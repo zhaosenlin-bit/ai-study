@@ -1,0 +1,422 @@
+[
+  {
+    "id": "chinese_g3_word_synonym_antonym",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "近义词与反义词",
+    "difficulty": 2,
+    "prerequisites": [],
+    "next": ["chinese_g3_word_collocation", "chinese_g3_idiom_meaning", "chinese_g3_word_overlap"],
+    "common_misconceptions": [
+      "混淆近义词之间的细微差别",
+      "把反义词误当成近义词"
+    ],
+    "demo_value": "适合词语辨析和 AI 追问"
+  },
+  {
+    "id": "chinese_g3_radical_structure",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "汉字偏旁与结构",
+    "difficulty": 2,
+    "prerequisites": [],
+    "next": [],
+    "common_misconceptions": [
+      "只按偏旁乱猜字义",
+      "混淆形近字（如晴、睛、情）"
+    ],
+    "demo_value": "适合识字趣味讲解"
+  },
+  {
+    "id": "chinese_g3_idiom_meaning",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "成语理解与运用",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_word_synonym_antonym"],
+    "next": [],
+    "common_misconceptions": [
+      "望文生义，按字面理解成语",
+      "用错成语的适用对象"
+    ],
+    "demo_value": "适合情境化讲解"
+  },
+  {
+    "id": "chinese_g3_word_collocation",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "词语搭配",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_word_synonym_antonym"],
+    "next": ["chinese_g3_word_context_meaning"],
+    "common_misconceptions": [
+      "搭配不当（如「戴帽子」说成「穿帽子」）",
+      "受口语或方言影响选错搭配"
+    ],
+    "demo_value": "适合搭配纠错引导"
+  },
+  {
+    "id": "chinese_g3_word_context_meaning",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "联系上下文理解词语",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_word_collocation"],
+    "next": ["chinese_g4_word_polysemy", "chinese_g3_poem_keyword", "chinese_g3_reading_detail"],
+    "common_misconceptions": [
+      "脱离语境猜词",
+      "只记字典义，不看句子意思"
+    ],
+    "demo_value": "适合引导联系上下文"
+  },
+  {
+    "id": "chinese_g3_word_overlap",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "叠词积累（ABB/AABB/ABAB）",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_word_synonym_antonym"],
+    "next": ["chinese_g3_expression_sentence_expand"],
+    "common_misconceptions": [
+      "分不清 ABB 和 AABB 形式",
+      "叠词用错位置或搭配"
+    ],
+    "demo_value": "适合语言积累小游戏"
+  },
+  {
+    "id": "chinese_g4_word_polysemy",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "多义词辨析",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_word_context_meaning"],
+    "next": ["chinese_g4_word_usage"],
+    "common_misconceptions": [
+      "只知词语的一个意思",
+      "不根据语境选择正确义项"
+    ],
+    "demo_value": "适合一词多义辨析"
+  },
+  {
+    "id": "chinese_g4_word_usage",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "词语准确运用",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g4_word_polysemy"],
+    "next": [],
+    "common_misconceptions": [
+      "书面语口语混用",
+      "用词不够准确、不贴切"
+    ],
+    "demo_value": "适合用词准确性引导"
+  },
+  {
+    "id": "chinese_g3_poem_recite",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "古诗背诵与默写",
+    "difficulty": 2,
+    "prerequisites": [],
+    "next": ["chinese_g3_poem_author"],
+    "common_misconceptions": [
+      "背诵丢字漏句",
+      "默写时混淆同音字"
+    ],
+    "demo_value": "适合记忆节奏引导"
+  },
+  {
+    "id": "chinese_g3_poem_author",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "古诗作者与朝代",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_poem_recite"],
+    "next": ["chinese_g3_poem_keyword"],
+    "common_misconceptions": [
+      "作者朝代张冠李戴",
+      "混淆同时代诗人"
+    ],
+    "demo_value": "适合文学常识记忆"
+  },
+  {
+    "id": "chinese_g3_poem_keyword",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "古诗关键字词理解",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_word_context_meaning", "chinese_g3_poem_author"],
+    "next": ["chinese_g4_poem_image", "chinese_g4_poem_scene"],
+    "common_misconceptions": [
+      "按现代词义理解古词",
+      "忽略诗句注释"
+    ],
+    "demo_value": "适合关键字词讲解"
+  },
+  {
+    "id": "chinese_g4_poem_image",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗画面想象",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_poem_keyword"],
+    "next": ["chinese_g4_poem_emotion", "chinese_g4_poem_technique"],
+    "common_misconceptions": [
+      "只会背诵不会理解画面",
+      "把字面翻译当作情感理解"
+    ],
+    "demo_value": "适合做情境化讲解和追问"
+  },
+  {
+    "id": "chinese_g4_poem_emotion",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗情感体会",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_poem_image"],
+    "next": ["chinese_g4_poem_accumulate"],
+    "common_misconceptions": [
+      "感受与画面脱节",
+      "直接背「表达了……」的套路答案"
+    ],
+    "demo_value": "适合情感体验引导"
+  },
+  {
+    "id": "chinese_g4_poem_technique",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗修辞初步认识",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_poem_image"],
+    "next": [],
+    "common_misconceptions": [
+      "认不出比喻、拟人等修辞",
+      "能说出修辞但不理解它的作用"
+    ],
+    "demo_value": "适合修辞启蒙讲解"
+  },
+  {
+    "id": "chinese_g4_poem_scene",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗时令与场景",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_poem_keyword"],
+    "next": [],
+    "common_misconceptions": [
+      "分不清诗句写的季节时辰",
+      "忽略景物对场景的提示"
+    ],
+    "demo_value": "适合时令场景归类"
+  },
+  {
+    "id": "chinese_g4_poem_accumulate",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗积累与运用",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g4_poem_emotion"],
+    "next": [],
+    "common_misconceptions": [
+      "死记不归类",
+      "主题相近的古诗混淆"
+    ],
+    "demo_value": "适合古诗归类积累"
+  },
+  {
+    "id": "chinese_g3_reading_detail",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "阅读细节定位",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_word_context_meaning"],
+    "next": ["chinese_g3_reading_order", "chinese_g3_reading_question_norm", "chinese_g3_reading_main_idea", "chinese_g4_reading_detail"],
+    "common_misconceptions": [
+      "凭印象作答，不回原文找证据",
+      "把细节题答成自己的感受"
+    ],
+    "demo_value": "适合引导回原文找证据"
+  },
+  {
+    "id": "chinese_g3_reading_order",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "阅读顺序与先后",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_reading_detail"],
+    "next": [],
+    "common_misconceptions": [
+      "分不清事情先后顺序",
+      "不会用「先……接着……最后……」梳理"
+    ],
+    "demo_value": "适合顺序梳理引导"
+  },
+  {
+    "id": "chinese_g3_reading_question_norm",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "阅读答题完整规范",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_reading_detail"],
+    "next": [],
+    "common_misconceptions": [
+      "回答不完整，只用一两个词",
+      "答非所问，不问什么答什么"
+    ],
+    "demo_value": "适合答题规范示范"
+  },
+  {
+    "id": "chinese_g3_reading_main_idea",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "阅读主旨概括（三年级）",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_reading_detail"],
+    "next": ["chinese_g4_reading_main_idea"],
+    "common_misconceptions": [
+      "把某一处细节当作主旨",
+      "概括不完整，只抓开头或结尾"
+    ],
+    "demo_value": "适合主旨归纳支架"
+  },
+  {
+    "id": "chinese_g4_reading_detail",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "阅读细节定位（四年级）",
+    "difficulty": 2,
+    "prerequisites": ["chinese_g3_reading_detail"],
+    "next": ["chinese_g4_reading_word_sentence"],
+    "common_misconceptions": [
+      "凭印象作答，不回原文找证据",
+      "把细节题答成自己的感受"
+    ],
+    "demo_value": "适合引导回原文找证据"
+  },
+  {
+    "id": "chinese_g4_reading_main_idea",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "阅读主旨概括（四年级）",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_reading_detail"],
+    "next": ["chinese_g4_reading_inference"],
+    "common_misconceptions": [
+      "把某一处细节当作全文主旨",
+      "概括不完整，只抓开头或结尾"
+    ],
+    "demo_value": "适合主旨归纳支架"
+  },
+  {
+    "id": "chinese_g4_reading_inference",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "阅读推断",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_reading_main_idea"],
+    "next": ["chinese_g4_reading_character"],
+    "common_misconceptions": [
+      "过度推理，脱离文本依据",
+      "把猜测当成有依据的推断"
+    ],
+    "demo_value": "适合推断引导"
+  },
+  {
+    "id": "chinese_g4_reading_word_sentence",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "词句理解（阅读）",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g4_reading_detail"],
+    "next": [],
+    "common_misconceptions": [
+      "脱离上下文理解词语",
+      "只答字面意思，不理解句子的深层含义"
+    ],
+    "demo_value": "适合词句含义引导"
+  },
+  {
+    "id": "chinese_g4_reading_character",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "人物形象分析",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_reading_inference"],
+    "next": [],
+    "common_misconceptions": [
+      "概括用词不准确",
+      "分析缺少文中依据"
+    ],
+    "demo_value": "适合人物分析支架"
+  },
+  {
+    "id": "chinese_g3_expression_sentence_expand",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "短句扩写",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_word_overlap"],
+    "next": ["chinese_g3_picture_talk"],
+    "common_misconceptions": [
+      "只会加形容词，不会加动作和感受",
+      "扩写后句子不通顺、重复啰嗦"
+    ],
+    "demo_value": "适合表达支架引导，能体现表达能力提升"
+  },
+  {
+    "id": "chinese_g3_picture_talk",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "看图说话",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_expression_sentence_expand"],
+    "next": ["chinese_g4_expression_picture_write"],
+    "common_misconceptions": [
+      "只描述单个人物，忽略背景和顺序",
+      "说不出时间、地点、谁、干什么"
+    ],
+    "demo_value": "适合四要素支架引导"
+  },
+  {
+    "id": "chinese_g4_expression_picture_write",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "看图写话",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g3_picture_talk"],
+    "next": ["chinese_g4_expression_paragraph"],
+    "common_misconceptions": [
+      "写成流水账",
+      "不会抓重点和写感受"
+    ],
+    "demo_value": "适合段落结构引导"
+  },
+  {
+    "id": "chinese_g4_expression_conjunction",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "关联词语运用",
+    "difficulty": 3,
+    "prerequisites": ["chinese_g3_expression_sentence_expand"],
+    "next": [],
+    "common_misconceptions": [
+      "关联词乱用",
+      "分不清转折、因果、递进"
+    ],
+    "demo_value": "适合句子连贯引导"
+  },
+  {
+    "id": "chinese_g4_expression_paragraph",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "总分段落写作",
+    "difficulty": 4,
+    "prerequisites": ["chinese_g4_expression_picture_write"],
+    "next": [],
+    "common_misconceptions": [
+      "段落没有中心句",
+      "前后句子跳跃、不连贯"
+    ],
+    "demo_value": "适合总分结构讲解"
+  }
+]

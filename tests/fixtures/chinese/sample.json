@@ -1,0 +1,51 @@
+{
+  "description": "语文模块最小测试样例：供角色 A 单元测试 / 角色 E 联调快速加载。完整数据见 data/knowledge_graph/chinese/ 与 data/question_bank/chinese/。",
+  "knowledge_points": [
+    {
+      "id": "chinese_g4_poem_image",
+      "subject": "chinese",
+      "grade": 4,
+      "name": "古诗画面想象",
+      "difficulty": 3,
+      "prerequisites": ["chinese_g3_poem_keyword"],
+      "common_misconceptions": ["只会背诵不会理解画面", "把字面翻译当作情感理解"]
+    },
+    {
+      "id": "chinese_g4_reading_detail",
+      "subject": "chinese",
+      "grade": 4,
+      "name": "阅读细节定位（四年级）",
+      "difficulty": 2,
+      "prerequisites": ["chinese_g3_reading_detail"],
+      "common_misconceptions": ["凭印象作答，不回原文找证据"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "chinese_q_0019",
+      "subject": "chinese",
+      "grade": 4,
+      "type": "single_choice",
+      "stem": "《望庐山瀑布》中「飞流直下三千尺，疑是银河落九天」描写了怎样的画面？",
+      "passage": "日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。",
+      "options": ["瀑布从高处倾泻而下，像银河从天而降", "一条小河缓缓流过田野"],
+      "answer": "瀑布从高处倾泻而下，像银河从天而降",
+      "knowledge_point_ids": ["chinese_g4_poem_image"],
+      "difficulty": 3,
+      "error_types": ["inference_error", "word_meaning"]
+    },
+    {
+      "id": "chinese_q_0031",
+      "subject": "chinese",
+      "grade": 4,
+      "type": "single_choice",
+      "stem": "短文中，小丽和弟弟在哪里放风筝？",
+      "passage": "春天来了，小丽和弟弟来到草地上放风筝，风筝飞得高高的。",
+      "options": ["小河边", "草地上"],
+      "answer": "草地上",
+      "knowledge_point_ids": ["chinese_g4_reading_detail"],
+      "difficulty": 2,
+      "error_types": ["detail_missing"]
+    }
+  ]
+}
