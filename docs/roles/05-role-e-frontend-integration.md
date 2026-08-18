@@ -29,6 +29,15 @@ docs/demo/
 tests/e2e/
 ```
 
+统一技术栈：
+
+```text
+React + Vite + TypeScript
+状态管理可选 Zustand 或 Redux Toolkit
+图表可选 ECharts 或 Recharts
+接口请求可选 fetch 封装或 TanStack Query
+```
+
 ## 3. 必做页面
 
 1. 学生首页：今日任务、连续学习天数、三科掌握度。

@@ -13,6 +13,7 @@
 - [角色 D：英语模块负责人](docs/roles/04-role-d-english.md)
 - [角色 E：前端体验、联调与演示负责人](docs/roles/05-role-e-frontend-integration.md)
 - [OpenAPI 接口契约草案](docs/api/openapi-contract-v0.yaml)
+- [讯飞星火/语音 Key 获取与环境变量](docs/setup/iflytek-keys.md)
 - [Git 协作规范](CONTRIBUTING.md)
 
 ## 分支
