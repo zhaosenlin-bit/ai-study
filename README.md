@@ -7,8 +7,9 @@
 ## 必读文档
 
 - [总 PRD、架构与协作规则](docs/00-master-prd-architecture-collaboration.md)
-- [课堂展示与学生执行手册](docs/01-classroom-student-handbook.md)
-- [Word 展示文档](docs/presentation/ai-study-课堂展示与学生执行手册.docx)
+- [课堂展示讲义](docs/01-classroom-student-handbook.md)
+- [Word 投屏讲义](docs/presentation/ai-study-课堂展示讲义-v0.3.docx)
+- [技术栈与架构学习选择指南](docs/02-tech-stack-and-architecture-learning-guide.md)
 - [角色 A：Agent 后端与接口负责人](docs/roles/01-role-a-agent-backend.md)
 - [A-E 角色分工确认看板](docs/roles/00-role-assignment-board.md)
 - [角色 B：数学模块负责人](docs/roles/02-role-b-math.md)

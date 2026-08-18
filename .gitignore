@@ -26,6 +26,7 @@ Thumbs.db
 *.mov
 *.zip
 *.rar
+~$*.docx
 
 # Local databases
 *.sqlite

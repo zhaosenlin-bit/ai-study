@@ -17,6 +17,12 @@
 4. 是否接入讯飞星火或讯飞 ASR/TTS 作为赛事契合亮点；如果账号暂时不稳定，允许用 DeepSeek/Qwen/MiniMax 等兼容模型或 mock 语音做备用。
 5. 今晚每位同学提交的创意方案，按“能否服务完整闭环、能否两周内做出来、能否在路演中讲清楚”筛选进入最终版本。
 
+## 2.1 课堂讲解与学习材料
+
+- 老师课堂投屏优先使用：[课堂展示讲义](01-classroom-student-handbook.md) 和 `docs/presentation/ai-study-课堂展示讲义-v0.3.docx`。
+- 学生课后理解技术栈选择，单独阅读：[技术栈与架构学习选择指南](02-tech-stack-and-architecture-learning-guide.md)。
+- 技术栈指南不只为 `ai-study` 服务，它是一个通用学习材料：帮助学生以后做任何项目时，都能先判断需求，再选择技术。
+
 ## 3. 赛事评分对齐
 
 | 评分项 | 分值 | 我们必须展示的证据 | 负责人 |
@@ -91,7 +97,8 @@
 
 ```text
 apps/web
-  学生端、家长端、演示控制台
+  React 沉浸式学习 App
+  中央 AI 精灵 + 左右边缘功能按钮 + 学生端 + 家长端 + 演示控制台
       |
       | REST / SSE
       v
@@ -113,18 +120,35 @@ services/agent
              SQLite student profile + mistake book + review schedule
 ```
 
+### 6.1 产品体验架构
+
+`ai-study` 外层要像一个有科技感和陪伴感的学习 App，内层要有可解释的 Agent 学习闭环。
+
+界面采用“中央舞台 + 左右边缘工具”的结构：
+
+- 中央舞台：AI 精灵、当前任务、诊断题、对话辅导。
+- 左侧边缘：今日任务、语文/数学/英语入口、学习路径地图。
+- 右侧边缘：错题本、徽章、家长报告、设置。
+- 顶部轻状态：学生姓名、年级、连续学习天数、模型状态。
+- 底部操作区：开始诊断、提交答案、下一步。
+
+AI 精灵不是纯装饰，它必须绑定 Agent 状态：问候对应读取画像，提示对应错因分析，表情变化对应学习状态，完成反馈对应路径规划和激励。
+
 ## 7. 推荐技术栈
 
 | 层级 | MVP 选择 | 原因 |
 | --- | --- | --- |
-| 前端 | React + Vite + TypeScript | 已统一 React，角色 E 负责组件化和联调 |
+| 前端 | React + Vite + TypeScript | 已统一 React；适合组件化、AI 对话、沉浸式交互和后续 App 封装 |
+| UI | Tailwind CSS + shadcn/ui + 自定义 AI 精灵组件 | 让界面有专业感，同时保留自由设计空间 |
+| AI 对话 UI | assistant-ui 思路或轻量自研 Chat Panel | 支持流式对话、提示层级、工具调用展示 |
 | 后端 | Python FastAPI | OpenAPI 自动生成，适合 Agent/RAG 接入 |
 | Agent | LangGraph 优先，Dify 作为可视化备用 | 更容易体现规划、记忆、工具调用 |
 | 模型 | 模型网关可配置：讯飞星火、DeepSeek、Qwen、MiniMax 等 | 赛题未写死指定模型；用可插拔模型降低风险，建议保留星火或讯飞语音作为赛事契合亮点 |
-| 知识图谱 | JSON 文件先行，Neo4j 决赛增强 | 初赛快，容易 Git 协作和审查 |
+| 知识图谱 | JSON 文件先行，Neo4j 决赛增强 | 学生容易写，Git 容易检查；后续可升级图数据库 |
 | 向量库 | Chroma 本地持久化 | 轻量，Docker 容易跑 |
-| 数据库 | SQLite MVP，PostgreSQL 决赛增强 | 演示稳定，降低部署成本 |
+| 数据库 | SQLite + SQLModel MVP，PostgreSQL/Supabase 增强 | MVP 稳定易懂；后续支持多人和云端 |
 | 复习调度 | SM-2 简化版，英语可扩展 FSRS | 错题本和单词复习有科学依据 |
+| App 封装 | PWA -> Tauri -> Capacitor | MVP 先 Web，后续可封装桌面或移动 App |
 | 部署 | Docker Compose | 评委和老师验收容易复现 |
 
 ## 8. 仓库目录约定

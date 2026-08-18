@@ -12,7 +12,7 @@
 | B | 待填姓名 | `feature/subject-math` | 数学知识点、题库、错因、数学 Prompt | 5 个知识点、5 道题、1 个 Prompt |
 | C | 待填姓名 | `feature/subject-chinese` | 语文知识点、古诗/阅读/表达题库、语文 Prompt | 5 个知识点、5 道题、1 个 Prompt |
 | D | 待填姓名 | `feature/subject-english` | 英语词库、题库、复习调度、英语 Prompt | 5 个词汇节点、5 道题、1 个 Prompt |
-| E | 待填姓名 | `feature/web-integration-demo` | React 前端、家长端、演示脚本、联调 | 首页、诊断页 mock、演示控制台雏形 |
+| E | 待填姓名 | `feature/web-integration-demo` | React 前端、AI 精灵体验、家长端、演示脚本、联调 | 沉浸式首页、诊断页 mock、AI 对话页 mock、演示控制台雏形 |
 
 ## 2. 角色不是孤岛
 
@@ -22,6 +22,10 @@
 | A 依赖 B/C/D | 三科题库和知识图谱 | B/C/D 先交最小 JSON 样例 |
 | B/C/D 依赖 A | 统一数据格式 | 先按 OpenAPI 和样例字段写 |
 | 全组依赖 E | 演示路线和截图 | E 先出 3-5 分钟演示脚本 |
+
+## 2.1 体验统一口径
+
+所有角色都要围绕同一个产品画面交付：中间是 AI 精灵和学习任务，左侧边缘是三科入口和任务，右侧边缘是错题本、徽章、家长报告。三科内容和后端接口都要服务这个体验，不要各自做成孤立页面。
 
 ## 3. 每位同学确认角色后要发的话
 

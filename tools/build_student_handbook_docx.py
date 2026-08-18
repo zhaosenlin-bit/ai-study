@@ -14,7 +14,7 @@ from docx.shared import Cm, Inches, Pt, RGBColor
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs" / "01-classroom-student-handbook.md"
-OUTPUT = ROOT / "docs" / "presentation" / "ai-study-课堂展示与学生执行手册.docx"
+OUTPUT = ROOT / "docs" / "presentation" / "ai-study-课堂展示讲义-v0.3.docx"
 
 
 FONT = "Microsoft YaHei"
@@ -126,7 +126,7 @@ def add_cover(doc: Document):
 
     subtitle = doc.add_paragraph()
     subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    run = subtitle.add_run("三科自适应伴学 Agent 课堂展示与学生执行手册")
+    run = subtitle.add_run("三科自适应伴学 Agent 课堂展示讲义")
     set_run_font(run, 16, True, HEADING_DARK)
 
     meta = doc.add_paragraph()
@@ -171,7 +171,7 @@ def add_footer(doc: Document):
     for section in doc.sections:
         footer = section.footer.paragraphs[0]
         footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        run = footer.add_run("ai-study 项目课堂展示与学生执行手册")
+        run = footer.add_run("ai-study 项目课堂展示讲义")
         set_run_font(run, 8.5, False, MUTED)
 
 
