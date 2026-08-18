@@ -1,0 +1,405 @@
+openapi: 3.0.3
+info:
+  title: AI Study Adaptive Tutor API
+  version: 0.1.0
+  description: 三科自适应伴学 Agent MVP 接口契约。任何接口字段变更必须先更新本文件。
+servers:
+  - url: http://localhost:8000
+paths:
+  /api/v1/health:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: OK
+  /api/v1/diagnosis/start:
+    post:
+      summary: Start diagnosis session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DiagnosisStartRequest"
+      responses:
+        "200":
+          description: Diagnosis session with first questions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DiagnosisSession"
+  /api/v1/diagnosis/submit:
+    post:
+      summary: Submit diagnosis answers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DiagnosisSubmitRequest"
+      responses:
+        "200":
+          description: Diagnosis result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DiagnosisResult"
+  /api/v1/students/{student_id}/profile:
+    get:
+      summary: Get student profile
+      parameters:
+        - $ref: "#/components/parameters/StudentId"
+      responses:
+        "200":
+          description: Student profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StudentProfile"
+  /api/v1/students/{student_id}/path:
+    get:
+      summary: Get current learning path
+      parameters:
+        - $ref: "#/components/parameters/StudentId"
+      responses:
+        "200":
+          description: Learning path
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LearningPath"
+  /api/v1/agent/chat:
+    post:
+      summary: Chat with tutor agent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AgentChatRequest"
+      responses:
+        "200":
+          description: Agent response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AgentChatResponse"
+  /api/v1/students/{student_id}/mistakes:
+    get:
+      summary: Get mistake book
+      parameters:
+        - $ref: "#/components/parameters/StudentId"
+      responses:
+        "200":
+          description: Mistake records
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MistakeRecord"
+  /api/v1/review/next:
+    post:
+      summary: Get next review item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [student_id, subject]
+              properties:
+                student_id:
+                  type: string
+                subject:
+                  $ref: "#/components/schemas/Subject"
+      responses:
+        "200":
+          description: Next review item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReviewItem"
+  /api/v1/reports/parent/{student_id}:
+    get:
+      summary: Get parent report
+      parameters:
+        - $ref: "#/components/parameters/StudentId"
+      responses:
+        "200":
+          description: Parent report
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ParentReport"
+components:
+  parameters:
+    StudentId:
+      name: student_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    Subject:
+      type: string
+      enum: [math, chinese, english, mixed]
+    DiagnosisStartRequest:
+      type: object
+      required: [student_id, grade, subjects]
+      properties:
+        student_id:
+          type: string
+        grade:
+          type: integer
+          minimum: 3
+          maximum: 6
+        subjects:
+          type: array
+          items:
+            $ref: "#/components/schemas/Subject"
+        count_per_subject:
+          type: integer
+          default: 3
+    DiagnosisSession:
+      type: object
+      required: [session_id, student_id, questions]
+      properties:
+        session_id:
+          type: string
+        student_id:
+          type: string
+        questions:
+          type: array
+          items:
+            $ref: "#/components/schemas/Question"
+    DiagnosisSubmitRequest:
+      type: object
+      required: [session_id, student_id, answers]
+      properties:
+        session_id:
+          type: string
+        student_id:
+          type: string
+        answers:
+          type: array
+          items:
+            $ref: "#/components/schemas/Answer"
+    DiagnosisResult:
+      type: object
+      required: [student_id, weak_points, mastery_updates, recommended_path]
+      properties:
+        student_id:
+          type: string
+        weak_points:
+          type: array
+          items:
+            type: string
+        mastery_updates:
+          type: object
+          additionalProperties:
+            type: number
+        recommended_path:
+          $ref: "#/components/schemas/LearningPath"
+    StudentProfile:
+      type: object
+      required: [student_id, name, grade, mastery, weak_points]
+      properties:
+        student_id:
+          type: string
+        name:
+          type: string
+        grade:
+          type: integer
+        mastery:
+          type: object
+          additionalProperties:
+            type: number
+        weak_points:
+          type: array
+          items:
+            type: string
+        emotion_state:
+          type: string
+          enum: [happy, neutral, anxious, frustrated]
+        learning_style:
+          type: string
+          enum: [visual, auditory, reading, kinesthetic]
+    KnowledgePoint:
+      type: object
+      required: [id, subject, grade, name, difficulty]
+      properties:
+        id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        grade:
+          type: integer
+        name:
+          type: string
+        difficulty:
+          type: integer
+          minimum: 1
+          maximum: 5
+        prerequisites:
+          type: array
+          items:
+            type: string
+        common_misconceptions:
+          type: array
+          items:
+            type: string
+    Question:
+      type: object
+      required: [id, subject, grade, type, stem, knowledge_point_ids]
+      properties:
+        id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        grade:
+          type: integer
+        type:
+          type: string
+          enum: [single_choice, multiple_choice, fill_blank, short_answer, dialogue]
+        stem:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+        answer:
+          type: string
+        knowledge_point_ids:
+          type: array
+          items:
+            type: string
+        difficulty:
+          type: integer
+          minimum: 1
+          maximum: 5
+    Answer:
+      type: object
+      required: [question_id, answer]
+      properties:
+        question_id:
+          type: string
+        answer:
+          type: string
+        elapsed_seconds:
+          type: integer
+    LearningPath:
+      type: object
+      required: [student_id, tasks]
+      properties:
+        student_id:
+          type: string
+        tasks:
+          type: array
+          items:
+            $ref: "#/components/schemas/LearningTask"
+        reason:
+          type: string
+    LearningTask:
+      type: object
+      required: [task_id, subject, title, knowledge_point_id, status]
+      properties:
+        task_id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        title:
+          type: string
+        knowledge_point_id:
+          type: string
+        status:
+          type: string
+          enum: [todo, doing, done]
+    AgentChatRequest:
+      type: object
+      required: [student_id, subject, message]
+      properties:
+        student_id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        message:
+          type: string
+        question_id:
+          type: string
+        hint_level:
+          type: integer
+          minimum: 0
+          maximum: 3
+    AgentChatResponse:
+      type: object
+      required: [reply, strategy, updated_profile]
+      properties:
+        reply:
+          type: string
+        strategy:
+          type: string
+          enum: [socratic, explain, encourage, review, reflect]
+        suggested_next_question:
+          type: string
+        updated_profile:
+          $ref: "#/components/schemas/StudentProfile"
+        tool_trace:
+          type: array
+          items:
+            type: string
+    MistakeRecord:
+      type: object
+      required: [mistake_id, student_id, question_id, subject, error_type, next_review_at]
+      properties:
+        mistake_id:
+          type: string
+        student_id:
+          type: string
+        question_id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        error_type:
+          type: string
+        explanation:
+          type: string
+        review_count:
+          type: integer
+        next_review_at:
+          type: string
+          format: date-time
+    ReviewItem:
+      type: object
+      required: [review_id, student_id, subject, question]
+      properties:
+        review_id:
+          type: string
+        student_id:
+          type: string
+        subject:
+          $ref: "#/components/schemas/Subject"
+        question:
+          $ref: "#/components/schemas/Question"
+        due_reason:
+          type: string
+    ParentReport:
+      type: object
+      required: [student_id, summary, mastery, suggestions]
+      properties:
+        student_id:
+          type: string
+        summary:
+          type: string
+        mastery:
+          type: object
+          additionalProperties:
+            type: number
+        mistake_stats:
+          type: object
+          additionalProperties:
+            type: integer
+        suggestions:
+          type: array
+          items:
+            type: string
