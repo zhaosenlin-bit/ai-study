@@ -1,0 +1,12 @@
+{
+  "id": "english_q_0002",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": ["english_g3_numbers"],
+  "stem": "Spell the word: 数字 3 → th___",
+  "options": [],
+  "answer": "three",
+  "rubric": "检查数字拼写；常见错误 three 写成 tree，可标记 spelling_error。",
+  "difficulty": 2
+}

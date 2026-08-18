@@ -1,0 +1,12 @@
+{
+  "id": "english_g3_colors",
+  "subject": "english",
+  "grade": 3,
+  "name": "颜色词汇",
+  "difficulty": 1,
+  "prerequisites": ["english_g3_alphabet"],
+  "next": ["english_g3_numbers"],
+  "vocabulary": ["red", "yellow", "blue", "green", "black", "white"],
+  "common_misconceptions": ["green 拼写漏字母", "blue 与 blow 读音混淆"],
+  "demo_value": "适合展示单词识别与拼写纠错"
+}
