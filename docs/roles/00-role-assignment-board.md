@@ -21,7 +21,7 @@
 | A | 待填姓名 | `feature/agent-core` | 后端、Agent、接口、学生画像、路径规划 | `/api/v1/health`、mock 诊断接口、Schema 草案 |
 | B | 待填姓名 | `feature/subject-math` | 数学知识点、题库、错因、数学 Prompt | 5 个知识点、5 道题、1 个 Prompt |
 | C | 待填姓名 | `feature/subject-chinese` | 语文知识点、古诗/阅读/表达题库、语文 Prompt | 5 个知识点、5 道题、1 个 Prompt |
-| D | 待填姓名 | `feature/subject-english` | 英语词库、题库、复习调度、英语 Prompt | 5 个词汇节点、5 道题、1 个 Prompt |
+| D | 胡智博 | `feature/subject-english` | 英语词库、题库、复习调度、英语 Prompt | 5 个词汇节点、5 道题、1 个 Prompt |
 | E | 待填姓名 | `feature/web-integration-demo` | React 前端、AI 精灵体验、家长端、演示脚本、联调 | 沉浸式首页、诊断页 mock、AI 对话页 mock、演示控制台雏形 |
 
 ## 2. 角色不是孤岛
