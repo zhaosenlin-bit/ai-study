@@ -4,6 +4,12 @@
 主责目录：`services/api/`、`services/agent/`、`packages/contracts/`、`docs/api/`  
 目标：让整个项目不是“聊天套壳”，而是有可展示的 Agent 状态机、工具调用、记忆和自适应路径。
 
+## 0. 开发前先读
+
+角色 A 开始写代码前，不是只读这份文档。先按顺序读：`README.md`、总 PRD、课堂讲义、技术栈指南、文档领取指南、`CONTRIBUTING.md`、`docs/api/openapi-contract-v0.yaml`，再读本角色文档。
+
+如果今晚老师采纳学生新方案，先看 `docs/proposals/final-decision.md` 和新版总 PRD，再决定是否改接口或 Agent 流程。
+
 ## 1. 你负责什么
 
 1. 搭建 FastAPI 后端骨架。

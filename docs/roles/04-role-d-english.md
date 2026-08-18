@@ -4,6 +4,12 @@
 主责目录：`data/knowledge_graph/english/`、`data/question_bank/english/`、`prompts/english/`  
 目标：让英语模块展示“单词记忆 + 情景对话 + 复习调度”，如果接口条件允许，再接入讯飞 ASR/TTS 做口语亮点。
 
+## 0. 开发前先读
+
+角色 D 开始写内容前，不是只读这份文档。先按顺序读：`README.md`、总 PRD、课堂讲义、技术栈指南、文档领取指南、`CONTRIBUTING.md`、`docs/api/openapi-contract-v0.yaml`，再读本角色文档。
+
+如果今晚老师采纳学生新方案，先看 `docs/proposals/final-decision.md` 和新版总 PRD，再决定英语词库、听说任务或复习规则是否要调整。
+
 ## 1. 你负责什么
 
 1. 小学 3-6 年级英语词库和知识图谱。

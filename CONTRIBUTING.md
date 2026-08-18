@@ -2,6 +2,18 @@
 
 本规范用于保证五个人开发的代码最后能汇成一个完整 Demo。
 
+## 开发前先确认
+
+开始写代码前，先读完：
+
+- `README.md`
+- `docs/00-master-prd-architecture-collaboration.md`
+- `docs/01-classroom-student-handbook.md`
+- `docs/03-document-reading-and-versioning-guide.md`
+- 自己的角色文档
+
+如果老师课后确认了新方案，先更新文档和 OpenAPI，再改代码。
+
 ## 第一次拉取
 
 ```bash
@@ -78,5 +90,6 @@ git push -u origin feature/agent-core
 - 能本地启动自己负责的模块。
 - 没有提交 `.env`、密钥、临时压缩包、大型视频。
 - README 或角色文档已同步变更。
+- 版本号和文档入口已同步变更。
 - 测试数据不是空壳，至少能支撑一轮演示。
 - PR 描述写清楚做了什么、怎么验收、还缺什么。

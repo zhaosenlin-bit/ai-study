@@ -4,6 +4,12 @@
 主责目录：`data/knowledge_graph/chinese/`、`data/question_bank/chinese/`、`prompts/chinese/`  
 目标：让语文模块展示“识字/古诗/阅读理解”的个性化引导，重点体现情境化讲解和表达能力提升。
 
+## 0. 开发前先读
+
+角色 C 开始写内容前，不是只读这份文档。先按顺序读：`README.md`、总 PRD、课堂讲义、技术栈指南、文档领取指南、`CONTRIBUTING.md`、`docs/api/openapi-contract-v0.yaml`，再读本角色文档。
+
+如果今晚老师采纳学生新方案，先看 `docs/proposals/final-decision.md` 和新版总 PRD，再决定语文题型、知识点或 Prompt 是否要调整。
+
 ## 1. 你负责什么
 
 1. 小学 3-6 年级语文知识图谱。

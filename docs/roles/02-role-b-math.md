@@ -4,6 +4,12 @@
 主责目录：`data/knowledge_graph/math/`、`data/question_bank/math/`、`prompts/math/`  
 目标：让数学模块能展示“错因诊断 + 分步引导 + 路径推荐”，成为三科中最容易让评委看懂自适应策略的样板。
 
+## 0. 开发前先读
+
+角色 B 开始写内容前，不是只读这份文档。先按顺序读：`README.md`、总 PRD、课堂讲义、技术栈指南、文档领取指南、`CONTRIBUTING.md`、`docs/api/openapi-contract-v0.yaml`，再读本角色文档。
+
+如果今晚老师采纳学生新方案，先看 `docs/proposals/final-decision.md` 和新版总 PRD，再决定数学知识点、题库或 Prompt 是否要调整。
+
 ## 1. 你负责什么
 
 1. 小学 3-6 年级数学知识图谱。

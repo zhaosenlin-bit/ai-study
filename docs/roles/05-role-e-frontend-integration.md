@@ -4,6 +4,12 @@
 主责目录：`apps/web/`、`docs/demo/`、`tests/e2e/`  
 目标：把 A/B/C/D 的能力变成评委能看懂、老师能验收、学生能操作的完整 Demo。
 
+## 0. 开发前先读
+
+角色 E 开始写页面前，不是只读这份文档。先按顺序读：`README.md`、总 PRD、课堂讲义、技术栈指南、文档领取指南、`CONTRIBUTING.md`、`docs/api/openapi-contract-v0.yaml`，再读本角色文档。
+
+如果今晚老师采纳学生新方案，先看 `docs/proposals/final-decision.md` 和新版总 PRD，再决定页面、AI 精灵状态或演示脚本是否要调整。
+
 ## 1. 你负责什么
 
 1. 前端项目骨架和页面。
