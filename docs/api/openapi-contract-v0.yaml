@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: AI Study Adaptive Tutor API
+  title: ai-study Adaptive Tutor API
   version: 0.1.0
   description: 三科自适应伴学 Agent MVP 接口契约。任何接口字段变更必须先更新本文件。
 servers:
