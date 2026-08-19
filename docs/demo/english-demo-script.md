@@ -55,6 +55,8 @@ AI 精灵调用 `prompts/english/vocabulary_hint.md`：
 - 明日学习路径：`english_g3_food_drinks`（前置满足，进阶）
 - 家长端报告一句话：孩子拼写明显进步，今日错词 1 个，明天 09:00 自动复习。
 
+> 增强演示（可选）：若前端已实现"词卡花园"，第 2 步错词将显示为种子并随复习推进发芽/开花，把复习调度可视化。完整实现方案见 [词卡花园实现方案](../proposals/word-garden-implementation.md)。
+
 ## 语音占位说明（mock）
 
 - 当前未接通讯飞 ASR/TTS，全程使用文本跟读。
