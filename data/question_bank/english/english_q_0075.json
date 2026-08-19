@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0075",
+  "subject": "english",
+  "grade": 5,
+  "type": "multiple_choice",
+  "knowledge_point_ids": [
+    "english_g5_healthy_food"
+  ],
+  "stem": "Which are healthy food and drinks? Select ALL.",
+  "options": [
+    "vegetables",
+    "fruit",
+    "cola",
+    "candy"
+  ],
+  "answer": "vegetables, fruit",
+  "rubric": "检查健康饮食概念；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0073",
+  "subject": "english",
+  "grade": 3,
+  "type": "multiple_choice",
+  "knowledge_point_ids": [
+    "english_g3_farm_animals"
+  ],
+  "stem": "Which animals live on a farm? Select ALL.",
+  "options": [
+    "cow",
+    "duck",
+    "lion",
+    "pig"
+  ],
+  "answer": "cow, duck, pig",
+  "rubric": "检查动物分类；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

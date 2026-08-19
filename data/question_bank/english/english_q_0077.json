@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0077",
+  "subject": "english",
+  "grade": 5,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g5_future_will"
+  ],
+  "stem": "What will you do next weekend? 请用 will 写一个完整句子。",
+  "options": [],
+  "answer": "I will visit my grandparents.",
+  "rubric": "检查 will + 动词原形；will 后加三单可标记 sentence_pattern_error。",
+  "difficulty": 3
+}
