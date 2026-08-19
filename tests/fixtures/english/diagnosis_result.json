@@ -1,0 +1,27 @@
+{
+  "student_id": "stu_demo_001",
+  "weak_points": ["english_g3_fruits"],
+  "mastery_updates": {
+    "english_g3_fruits": 0.2
+  },
+  "recommended_path": {
+    "student_id": "stu_demo_001",
+    "tasks": [
+      {
+        "task_id": "task_001",
+        "subject": "english",
+        "title": "复习前置知识点：颜色词汇",
+        "knowledge_point_id": "english_g3_colors",
+        "status": "todo"
+      },
+      {
+        "task_id": "task_002",
+        "subject": "english",
+        "title": "主攻薄弱点：水果单词",
+        "knowledge_point_id": "english_g3_fruits",
+        "status": "todo"
+      }
+    ],
+    "reason": "fruits 掌握度 0.2，需先巩固前置 colors 再主攻 fruits"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "review_id": "rev_0001",
+  "student_id": "stu_demo_001",
+  "subject": "english",
+  "question": {
+    "id": "english_q_0013",
+    "subject": "english",
+    "grade": 3,
+    "type": "fill_blank",
+    "stem": "Spell the word: 香蕉 → ba___na",
+    "options": [],
+    "answer": "banana",
+    "knowledge_point_ids": ["english_g3_fruits"],
+    "difficulty": 2
+  },
+  "due_reason": "上次答错，SM-2 简化版间隔 1 天到期复习"
+}

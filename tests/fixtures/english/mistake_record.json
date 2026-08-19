@@ -1,0 +1,10 @@
+{
+  "mistake_id": "mist_0001",
+  "student_id": "stu_demo_001",
+  "question_id": "english_q_0013",
+  "subject": "english",
+  "error_type": "spelling_error",
+  "explanation": "banana 拼成 banna，漏了中间一个 a；记忆法：banana 里两个 a 像两根香蕉",
+  "review_count": 0,
+  "next_review_at": "2026-08-20T09:00:00+08:00"
+}

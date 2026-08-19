@@ -1,0 +1,17 @@
+{
+  "student_id": "stu_demo_001",
+  "name": "小明",
+  "grade": 3,
+  "mastery": {
+    "english_g3_alphabet": 0.9,
+    "english_g3_colors": 0.8,
+    "english_g3_numbers": 0.8,
+    "english_g3_family_members": 0.7,
+    "english_g3_basic_greetings": 0.75,
+    "english_g3_fruits": 0.2
+  },
+  "weak_points": ["english_g3_fruits"],
+  "emotion_state": "neutral",
+  "learning_style": "visual",
+  "updated_at": "2026-08-19T09:00:00+08:00"
+}
