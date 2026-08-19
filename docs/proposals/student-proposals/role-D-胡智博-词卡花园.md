@@ -55,7 +55,7 @@
 ## 7. 需要改哪些东西
 
 - 接口：无新增。`MistakeRecord.review_count`、`next_review_at` 复用现有契约。
-- 数据：已有 46 节点 / 70 题 / SM-2 规则，无需新增。
+- 数据：已有 46 节点 / 80 题（5 类题型）/ SM-2 规则，无需新增。
 - 页面：前端错词本组件增加花园状态（E）。
 - Prompt：`dialogue_partner.md` 追加一句"浇水"鼓励语（D）。
 - 测试或演示脚本：`docs/demo/english-demo-script.md` 第 2 步已含错词入复习，补一句花园展示说明（D）。

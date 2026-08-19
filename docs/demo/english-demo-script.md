@@ -2,7 +2,7 @@
 
 版本：v0.3 课前讨论版
 用途：英语模块 1 轮完整演示（约 3 分钟），供角色 E 汇总到总演示、录制 Demo 视频。
-配套数据：`data/knowledge_graph/english/`（46 节点）、`data/question_bank/english/`（70 题）、`prompts/english/`（3 个 Prompt）。
+配套数据：`data/knowledge_graph/english/`（46 节点）、`data/question_bank/english/`（80 题，含 5 类题型）、`prompts/english/`（3 个 Prompt）。
 
 ## 演示流程（诊断 → 错词 → 复习 → 情景对话）
 
@@ -66,7 +66,7 @@ AI 精灵调用 `prompts/english/vocabulary_hint.md`：
 | 验收点（角色 D 文档第 8 节） | 本脚本覆盖 |
 | --- | --- |
 | 知识点/词汇节点 ≥ 40 | 46 节点 |
-| 题库 ≥ 60 条 | 70 题 |
+| 题库 ≥ 60 条 | 80 题（5 类题型） |
 | 展示错词进入复习计划 | 第 2 步 |
 | 展示一个情景对话 | 第 4 步 |
 | ASR/TTS 未接通有 mock 替代 | 语音占位说明 |
