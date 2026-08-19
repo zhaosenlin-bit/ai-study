@@ -5,7 +5,7 @@
   "name": "基础问候语",
   "difficulty": 2,
   "prerequisites": ["english_g3_family_members"],
-  "next": ["english_g4_school_words"],
+  "next": ["english_g4_can_sentence"],
   "vocabulary": ["hello", "good morning", "goodbye", "thank you", "how are you"],
   "common_misconceptions": ["问候回应不完整", "How are you 的回答忘记 I'm fine"],
   "demo_value": "适合展示情景对话和完整句子引导"

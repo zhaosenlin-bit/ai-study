@@ -1,0 +1,26 @@
+{
+  "id": "english_g4_like_sentence",
+  "subject": "english",
+  "grade": 4,
+  "name": "I like 句型",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_food_words",
+    "english_g3_family_members"
+  ],
+  "next": [
+    "english_g5_hobbies"
+  ],
+  "vocabulary": [
+    "like",
+    "I like",
+    "I don't like",
+    "Do you like",
+    "Yes, I do"
+  ],
+  "common_misconceptions": [
+    "like 后动词忘加 ing",
+    "Don't like 主语搭配错误"
+  ],
+  "demo_value": "适合展示喜好问答和食物话题"
+}

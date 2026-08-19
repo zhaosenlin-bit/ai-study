@@ -1,0 +1,28 @@
+{
+  "id": "english_g4_can_sentence",
+  "subject": "english",
+  "grade": 4,
+  "name": "Can 句型",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_basic_greetings"
+  ],
+  "next": [
+    "english_g5_sports"
+  ],
+  "vocabulary": [
+    "can",
+    "can't",
+    "Can you",
+    "Yes, I can",
+    "No, I can't",
+    "swim",
+    "run",
+    "jump"
+  ],
+  "common_misconceptions": [
+    "can 后动词用原形",
+    "can't 读音与 can 混淆"
+  ],
+  "demo_value": "适合展示能力问答和运动会话题"
+}

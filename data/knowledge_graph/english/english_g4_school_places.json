@@ -1,0 +1,26 @@
+{
+  "id": "english_g4_school_places",
+  "subject": "english",
+  "grade": 4,
+  "name": "学校场所",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_classroom_objects"
+  ],
+  "next": [
+    "english_g4_daily_routines"
+  ],
+  "vocabulary": [
+    "classroom",
+    "library",
+    "playground",
+    "canteen",
+    "office",
+    "gym"
+  ],
+  "common_misconceptions": [
+    "playground 与 classroom 场景混淆",
+    "library 拼写漏 r"
+  ],
+  "demo_value": "适合展示问路指路和校园情景对话"
+}

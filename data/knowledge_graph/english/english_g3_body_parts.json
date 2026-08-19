@@ -1,0 +1,26 @@
+{
+  "id": "english_g3_body_parts",
+  "subject": "english",
+  "grade": 3,
+  "name": "身体部位",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_alphabet"
+  ],
+  "next": [],
+  "vocabulary": [
+    "head",
+    "eye",
+    "ear",
+    "nose",
+    "mouth",
+    "hand",
+    "foot",
+    "arm"
+  ],
+  "common_misconceptions": [
+    "ear 与 eye 混淆",
+    "foot 复数 feet 不会用"
+  ],
+  "demo_value": "适合展示单词跟读和 head 系列指令游戏"
+}

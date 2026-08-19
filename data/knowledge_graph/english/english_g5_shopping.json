@@ -1,0 +1,24 @@
+{
+  "id": "english_g5_shopping",
+  "subject": "english",
+  "grade": 5,
+  "name": "购物用语",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_like_sentence"
+  ],
+  "next": [],
+  "vocabulary": [
+    "How much",
+    "Can I help you",
+    "I want",
+    "size",
+    "too expensive",
+    "Here you are"
+  ],
+  "common_misconceptions": [
+    "How much 与 How many 混淆",
+    "I'd like 与 I like 混淆"
+  ],
+  "demo_value": "适合展示购物情景角色扮演"
+}

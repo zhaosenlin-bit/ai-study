@@ -1,0 +1,27 @@
+{
+  "id": "english_g5_season_activities",
+  "subject": "english",
+  "grade": 5,
+  "name": "季节活动",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_months_seasons",
+    "english_g4_weather"
+  ],
+  "next": [
+    "english_g5_festivals"
+  ],
+  "vocabulary": [
+    "fly a kite",
+    "make a snowman",
+    "swim",
+    "pick apples",
+    "plant trees",
+    "go hiking"
+  ],
+  "common_misconceptions": [
+    "make a snowman 拼写",
+    "plant 与 plan 混淆"
+  ],
+  "demo_value": "适合展示四季话题和节日铺垫"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "english_g6_travel",
+  "subject": "english",
+  "grade": 6,
+  "name": "旅行话题",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_future_will",
+    "english_g5_asking_directions"
+  ],
+  "next": [],
+  "vocabulary": [
+    "trip",
+    "hotel",
+    "ticket",
+    "camera",
+    "suitcase",
+    "take photos",
+    "go sightseeing"
+  ],
+  "common_misconceptions": [
+    "trip 与 travel 用法混淆",
+    "ticket 与 letter 混淆"
+  ],
+  "demo_value": "适合展示旅行计划完整对话"
+}

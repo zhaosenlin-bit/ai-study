@@ -1,0 +1,24 @@
+{
+  "id": "english_g5_festivals",
+  "subject": "english",
+  "grade": 5,
+  "name": "中外节日",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_months_seasons",
+    "english_g5_season_activities"
+  ],
+  "next": [],
+  "vocabulary": [
+    "Spring Festival",
+    "Mid-Autumn Festival",
+    "Christmas",
+    "Halloween",
+    "Dragon Boat Festival"
+  ],
+  "common_misconceptions": [
+    "节日名称大小写规则",
+    "Mid-Autumn 拼写"
+  ],
+  "demo_value": "适合展示文化对比话题和中西节日对话"
+}

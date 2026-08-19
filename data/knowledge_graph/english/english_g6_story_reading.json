@@ -1,0 +1,27 @@
+{
+  "id": "english_g6_story_reading",
+  "subject": "english",
+  "grade": 6,
+  "name": "故事阅读",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_there_be",
+    "english_g6_past_tense"
+  ],
+  "next": [
+    "english_g6_letter_writing"
+  ],
+  "vocabulary": [
+    "Once upon a time",
+    "king",
+    "princess",
+    "magic",
+    "clever",
+    "happily"
+  ],
+  "common_misconceptions": [
+    "故事时态混乱",
+    "Once upon a time 不会使用"
+  ],
+  "demo_value": "适合展示阅读理解和故事复述"
+}

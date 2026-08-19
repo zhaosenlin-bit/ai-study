@@ -1,0 +1,26 @@
+{
+  "id": "english_g4_positions",
+  "subject": "english",
+  "grade": 4,
+  "name": "方位介词",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_classroom_objects"
+  ],
+  "next": [
+    "english_g5_there_be"
+  ],
+  "vocabulary": [
+    "in",
+    "on",
+    "under",
+    "behind",
+    "in front of",
+    "next to"
+  ],
+  "common_misconceptions": [
+    "in 与 on 混淆",
+    "behind 与 before 混淆"
+  ],
+  "demo_value": "适合展示物品位置问答 Where is...?"
+}
