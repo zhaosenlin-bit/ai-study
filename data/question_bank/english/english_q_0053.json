@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0053",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_travel"
+  ],
+  "stem": "旅行时你会带哪件物品？用完整英语句子说明原因。",
+  "options": [],
+  "answer": "I take a camera because I want to take photos.",
+  "rubric": "检查 because 原因从句结构；句子不完整可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

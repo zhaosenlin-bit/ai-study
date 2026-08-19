@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0033",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_clothes"
+  ],
+  "stem": "Which one do you wear in winter?",
+  "options": [
+    "T-shirt",
+    "shorts",
+    "coat",
+    "sandals"
+  ],
+  "answer": "coat",
+  "rubric": "检查衣物与季节关联；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

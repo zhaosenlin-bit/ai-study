@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0016",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_food_drinks"
+  ],
+  "stem": "Which one is a drink?",
+  "options": [
+    "rice",
+    "milk",
+    "bread",
+    "egg"
+  ],
+  "answer": "milk",
+  "rubric": "检查食物饮料分类；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0045",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_healthy_food"
+  ],
+  "stem": "Which one is healthy?",
+  "options": [
+    "candy",
+    "fried chicken",
+    "apple",
+    "cola"
+  ],
+  "answer": "apple",
+  "rubric": "检查健康饮食概念；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

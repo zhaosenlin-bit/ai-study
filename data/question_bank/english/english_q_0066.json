@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0066",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_food_words"
+  ],
+  "stem": "在餐厅，服务员问：What would you like? 请用完整英语句子说出你想要的食物或饮料。",
+  "options": [],
+  "answer": "I'd like some noodles, please.",
+  "rubric": "检查点餐表达；I'd like 结构错误可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0068",
+  "subject": "english",
+  "grade": 5,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g5_shopping"
+  ],
+  "stem": "在商店想买一件衣服，用英语问价格（完整句子）。",
+  "options": [],
+  "answer": "How much is this coat?",
+  "rubric": "检查 How much 问价句型；How many 混淆可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

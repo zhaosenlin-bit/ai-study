@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0020",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_toys"
+  ],
+  "stem": "Which one is a toy?",
+  "options": [
+    "ball",
+    "book",
+    "pen",
+    "ruler"
+  ],
+  "answer": "ball",
+  "rubric": "检查玩具词汇分类；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

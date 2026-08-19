@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0018",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_days_week"
+  ],
+  "stem": "What day comes after Monday?",
+  "options": [
+    "Sunday",
+    "Tuesday",
+    "Friday",
+    "Saturday"
+  ],
+  "answer": "Tuesday",
+  "rubric": "检查星期顺序；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

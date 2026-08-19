@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0036",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_hobbies"
+  ],
+  "stem": "Which one can be a hobby?",
+  "options": [
+    "reading",
+    "desk",
+    "red",
+    "rice"
+  ],
+  "answer": "reading",
+  "rubric": "检查爱好类词汇；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

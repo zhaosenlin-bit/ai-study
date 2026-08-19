@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0058",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_letter_writing"
+  ],
+  "stem": "信的结尾写\"你的朋友\"：Your ___",
+  "options": [],
+  "answer": "friend",
+  "rubric": "检查书信格式；落款错误可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

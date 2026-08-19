@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0035",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_transportation"
+  ],
+  "stem": "同学问你：How do you go to school? 请用完整英语句子回答你的上学方式。",
+  "options": [],
+  "answer": "I go to school by bus.",
+  "rubric": "检查 by + 交通方式结构；漏 by 可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

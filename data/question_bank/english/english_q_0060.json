@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0060",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_describing_people"
+  ],
+  "stem": "Which word describes a person's height?",
+  "options": [
+    "tall",
+    "hot",
+    "new",
+    "fast"
+  ],
+  "answer": "tall",
+  "rubric": "检查人物描述词汇；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0040",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_season_activities"
+  ],
+  "stem": "What do we often do in summer?",
+  "options": [
+    "make a snowman",
+    "swim",
+    "pick leaves",
+    "fly a kite"
+  ],
+  "answer": "swim",
+  "rubric": "检查季节活动关联；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

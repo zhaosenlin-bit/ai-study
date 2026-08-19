@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0034",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_positions"
+  ],
+  "stem": "The cat is ___ the box. (猫在盒子里)",
+  "options": [
+    "in",
+    "at",
+    "for",
+    "and"
+  ],
+  "answer": "in",
+  "rubric": "检查方位介词；in/on 混淆可标记 meaning_confusion。",
+  "difficulty": 2
+}

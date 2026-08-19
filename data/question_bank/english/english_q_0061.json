@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0061",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_describing_people"
+  ],
+  "stem": "她戴眼镜：She ___ glasses.",
+  "options": [],
+  "answer": "wears",
+  "rubric": "检查 wear 三单形式；忘加 s 可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

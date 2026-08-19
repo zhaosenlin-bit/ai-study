@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0011",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_body_parts"
+  ],
+  "stem": "Spell the word: 耳朵 → e___r",
+  "options": [],
+  "answer": "ear",
+  "rubric": "检查拼写；ear 与 eye 混淆可标记 meaning_confusion。",
+  "difficulty": 1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0057",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_story_reading"
+  ],
+  "stem": "请用英语讲一个你读过的小故事的开头（一句话）。",
+  "options": [],
+  "answer": "Once upon a time, there was a clever rabbit.",
+  "rubric": "检查故事开头句型；时态混乱可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

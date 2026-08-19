@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0059",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_telephone_english"
+  ],
+  "stem": "接电话时，用英语说\"你好，我是 Tom\"。",
+  "options": [],
+  "answer": "Hello, this is Tom speaking.",
+  "rubric": "检查电话英语表达；I am Tom 中式表达可标记 sentence_pattern_error。",
+  "difficulty": 3
+}
