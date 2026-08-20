@@ -1,0 +1,30 @@
+{
+  "id": "english_g5_emotions",
+  "subject": "english",
+  "grade": 5,
+  "name": "情绪表达",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_daily_routines"
+  ],
+  "next": [
+    "english_g6_describing_people"
+  ],
+  "vocabulary": [
+    "happy",
+    "sad",
+    "angry",
+    "excited",
+    "tired",
+    "bored",
+    "afraid",
+    "surprised",
+    "feel",
+    "How do you feel"
+  ],
+  "common_misconceptions": [
+    "excited about 介词漏",
+    "How do you feel 与 What do you feel 混"
+  ],
+  "demo_value": "适合展示情绪问答与 I feel 句型"
+}

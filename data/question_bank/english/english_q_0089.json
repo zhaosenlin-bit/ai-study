@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0089",
+  "subject": "english",
+  "grade": 5,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+  ],
+  "stem": "天气预报主播请你播报：今天上海 stormy，温度 18 度。请用 2-3 句英语播报。",
+  "options": [],
+  "answer": "It is stormy in Shanghai today. The temperature is about 18 degrees. Please stay safe!",
+  "rubric": "检查复合形容词 + 温度句型 + 安全提示；缺温度可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

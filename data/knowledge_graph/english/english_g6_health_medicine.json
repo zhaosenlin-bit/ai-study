@@ -1,0 +1,29 @@
+{
+  "id": "english_g6_health_medicine",
+  "subject": "english",
+  "grade": 6,
+  "name": "健康与就医",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_healthy_food",
+    "english_g6_describing_people"
+  ],
+  "next": [],
+  "vocabulary": [
+    "headache",
+    "fever",
+    "stomachache",
+    "toothache",
+    "cough",
+    "see a doctor",
+    "take medicine",
+    "rest",
+    "drink water",
+    "feel ill"
+  ],
+  "common_misconceptions": [
+    "headache 拼写漏 a",
+    "see a doctor 与 look a doctor 混"
+  ],
+  "demo_value": "适合展示就医情景对话与症状表达"
+}

@@ -1,18 +1,88 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "mode": "mock",
   "base_path": "/audio/english/",
-  "note": "ASR/TTS 未接通前的 mock 音频占位清单。真实接入讯飞后由后端动态生成并替换。仅供前端联调展示跟读按钮与播放占位。",
+  "note": "ASR/TTS 未接通前的 mock 音频占位清单。真实接入讯飞后由后端动态生成并替换。仅供前端联调展示跟读按钮与播放占位。v0.2 新增 6 个新节点代表词。",
   "items": [
-    {"word": "red", "file": "red.mp3", "knowledge_point_id": "english_g3_colors"},
-    {"word": "three", "file": "three.mp3", "knowledge_point_id": "english_g3_numbers"},
-    {"word": "mother", "file": "mother.mp3", "knowledge_point_id": "english_g3_family_members"},
-    {"word": "Good morning", "file": "good_morning.mp3", "knowledge_point_id": "english_g3_basic_greetings"},
-    {"word": "banana", "file": "banana.mp3", "knowledge_point_id": "english_g3_fruits"},
-    {"word": "apple", "file": "apple.mp3", "knowledge_point_id": "english_g3_fruits"},
-    {"word": "noodles", "file": "noodles.mp3", "knowledge_point_id": "english_g4_food_words"},
-    {"word": "sunny", "file": "sunny.mp3", "knowledge_point_id": "english_g4_weather"},
-    {"word": "basketball", "file": "basketball.mp3", "knowledge_point_id": "english_g5_sports"},
-    {"word": "went", "file": "went.mp3", "knowledge_point_id": "english_g6_past_tense"}
+    {
+      "word": "red",
+      "file": "red.mp3",
+      "knowledge_point_id": "english_g3_colors"
+    },
+    {
+      "word": "three",
+      "file": "three.mp3",
+      "knowledge_point_id": "english_g3_numbers"
+    },
+    {
+      "word": "mother",
+      "file": "mother.mp3",
+      "knowledge_point_id": "english_g3_family_members"
+    },
+    {
+      "word": "Good morning",
+      "file": "good_morning.mp3",
+      "knowledge_point_id": "english_g3_basic_greetings"
+    },
+    {
+      "word": "banana",
+      "file": "banana.mp3",
+      "knowledge_point_id": "english_g3_fruits"
+    },
+    {
+      "word": "apple",
+      "file": "apple.mp3",
+      "knowledge_point_id": "english_g3_fruits"
+    },
+    {
+      "word": "noodles",
+      "file": "noodles.mp3",
+      "knowledge_point_id": "english_g4_food_words"
+    },
+    {
+      "word": "sunny",
+      "file": "sunny.mp3",
+      "knowledge_point_id": "english_g4_weather"
+    },
+    {
+      "word": "basketball",
+      "file": "basketball.mp3",
+      "knowledge_point_id": "english_g5_sports"
+    },
+    {
+      "word": "went",
+      "file": "went.mp3",
+      "knowledge_point_id": "english_g6_past_tense"
+    },
+    {
+      "word": "run",
+      "file": "run.mp3",
+      "knowledge_point_id": "english_g4_daily_actions"
+    },
+    {
+      "word": "happy",
+      "file": "happy.mp3",
+      "knowledge_point_id": "english_g5_emotions"
+    },
+    {
+      "word": "temperature",
+      "file": "temperature.mp3",
+      "knowledge_point_id": "english_g5_weather_extreme"
+    },
+    {
+      "word": "Let's go",
+      "file": "lets_go.mp3",
+      "knowledge_point_id": "english_g6_invitations"
+    },
+    {
+      "word": "Spring Festival",
+      "file": "spring_festival.mp3",
+      "knowledge_point_id": "english_g6_customs_traditions"
+    },
+    {
+      "word": "headache",
+      "file": "headache.mp3",
+      "knowledge_point_id": "english_g6_health_medicine"
+    }
   ]
 }

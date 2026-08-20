@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0100",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_suggestions"
+  ],
+  "stem": "朋友说他很累，请用 2-3 句话给出 3 条建议（should / Why don’t you / How about）。",
+  "options": [],
+  "answer": "You should take a rest. Why don’t you drink some hot water? How about going to bed early tonight?",
+  "rubric": "检查三种建议句型至少用上 2 种。",
+  "difficulty": 3
+}

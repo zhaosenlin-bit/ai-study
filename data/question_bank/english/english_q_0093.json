@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0093",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_invitations"
+  ],
+  "stem": "______ (Why don’t) you come to my party this Saturday?",
+  "options": [],
+  "answer": "Why don’t",
+  "rubric": "Why don’t you + V 原形；拼写缩写 don’t 可标记 spelling_error。",
+  "difficulty": 2
+}

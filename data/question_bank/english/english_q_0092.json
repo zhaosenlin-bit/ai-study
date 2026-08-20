@@ -1,0 +1,18 @@
+{
+  "id": "english_q_0092",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_invitations"
+  ],
+  "stem": "邀请朋友去公园，最地道的表达是？",
+  "options": [
+    "Let’s go to the park.",
+    "Let us to the park.",
+    "We go park.",
+    "Go park with I."
+  ],
+  "answer": "Let’s go to the park.",
+  "difficulty": 2
+}

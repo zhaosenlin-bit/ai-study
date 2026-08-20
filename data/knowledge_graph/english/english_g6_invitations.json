@@ -1,0 +1,30 @@
+{
+  "id": "english_g6_invitations",
+  "subject": "english",
+  "grade": 6,
+  "name": "邀请与提议",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g5_future_will"
+  ],
+  "next": [
+    "english_g6_suggestions"
+  ],
+  "vocabulary": [
+    "Would you like to",
+    "Let's",
+    "Shall we",
+    "Why don't you",
+    "Sure",
+    "Sounds great",
+    "How about",
+    "This weekend",
+    "park",
+    "see a movie"
+  ],
+  "common_misconceptions": [
+    "Let's 后忘接动词原形",
+    "Would you like to 与 Do you like 混"
+  ],
+  "demo_value": "适合展示周末活动邀请对话"
+}

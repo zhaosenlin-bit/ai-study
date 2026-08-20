@@ -6,7 +6,8 @@
   "difficulty": 2,
   "prerequisites": [
     "english_g4_months_seasons",
-    "english_g4_weather"
+    "english_g4_weather",
+    "english_g5_weather_extreme"
   ],
   "next": [
     "english_g5_festivals"

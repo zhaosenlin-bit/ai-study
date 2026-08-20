@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0094",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_invitations"
+  ],
+  "stem": "朋友邀请你这周末去看电影，你欣然同意。请写出 2 轮对话（邀请 + 同意 + 追问）。",
+  "options": [],
+  "answer": "A: Would you like to see a movie this weekend? B: Sure! That sounds great. What time? A: How about Saturday afternoon at 3?",
+  "rubric": "检查 Would you like to + 同意回应 + 时间追问。",
+  "difficulty": 3
+}

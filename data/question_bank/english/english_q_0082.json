@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0082",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_daily_actions"
+  ],
+  "stem": "He ______ (jump) high every day. → 现在时第三人称单数",
+  "options": [],
+  "answer": "jumps",
+  "rubric": "检查第三人称单数 -s；漏 s 可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

@@ -1,0 +1,15 @@
+{
+  "id": "english_q_0096",
+  "subject": "english",
+  "grade": 6,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g6_customs_traditions",
+    "english_g5_festivals"
+  ],
+  "stem": "用 3 句话介绍你最喜欢的一个中国节日（名称 + 时间 + 活动）。",
+  "options": [],
+  "answer": "My favorite Chinese festival is the Spring Festival. It is in January or February. We eat dumplings and say happy new year to our family.",
+  "rubric": "检查节日拼写 + 时间介词 + 动词搭配。",
+  "difficulty": 3
+}

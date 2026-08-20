@@ -5,7 +5,8 @@
   "name": "兴趣爱好",
   "difficulty": 2,
   "prerequisites": [
-    "english_g4_like_sentence"
+    "english_g4_like_sentence",
+    "english_g4_daily_actions"
   ],
   "next": [
     "english_g6_letter_writing"
