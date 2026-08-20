@@ -9,6 +9,12 @@ venv/
 node_modules/
 dist/
 .vite/
+.npm-cache/
+
+# Playwright
+test-results/
+playwright-report/
+.browsers/
 
 # Environment
 .env

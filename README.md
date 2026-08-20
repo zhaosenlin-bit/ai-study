@@ -50,3 +50,22 @@
 - `feature/web-integration-demo`: 角色 E 开发。
 
 所有同学先阅读全组共读文档，再从 `develop` 拉自己的功能分支开发。任何接口、目录、字段变化，先更新文档和 OpenAPI，再写代码。
+
+
+---
+
+## 2026-08-20 项目整合
+
+新增 1 份检查报告 + 6 份学生创意方案（星图探险家系列）。
+
+| 文件 | 路径 | 说明 |
+| --- | --- | --- |
+| 项目检查报告 | `docs/检查报告_项目现状与建议.md` | localhost:5174 + 仓库现状评估，5 强项 5 弱项 + W3/W4 行动项 |
+| 创意方案索引 | `docs/proposals/student-proposals/README.md` | 星图探险家方案的接入说明 |
+| 星图探险家 PRD | `docs/proposals/student-proposals/role-X-星图探险家-PRD.md` | 13 章产品需求 |
+| 星图探险家 执行 | `docs/proposals/student-proposals/role-X-星图探险家-执行文档.md` | 4 周 WBS + OpenAPI + Prompt |
+| 星图探险家 团队分工 | `docs/proposals/student-proposals/role-X-星图探险家-团队分工与降级.md` | 4/3/2/1 人降级方案 |
+| 星图探险家 灵感 | `docs/proposals/student-proposals/role-X-星图探险家-灵感散文.md` | 「当 AI 学会陪一个孩子做火星探测器」 |
+| v1.0 基线 | `docs/proposals/student-proposals/v1.0-团队协作方案基线.docx` | 原始 4 人 v1.0 文档，作为对比基线 |
+
+详见 `docs/CHANGELOG.md` 与 `docs/检查报告_项目现状与建议.md`。
