@@ -187,3 +187,20 @@ export interface UserInfo {
   role: AuthRole;
   display_name: string;
 }
+
+export interface MeResponse {
+  user_id: string;
+  username: string;
+  role: AuthRole;
+  display_name: string;
+  student: {
+    student_id: string;
+    name: string;
+    grade: number;
+    mastery: Record<string, number>;
+    weak_points: string[];
+    emotion_state?: string;
+    learning_style?: string;
+    updated_at?: string;
+  };
+}

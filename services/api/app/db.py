@@ -203,3 +203,21 @@ def create_user(user: dict) -> None:
                 user["created_at"],
             ),
         )
+
+
+def get_or_create_student(student_id: str) -> dict:
+    """按 student_id 获取学生；不存在则创建空记录（grade=0，等用户选年级）。"""
+    existing = load_student(student_id)
+    if existing is not None:
+        return existing
+    profile = {
+        "student_id": student_id,
+        "name": student_id,
+        "grade": 0,
+        "mastery": {},
+        "weak_points": [],
+        "emotion_state": "neutral",
+        "learning_style": "visual",
+    }
+    upsert_student(profile)
+    return profile

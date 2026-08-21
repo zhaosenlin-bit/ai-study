@@ -3,7 +3,7 @@ import { useAppStore } from "@/stores/appStore";
 import { Badge } from "@/components/ui/badge";
 
 export function TopBar() {
-  const { studentName, streakDays, modelProvider } = useAppStore();
+  const { studentName, streakDays, modelProvider, grade } = useAppStore();
   const nav = useNavigate();
 
   function logout() {
@@ -51,7 +51,7 @@ export function TopBar() {
           <div className="hidden leading-tight sm:block">
             <div className="text-sm font-bold text-foreground">{studentName}</div>
             <div className="text-xs text-muted-foreground">
-              {useAppStore.getState().studentId === "stu_demo_002" ? "五年级" : "四年级"} · 小学
+              {[3, 4, 5, 6].includes(grade) ? `${["", "", "三年级", "四年级", "五年级", "六年级"][grade]} · 小学` : "未选年级 · 小学"}
             </div>
           </div>
         </div>

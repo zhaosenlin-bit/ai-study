@@ -134,6 +134,8 @@ def register(username: str, password: str, role: str, captcha_id: str, captcha: 
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
     db.create_user(user)
+    # 为新用户自动创建空学生记录（grade=0），让前端能调用诊断/画像等接口
+    db.get_or_create_student(user["user_id"])
     return {
         "user_id": user["user_id"],
         "username": username,

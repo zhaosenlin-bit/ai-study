@@ -3,6 +3,8 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import type { AuthRole, CaptchaResponse, UserInfo } from "@contracts";
 import { realGetCaptcha, realLogin } from "@/api/auth";
+import { getMe } from "@/api/me";
+import { useAppStore } from "@/stores/appStore";
 
 const ROLES: { value: AuthRole; label: string }[] = [
   { value: "student", label: "学生" },
@@ -23,6 +25,7 @@ function Logo() {
 
 export function LoginPage() {
   const nav = useNavigate();
+  const setCurrentUser = useAppStore((s) => s.setCurrentUser);
   const [role, setRole] = useState<AuthRole>("student");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +64,9 @@ export function LoginPage() {
         captcha: captcha.trim(),
       });
       localStorage.setItem("ai-study-user", JSON.stringify(user));
-      nav("/", { replace: true });
+      const me = await getMe(user.user_id);
+      setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade });
+      nav(me.student.grade > 0 ? "/" : "/setup/grade", { replace: true });
     } catch (err) {
       const message = err instanceof Error ? err.message : "登录失败";
       setErrors({ form: message });
