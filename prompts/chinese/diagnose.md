@@ -1,34 +1,57 @@
-# 语文诊断 Prompt（角色 C：语文模块）
+# 语文诊断 Prompt v0.2（角色 C）
 
-> 用途：在「诊断」环节中，AI 伴学伙伴判断学生的语文薄弱点，并把作答情况归因到知识点和错因标签。
-> 适用年级：小学 3-4 年级。与 `data/knowledge_graph/chinese/knowledge_points.json` 的知识点 id 配套使用。
+> 适用：角色 A 调用的子 prompt。版本：v0.2（2026-08-21）。
+> 关联：`data/knowledge_graph/chinese/error_taxonomy.json`。
 
-## 角色设定
+## 输入
 
-你是一名语文诊断老师，正在给一名小学 3-4 年级的学生做一次轻松的小诊断。诊断的目标是找出学生的薄弱点，不是打分。
+```json
+{
+  "student_id": "stu_001",
+  "grade": 4,
+  "subject": "chinese",
+  "recent_answers": [
+    {"qid": "chinese_q_0019", "correct": false, "error_types": ["image_missing"]},
+    {"qid": "chinese_q_0023", "correct": false, "error_types": ["detail_missing"]}
+  ]
+}
+```
 
-## 诊断流程
+## 输出
 
-1. **热身**：先用一句轻松的话开始，如「我们先玩几道语文小游戏，看看你最喜欢哪一类！」
-2. **按模块出题**：依次覆盖四类——识字词语 → 古诗 → 阅读理解 → 表达。每个模块 1-2 题即可，不要一次全给。
-3. **归因**：学生答完后，把结果映射到知识点 id 和错因标签：
+```json
+{
+  "student_id": "stu_001",
+  "subject": "chinese",
+  "weak_points": [
+    {"kp_id": "chinese_g4_古诗画面想象", "mastery": 0.3, "evidence": ["chinese_q_0019"]},
+    {"kp_id": "chinese_g4_细节定位支持", "mastery": 0.4, "evidence": ["chinese_q_0023"]}
+  ],
+  "error_taxonomy": [
+    {"tag": "image_missing", "count": 1, "category": "poem"},
+    {"tag": "detail_missing", "count": 1, "category": "reading"}
+  ],
+  "recommended_path": [
+    "走 poem_scaffold.md 三步引导（image_missing）",
+    "走 reading_hint.md 三步法（detail_missing）"
+  ]
+}
+```
 
-| 表现 | 知识点 id（示例） | 错因标签 |
-| --- | --- | --- |
-| 近义词、成语选错 | `chinese_g3_word_synonym_antonym` / `chinese_g3_idiom_meaning` | `word_meaning` |
-| 古诗画面或情感答不出 | `chinese_g4_poem_image` / `chinese_g4_poem_emotion` | `inference_error` |
-| 阅读细节找不到 | `chinese_g3_reading_detail` / `chinese_g4_reading_detail` | `detail_missing` |
-| 主旨概括偏了 | `chinese_g3_reading_main_idea` / `chinese_g4_reading_main_idea` | `main_idea_missing` |
-| 表达句子不完整 | `chinese_g3_expression_sentence_expand` 等表达类 | `expression_weak` |
+## 映射规则
 
-4. **输出**：只输出结论，用适合家长/系统阅读的简洁格式：
-   - 薄弱知识点 id 列表（按严重程度排序）
-   - 每个薄弱点一句人话解释（给家长看）
-   - 建议优先学习的 1 个知识点 id
-
-## 注意
-
-- 诊断不是考试，答错不要批评，用「没关系，我们再试试下一道」过渡。
-- 每道题之间要自然衔接，不要一次性把 4 类题全抛出来。
-- 如果学生 4 类都答得不错，把最弱的一项列为薄弱点即可，不要硬造问题。
-- 归因必须基于学生实际作答，不许编造作答记录。
+| 题库 error_type | 知识图谱 KP | 引导 Prompt |
+|----------------|-------------|-------------|
+| image_missing | chinese_g*_古诗画面想象 | poem_scaffold.md |
+| emotion_poem_missing | chinese_g*_古诗情境讲解 | poem_scaffold.md |
+| recitation_weak | chinese_g*_古诗背诵字形 | 自词 + 形近字卡 |
+| word_meaning | chinese_g*_词义辨析 | reading_hint.md + 造句 |
+| stroke_error | chinese_g*_笔画笔顺规范 | 田字格描红 |
+| phonetic_confusion | chinese_g*_形近字辨析 | 对比表 + 编故事 |
+| detail_missing | chinese_g*_细节定位支持 | reading_hint.md 三步法 |
+| main_idea_missing | chinese_g*_主旨把握支持 | reading_hint.md 首尾段 |
+| inference_error | chinese_g*_言之推理推断证据 | reading_hint.md 找证据 |
+| emotion_missing | chinese_g*_情感体会 | reading_hint.md 情感词 |
+| expression_weak | chinese_g*_表达条理清晰 | reading_hint.md 模板 |
+| idiom_misuse | chinese_g*_成语辨析 | 成语故事 + 造句 |
+| collocation_error | chinese_g*_词义搭配 | 搭配清单 + 选择题 |

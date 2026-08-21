@@ -6,11 +6,20 @@
     "type": "single_choice",
     "stem": "下列词语中，与「快乐」意思最接近的一项是？",
     "passage": "",
-    "options": ["高兴", "伤心", "生气", "害怕"],
+    "options": [
+      "高兴",
+      "伤心",
+      "生气",
+      "害怕"
+    ],
     "answer": "高兴",
-    "knowledge_point_ids": ["chinese_g3_word_synonym_antonym"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_synonym_antonym"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否区分近义词与反义词，理解词语的基本含义。"
   },
   {
@@ -20,11 +29,20 @@
     "type": "single_choice",
     "stem": "下列词语中，与「谦虚」意思相反的词是？",
     "passage": "",
-    "options": ["虚心", "骄傲", "诚实", "勇敢"],
+    "options": [
+      "虚心",
+      "骄傲",
+      "诚实",
+      "勇敢"
+    ],
     "answer": "骄傲",
-    "knowledge_point_ids": ["chinese_g3_word_synonym_antonym"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_synonym_antonym"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否准确找到反义词，不被近义词干扰。"
   },
   {
@@ -34,11 +52,21 @@
     "type": "single_choice",
     "stem": "天气很热，小明走得很累，他想：要是前面有梅子吃，就能解渴了。这个情景可以用哪个成语形容？",
     "passage": "",
-    "options": ["望梅止渴", "画蛇添足", "守株待兔", "亡羊补牢"],
+    "options": [
+      "望梅止渴",
+      "画蛇添足",
+      "守株待兔",
+      "亡羊补牢"
+    ],
     "answer": "望梅止渴",
-    "knowledge_point_ids": ["chinese_g3_idiom_meaning"],
+    "knowledge_point_ids": [
+      "chinese_g3_idiom_meaning"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning", "inference_error"],
+    "error_types": [
+      "word_meaning",
+      "inference_error"
+    ],
     "rubric": "检查学生能否根据情景推断成语含义，而不是望文生义。"
   },
   {
@@ -48,11 +76,20 @@
     "type": "single_choice",
     "stem": "下面哪个成语用在「小丽考试得了第一名，高兴得跳了起来」这句话里最合适？",
     "passage": "",
-    "options": ["手舞足蹈", "垂头丧气", "提心吊胆", "愁眉苦脸"],
+    "options": [
+      "手舞足蹈",
+      "垂头丧气",
+      "提心吊胆",
+      "愁眉苦脸"
+    ],
     "answer": "手舞足蹈",
-    "knowledge_point_ids": ["chinese_g3_idiom_meaning"],
+    "knowledge_point_ids": [
+      "chinese_g3_idiom_meaning"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否根据语境选择成语，理解成语表达的情绪。"
   },
   {
@@ -62,11 +99,20 @@
     "type": "single_choice",
     "stem": "下面哪一组词语搭配是正确的？",
     "passage": "",
-    "options": ["穿帽子", "戴帽子", "拿帽子到头上", "顶帽子在身上"],
+    "options": [
+      "穿帽子",
+      "戴帽子",
+      "拿帽子到头上",
+      "顶帽子在身上"
+    ],
     "answer": "戴帽子",
-    "knowledge_point_ids": ["chinese_g3_word_collocation"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_collocation"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生是否掌握常见动宾搭配，纠正口语化错误。"
   },
   {
@@ -76,11 +122,20 @@
     "type": "single_choice",
     "stem": "「蜻蜓」两个字都有「虫」字旁，说明它们很可能和什么有关？",
     "passage": "",
-    "options": ["昆虫", "花草", "天空", "流水"],
+    "options": [
+      "昆虫",
+      "花草",
+      "天空",
+      "流水"
+    ],
     "answer": "昆虫",
-    "knowledge_point_ids": ["chinese_g3_radical_structure"],
+    "knowledge_point_ids": [
+      "chinese_g3_radical_structure"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否利用偏旁猜测字义，建立「偏旁表义」的意识。"
   },
   {
@@ -90,11 +145,20 @@
     "type": "single_choice",
     "stem": "选字填空：今天天气（ ）朗，我们一起去公园。",
     "passage": "",
-    "options": ["晴", "睛", "情", "清"],
+    "options": [
+      "晴",
+      "睛",
+      "情",
+      "清"
+    ],
     "answer": "晴",
-    "knowledge_point_ids": ["chinese_g3_radical_structure"],
+    "knowledge_point_ids": [
+      "chinese_g3_radical_structure"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否区分形近字，理解偏旁与字义的关系。"
   },
   {
@@ -104,11 +168,20 @@
     "type": "single_choice",
     "stem": "下面哪个词是 ABB 式词语？",
     "passage": "",
-    "options": ["绿油油", "高高兴兴", "研究研究", "又大又圆"],
+    "options": [
+      "绿油油",
+      "高高兴兴",
+      "研究研究",
+      "又大又圆"
+    ],
     "answer": "绿油油",
-    "knowledge_point_ids": ["chinese_g3_word_overlap"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_overlap"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否区分 ABB、AABB、ABAB 等词语形式。"
   },
   {
@@ -125,9 +198,13 @@
       "不一样，前一句是自豪，后一句是自满"
     ],
     "answer": "不一样，前一句是自满，后一句是自豪",
-    "knowledge_point_ids": ["chinese_g3_word_context_meaning"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_context_meaning"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否联系上下文判断词语在具体句子中的含义。"
   },
   {
@@ -144,9 +221,13 @@
       "一样，都是熟悉的意思"
     ],
     "answer": "不一样，前一句是可食用，后一句是熟悉",
-    "knowledge_point_ids": ["chinese_g4_word_polysemy"],
+    "knowledge_point_ids": [
+      "chinese_g4_word_polysemy"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否根据语境判断多义词的不同义项。"
   },
   {
@@ -163,9 +244,14 @@
       "夜空中星星闪烁，像面条一样又细又长"
     ],
     "answer": "夜空中星星闪烁，像眼睛一样一眨一眨",
-    "knowledge_point_ids": ["chinese_g4_word_usage"],
+    "knowledge_point_ids": [
+      "chinese_g4_word_usage"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning", "expression_weak"],
+    "error_types": [
+      "word_meaning",
+      "expression_weak"
+    ],
     "rubric": "检查学生能否选择最贴切、最生动的词语进行表达。"
   },
   {
@@ -175,11 +261,20 @@
     "type": "single_choice",
     "stem": "下面四个词语中，哪一个和其他三个不是同一类？",
     "passage": "",
-    "options": ["苹果", "香蕉", "白菜", "葡萄"],
+    "options": [
+      "苹果",
+      "香蕉",
+      "白菜",
+      "葡萄"
+    ],
     "answer": "白菜",
-    "knowledge_point_ids": ["chinese_g3_word_collocation"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_collocation"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否按事物类别给词语分类。"
   },
   {
@@ -189,11 +284,20 @@
     "type": "single_choice",
     "stem": "下面的量词使用，正确的一项是？",
     "passage": "",
-    "options": ["一（头）牛", "一（匹）牛", "一（只）牛", "一（条）牛"],
+    "options": [
+      "一（头）牛",
+      "一（匹）牛",
+      "一（只）牛",
+      "一（条）牛"
+    ],
     "answer": "一（头）牛",
-    "knowledge_point_ids": ["chinese_g3_word_collocation"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_collocation"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生是否掌握常见量词的搭配规律。"
   },
   {
@@ -210,9 +314,13 @@
       "简单——复杂，安全——平安"
     ],
     "answer": "简单——复杂，安全——危险",
-    "knowledge_point_ids": ["chinese_g3_word_synonym_antonym"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_synonym_antonym"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否准确配对反义词。"
   },
   {
@@ -222,11 +330,160 @@
     "type": "single_choice",
     "stem": "下面哪个词是 AABB 式词语？",
     "passage": "",
-    "options": ["开开心心", "金灿灿", "打扫打扫", "一心一意"],
+    "options": [
+      "开开心心",
+      "金灿灿",
+      "打扫打扫",
+      "一心一意"
+    ],
     "answer": "开开心心",
-    "knowledge_point_ids": ["chinese_g3_word_overlap"],
+    "knowledge_point_ids": [
+      "chinese_g3_word_overlap"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否识别 AABB 式叠词形式。"
+  },
+  {
+    "id": "chinese_q_w_low_001",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "字音辨析",
+    "stem": "下列加点字读音全部正确的一项是？",
+    "passage": "A. 种子(zhong)  B. 睡觉(jiao)  C. 早晨(chen)  D. 流水(liu)",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "C",
+    "knowledge_point_ids": [
+      "chinese_g1_拼音字母拼读"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "phonetic_confusion"
+    ],
+    "rubric": "考察 1 年级拼音"
+  },
+  {
+    "id": "chinese_q_w_low_002",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "识字",
+    "stem": "「休」字的意思最可能是？",
+    "passage": "一个人靠在树旁。",
+    "options": [
+      "A. 树木",
+      "B. 休息",
+      "C. 走开",
+      "D. 站立"
+    ],
+    "answer": "B",
+    "knowledge_point_ids": [
+      "chinese_g1_字理讲解",
+      "chinese_g1_常用汉字"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "会意字结构理解"
+  },
+  {
+    "id": "chinese_q_w_low_003",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "形近字辨析",
+    "stem": "下列词语中没有错别字的一项是？",
+    "passage": "A. 蜜蜂  B. 密峰  C. 蜜锋  D. 密蜂",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "A",
+    "knowledge_point_ids": [
+      "chinese_g2_形近字辨析"
+    ],
+    "difficulty": 2,
+    "error_types": [
+      "phonetic_confusion"
+    ],
+    "rubric": "辨析 蜜/密 蜂/峰/锋"
+  },
+  {
+    "id": "chinese_q_w_low_004",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "笔顺",
+    "stem": "「右」字正确的笔顺第 1 步是？",
+    "passage": "",
+    "options": [
+      "A. 横",
+      "B. 撇",
+      "C. 竖",
+      "D. 点"
+    ],
+    "answer": "A",
+    "knowledge_point_ids": [
+      "chinese_g1_笔画笔顺规范"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "stroke_error"
+    ],
+    "rubric": "右字笔顺"
+  },
+  {
+    "id": "chinese_q_w_high_001",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "四字词语运用",
+    "stem": "下列句子中加点的成语使用不当的一项是？",
+    "passage": "A. 这件事扑朔迷离  B. 他居然考上了  C. 老师的话金玉良言  D. 这本书味同嚼蜡",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": "B",
+    "knowledge_point_ids": [
+      "chinese_g5_成语辨析",
+      "chinese_g5_褒贬判断"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "idiom_misuse"
+    ],
+    "rubric": "B 项「居然」用于好的方面不当"
+  },
+  {
+    "id": "chinese_q_w_high_002",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "近义词辨析",
+    "stem": "「突然」和「忽然」的细微差别最准确的是？",
+    "passage": "",
+    "options": [
+      "A. 完全相同",
+      "B. 「突然」可作定语/状语/谓语，「忽然」只能作状语",
+      "C. 「忽然」语气更强",
+      "D. 「突然」只能用在句首"
+    ],
+    "answer": "B",
+    "knowledge_point_ids": [
+      "chinese_g6_词义辨析"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "语法功能差异"
   }
 ]

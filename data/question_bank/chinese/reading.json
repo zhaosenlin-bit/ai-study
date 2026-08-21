@@ -6,11 +6,20 @@
     "type": "single_choice",
     "stem": "短文中，小丽和弟弟在哪里放风筝？",
     "passage": "春天来了，公园里的桃花开了，一朵朵粉红粉红的。小丽和弟弟来到草地上放风筝，风筝飞得高高的，像一只彩色的鸟。旁边的小朋友们都在拍手叫好，大家玩得真开心。",
-    "options": ["小河边", "草地上", "山顶上", "操场上"],
+    "options": [
+      "小河边",
+      "草地上",
+      "山顶上",
+      "操场上"
+    ],
     "answer": "草地上",
-    "knowledge_point_ids": ["chinese_g4_reading_detail"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_detail"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否回到原文定位关键信息，而不是凭印象作答。"
   },
   {
@@ -20,11 +29,20 @@
     "type": "single_choice",
     "stem": "短文中「风筝飞得高高的，像一只彩色的鸟」把风筝比作什么？",
     "passage": "春天来了，公园里的桃花开了，一朵朵粉红粉红的。小丽和弟弟来到草地上放风筝，风筝飞得高高的，像一只彩色的鸟。旁边的小朋友们都在拍手叫好，大家玩得真开心。",
-    "options": ["彩色的鸟", "粉红的桃花", "高高的大树", "可爱的小朋友"],
+    "options": [
+      "彩色的鸟",
+      "粉红的桃花",
+      "高高的大树",
+      "可爱的小朋友"
+    ],
     "answer": "彩色的鸟",
-    "knowledge_point_ids": ["chinese_g4_reading_word_sentence"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_word_sentence"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否理解比喻句，找到本体和喻体。"
   },
   {
@@ -41,9 +59,13 @@
       "弟弟最喜欢放风筝"
     ],
     "answer": "春天在公园里放风筝的快乐",
-    "knowledge_point_ids": ["chinese_g4_reading_main_idea"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_main_idea"
+    ],
     "difficulty": 3,
-    "error_types": ["main_idea_missing"],
+    "error_types": [
+      "main_idea_missing"
+    ],
     "rubric": "检查学生能否从整体概括主要内容，而不是抓住某一处细节。"
   },
   {
@@ -53,11 +75,20 @@
     "type": "single_choice",
     "stem": "从「旁边的小朋友们都在拍手叫好」可以推断，大家的心情是怎样的？",
     "passage": "春天来了，公园里的桃花开了，一朵朵粉红粉红的。小丽和弟弟来到草地上放风筝，风筝飞得高高的，像一只彩色的鸟。旁边的小朋友们都在拍手叫好，大家玩得真开心。",
-    "options": ["开心", "生气", "难过", "害怕"],
+    "options": [
+      "开心",
+      "生气",
+      "难过",
+      "害怕"
+    ],
     "answer": "开心",
-    "knowledge_point_ids": ["chinese_g4_reading_inference"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_inference"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否根据文中行为（拍手叫好）推断人物的心情。"
   },
   {
@@ -67,11 +98,20 @@
     "type": "single_choice",
     "stem": "小猴子第一天去找谁学本领？",
     "passage": "小猴子想学一样本领。第一天，他去找小鸟学飞，可是翅膀不够硬，摔了下来。第二天，他去找小兔学跳，跳了两下就喊累。第三天，他去找鸭子学游泳，刚下水就呛得直咳嗽。小猴子一样也没学会，红着脸回家了。",
-    "options": ["小鸟", "小兔", "鸭子", "小鹿"],
+    "options": [
+      "小鸟",
+      "小兔",
+      "鸭子",
+      "小鹿"
+    ],
     "answer": "小鸟",
-    "knowledge_point_ids": ["chinese_g3_reading_detail"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_detail"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否从文中定位具体信息。"
   },
   {
@@ -88,9 +128,13 @@
       "小鸟→鸭子→小兔"
     ],
     "answer": "小鸟→小兔→鸭子",
-    "knowledge_point_ids": ["chinese_g3_reading_order"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_order"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否理清事情发展的先后顺序。"
   },
   {
@@ -107,9 +151,14 @@
       "鸭子游泳很厉害"
     ],
     "answer": "学本领不能怕苦怕累，要坚持到底",
-    "knowledge_point_ids": ["chinese_g3_reading_main_idea"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_main_idea"
+    ],
     "difficulty": 3,
-    "error_types": ["main_idea_missing", "inference_error"],
+    "error_types": [
+      "main_idea_missing",
+      "inference_error"
+    ],
     "rubric": "检查学生能否从故事结局（一样也没学会）提炼道理。"
   },
   {
@@ -121,9 +170,14 @@
     "passage": "小猴子想学一样本领。第一天，他去找小鸟学飞，可是翅膀不够硬，摔了下来。第二天，他去找小兔学跳，跳了两下就喊累。第三天，他去找鸭子学游泳，刚下水就呛得直咳嗽。小猴子一样也没学会，红着脸回家了。",
     "options": [],
     "answer": "示例：因为小猴子怕苦怕累，一样本领也没学会，觉得很不好意思、很难为情，所以红着脸回家了。",
-    "knowledge_point_ids": ["chinese_g3_reading_question_norm"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_question_norm"
+    ],
     "difficulty": 3,
-    "error_types": ["expression_weak", "inference_error"],
+    "error_types": [
+      "expression_weak",
+      "inference_error"
+    ],
     "rubric": "检查学生能否结合上下文推断原因，并用完整的句子作答。"
   },
   {
@@ -133,11 +187,20 @@
     "type": "single_choice",
     "stem": "短文中，果园里的什么水果像一盏盏红灯笼？",
     "passage": "秋天到了，果园里热闹极了。红红的柿子挂在枝头，像一盏盏小灯笼。黄澄澄的梨子压弯了树枝，苹果露出了红红的脸蛋。农民伯伯一边摘果子，一边笑呵呵地说：「今年又是个丰收年！」",
-    "options": ["柿子", "梨子", "苹果", "葡萄"],
+    "options": [
+      "柿子",
+      "梨子",
+      "苹果",
+      "葡萄"
+    ],
     "answer": "柿子",
-    "knowledge_point_ids": ["chinese_g3_reading_detail"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_detail"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否回原文定位比喻句中的具体事物。"
   },
   {
@@ -147,11 +210,21 @@
     "type": "single_choice",
     "stem": "短文中「苹果露出了红红的脸蛋」，把苹果当作人来写，这种写法叫什么？",
     "passage": "秋天到了，果园里热闹极了。红红的柿子挂在枝头，像一盏盏小灯笼。黄澄澄的梨子压弯了树枝，苹果露出了红红的脸蛋。农民伯伯一边摘果子，一边笑呵呵地说：「今年又是个丰收年！」",
-    "options": ["拟人", "排比", "反问", "夸张"],
+    "options": [
+      "拟人",
+      "排比",
+      "反问",
+      "夸张"
+    ],
     "answer": "拟人",
-    "knowledge_point_ids": ["chinese_g4_reading_word_sentence"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_word_sentence"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning", "inference_error"],
+    "error_types": [
+      "word_meaning",
+      "inference_error"
+    ],
     "rubric": "检查学生能否识别拟人修辞。"
   },
   {
@@ -168,9 +241,13 @@
       "水果的营养价值"
     ],
     "answer": "秋天果园大丰收的景象",
-    "knowledge_point_ids": ["chinese_g3_reading_main_idea"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_main_idea"
+    ],
     "difficulty": 3,
-    "error_types": ["main_idea_missing"],
+    "error_types": [
+      "main_idea_missing"
+    ],
     "rubric": "检查学生能否概括短文的主要内容。"
   },
   {
@@ -180,11 +257,20 @@
     "type": "single_choice",
     "stem": "从农民伯伯「笑呵呵」的样子可以推断，他当时的心情是怎样的？",
     "passage": "秋天到了，果园里热闹极了。红红的柿子挂在枝头，像一盏盏小灯笼。黄澄澄的梨子压弯了树枝，苹果露出了红红的脸蛋。农民伯伯一边摘果子，一边笑呵呵地说：「今年又是个丰收年！」",
-    "options": ["高兴、满足", "难过、失望", "生气、着急", "平静、无所谓"],
+    "options": [
+      "高兴、满足",
+      "难过、失望",
+      "生气、着急",
+      "平静、无所谓"
+    ],
     "answer": "高兴、满足",
-    "knowledge_point_ids": ["chinese_g4_reading_inference"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_inference"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否根据人物表情和语言推断心情。"
   },
   {
@@ -194,11 +280,20 @@
     "type": "single_choice",
     "stem": "蚂蚁们把家搬到了哪里？",
     "passage": "傍晚，天边的云变得又黑又厚。蚂蚁队长带着队伍，把一粒粒米往高处的洞口搬。小蚂蚁们排着长队，谁也不偷懒。没过多久，豆大的雨点落下来了，可蚂蚁们的家已经搬到了安全的地方，一滴雨也没有淋到。",
-    "options": ["高处的洞口", "低处的小坑", "大树底下", "小河旁边"],
+    "options": [
+      "高处的洞口",
+      "低处的小坑",
+      "大树底下",
+      "小河旁边"
+    ],
     "answer": "高处的洞口",
-    "knowledge_point_ids": ["chinese_g4_reading_detail"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_detail"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否定位关键信息。"
   },
   {
@@ -215,9 +310,14 @@
       "从多到少的顺序"
     ],
     "answer": "事情发展的先后顺序",
-    "knowledge_point_ids": ["chinese_g3_reading_order"],
+    "knowledge_point_ids": [
+      "chinese_g3_reading_order"
+    ],
     "difficulty": 3,
-    "error_types": ["detail_missing", "main_idea_missing"],
+    "error_types": [
+      "detail_missing",
+      "main_idea_missing"
+    ],
     "rubric": "检查学生能否识别文章的叙述顺序。"
   },
   {
@@ -234,9 +334,13 @@
       "蚂蚁们害怕小动物"
     ],
     "answer": "蚂蚁们预感到要下雨，提前搬到了高处",
-    "knowledge_point_ids": ["chinese_g4_reading_inference"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_inference"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否结合前后文（云变黑厚、雨点落下）进行合理推断。"
   },
   {
@@ -253,9 +357,13 @@
       "小蚂蚁们喜欢吃米"
     ],
     "answer": "蚂蚁们赶在下雨前把家搬到了安全的地方",
-    "knowledge_point_ids": ["chinese_g4_reading_main_idea"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_main_idea"
+    ],
     "difficulty": 3,
-    "error_types": ["main_idea_missing"],
+    "error_types": [
+      "main_idea_missing"
+    ],
     "rubric": "检查学生能否完整概括事件过程。"
   },
   {
@@ -265,11 +373,20 @@
     "type": "single_choice",
     "stem": "小兔帮山羊爷爷做了什么？",
     "passage": "放学路上，小兔看见山羊爷爷背着一大筐萝卜，走得气喘吁吁。小兔连忙跑过去说：「爷爷，我来帮您背吧！」山羊爷爷笑着把筐放下来。小兔背着筐，把萝卜送到了山羊爷爷家门口。山羊爷爷竖起大拇指说：「谢谢你，真是个乐于助人的好孩子！」",
-    "options": ["帮山羊爷爷背萝卜", "帮山羊爷爷种萝卜", "帮山羊爷爷拔萝卜", "帮山羊爷爷卖萝卜"],
+    "options": [
+      "帮山羊爷爷背萝卜",
+      "帮山羊爷爷种萝卜",
+      "帮山羊爷爷拔萝卜",
+      "帮山羊爷爷卖萝卜"
+    ],
     "answer": "帮山羊爷爷背萝卜",
-    "knowledge_point_ids": ["chinese_g4_reading_detail"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_detail"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生能否定位文中关键动作。"
   },
   {
@@ -279,11 +396,20 @@
     "type": "single_choice",
     "stem": "从短文看，小兔是一个怎样的孩子？",
     "passage": "放学路上，小兔看见山羊爷爷背着一大筐萝卜，走得气喘吁吁。小兔连忙跑过去说：「爷爷，我来帮您背吧！」山羊爷爷笑着把筐放下来。小兔背着筐，把萝卜送到了山羊爷爷家门口。山羊爷爷竖起大拇指说：「谢谢你，真是个乐于助人的好孩子！」",
-    "options": ["乐于助人、热心", "胆小怕事", "贪玩偷懒", "骄傲自满"],
+    "options": [
+      "乐于助人、热心",
+      "胆小怕事",
+      "贪玩偷懒",
+      "骄傲自满"
+    ],
     "answer": "乐于助人、热心",
-    "knowledge_point_ids": ["chinese_g4_reading_character"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_character"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否根据人物言行概括人物品质。"
   },
   {
@@ -300,9 +426,13 @@
       "山羊爷爷力气很大"
     ],
     "answer": "帮助别人是件快乐的事",
-    "knowledge_point_ids": ["chinese_g4_reading_main_idea"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_main_idea"
+    ],
     "difficulty": 3,
-    "error_types": ["main_idea_missing"],
+    "error_types": [
+      "main_idea_missing"
+    ],
     "rubric": "检查学生能否从故事中提炼主题。"
   },
   {
@@ -314,9 +444,62 @@
     "passage": "放学路上，小兔看见山羊爷爷背着一大筐萝卜，走得气喘吁吁。小兔连忙跑过去说：「爷爷，我来帮您背吧！」山羊爷爷笑着把筐放下来。小兔背着筐，把萝卜送到了山羊爷爷家门口。山羊爷爷竖起大拇指说：「谢谢你，真是个乐于助人的好孩子！」",
     "options": [],
     "answer": "示例：我会很开心，因为我帮助了山羊爷爷，还得到了他的夸奖，帮助别人让我觉得很满足。",
-    "knowledge_point_ids": ["chinese_g4_reading_character", "chinese_g3_expression_sentence_expand"],
+    "knowledge_point_ids": [
+      "chinese_g4_reading_character",
+      "chinese_g3_expression_sentence_expand"
+    ],
     "difficulty": 3,
-    "error_types": ["expression_weak", "inference_error"],
+    "error_types": [
+      "expression_weak",
+      "inference_error"
+    ],
     "rubric": "检查学生能否结合故事内容表达自己的感受，并写清楚原因。"
+  },
+  {
+    "id": "chinese_q_r_g5_001",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "主旨把握",
+    "stem": "阅读下面短文，这篇短文主要讲了什么？",
+    "passage": "一位老人每天清晨在公园里打扫落叶。他从不戴口罩，因为他说：我喜欢树叶落在地上的样子，那是秋天的味道。",
+    "options": [
+      "A. 老人很穷",
+      "B. 老人热爱自然，珍惜四季变化",
+      "C. 公园很脏",
+      "D. 老人身体不好"
+    ],
+    "answer": "B",
+    "knowledge_point_ids": [
+      "chinese_g5_主旨把握支持"
+    ],
+    "difficulty": 3,
+    "error_types": [
+      "main_idea_missing"
+    ],
+    "rubric": "通过老人言行体会他对自然的珍爱"
+  },
+  {
+    "id": "chinese_q_r_g6_001",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "情感体会",
+    "stem": "「我鼻子一酸，泪就涌到了眼眶」中「鼻子一酸」表达了什么？",
+    "passage": "看到母亲斑白的头发，我鼻子一酸，泪就涌到了眼眶。",
+    "options": [
+      "A. 真的感冒了",
+      "B. 闻到刺激性气味",
+      "C. 感动、心酸想哭",
+      "D. 鼻子撞到东西"
+    ],
+    "answer": "C",
+    "knowledge_point_ids": [
+      "chinese_g6_情感体会",
+      "chinese_g6_言之推理推断证据"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "emotion_missing"
+    ],
+    "rubric": "联系上下文体会孩子的心酸与感动"
   }
 ]

@@ -6,11 +6,20 @@
     "type": "single_choice",
     "stem": "《静夜思》中，「举头望明月」的下一句是？",
     "passage": "床前明月光，疑是地上霜。举头望明月，低头思故乡。——李白《静夜思》",
-    "options": ["低头思故乡", "疑是地上霜", "春风吹又生", "处处闻啼鸟"],
+    "options": [
+      "低头思故乡",
+      "疑是地上霜",
+      "春风吹又生",
+      "处处闻啼鸟"
+    ],
     "answer": "低头思故乡",
-    "knowledge_point_ids": ["chinese_g3_poem_recite"],
+    "knowledge_point_ids": [
+      "chinese_g3_poem_recite"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生古诗背诵是否准确连贯。"
   },
   {
@@ -20,11 +29,20 @@
     "type": "single_choice",
     "stem": "《静夜思》的作者李白是哪个朝代的诗人？",
     "passage": "",
-    "options": ["唐朝", "宋朝", "明朝", "清朝"],
+    "options": [
+      "唐朝",
+      "宋朝",
+      "明朝",
+      "清朝"
+    ],
     "answer": "唐朝",
-    "knowledge_point_ids": ["chinese_g3_poem_author"],
+    "knowledge_point_ids": [
+      "chinese_g3_poem_author"
+    ],
     "difficulty": 2,
-    "error_types": ["detail_missing"],
+    "error_types": [
+      "detail_missing"
+    ],
     "rubric": "检查学生对古诗作者和朝代的记忆。"
   },
   {
@@ -34,11 +52,20 @@
     "type": "single_choice",
     "stem": "《山行》中「停车坐爱枫林晚」的「坐」是什么意思？",
     "passage": "远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。——杜牧《山行》",
-    "options": ["因为", "坐下", "乘坐", "座位"],
+    "options": [
+      "因为",
+      "坐下",
+      "乘坐",
+      "座位"
+    ],
     "answer": "因为",
-    "knowledge_point_ids": ["chinese_g3_poem_keyword"],
+    "knowledge_point_ids": [
+      "chinese_g3_poem_keyword"
+    ],
     "difficulty": 3,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否结合诗句理解古文中字词的特殊含义。"
   },
   {
@@ -55,9 +82,14 @@
       "山谷里的一汪清泉"
     ],
     "answer": "瀑布从高处倾泻而下，像银河从天而降",
-    "knowledge_point_ids": ["chinese_g4_poem_image"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_image"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error", "word_meaning"],
+    "error_types": [
+      "inference_error",
+      "word_meaning"
+    ],
     "rubric": "检查学生能否抓住诗中比喻展开画面想象，而不是只理解个别字词。"
   },
   {
@@ -74,9 +106,13 @@
       "担心天气"
     ],
     "answer": "思念故乡",
-    "knowledge_point_ids": ["chinese_g4_poem_emotion"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_emotion"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否由画面和动作（举头、低头）体会到诗人的情感。"
   },
   {
@@ -86,11 +122,21 @@
     "type": "single_choice",
     "stem": "《咏柳》中「不知细叶谁裁出，二月春风似剪刀」把春风比作什么？",
     "passage": "碧玉妆成一树高，万条垂下绿丝绦。不知细叶谁裁出，二月春风似剪刀。——贺知章《咏柳》",
-    "options": ["剪刀", "丝绦", "碧玉", "细叶"],
+    "options": [
+      "剪刀",
+      "丝绦",
+      "碧玉",
+      "细叶"
+    ],
     "answer": "剪刀",
-    "knowledge_point_ids": ["chinese_g4_poem_technique"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_technique"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error", "word_meaning"],
+    "error_types": [
+      "inference_error",
+      "word_meaning"
+    ],
     "rubric": "检查学生能否识别比喻修辞，并理解比喻的本体和喻体。"
   },
   {
@@ -100,11 +146,20 @@
     "type": "single_choice",
     "stem": "《春晓》中「春眠不觉晓，处处闻啼鸟」，从「啼鸟」和「春眠」看，这首诗写的是哪个季节？",
     "passage": "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。——孟浩然《春晓》",
-    "options": ["春天", "夏天", "秋天", "冬天"],
+    "options": [
+      "春天",
+      "夏天",
+      "秋天",
+      "冬天"
+    ],
     "answer": "春天",
-    "knowledge_point_ids": ["chinese_g4_poem_scene"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_scene"
+    ],
     "difficulty": 2,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否从诗句中的景物（鸟啼、春眠、花落）判断季节。"
   },
   {
@@ -114,11 +169,20 @@
     "type": "single_choice",
     "stem": "《村居》中「儿童散学归来早，忙趁东风放纸鸢」，「纸鸢」指的是什么？",
     "passage": "草长莺飞二月天，拂堤杨柳醉春烟。儿童散学归来早，忙趁东风放纸鸢。——高鼎《村居》",
-    "options": ["风筝", "小鸟", "纸船", "气球"],
+    "options": [
+      "风筝",
+      "小鸟",
+      "纸船",
+      "气球"
+    ],
     "answer": "风筝",
-    "knowledge_point_ids": ["chinese_g3_poem_keyword"],
+    "knowledge_point_ids": [
+      "chinese_g3_poem_keyword"
+    ],
     "difficulty": 2,
-    "error_types": ["word_meaning"],
+    "error_types": [
+      "word_meaning"
+    ],
     "rubric": "检查学生能否借助注释和生活经验理解古代词语。"
   },
   {
@@ -135,9 +199,13 @@
       "夜晚安静的教室"
     ],
     "answer": "初夏的池塘边，嫩荷叶刚露出尖角，一只蜻蜓停在上面",
-    "knowledge_point_ids": ["chinese_g4_poem_image"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_image"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否把诗句中的景物组合成完整画面，并感受时令。"
   },
   {
@@ -147,11 +215,20 @@
     "type": "single_choice",
     "stem": "《九月九日忆山东兄弟》中「每逢佳节倍思亲」，诗人在节日里更想念谁？",
     "passage": "独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。——王维《九月九日忆山东兄弟》",
-    "options": ["家乡的亲人", "家乡的美食", "家乡的风景", "新认识的朋友"],
+    "options": [
+      "家乡的亲人",
+      "家乡的美食",
+      "家乡的风景",
+      "新认识的朋友"
+    ],
     "answer": "家乡的亲人",
-    "knowledge_point_ids": ["chinese_g4_poem_emotion"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_emotion"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否理解「思亲」的含义，体会诗人在异乡的情感。"
   },
   {
@@ -161,11 +238,21 @@
     "type": "single_choice",
     "stem": "《望洞庭》中「湖光秋月两相和，潭面无风镜未磨」，湖面被比作什么？",
     "passage": "湖光秋月两相和，潭面无风镜未磨。遥望洞庭山水翠，白银盘里一青螺。——刘禹锡《望洞庭》",
-    "options": ["镜子", "白银盘", "青螺", "月光"],
+    "options": [
+      "镜子",
+      "白银盘",
+      "青螺",
+      "月光"
+    ],
     "answer": "镜子",
-    "knowledge_point_ids": ["chinese_g4_poem_technique"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_technique"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error", "word_meaning"],
+    "error_types": [
+      "inference_error",
+      "word_meaning"
+    ],
     "rubric": "检查学生能否识别比喻，理解「镜未磨」描绘的朦胧湖面。"
   },
   {
@@ -175,11 +262,20 @@
     "type": "single_choice",
     "stem": "《望庐山瀑布》中「飞流直下三千尺」用了哪种写法？",
     "passage": "日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。——李白《望庐山瀑布》",
-    "options": ["夸张", "反问", "设问", "排比"],
+    "options": [
+      "夸张",
+      "反问",
+      "设问",
+      "排比"
+    ],
     "answer": "夸张",
-    "knowledge_point_ids": ["chinese_g4_poem_technique"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_technique"
+    ],
     "difficulty": 4,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否识别夸张修辞，理解「三千尺」是极力描写瀑布之高。"
   },
   {
@@ -189,11 +285,21 @@
     "type": "single_choice",
     "stem": "《九月九日忆山东兄弟》写的是哪个传统节日？",
     "passage": "独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。——王维《九月九日忆山东兄弟》",
-    "options": ["重阳节", "中秋节", "端午节", "春节"],
+    "options": [
+      "重阳节",
+      "中秋节",
+      "端午节",
+      "春节"
+    ],
     "answer": "重阳节",
-    "knowledge_point_ids": ["chinese_g4_poem_scene"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_scene"
+    ],
     "difficulty": 3,
-    "error_types": ["detail_missing", "inference_error"],
+    "error_types": [
+      "detail_missing",
+      "inference_error"
+    ],
     "rubric": "检查学生能否从「登高、插茱萸」等习俗判断节日。"
   },
   {
@@ -210,9 +316,14 @@
       "湖光秋月两相和，潭面无风镜未磨"
     ],
     "answer": "碧玉妆成一树高，万条垂下绿丝绦",
-    "knowledge_point_ids": ["chinese_g4_poem_accumulate"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_accumulate"
+    ],
     "difficulty": 4,
-    "error_types": ["inference_error", "detail_missing"],
+    "error_types": [
+      "inference_error",
+      "detail_missing"
+    ],
     "rubric": "检查学生能否根据诗句内容归类季节，积累描写不同季节的诗句。"
   },
   {
@@ -229,9 +340,86 @@
       "诗人不想离开桃花潭"
     ],
     "answer": "汪伦送别的情谊比潭水还深",
-    "knowledge_point_ids": ["chinese_g4_poem_emotion"],
+    "knowledge_point_ids": [
+      "chinese_g4_poem_emotion"
+    ],
     "difficulty": 3,
-    "error_types": ["inference_error"],
+    "error_types": [
+      "inference_error"
+    ],
     "rubric": "检查学生能否理解对比手法背后的深厚情感。"
+  },
+  {
+    "id": "chinese_q_poem_g1_001",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "古诗背诵",
+    "stem": "「锄禾日当午」的下一句是？",
+    "passage": "锄禾日当午，____。",
+    "options": [
+      "A. 汗滴禾下土",
+      "B. 粒粒皆辛苦",
+      "C. 谁知盘中餐",
+      "D. 汗滴禾上土"
+    ],
+    "answer": "A",
+    "knowledge_point_ids": [
+      "chinese_g1_古诗背诵字形"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "recitation_weak"
+    ],
+    "rubric": "《悯农》其二，李绅"
+  },
+  {
+    "id": "chinese_q_poem_g5_001",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "古诗理解",
+    "stem": "「劝君更尽一杯酒，西出阳关无故人」中「故人」指的是？",
+    "passage": "",
+    "options": [
+      "A. 老朋友",
+      "B. 古代的人",
+      "C. 过去的皇帝",
+      "D. 故乡的人"
+    ],
+    "answer": "A",
+    "knowledge_point_ids": [
+      "chinese_g5_古诗情境讲解",
+      "chinese_g5_诗情体会"
+    ],
+    "difficulty": 3,
+    "error_types": [
+      "word_meaning",
+      "emotion_poem_missing"
+    ],
+    "rubric": "《送元二使安西》王维"
+  },
+  {
+    "id": "chinese_q_poem_g6_001",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "古诗意境",
+    "stem": "「大漠孤烟直，长河落日圆」描绘的画面有什么特点？",
+    "passage": "",
+    "options": [
+      "A. 江南水乡的秀丽",
+      "B. 塞外边陲的雄浑壮阔",
+      "C. 城市夜景的繁华",
+      "D. 山林间的幽静"
+    ],
+    "answer": "B",
+    "knowledge_point_ids": [
+      "chinese_g6_古诗鉴赏",
+      "chinese_g6_画面想象"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "image_missing",
+      "emotion_poem_missing"
+    ],
+    "rubric": "《使至塞上》王维"
   }
 ]

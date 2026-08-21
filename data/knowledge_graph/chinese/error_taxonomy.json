@@ -1,0 +1,164 @@
+{
+  "_meta": {
+    "version": "v0.1",
+    "updated": "2026-08-21",
+    "owner": "角色 C · 语文模块",
+    "purpose": "小学语文（1-6 年级）阅读理解 + 古诗 + 识字错因分类规范，供题库 error_types、知识图谱 common_misconceptions、Agent 诊断逻辑共同引用。",
+    "scope": "阅读理解（含现代文与古诗） + 识字写字 + 词语运用"
+  },
+  "categories": [
+    {
+      "id": "reading",
+      "name": "阅读理解类",
+      "color": "#2E74B5",
+      "icon": "📖",
+      "errors": [
+        {
+          "id": "main_idea_missing",
+          "name": "主旨把握缺失",
+          "grade_range": [3, 6],
+          "symptoms": "抓不到段落或全文的核心意思，答题只摘抄原文句子",
+          "root_causes": ["缺少概括训练", "忽略首尾段与中心句", "过度关注细节忽略整体"],
+          "agent_strategy": "引导学生回原文找首尾段、反复出现的关键词、段落中心句；用「这篇文章主要讲了什么，你能用一句话告诉我吗？」开场。",
+          "related_kp": ["chinese_g5_主旨把握支持", "chinese_g6_段落主旨支持"]
+        },
+        {
+          "id": "detail_missing",
+          "name": "细节定位缺失",
+          "grade_range": [3, 6],
+          "symptoms": "找不到原文中对应的句子，凭印象答题",
+          "root_causes": ["没有养成回原文圈关键词的习惯", "题目信息与原文脱节", "略读过快"],
+          "agent_strategy": "用三步法：① 圈出题目的关键词 ② 带着关键词回原文逐段找 ③ 找到原句后画线，再用自己的话答。",
+          "related_kp": ["chinese_g3_快速检索信息", "chinese_g4_细节定位支持"]
+        },
+        {
+          "id": "inference_error",
+          "name": "推断错误",
+          "grade_range": [4, 6],
+          "symptoms": "读不出言外之意，把可能/也许当成一定",
+          "root_causes": ["缺乏生活经验类比", "不会联系上下文推断", "主观代替文本"],
+          "agent_strategy": "提示「作者虽然没有直接说，但他用了哪些词让你这么想？」；训练学生区分「文中写到的」和「作者想表达的」。",
+          "related_kp": ["chinese_g4_观点推断证据", "chinese_g5_言之推理推断证据"]
+        },
+        {
+          "id": "emotion_missing",
+          "name": "情感体会缺失",
+          "grade_range": [4, 6],
+          "symptoms": "答不出作者表达的感情，只能说「开心/难过」一类笼统词",
+          "root_causes": ["生活经验不足", "不会联系具体词句", "缺乏情感词汇"],
+          "agent_strategy": "用「从哪儿看出来的？」追问，让学生找证据；提示常用情感词（敬佩、惆怅、惊喜、孤寂、眷恋）。",
+          "related_kp": ["chinese_g5_言之推理推断证据"]
+        },
+        {
+          "id": "expression_weak",
+          "name": "表达薄弱",
+          "grade_range": [3, 6],
+          "symptoms": "意思懂但写不出来，句子不通顺或词不达意",
+          "root_causes": ["积累的好词好句少", "缺少结构化表达模板", "答题没分点"],
+          "agent_strategy": "提供「答题三件套」模板：① 我认为…… ② 因为文中说「……」 ③ 所以我体会到……。",
+          "related_kp": ["chinese_g4_表达条理清晰", "chinese_g5_答题规范示例"]
+        }
+      ]
+    },
+    {
+      "id": "poem",
+      "name": "古诗鉴赏类",
+      "color": "#805AD5",
+      "icon": "🎋",
+      "errors": [
+        {
+          "id": "image_missing",
+          "name": "画面想象缺失",
+          "grade_range": [3, 6],
+          "symptoms": "读不出诗里的画面，只会说「写得很美」",
+          "root_causes": ["缺少视觉化训练", "不会拆解景物", "不能连成画面"],
+          "agent_strategy": "严格走 poem_scaffold.md 的三步引导：找景物 → 想画面 → 说感受，每步只问 1 个问题。",
+          "related_kp": ["chinese_g4_古诗画面想象", "chinese_g5_古诗情境讲解"]
+        },
+        {
+          "id": "emotion_poem_missing",
+          "name": "诗情体会缺失",
+          "grade_range": [4, 6],
+          "symptoms": "画面看到了但说不出诗人情感",
+          "root_causes": ["景与情脱节", "缺少典故背景", "对诗人经历陌生"],
+          "agent_strategy": "把画面词和情感词连起来：「孤舟 + 寒江 = ？」；提供诗人背景故事，让学生猜诗人处境。",
+          "related_kp": ["chinese_g5_古诗情境讲解"]
+        },
+        {
+          "id": "recitation_weak",
+          "name": "背诵与默写薄弱",
+          "grade_range": [3, 6],
+          "symptoms": "会背但默写错字、漏字、错顺序",
+          "root_causes": ["形近字混淆（如「蓬/篷」「辨/辩」）", "节奏感不强", "缺少出声记忆错"],
+          "agent_strategy": "针对错字出形近字对比卡（蓬 vs 篷）；节奏型记忆：拍手背诗。",
+          "related_kp": ["chinese_g3_古诗背诵字形", "chinese_g4_古诗情境讲解"]
+        }
+      ]
+    },
+    {
+      "id": "vocabulary",
+      "name": "识字写字类",
+      "color": "#38A169",
+      "icon": "✏️",
+      "errors": [
+        {
+          "id": "word_meaning",
+          "name": "词义理解错误",
+          "grade_range": [1, 4],
+          "symptoms": "常见字词理解错位（如「果然」当成「竟然」）",
+          "root_causes": ["字形相似混淆", "多义字只记得第一个义项", "生活经验不足"],
+          "agent_strategy": "造三个不同情境的句子让学生判断；用「这个词在句子里能换成什么？」测试理解。",
+          "related_kp": ["chinese_g2_常用词语", "chinese_g3_一字多义讲解"]
+        },
+        {
+          "id": "stroke_error",
+          "name": "笔画笔顺错误",
+          "grade_range": [1, 3],
+          "symptoms": "笔画增减、笔顺错误（如「右」先写横）",
+          "root_causes": ["观察不细", "缺少动态笔顺演示", "过早脱离田字格"],
+          "agent_strategy": "让学生先在田字格描红 3 遍，再独立写 1 遍；用顺口溜记特殊笔顺（先撇后捺）。",
+          "related_kp": ["chinese_g1_笔画笔顺规范", "chinese_g2_间架结构"]
+        },
+        {
+          "id": "phonetic_confusion",
+          "name": "形近/音近混淆",
+          "grade_range": [1, 4],
+          "symptoms": "分辨不开「辨/辩/辫」「在/再」",
+          "root_causes": ["机械记忆未归类", "缺少对比训练", "字义理解浮于表面"],
+          "agent_strategy": "提供 3-5 个易混字对比表，每个字配一句话（含该字）；让学生编故事串联。",
+          "related_kp": ["chinese_g2_形近字辨析", "chinese_g3_多音字讲解"]
+        }
+      ]
+    },
+    {
+      "id": "expression",
+      "name": "词语运用类",
+      "color": "#DD6B20",
+      "icon": "💬",
+      "errors": [
+        {
+          "id": "idiom_misuse",
+          "name": "成语误用",
+          "grade_range": [3, 6],
+          "symptoms": "望文生义（如把「空穴来风」当无中生有）",
+          "root_causes": ["只看字面意思", "不知道成语出处", "感情色彩不分"],
+          "agent_strategy": "讲成语故事 1 遍；让学生用成语造 3 个不同语境的句子；标注感情色彩（褒/贬）。",
+          "related_kp": ["chinese_g3_成语故事讲解", "chinese_g5_褒贬判断"]
+        },
+        {
+          "id": "collocation_error",
+          "name": "搭配不当",
+          "grade_range": [2, 5],
+          "symptoms": "动宾、修饰语搭配错（如「美丽地笑了」）",
+          "root_causes": ["词性不分", "缺少搭配积累", "语感弱"],
+          "agent_strategy": "提供「动词 + 名词」常见搭配清单；用「这个词后面通常跟什么？」做选择题。",
+          "related_kp": ["chinese_g3_词义搭配", "chinese_g4_语境辨析"]
+        }
+      ]
+    }
+  ],
+  "agent_dispatch": {
+    "rule": "前端在错题展示时携带 error_types 数组 → 后端 Agent 按 error_types 第一个未掌握标签选择引导策略",
+    "fallback_strategy": "若 error_types 为空 → 默认走「回原文找证据」通用引导"
+  }
+}
