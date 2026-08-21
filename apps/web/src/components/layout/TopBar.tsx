@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores/appStore";
 import { Badge } from "@/components/ui/badge";
 
 export function TopBar() {
   const { studentName, streakDays, modelProvider } = useAppStore();
+  const nav = useNavigate();
+
+  function logout() {
+    localStorage.removeItem("ai-study-user");
+    nav("/login", { replace: true });
+  }
 
   return (
     <header className="relative z-20 flex h-14 shrink-0 items-center justify-between border-b border-white/8 bg-background/60 px-4 backdrop-blur-md">
@@ -48,6 +55,14 @@ export function TopBar() {
             </div>
           </div>
         </div>
+        <button
+          onClick={logout}
+          className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-medium text-foreground/80 transition hover:bg-white/10 hover:text-foreground"
+          title="退出登录"
+        >
+          <span aria-hidden>⇥</span>
+          退出
+        </button>
       </div>
     </header>
   );
