@@ -169,7 +169,7 @@ function Field(props: {
           value={props.value}
           placeholder={props.placeholder}
           onChange={(e) => props.onChange(e.target.value)}
-          className="h-11 w-full bg-transparent text-sm outline-none placeholder:text-slate-500"
+          className="h-11 w-full bg-transparent text-sm text-black outline-none placeholder:text-slate-500"
         />
       </div>
       {props.error && <div className="mt-1 text-xs text-rose-500">{props.error}</div>}
