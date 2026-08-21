@@ -15,8 +15,8 @@ function Logo() {
       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 text-2xl shadow-md">
         🤖
       </div>
-      <div className="text-lg font-bold tracking-wide text-slate-700">ai-study</div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-400">Adaptive Tutor</div>
+      <div className="text-lg font-bold tracking-wide text-slate-500">ai-study</div>
+      <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500">Adaptive Tutor</div>
     </div>
   );
 }
@@ -78,8 +78,8 @@ export function LoginPage() {
         className="w-full max-w-md rounded-3xl bg-white px-8 pb-8 pt-2 shadow-xl ring-1 ring-slate-100"
       >
         <Logo />
-        <h1 className="text-center text-2xl font-semibold text-slate-800 mb-6">
-          欢迎使用 <span className="text-blue-600">ai-study</span>
+        <h1 className="text-center text-2xl font-semibold text-slate-600 mb-6">
+          欢迎使用 <span className="text-blue-700">ai-study</span>
         </h1>
 
         <div className="mb-5 flex rounded-xl bg-slate-100 p-1 text-sm font-medium">
@@ -89,7 +89,7 @@ export function LoginPage() {
               type="button"
               onClick={() => setRole(r.value)}
               className={`flex-1 rounded-lg py-2 transition ${
-                role === r.value ? "bg-blue-500 text-white shadow" : "text-slate-600"
+                role === r.value ? "bg-blue-500 text-white shadow" : "text-slate-500"
               }`}
             >
               {r.label}
@@ -152,7 +152,7 @@ export function LoginPage() {
 
         <div className="mt-4 text-center text-sm text-slate-500">
           还没有账号？
-          <Link to="/register" className="ml-1 font-medium text-blue-600 hover:underline">
+          <Link to="/register" className="ml-1 font-medium text-blue-700 hover:underline">
             立即注册
           </Link>
         </div>
@@ -176,7 +176,7 @@ function Field(props: {
           props.error ? "border-rose-400" : "border-slate-200 focus-within:border-blue-400"
         }`}
       >
-        <span className="mr-2 text-slate-400">{props.icon}</span>
+        <span className="mr-2 text-slate-500">{props.icon}</span>
         <input
           type={props.type}
           value={props.value}
