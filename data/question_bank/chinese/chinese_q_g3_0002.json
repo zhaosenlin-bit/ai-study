@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0002",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_radical"
+  ],
+  "stem": "“江、河、湖、海”这些字的偏旁都跟什么有关?",
+  "options": [
+    "水",
+    "木头",
+    "金属",
+    "火"
+  ],
+  "answer": "水",
+  "rubric": "考察知识点:偏旁部首",
+  "explanation": "三点水偏旁的字大多与水有关。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

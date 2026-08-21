@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0029",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_character_detail"
+  ],
+  "stem": "句子“妈妈笑了,眼角的皱纹像菊花一样绽放”用了哪些描写?",
+  "options": [
+    "神态描写和比喻",
+    "动作描写",
+    "语言描写",
+    "心理描写"
+  ],
+  "answer": "神态描写和比喻",
+  "rubric": "考察知识点:人物描写方法",
+  "explanation": "写“笑”是神态描写,“像菊花”是比喻。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

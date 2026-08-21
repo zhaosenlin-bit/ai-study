@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0084",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_emotions"
+  ],
+  "stem": "Which word means “高兴的”？",
+  "options": [
+    "happy",
+    "tired",
+    "angry",
+    "bored"
+  ],
+  "answer": "happy",
+  "rubric": "情绪词义映射；错选 excited 时教师可补充进阶。",
+  "difficulty": 1
+}

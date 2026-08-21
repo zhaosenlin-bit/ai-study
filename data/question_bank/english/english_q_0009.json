@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0009",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_classroom_objects"
+  ],
+  "stem": "Spell the word: 书 → b___k",
+  "options": [],
+  "answer": "book",
+  "rubric": "检查拼写；常见错误 bok，可标记 spelling_error。",
+  "difficulty": 1
+}

@@ -1,0 +1,16 @@
+{
+  "id": "chinese_q_g4_0030",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "chinese_g4_connective"
+  ],
+  "stem": "用关联词填空:( )遇到多大的困难,他( )不放弃。",
+  "options": null,
+  "answer": "无论……都……",
+  "rubric": "考察知识点:关联词运用",
+  "explanation": "条件关系的关联词用“无论……都……”。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

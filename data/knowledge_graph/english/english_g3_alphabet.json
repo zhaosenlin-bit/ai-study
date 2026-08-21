@@ -1,0 +1,12 @@
+{
+  "id": "english_g3_alphabet",
+  "subject": "english",
+  "grade": 3,
+  "name": "26 个英文字母",
+  "difficulty": 1,
+  "prerequisites": [],
+  "next": ["english_g3_colors", "english_g3_numbers"],
+  "vocabulary": ["A", "B", "C", "D", "E", "F", "G"],
+  "common_misconceptions": ["大小写混淆", "字母读音与汉语拼音混淆"],
+  "demo_value": "展示基础字母识别与读音纠正"
+}

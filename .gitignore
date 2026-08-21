@@ -9,6 +9,12 @@ venv/
 node_modules/
 dist/
 .vite/
+.npm-cache/
+
+# Playwright
+test-results/
+playwright-report/
+.browsers/
 
 # Environment
 .env
@@ -31,4 +37,8 @@ Thumbs.db
 # Local databases
 *.sqlite
 *.sqlite3
+*.db
 chroma_db/
+
+# Temp
+.tmp_*

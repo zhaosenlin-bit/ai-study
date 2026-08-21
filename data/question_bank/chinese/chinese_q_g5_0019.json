@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0019",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_sentence_exaggeration"
+  ],
+  "stem": "下面哪个句子用了夸张的修辞手法?",
+  "options": [
+    "教室里静得连针掉在地上都能听见",
+    "弯弯的月亮像小船",
+    "太阳像个大火球",
+    "花儿在跳舞"
+  ],
+  "answer": "教室里静得连针掉在地上都能听见",
+  "rubric": "考察知识点:夸张句",
+  "explanation": "夸张是对事物进行扩大或缩小的描述。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

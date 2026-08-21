@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0006",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_alphabet"
+  ],
+  "stem": "Which letter comes after C?",
+  "options": [
+    "B",
+    "D",
+    "E",
+    "A"
+  ],
+  "answer": "D",
+  "rubric": "检查字母顺序；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

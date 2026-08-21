@@ -1,0 +1,16 @@
+{
+  "id": "chinese_q_g4_0026",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "chinese_g4_reading_main_idea"
+  ],
+  "stem": "短文《倔强的小红军》讲了小红军宁可牺牲也不拖累别人的故事。用一两句话概括这篇短文的中心。",
+  "options": null,
+  "answer": "赞美小红军宁可牺牲自己也不拖累别人的高贵品质",
+  "rubric": "考察知识点:阅读抓主旨",
+  "explanation": "概括中心:通过主要事件提炼人物品质。",
+  "error_type": "concept_missing",
+  "difficulty": 4
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0017",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_food_drinks"
+  ],
+  "stem": "Spell the word: 米饭 → r___e",
+  "options": [],
+  "answer": "rice",
+  "rubric": "检查拼写；rice 与 rise 混淆可标记 pronunciation_weak。",
+  "difficulty": 1
+}

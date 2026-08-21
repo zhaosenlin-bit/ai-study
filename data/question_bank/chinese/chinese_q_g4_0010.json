@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0010",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_character_meaning"
+  ],
+  "stem": "下面哪个词语中的“熟”表示“熟练”的意思?",
+  "options": [
+    "饭熟了",
+    "这条路我很熟",
+    "果子熟了",
+    "熟透了"
+  ],
+  "answer": "这条路我很熟",
+  "rubric": "考察知识点:多义字辨析",
+  "explanation": "“熟”在不同词语中意思不同,要结合语境判断。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

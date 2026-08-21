@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0065",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_present_perfect"
+  ],
+  "stem": "Have you ever seen a panda? 肯定的完整回答是？",
+  "options": [
+    "Yes, I have.",
+    "Yes, I do.",
+    "Yes, I did.",
+    "Yes, I am."
+  ],
+  "answer": "Yes, I have.",
+  "rubric": "检查现在完成时回答结构；错选可标记 sentence_pattern_error。",
+  "difficulty": 4
+}

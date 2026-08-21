@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0031",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_months_seasons"
+  ],
+  "stem": "How many months are there in a year?",
+  "options": [
+    "7",
+    "10",
+    "12",
+    "24"
+  ],
+  "answer": "12",
+  "rubric": "检查月份常识；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

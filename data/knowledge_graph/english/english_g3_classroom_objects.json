@@ -1,0 +1,28 @@
+{
+  "id": "english_g3_classroom_objects",
+  "subject": "english",
+  "grade": 3,
+  "name": "教室物品",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_basic_greetings"
+  ],
+  "next": [
+    "english_g4_school_places"
+  ],
+  "vocabulary": [
+    "desk",
+    "chair",
+    "book",
+    "pen",
+    "pencil",
+    "ruler",
+    "bag",
+    "eraser"
+  ],
+  "common_misconceptions": [
+    "book 与 box 混淆",
+    "ruler 拼写漏字母"
+  ],
+  "demo_value": "适合展示物品名词识别和教室情景对话"
+}

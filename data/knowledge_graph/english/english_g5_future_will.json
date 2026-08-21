@@ -1,0 +1,27 @@
+{
+  "id": "english_g5_future_will",
+  "subject": "english",
+  "grade": 5,
+  "name": "一般将来时 will",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_present_tense_s"
+  ],
+  "next": [
+    "english_g6_travel"
+  ],
+  "vocabulary": [
+    "will",
+    "won't",
+    "tomorrow",
+    "next week",
+    "this weekend",
+    "go",
+    "visit"
+  ],
+  "common_misconceptions": [
+    "will 后动词用原形",
+    "tomorrow 前不加 at"
+  ],
+  "demo_value": "适合展示周末计划和旅行计划"
+}

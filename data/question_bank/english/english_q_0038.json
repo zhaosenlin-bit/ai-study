@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0038",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_jobs"
+  ],
+  "stem": "Who helps sick people?",
+  "options": [
+    "teacher",
+    "doctor",
+    "driver",
+    "cook"
+  ],
+  "answer": "doctor",
+  "rubric": "检查职业词义；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

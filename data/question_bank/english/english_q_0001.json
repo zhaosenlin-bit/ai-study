@@ -1,0 +1,12 @@
+{
+  "id": "english_q_0001",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": ["english_g3_colors"],
+  "stem": "Which word means \"红色\"?",
+  "options": ["red", "blue", "green", "black"],
+  "answer": "red",
+  "rubric": "检查颜色词汇词义映射；错选 green 可标记 meaning_confusion。",
+  "difficulty": 1
+}

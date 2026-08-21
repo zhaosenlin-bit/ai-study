@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0056",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_story_reading"
+  ],
+  "stem": "Long long ago, there ___ a king. (be 动词过去式)",
+  "options": [],
+  "answer": "was",
+  "rubric": "检查故事时态与 be 动词过去式；用 is 可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

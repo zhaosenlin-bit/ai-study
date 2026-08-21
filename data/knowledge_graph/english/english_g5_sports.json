@@ -1,0 +1,26 @@
+{
+  "id": "english_g5_sports",
+  "subject": "english",
+  "grade": 5,
+  "name": "运动",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_can_sentence"
+  ],
+  "next": [
+    "english_g5_healthy_food"
+  ],
+  "vocabulary": [
+    "basketball",
+    "football",
+    "table tennis",
+    "badminton",
+    "swimming",
+    "running"
+  ],
+  "common_misconceptions": [
+    "play 与球类搭配无 the",
+    "basketball 拼写"
+  ],
+  "demo_value": "适合展示运动会话题和 Can you 问答"
+}

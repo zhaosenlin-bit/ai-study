@@ -1,0 +1,16 @@
+{
+  "id": "chinese_q_g6_0020",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "chinese_g6_poem_classic"
+  ],
+  "stem": "《春夜喜雨》中“随风潜入夜,______。”",
+  "options": null,
+  "answer": "润物细无声",
+  "rubric": "考察知识点:古诗词积累(春夜喜雨)",
+  "explanation": "注意“润”字不要写成“闰”。",
+  "error_type": "careless",
+  "difficulty": 3
+}

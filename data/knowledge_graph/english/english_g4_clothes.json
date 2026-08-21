@@ -1,0 +1,25 @@
+{
+  "id": "english_g4_clothes",
+  "subject": "english",
+  "grade": 4,
+  "name": "衣物",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_weather"
+  ],
+  "next": [],
+  "vocabulary": [
+    "shirt",
+    "T-shirt",
+    "coat",
+    "dress",
+    "shoes",
+    "socks",
+    "hat"
+  ],
+  "common_misconceptions": [
+    "shirt 与 skirt 混淆",
+    "shoes 常以复数出现"
+  ],
+  "demo_value": "适合展示穿衣话题和购物对话"
+}

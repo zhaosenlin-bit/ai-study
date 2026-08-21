@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0080",
+  "subject": "english",
+  "grade": 5,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g5_comparatives"
+  ],
+  "stem": "用比较级比较大象和猫，写一个完整句子（提示：big）。",
+  "options": [],
+  "answer": "The elephant is bigger than the cat.",
+  "rubric": "检查比较级 + than 结构；用原级可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

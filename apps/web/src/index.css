@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 228 45% 6%;
+    --foreground: 220 32% 96%;
+    --card: 228 38% 9%;
+    --card-foreground: 220 32% 96%;
+    --popover: 228 38% 10%;
+    --popover-foreground: 220 32% 96%;
+    --primary: 262 82% 64%;
+    --primary-foreground: 220 32% 98%;
+    --secondary: 228 30% 15%;
+    --secondary-foreground: 220 32% 92%;
+    --muted: 228 26% 14%;
+    --muted-foreground: 226 14% 62%;
+    --accent: 262 42% 22%;
+    --accent-foreground: 220 32% 94%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 220 32% 98%;
+    --border: 228 26% 18%;
+    --input: 228 26% 18%;
+    --ring: 262 82% 64%;
+    --radius: 0.75rem;
+
+    --subject-math: 220 90% 62%;
+    --subject-chinese: 18 88% 62%;
+    --subject-english: 158 68% 52%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family:
+      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
+      system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  /* 沉浸式主舞台的玻璃质感面板 */
+  .glass-panel {
+    @apply rounded-2xl border border-white/10 bg-card/70 backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,0.35)];
+  }
+
+  /* 边缘功能按钮 */
+  .edge-button {
+    @apply flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-muted-foreground transition-all hover:scale-105 hover:border-primary/50 hover:text-foreground;
+  }
+  .edge-button-active {
+    @apply border-primary/60 bg-primary/15 text-primary shadow-[0_0_18px_rgba(139,92,246,0.35)];
+  }
+
+  /* 大按钮：小学生友好 */
+  .big-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-base font-bold transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-40;
+  }
+  .big-button-primary {
+    @apply big-button bg-primary text-primary-foreground shadow-[0_8px_24px_rgba(139,92,246,0.4)] hover:brightness-110;
+  }
+  .big-button-ghost {
+    @apply big-button border border-white/15 bg-white/5 text-foreground hover:bg-white/10;
+  }
+
+  /* 学科徽标底色 */
+  .subject-chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}

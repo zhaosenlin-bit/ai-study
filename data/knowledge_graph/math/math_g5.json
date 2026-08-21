@@ -1,0 +1,105 @@
+[
+  {
+    "id": "math_g5_decimal_multiply",
+    "subject": "math",
+    "grade": 5,
+    "name": "小数乘法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g4_decimal_initial",
+      "math_g4_three_digit_times_two_digit"
+    ],
+    "common_misconceptions": [
+      "积的小数位数数错"
+    ]
+  },
+  {
+    "id": "math_g5_decimal_divide",
+    "subject": "math",
+    "grade": 5,
+    "name": "小数除法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g5_decimal_multiply"
+    ],
+    "common_misconceptions": [
+      "商的小数点位置错误"
+    ]
+  },
+  {
+    "id": "math_g5_equation_simple",
+    "subject": "math",
+    "grade": 5,
+    "name": "简易方程",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g5_decimal_multiply"
+    ],
+    "common_misconceptions": [
+      "移项不变号"
+    ]
+  },
+  {
+    "id": "math_g5_polygon_area",
+    "subject": "math",
+    "grade": 5,
+    "name": "多边形面积",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g4_rectangle_area"
+    ],
+    "common_misconceptions": [
+      "三角形面积忘记除以 2"
+    ]
+  },
+  {
+    "id": "math_g5_fraction_add_sub",
+    "subject": "math",
+    "grade": 5,
+    "name": "分数加减法(异分母)",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g4_fraction_compare"
+    ],
+    "common_misconceptions": [
+      "通分后分子漏乘"
+    ]
+  },
+  {
+    "id": "math_g5_prime_composite",
+    "subject": "math",
+    "grade": 5,
+    "name": "因数与倍数",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g3_division_meaning"
+    ],
+    "common_misconceptions": [
+      "质数与奇数混淆"
+    ]
+  },
+  {
+    "id": "math_g5_volume_cuboid",
+    "subject": "math",
+    "grade": 5,
+    "name": "长方体正方体体积",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g5_polygon_area"
+    ],
+    "common_misconceptions": [
+      "体积单位与面积单位混淆"
+    ]
+  },
+  {
+    "id": "math_g5_position_coordinates",
+    "subject": "math",
+    "grade": 5,
+    "name": "位置与数对",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "行与列顺序颠倒"
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0042",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_festivals"
+  ],
+  "stem": "Which festival is in December?",
+  "options": [
+    "Christmas",
+    "Mid-Autumn Festival",
+    "Dragon Boat Festival",
+    "Spring Festival"
+  ],
+  "answer": "Christmas",
+  "rubric": "检查节日时间；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0088",
+  "subject": "english",
+  "grade": 5,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+  ],
+  "stem": "Spell the word “温度” → t_______e",
+  "options": [],
+  "answer": "temperature",
+  "rubric": "temperature 拼写漏 e 可标记 spelling_error。",
+  "difficulty": 3
+}

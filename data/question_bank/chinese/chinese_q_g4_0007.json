@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0007",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_poem_image"
+  ],
+  "stem": "《静夜思》中“举头望明月”,诗人当时最可能是什么心情?",
+  "options": [
+    "高兴",
+    "想念家乡",
+    "生气",
+    "害怕"
+  ],
+  "answer": "想念家乡",
+  "rubric": "考察知识点:古诗画面与情感",
+  "explanation": "结合“思故乡”体会诗歌画面背后的情感。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

@@ -1,0 +1,26 @@
+{
+  "id": "english_g5_there_be",
+  "subject": "english",
+  "grade": 5,
+  "name": "There be 句型",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g4_positions"
+  ],
+  "next": [
+    "english_g6_story_reading"
+  ],
+  "vocabulary": [
+    "There is",
+    "There are",
+    "There isn't",
+    "There aren't",
+    "some",
+    "any"
+  ],
+  "common_misconceptions": [
+    "is/are 就近原则错误",
+    "some 用于肯定 any 用于否定混淆"
+  ],
+  "demo_value": "适合展示场景描述和故事开头"
+}

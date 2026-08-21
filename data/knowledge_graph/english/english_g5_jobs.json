@@ -1,0 +1,27 @@
+{
+  "id": "english_g5_jobs",
+  "subject": "english",
+  "grade": 5,
+  "name": "职业",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_daily_routines"
+  ],
+  "next": [
+    "english_g6_describing_people"
+  ],
+  "vocabulary": [
+    "teacher",
+    "doctor",
+    "nurse",
+    "driver",
+    "police officer",
+    "cook",
+    "farmer"
+  ],
+  "common_misconceptions": [
+    "police officer 与 police 混淆",
+    "doctor 与 driver 混淆"
+  ],
+  "demo_value": "适合展示职业问答 What do you do?"
+}

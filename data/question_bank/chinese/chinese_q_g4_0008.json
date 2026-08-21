@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0008",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_poem_image"
+  ],
+  "stem": "《望庐山瀑布》中“飞流直下三千尺”主要用了什么手法?",
+  "options": [
+    "比喻",
+    "夸张",
+    "拟人",
+    "排比"
+  ],
+  "answer": "夸张",
+  "rubric": "考察知识点:古诗画面与情感",
+  "explanation": "三千尺是夸张的说法,突出瀑布的壮观。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

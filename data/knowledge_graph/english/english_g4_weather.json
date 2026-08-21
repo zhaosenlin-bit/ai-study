@@ -1,0 +1,27 @@
+{
+  "id": "english_g4_weather",
+  "subject": "english",
+  "grade": 4,
+  "name": "天气",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_days_week"
+  ],
+  "next": [
+    "english_g4_clothes"
+  ],
+  "vocabulary": [
+    "sunny",
+    "rainy",
+    "cloudy",
+    "snowy",
+    "windy",
+    "hot",
+    "cold"
+  ],
+  "common_misconceptions": [
+    "sunny 双写 n 拼错",
+    "rainy 与 raining 时态混淆"
+  ],
+  "demo_value": "适合展示天气问答 How's the weather?"
+}

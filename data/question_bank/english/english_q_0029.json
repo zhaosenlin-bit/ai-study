@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0029",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_daily_routines"
+  ],
+  "stem": "老师问你：What do you do in the morning? 请用完整英语句子回答一件你早上做的事。",
+  "options": [],
+  "answer": "I brush my teeth.",
+  "rubric": "检查完整句输出；动词缺失可标记 sentence_pattern_error，听不清可标记 listening_error。",
+  "difficulty": 2
+}

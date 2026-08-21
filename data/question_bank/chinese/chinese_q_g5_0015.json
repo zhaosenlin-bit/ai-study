@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0015",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_poem_emotion"
+  ],
+  "stem": "《示儿》中陆游“但悲不见九州同”,表达了他怎样的情感?",
+  "options": [
+    "悲伤自己老了",
+    "渴望祖国统一的爱国之情",
+    "害怕死亡",
+    "思念家人"
+  ],
+  "answer": "渴望祖国统一的爱国之情",
+  "rubric": "考察知识点:古诗情感(示儿·题临安邸)",
+  "explanation": "结合诗人写作背景理解诗句情感。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

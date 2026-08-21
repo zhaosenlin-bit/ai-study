@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0069",
+  "subject": "english",
+  "grade": 5,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g5_asking_directions"
+  ],
+  "stem": "你在街上迷路了，用英语礼貌地向陌生人问去车站的路。",
+  "options": [],
+  "answer": "Excuse me, where is the bus station?",
+  "rubric": "检查礼貌问路句型；Excuse me 缺失可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

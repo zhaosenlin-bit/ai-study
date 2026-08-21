@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0030",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_time_clock"
+  ],
+  "stem": "七点整用英语怎么说：s___ o'clock",
+  "options": [],
+  "answer": "seven",
+  "rubric": "检查时间表达；常见错误 sewen，可标记 spelling_error。",
+  "difficulty": 2
+}

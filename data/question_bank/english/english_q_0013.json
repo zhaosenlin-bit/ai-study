@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0013",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_fruits"
+  ],
+  "stem": "Spell the word: 香蕉 → ba___na",
+  "options": [],
+  "answer": "banana",
+  "rubric": "检查拼写；常见错误 banna，可标记 spelling_error。",
+  "difficulty": 2
+}

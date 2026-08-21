@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0049",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_comparatives"
+  ],
+  "stem": "The elephant is ___ than the cat.",
+  "options": [
+    "big",
+    "bigger",
+    "biggest",
+    "more big"
+  ],
+  "answer": "bigger",
+  "rubric": "检查比较级形式；选原级可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

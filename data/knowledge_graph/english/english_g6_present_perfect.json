@@ -1,0 +1,24 @@
+{
+  "id": "english_g6_present_perfect",
+  "subject": "english",
+  "grade": 6,
+  "name": "现在完成时（初步）",
+  "difficulty": 4,
+  "prerequisites": [
+    "english_g6_past_tense"
+  ],
+  "next": [],
+  "vocabulary": [
+    "have been to",
+    "have visited",
+    "have seen",
+    "Have you ever",
+    "ever",
+    "already"
+  ],
+  "common_misconceptions": [
+    "过去分词与过去式混淆",
+    "have been to 与 have gone to 混淆"
+  ],
+  "demo_value": "适合展示拓展语法亮点和旅行经历分享"
+}

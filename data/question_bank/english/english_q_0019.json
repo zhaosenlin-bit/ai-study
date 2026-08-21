@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0019",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_days_week"
+  ],
+  "stem": "Spell the word: 星期日 → S___day",
+  "options": [],
+  "answer": "Sunday",
+  "rubric": "检查拼写与首字母大写；小写可标记 spelling_error。",
+  "difficulty": 2
+}

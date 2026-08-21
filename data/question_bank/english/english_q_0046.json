@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0046",
+  "subject": "english",
+  "grade": 5,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g5_present_tense_s"
+  ],
+  "stem": "She ___ (like) apples.",
+  "options": [],
+  "answer": "likes",
+  "rubric": "检查三单形式；忘加 s 可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

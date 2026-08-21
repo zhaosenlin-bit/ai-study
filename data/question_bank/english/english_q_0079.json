@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0079",
+  "subject": "english",
+  "grade": 6,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g6_suggestions"
+  ],
+  "stem": "给你的朋友一条健康建议，用 You should... 写一个完整句子。",
+  "options": [],
+  "answer": "You should drink more water.",
+  "rubric": "检查 should + 动词原形建议句；结构错误可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

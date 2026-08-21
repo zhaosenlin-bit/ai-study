@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0043",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_asking_directions"
+  ],
+  "stem": "Where is the park? 这句话是在问什么？",
+  "options": [
+    "问路",
+    "问价格",
+    "问时间",
+    "问姓名"
+  ],
+  "answer": "问路",
+  "rubric": "检查问路句型理解；错选可标记 listening_error。",
+  "difficulty": 2
+}

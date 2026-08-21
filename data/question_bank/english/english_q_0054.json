@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0054",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_environment"
+  ],
+  "stem": "We should ___ trees. (保护树木)",
+  "options": [],
+  "answer": "protect",
+  "rubric": "检查环保词汇；拼写错误可标记 spelling_error。",
+  "difficulty": 3
+}

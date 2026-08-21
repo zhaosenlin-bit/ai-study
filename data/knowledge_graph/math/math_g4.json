@@ -1,0 +1,106 @@
+[
+  {
+    "id": "math_g4_large_numbers",
+    "subject": "math",
+    "grade": 4,
+    "name": "大数的认识",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g3_addition_within_10000"
+    ],
+    "common_misconceptions": [
+      "亿级与万级混淆"
+    ]
+  },
+  {
+    "id": "math_g4_three_digit_times_two_digit",
+    "subject": "math",
+    "grade": 4,
+    "name": "三位数乘两位数",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_multi_digit_times_one_digit"
+    ],
+    "common_misconceptions": [
+      "第二个乘数十位乘出的积对错位"
+    ]
+  },
+  {
+    "id": "math_g4_division_by_two_digit",
+    "subject": "math",
+    "grade": 4,
+    "name": "除数是两位数的除法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_remainder_division"
+    ],
+    "common_misconceptions": [
+      "试商偏差大"
+    ]
+  },
+  {
+    "id": "math_g4_fraction_basic",
+    "subject": "math",
+    "grade": 4,
+    "name": "分数的意义与比较",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_fraction_initial"
+    ],
+    "common_misconceptions": [
+      "比较大小只看分子"
+    ]
+  },
+  {
+    "id": "math_g4_fraction_compare",
+    "subject": "math",
+    "grade": 4,
+    "name": "同分母分数加减",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g4_fraction_basic"
+    ],
+    "common_misconceptions": [
+      "分子相加减后分母也加减"
+    ]
+  },
+  {
+    "id": "math_g4_decimal_initial",
+    "subject": "math",
+    "grade": 4,
+    "name": "小数的意义与性质",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g4_fraction_basic"
+    ],
+    "common_misconceptions": [
+      "小数末尾 0 的意义不清"
+    ]
+  },
+  {
+    "id": "math_g4_decimal_add_sub",
+    "subject": "math",
+    "grade": 4,
+    "name": "小数加减法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g4_decimal_initial"
+    ],
+    "common_misconceptions": [
+      "小数点没对齐"
+    ]
+  },
+  {
+    "id": "math_g4_rectangle_area",
+    "subject": "math",
+    "grade": 4,
+    "name": "长方形正方形面积",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_multi_digit_times_one_digit"
+    ],
+    "common_misconceptions": [
+      "面积公式与周长公式混淆"
+    ]
+  }
+]

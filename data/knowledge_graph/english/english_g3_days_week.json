@@ -1,0 +1,27 @@
+{
+  "id": "english_g3_days_week",
+  "subject": "english",
+  "grade": 3,
+  "name": "星期",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_numbers"
+  ],
+  "next": [
+    "english_g4_time_clock"
+  ],
+  "vocabulary": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "common_misconceptions": [
+    "Tuesday 与 Thursday 混淆",
+    "首字母大写规则遗忘"
+  ],
+  "demo_value": "适合展示课程表话题和星期歌谣"
+}

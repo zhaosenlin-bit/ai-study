@@ -1,0 +1,16 @@
+{
+  "id": "chinese_q_g4_0028",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "chinese_g4_essay_structure"
+  ],
+  "stem": "请以“美丽的校园”为总起句,补写一句分述(写出校园的一个具体角落)。",
+  "options": null,
+  "answer": "操场的梧桐树像一把大伞,遮出一片阴凉",
+  "rubric": "考察知识点:段落结构(总分总)",
+  "explanation": "分述要具体,围绕总起句展开。",
+  "error_type": "concept_missing",
+  "difficulty": 4
+}

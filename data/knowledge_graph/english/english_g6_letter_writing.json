@@ -1,0 +1,24 @@
+{
+  "id": "english_g6_letter_writing",
+  "subject": "english",
+  "grade": 6,
+  "name": "书信写作",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_hobbies",
+    "english_g6_story_reading"
+  ],
+  "next": [],
+  "vocabulary": [
+    "Dear",
+    "Your friend",
+    "Yours",
+    "I'm writing to",
+    "Best wishes"
+  ],
+  "common_misconceptions": [
+    "信头称呼格式错误",
+    "落款 Your friend 顺序错误"
+  ],
+  "demo_value": "适合展示完整写作任务和格式规范"
+}

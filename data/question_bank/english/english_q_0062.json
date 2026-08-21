@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0062",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_suggestions"
+  ],
+  "stem": "你应该多喝水：You ___ drink more water.",
+  "options": [],
+  "answer": "should",
+  "rubric": "检查建议句型；should 后动词形式错误可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "english_g5_weather_extreme",
+  "subject": "english",
+  "grade": 5,
+  "name": "天气进阶",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_weather"
+  ],
+  "next": [
+    "english_g5_season_activities"
+  ],
+  "vocabulary": [
+    "windy",
+    "cloudy",
+    "snowy",
+    "foggy",
+    "storm",
+    "thunder",
+    "lightning",
+    "temperature",
+    "degree",
+    "rainy"
+  ],
+  "common_misconceptions": [
+    "temperature 拼写漏 e",
+    "thunder 与 lightning 混"
+  ],
+  "demo_value": "适合展示复合天气形容词与温度问答"
+}

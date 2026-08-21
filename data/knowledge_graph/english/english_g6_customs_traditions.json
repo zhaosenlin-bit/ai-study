@@ -1,0 +1,28 @@
+{
+  "id": "english_g6_customs_traditions",
+  "subject": "english",
+  "grade": 6,
+  "name": "中外文化与节日",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_festivals"
+  ],
+  "next": [],
+  "vocabulary": [
+    "Spring Festival",
+    "Mid-Autumn Festival",
+    "Dragon Boat Festival",
+    "Thanksgiving",
+    "Christmas",
+    "Halloween",
+    "traditional",
+    "custom",
+    "celebrate",
+    "dress up"
+  ],
+  "common_misconceptions": [
+    "Christmas 与 Chinese New Year 混",
+    "celebrate 介词用错"
+  ],
+  "demo_value": "适合展示节日对比与文化差异表达"
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "chinese_g5_exposition_reading",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "说明文阅读",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g4_reading_main_idea"
+    ],
+    "common_misconceptions": [
+      "分不清说明方法"
+    ]
+  },
+  {
+    "id": "chinese_g5_poem_emotion",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "古诗情感(示儿·题临安邸)",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g4_poem_image"
+    ],
+    "common_misconceptions": [
+      "忽略写作背景谈情感"
+    ]
+  },
+  {
+    "id": "chinese_g5_narrative_reading",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "记叙文阅读",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g4_reading_main_idea"
+    ],
+    "common_misconceptions": [
+      "人物品质概括不准确"
+    ]
+  },
+  {
+    "id": "chinese_g5_essay_detail",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "习作技巧(详略得当)",
+    "difficulty": 3,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "重点内容一笔带过"
+    ]
+  },
+  {
+    "id": "chinese_g5_classical_quotes",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "文言文启蒙",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g4_character_meaning"
+    ],
+    "common_misconceptions": [
+      "虚词理解困难"
+    ]
+  },
+  {
+    "id": "chinese_g5_sentence_exaggeration",
+    "subject": "chinese",
+    "grade": 5,
+    "name": "夸张句",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g3_sentence_metaphor"
+    ],
+    "common_misconceptions": [
+      "夸张与比喻混淆"
+    ]
+  }
+]

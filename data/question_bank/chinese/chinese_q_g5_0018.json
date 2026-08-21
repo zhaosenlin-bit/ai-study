@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0018",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_classical_quotes"
+  ],
+  "stem": "“知之为知之,不知为不知,是知也”中最后一个“知”的意思是?",
+  "options": [
+    "知道",
+    "智慧",
+    "知识",
+    "知道的事"
+  ],
+  "answer": "智慧",
+  "rubric": "考察知识点:文言文启蒙",
+  "explanation": "通假字:“知”通“智”,指智慧。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

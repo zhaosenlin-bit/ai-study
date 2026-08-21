@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0052",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_past_tense"
+  ],
+  "stem": "Which is the past tense of \"eat\"?",
+  "options": [
+    "ate",
+    "eating",
+    "eats",
+    "eaten"
+  ],
+  "answer": "ate",
+  "rubric": "检查不规则过去式记忆；错选可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

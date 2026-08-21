@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0099",
+  "subject": "english",
+  "grade": 6,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g6_health_medicine"
+  ],
+  "stem": "校医问：What’s the matter? 你头疼。请写出 2 轮对话（问诊 + 建议）。",
+  "options": [],
+  "answer": "Doctor: What’s the matter? Student: I have a headache. Doctor: You should take some medicine and rest.",
+  "rubric": "检查 I have a + 病症 + 建议句型 should + V。",
+  "difficulty": 2
+}

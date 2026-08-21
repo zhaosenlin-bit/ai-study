@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0064",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_present_perfect"
+  ],
+  "stem": "I have ___ (visit) the Great Wall.",
+  "options": [],
+  "answer": "visited",
+  "rubric": "检查过去分词；用 visit 可标记 sentence_pattern_error。",
+  "difficulty": 4
+}

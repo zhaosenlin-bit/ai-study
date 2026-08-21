@@ -1,0 +1,24 @@
+{
+  "id": "english_g6_telephone_english",
+  "subject": "english",
+  "grade": 6,
+  "name": "电话英语",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_can_sentence",
+    "english_g3_basic_greetings"
+  ],
+  "next": [],
+  "vocabulary": [
+    "This is Tom speaking",
+    "May I speak to",
+    "Hold on",
+    "call back",
+    "wrong number"
+  ],
+  "common_misconceptions": [
+    "电话中 I am Tom 中式表达",
+    "Hold on 与 wait 场景混淆"
+  ],
+  "demo_value": "适合展示电话情景角色扮演"
+}

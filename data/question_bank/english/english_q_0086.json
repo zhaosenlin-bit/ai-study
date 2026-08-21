@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0086",
+  "subject": "english",
+  "grade": 5,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g5_emotions"
+  ],
+  "stem": "朋友问你：You look tired. How do you feel? 请用完整英语回答。",
+  "options": [],
+  "answer": "I feel tired today. I didn’t sleep well last night.",
+  "rubric": "检查 I feel + 情绪词；只说 I’m tired 可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

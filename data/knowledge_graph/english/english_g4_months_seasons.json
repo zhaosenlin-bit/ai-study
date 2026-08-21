@@ -1,0 +1,28 @@
+{
+  "id": "english_g4_months_seasons",
+  "subject": "english",
+  "grade": 4,
+  "name": "月份与季节",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_days_week"
+  ],
+  "next": [
+    "english_g5_festivals"
+  ],
+  "vocabulary": [
+    "January",
+    "June",
+    "September",
+    "December",
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+  ],
+  "common_misconceptions": [
+    "月份首字母大写规则遗忘",
+    "autumn 与 winter 混淆"
+  ],
+  "demo_value": "适合展示生日月份话题和季节活动"
+}

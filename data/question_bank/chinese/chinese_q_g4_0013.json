@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0013",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_connective"
+  ],
+  "stem": "选词填空:小明( )生病了,( )坚持来上学。",
+  "options": [
+    "因为……所以……",
+    "虽然……但是……",
+    "不但……而且……",
+    "如果……就……"
+  ],
+  "answer": "虽然……但是……",
+  "rubric": "考察知识点:关联词运用",
+  "explanation": "前后是转折关系,用“虽然……但是……”。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}
