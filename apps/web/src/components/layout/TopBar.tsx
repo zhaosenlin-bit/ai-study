@@ -3,7 +3,7 @@ import { useAppStore } from "@/stores/appStore";
 import { Badge } from "@/components/ui/badge";
 
 export function TopBar() {
-  const { studentName, streakDays, modelProvider, grade } = useAppStore();
+  const { studentName, streakDays, modelProvider, grade, role } = useAppStore();
   const nav = useNavigate();
 
   function logout() {
@@ -36,6 +36,11 @@ export function TopBar() {
           />
           模型：{modelProvider === "mock" ? "Mock" : modelProvider}
         </Badge>
+        {role === "parent" && (
+          <Badge className="border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese">
+            👨‍👩‍👦 家长模式
+          </Badge>
+        )}
       </div>
 
       {/* 右侧：学习状态 */}

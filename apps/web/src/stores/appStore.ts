@@ -3,16 +3,19 @@ import { COMPANION, type CompanionState } from "@/config/companion";
 import type { ModelProvider } from "@contracts";
 import { DEMO_STUDENTS } from "@/api/mockData";
 
+export type UserRole = "student" | "parent";
+
 interface AppState {
   studentId: string;
   studentName: string;
+  role: UserRole;
   grade: number;
   streakDays: number;
   modelProvider: ModelProvider;
   companionState: CompanionState;
   companionText: string;
   setStudent: (studentId: string) => void;
-  setCurrentUser: (input: { userId: string; displayName: string; grade: number }) => void;
+  setCurrentUser: (input: { userId: string; displayName: string; grade: number; role?: UserRole }) => void;
   setModelProvider: (provider: ModelProvider) => void;
   setCompanion: (text: string, state?: CompanionState) => void;
   /** 仅演示控制台使用：强制更新学习状态 */
@@ -26,6 +29,7 @@ function metaOf(studentId: string) {
 export const useAppStore = create<AppState>((set) => ({
   studentId: "stu_demo_001",
   studentName: "小明",
+  role: "student",
   grade: 4,
   streakDays: 7,
   modelProvider: "mock",
@@ -43,10 +47,11 @@ export const useAppStore = create<AppState>((set) => ({
     });
   },
 
-  setCurrentUser: ({ userId, displayName, grade }) => {
+  setCurrentUser: ({ userId, displayName, grade, role = "student" }) => {
     set({
       studentId: userId,
       studentName: displayName,
+      role,
       grade,
       streakDays: 0,
       companionState: "greeting",

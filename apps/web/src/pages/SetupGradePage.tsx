@@ -35,7 +35,7 @@ export function SetupGradePage() {
     setError(null);
     try {
       const me = await setMyGrade(studentId, picked);
-      setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade });
+      setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade, role: me.role });
       nav("/", { replace: true });
     } catch (err) {
       setError(err instanceof Error ? err.message : "设置失败");

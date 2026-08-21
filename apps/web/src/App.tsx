@@ -7,6 +7,7 @@ import { DiagnosisPage } from "@/pages/DiagnosisPage";
 import { HomePage } from "@/pages/HomePage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MistakesPage } from "@/pages/MistakesPage";
+import { ParentHomePage } from "@/pages/ParentHomePage";
 import { PathPage } from "@/pages/PathPage";
 import { RegisterPage } from "@/pages/RegisterPage";
 import { ReportPage } from "@/pages/ReportPage";
@@ -35,6 +36,12 @@ function RequireAuth({ children }: { children: React.ReactElement }) {
   return children;
 }
 
+/** 按登录角色分流首页：家长 → 家长看板；学生 → 学习主页 */
+function RoleHome() {
+  const role = useAppStore((s) => s.role);
+  return role === "parent" ? <ParentHomePage /> : <HomePage />;
+}
+
 /** 顶层：如有本地登录态，启动时从 /me 拉取最新 grade/displayName 同步到 store。 */
 function useBootstrapUser() {
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
@@ -42,7 +49,7 @@ function useBootstrapUser() {
     const user = getStoredUser();
     if (!user) return;
     getMe(user.user_id)
-      .then((me) => setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade }))
+      .then((me) => setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade, role: me.role }))
       .catch(() => {
         // 远端失败（如后端重启）保持默认 store，不影响 UI
       });
@@ -70,7 +77,7 @@ export function App() {
           </RequireAuth>
         }
       >
-        <Route index element={<HomePage />} />
+        <Route index element={<RoleHome />} />
         <Route path="diagnosis" element={<DiagnosisPage />} />
         <Route path="chat/:subject" element={<ChatPage />} />
         <Route path="path" element={<PathPage />} />
