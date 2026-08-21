@@ -1,17 +1,28 @@
 <!doctype html>
-<html lang="zh-CN" class="dark">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0a0f1f" />
+    <meta name="theme-color" content="#EFFDF0" />
     <meta
       name="description"
       content="ai-study · 小学语数英三科自适应伴学 AI 学习伙伴"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap"
+      rel="stylesheet"
     />
     <title>ai-study · AI 学习伙伴</title>
   </head>
   <body>
     <div id="root"></div>
+    <!-- Emotion Ball 表情引擎（零依赖，挂载 window.EmotionBall） -->
+    <script src="/vendor/emotion-ball/rings.js"></script>
+    <script src="/vendor/emotion-ball/emotions.js"></script>
+    <script src="/vendor/emotion-ball/ball.js"></script>
+    <script src="/vendor/emotion-ball/engine.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

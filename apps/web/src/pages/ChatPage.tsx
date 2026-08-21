@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "@/api";
+import { detectMood } from "@/api/moodApi";
 import { AiCompanion } from "@/components/companion/AiCompanion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { subjectMeta } from "@/lib/subjects";
 import { useAppStore } from "@/stores/appStore";
+import { MOOD_LABEL_ZH, MOOD_TO_EMOTION, type MoodTag } from "@/config/emotionMap";
 import type { AgentStrategy } from "@contracts";
 
 interface Message {
@@ -28,13 +30,17 @@ const SUBJECTS = ["math", "chinese", "english"] as const;
 
 export function ChatPage() {
   const { subject = "math" } = useParams();
-  const { studentId, studentName, setCompanion } = useAppStore();
+  const { studentId, studentName, setCompanion, setMoodEmotion } = useAppStore();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [hintLevel, setHintLevel] = useState(0);
   const [showTrace, setShowTrace] = useState(false);
+  /** 最近一次 AI 观察到的情绪（仅用于展示，表情由 store.moodEmotion 驱动） */
+  const [lastMood, setLastMood] = useState<MoodTag | null>(null);
   const endRef = useRef<HTMLDivElement>(null);
+  /** 情绪展示窗口定时器：8 秒后自动恢复状态表情 */
+  const moodTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const meta = subjectMeta(subject);
 
@@ -56,6 +62,24 @@ export function ChatPage() {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  function clearMoodTimer() {
+    if (moodTimerRef.current) {
+      clearTimeout(moodTimerRef.current);
+      moodTimerRef.current = null;
+    }
+  }
+
+  /** AI 观察学生心情：切换表情 + 8 秒展示窗口后回落状态表情 */
+  function applyMood(mood: MoodTag) {
+    clearMoodTimer();
+    setLastMood(mood);
+    setMoodEmotion(MOOD_TO_EMOTION[mood]);
+    moodTimerRef.current = setTimeout(() => {
+      setMoodEmotion(null);
+      setLastMood(null);
+    }, 8000);
+  }
+
   async function handleSend() {
     const text = input.trim();
     if (!text || sending) return;
@@ -63,6 +87,11 @@ export function ChatPage() {
     setSending(true);
     setMessages((m) => [...m, { role: "user", text }]);
     setCompanion("让我想一想怎么帮你…", "thinking");
+
+    // AI 观察心情（异步，失败静默降级，不影响对话主流程）
+    detectMood(text)
+      .then((r) => applyMood(r.emotion))
+      .catch(() => {});
 
     try {
       const res = await api.agentChat({
@@ -113,7 +142,7 @@ export function ChatPage() {
         })}
         <button
           onClick={() => setShowTrace((v) => !v)}
-          className="ml-auto rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground"
+          className="ml-auto rounded-lg border border-border bg-muted/70 px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground"
         >
           {showTrace ? "隐藏" : "显示"} Agent 痕迹
         </button>
@@ -136,7 +165,7 @@ export function ChatPage() {
                     "max-w-[82%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
                     msg.role === "user"
                       ? "rounded-br-md bg-primary/85 text-primary-foreground"
-                      : "rounded-bl-md border border-white/10 bg-white/6 text-foreground/95",
+                      : "rounded-bl-md border border-border bg-muted/70 text-foreground/95",
                   )}
                 >
                   {msg.role === "ai" && msg.strategy && (
@@ -171,7 +200,7 @@ export function ChatPage() {
           </div>
 
           {/* 输入区 */}
-          <div className="border-t border-white/8 p-3">
+          <div className="border-t border-border p-3">
             <div className="flex gap-2">
               <Textarea
                 rows={2}
@@ -204,6 +233,11 @@ export function ChatPage() {
             <p className="text-center text-xs leading-relaxed text-muted-foreground">
               {meta.label}辅导中 · 提示层级 {hintLevel + 1}/4
             </p>
+            {lastMood && (
+              <p className="animate-pop rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
+                🤖 AI 观察到：{MOOD_LABEL_ZH[lastMood]}
+              </p>
+            )}
           </div>
 
           {showTrace && (
@@ -217,7 +251,7 @@ export function ChatPage() {
                 ].map((t, i) => (
                   <li
                     key={i}
-                    className="rounded-md bg-black/30 px-2 py-1 font-mono text-[10px] leading-relaxed text-subject-english"
+                    className="rounded-md bg-muted px-2 py-1 font-mono text-[10px] leading-relaxed text-subject-english"
                   >
                     {t}
                   </li>
