@@ -66,7 +66,8 @@ export function LoginPage() {
       localStorage.setItem("ai-study-user", JSON.stringify(user));
       const me = await getMe(user.user_id);
       setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade, role: me.role });
-      nav(me.student.grade > 0 ? "/" : "/setup/grade", { replace: true });
+      const target = me.role === "parent" || me.student.grade > 0 ? "/" : "/setup/grade";
+      nav(target, { replace: true });
     } catch (err) {
       const message = err instanceof Error ? err.message : "登录失败";
       setErrors({ form: message });

@@ -71,7 +71,8 @@ export function RegisterPage() {
       localStorage.setItem("ai-study-user", JSON.stringify(user));
       const me = await getMe(user.user_id);
       setCurrentUser({ userId: me.student.student_id, displayName: me.display_name, grade: me.student.grade, role: me.role });
-      nav("/setup/grade", { replace: true });
+      const target = me.role === "parent" ? "/" : "/setup/grade";
+      nav(target, { replace: true });
     } catch (err) {
       const message = err instanceof Error ? err.message : "注册失败";
       setErrors({ form: message });

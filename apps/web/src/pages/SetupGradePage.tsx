@@ -1,5 +1,5 @@
-/** 选年级页：新用户登录后选择自己的年级（3-6），之后进入主页开始诊断。 */
-import { useState } from "react";
+/** 选年级页：仅学生使用；家长误入直接跳回家长看板。 */
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { setMyGrade } from "@/api/me";
 import { useAppStore } from "@/stores/appStore";
@@ -24,10 +24,17 @@ function Logo() {
 
 export function SetupGradePage() {
   const nav = useNavigate();
-  const { studentId, studentName, setCurrentUser } = useAppStore();
+  const { studentId, studentName, role, setCurrentUser } = useAppStore();
   const [picked, setPicked] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // 家长账号误入选年级页时直接回家长看板
+  useEffect(() => {
+    if (role === "parent") {
+      nav("/", { replace: true });
+    }
+  }, [role, nav]);
 
   async function onConfirm() {
     if (!picked) return;

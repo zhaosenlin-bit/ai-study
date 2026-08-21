@@ -19,13 +19,14 @@ function StageBackground() {
 export function AppShell() {
   const nav = useNavigate();
   const grade = useAppStore((s) => s.grade);
+  const role = useAppStore((s) => s.role);
 
-  // 尚未选择年级的用户自动去选年级页
+  // 仅学生需要在首次登录后选年级；家长直接进家长看板
   useEffect(() => {
-    if (grade === 0) {
+    if (role === "student" && grade === 0) {
       nav("/setup/grade", { replace: true });
     }
-  }, [grade, nav]);
+  }, [grade, role, nav]);
 
   return (
     <div className="flex h-full flex-col overflow-hidden">
