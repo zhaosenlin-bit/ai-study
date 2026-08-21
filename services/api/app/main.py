@@ -10,6 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app import db
 from app.routers import agent, auth, diagnosis, reports, review, students
@@ -26,6 +27,15 @@ app = FastAPI(
     version="0.2.0",
     description="三科自适应伴学 Agent MVP 接口。OpenAPI 契约见 docs/api/openapi-contract-v0.yaml",
     lifespan=lifespan,
+)
+
+# 前端（Vite dev server）跨域访问支持
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5174", "http://127.0.0.1:5174"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 for router in (diagnosis.router, students.router, agent.router, review.router, reports.router, auth.router):
