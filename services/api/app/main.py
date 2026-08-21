@@ -12,7 +12,7 @@ if str(ROOT) not in sys.path:
 from fastapi import FastAPI
 
 from app import db
-from app.routers import agent, diagnosis, reports, review, students
+from app.routers import agent, auth, diagnosis, reports, review, students
 
 
 @asynccontextmanager
@@ -28,7 +28,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-for router in (diagnosis.router, students.router, agent.router, review.router, reports.router):
+for router in (diagnosis.router, students.router, agent.router, review.router, reports.router, auth.router):
     app.include_router(router)
 
 

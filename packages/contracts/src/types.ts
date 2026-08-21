@@ -161,3 +161,29 @@ export interface DemoStudentMeta {
   streak_days: number;
   tagline: string;
 }
+
+/** 角色 A：登录注册（学生/家长） */
+export type AuthRole = "student" | "parent";
+
+export interface CaptchaResponse {
+  captcha_id: string;
+  image: string; // data:image/svg+xml;base64,xxx
+}
+
+export interface AuthRequest {
+  username: string;
+  password: string;
+  captcha_id: string;
+  captcha: string;
+}
+
+export interface RegisterRequest extends AuthRequest {
+  role: AuthRole;
+}
+
+export interface UserInfo {
+  user_id: string;
+  username: string;
+  role: AuthRole;
+  display_name: string;
+}

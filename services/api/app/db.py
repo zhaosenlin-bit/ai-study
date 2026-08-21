@@ -44,6 +44,15 @@ def init_db() -> None:
                 next_review_at TEXT,
                 FOREIGN KEY (student_id) REFERENCES students(student_id)
             );
+            CREATE TABLE IF NOT EXISTS users (
+                user_id TEXT PRIMARY KEY,
+                username TEXT NOT NULL UNIQUE,
+                password_hash TEXT NOT NULL,
+                role TEXT NOT NULL,
+                display_name TEXT,
+                linked_student_id TEXT,
+                created_at TEXT NOT NULL
+            );
             """
         )
     seed_demo_student()
@@ -159,3 +168,38 @@ def list_mistakes(student_id: str) -> list[dict]:
         }
         for r in rows
     ]
+
+
+def get_user_by_username(username: str) -> dict | None:
+    with _connect() as conn:
+        row = conn.execute(
+            "SELECT * FROM users WHERE username = ?", (username,)
+        ).fetchone()
+    if not row:
+        return None
+    return {
+        "user_id": row["user_id"],
+        "username": row["username"],
+        "password_hash": row["password_hash"],
+        "role": row["role"],
+        "display_name": row["display_name"],
+        "linked_student_id": row["linked_student_id"],
+        "created_at": row["created_at"],
+    }
+
+
+def create_user(user: dict) -> None:
+    with _connect() as conn:
+        conn.execute(
+            "INSERT INTO users (user_id, username, password_hash, role,"
+            " display_name, linked_student_id, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            (
+                user["user_id"],
+                user["username"],
+                user["password_hash"],
+                user["role"],
+                user.get("display_name"),
+                user.get("linked_student_id"),
+                user["created_at"],
+            ),
+        )
