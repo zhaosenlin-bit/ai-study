@@ -1,0 +1,347 @@
+[
+  {
+    "id": "chinese_q_0076",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「他跑得很快,像一阵风」用了什么修辞手法？",
+    "passage": "",
+    "options": [
+      "比喻",
+      "反问",
+      "设问",
+      "夸张"
+    ],
+    "answer": "比喻",
+    "knowledge_point_ids": [
+      "chinese_g5_rhetoric"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查比喻修辞识别。"
+  },
+  {
+    "id": "chinese_q_0077",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「难道我们不该珍惜时间吗?」用了什么修辞？",
+    "passage": "",
+    "options": [
+      "反问",
+      "拟人",
+      "比喻",
+      "排比"
+    ],
+    "answer": "反问",
+    "knowledge_point_ids": [
+      "chinese_g5_rhetoric"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查反问句识别。"
+  },
+  {
+    "id": "chinese_q_0078",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "病句「我大约用了两个小时左右」中,重复啰嗦的是？",
+    "passage": "",
+    "options": [
+      "大约和左右",
+      "大约",
+      "左右",
+      "小时"
+    ],
+    "answer": "大约和左右",
+    "knowledge_point_ids": [
+      "chinese_g5_sentence_repair"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "expression_weak"
+    ],
+    "rubric": "检查语病识别。"
+  },
+  {
+    "id": "chinese_q_0079",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「三人行,必有我师焉」出自哪部经典？",
+    "passage": "",
+    "options": [
+      "《论语》",
+      "《孟子》",
+      "《庄子》",
+      "《史记》"
+    ],
+    "answer": "《论语》",
+    "knowledge_point_ids": [
+      "chinese_g6_classical_intro"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查文言名句出处。"
+  },
+  {
+    "id": "chinese_q_0080",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "single_choice",
+    "stem": "「知之者不如好之者」中「好」的意思是？",
+    "passage": "",
+    "options": [
+      "喜爱",
+      "好坏",
+      "好处",
+      "友好"
+    ],
+    "answer": "喜爱",
+    "knowledge_point_ids": [
+      "chinese_g6_classical_intro"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查文言实词理解。"
+  },
+  {
+    "id": "chinese_q_0081",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "古诗中「明月」常常用来表达什么情感？",
+    "passage": "",
+    "options": [
+      "思乡",
+      "快乐",
+      "愤怒",
+      "惊讶"
+    ],
+    "answer": "思乡",
+    "knowledge_point_ids": [
+      "chinese_g5_poem_imagery"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查意象与情感关联。"
+  },
+  {
+    "id": "chinese_q_0082",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「春色满园关不住」表现出春天怎样的特点？",
+    "passage": "",
+    "options": [
+      "生机勃勃",
+      "萧瑟冷清",
+      "炎热干燥",
+      "寒风刺骨"
+    ],
+    "answer": "生机勃勃",
+    "knowledge_point_ids": [
+      "chinese_g5_poem_deep_emotion"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查诗句深层理解。"
+  },
+  {
+    "id": "chinese_q_0083",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "写作文之前,先列一个？",
+    "passage": "",
+    "options": [
+      "提纲",
+      "草稿纸",
+      "题目",
+      "结尾"
+    ],
+    "answer": "提纲",
+    "knowledge_point_ids": [
+      "chinese_g6_essay_planning"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "expression_weak"
+    ],
+    "rubric": "检查写作构思步骤。"
+  },
+  {
+    "id": "chinese_q_0084",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "single_choice",
+    "stem": "小明说「今天的作业真多啊!」他实际表达的是？",
+    "passage": "",
+    "options": [
+      "抱怨作业多",
+      "喜欢作业",
+      "作业太少",
+      "想写作业"
+    ],
+    "answer": "抱怨作业多",
+    "knowledge_point_ids": [
+      "chinese_g6_read_between"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查言外之意理解。"
+  },
+  {
+    "id": "chinese_q_0085",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "概括一段话的主要意思,首先应该？",
+    "passage": "",
+    "options": [
+      "抓中心句",
+      "背课文",
+      "数句子",
+      "抄原文"
+    ],
+    "answer": "抓中心句",
+    "knowledge_point_ids": [
+      "chinese_g5_reading_strategy"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "main_idea_missing"
+    ],
+    "rubric": "检查概括策略。"
+  },
+  {
+    "id": "chinese_q_0086",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "single_choice",
+    "stem": "下面哪个词是贬义词？",
+    "passage": "",
+    "options": [
+      "狡猾",
+      "勇敢",
+      "善良",
+      "诚实"
+    ],
+    "answer": "狡猾",
+    "knowledge_point_ids": [
+      "chinese_g6_comprehensive"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查词语感情色彩。"
+  },
+  {
+    "id": "chinese_q_0087",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「读万卷书,行万里路」强调读书要结合？",
+    "passage": "",
+    "options": [
+      "实践",
+      "背诵",
+      "抄写",
+      "听讲"
+    ],
+    "answer": "实践",
+    "knowledge_point_ids": [
+      "chinese_g5_reading_summarize"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查名句内涵理解。"
+  },
+  {
+    "id": "chinese_q_0088",
+    "subject": "chinese",
+    "grade": 5,
+    "type": "single_choice",
+    "stem": "「欲穷千里目」的下一句是？",
+    "passage": "白日依山尽,黄河入海流。欲穷千里目,更上一层楼。——王之涣《登鹳雀楼》",
+    "options": [
+      "更上一层楼",
+      "黄河入海流",
+      "春风不度玉门关",
+      "一片孤城万仞山"
+    ],
+    "answer": "更上一层楼",
+    "knowledge_point_ids": [
+      "chinese_g5_poem_deep_emotion"
+    ],
+    "difficulty": 4,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查高年级古诗积累。"
+  },
+  {
+    "id": "chinese_q_0089",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "single_choice",
+    "stem": "阅读时快速找出「时间、地点、人物」等信息,属于？",
+    "passage": "",
+    "options": [
+      "信息检索",
+      "背诵课文",
+      "猜测内容",
+      "书写感想"
+    ],
+    "answer": "信息检索",
+    "knowledge_point_ids": [
+      "chinese_g6_reading_search"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "detail_missing"
+    ],
+    "rubric": "检查速读检索能力。"
+  },
+  {
+    "id": "chinese_q_0090",
+    "subject": "chinese",
+    "grade": 6,
+    "type": "single_choice",
+    "stem": "段落之间用「不但……而且……」连接,表示什么关系？",
+    "passage": "",
+    "options": [
+      "递进",
+      "转折",
+      "因果",
+      "选择"
+    ],
+    "answer": "递进",
+    "knowledge_point_ids": [
+      "chinese_g5_article_transition"
+    ],
+    "difficulty": 5,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查关联词与段落逻辑。"
+  }
+]

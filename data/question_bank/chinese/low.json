@@ -1,0 +1,347 @@
+[
+  {
+    "id": "chinese_q_0061",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "与「大」意思相反的词是？",
+    "passage": "",
+    "options": [
+      "小",
+      "多",
+      "好",
+      "长"
+    ],
+    "answer": "小",
+    "knowledge_point_ids": [
+      "chinese_g2_simple_antonym"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查学生是否掌握基础反义词。"
+  },
+  {
+    "id": "chinese_q_0062",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "与「上」意思相反的词是？",
+    "passage": "",
+    "options": [
+      "下",
+      "中",
+      "前",
+      "左"
+    ],
+    "answer": "下",
+    "knowledge_point_ids": [
+      "chinese_g2_simple_antonym"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查反义词理解。"
+  },
+  {
+    "id": "chinese_q_0063",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "与「开心」意思最接近的词是？",
+    "passage": "",
+    "options": [
+      "难过",
+      "高兴",
+      "生气",
+      "害怕"
+    ],
+    "answer": "高兴",
+    "knowledge_point_ids": [
+      "chinese_g2_simple_synonym"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查简单近义词。"
+  },
+  {
+    "id": "chinese_q_0064",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "一（ ）鱼",
+    "passage": "",
+    "options": [
+      "条",
+      "匹",
+      "头",
+      "本"
+    ],
+    "answer": "条",
+    "knowledge_point_ids": [
+      "chinese_g2_measure_words"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查常见量词。"
+  },
+  {
+    "id": "chinese_q_0065",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "一（ ）花",
+    "passage": "",
+    "options": [
+      "朵",
+      "棵",
+      "只",
+      "件"
+    ],
+    "answer": "朵",
+    "knowledge_point_ids": [
+      "chinese_g2_measure_words"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查量词搭配。"
+  },
+  {
+    "id": "chinese_q_0066",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "「b」和「p」在拼音里都是？",
+    "passage": "",
+    "options": [
+      "声母",
+      "韵母",
+      "声调",
+      "整体认读音节"
+    ],
+    "answer": "声母",
+    "knowledge_point_ids": [
+      "chinese_g1_pinyin_initials"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查拼音基础概念。"
+  },
+  {
+    "id": "chinese_q_0067",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "「妈」字的偏旁是？",
+    "passage": "",
+    "options": [
+      "女",
+      "马",
+      "口",
+      "日"
+    ],
+    "answer": "女",
+    "knowledge_point_ids": [
+      "chinese_g2_common_radical"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查常见偏旁。"
+  },
+  {
+    "id": "chinese_q_0068",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "汉字「明」由哪两个字组成？",
+    "passage": "",
+    "options": [
+      "日+月",
+      "日+目",
+      "口+月",
+      "门+月"
+    ],
+    "answer": "日+月",
+    "knowledge_point_ids": [
+      "chinese_g1_hanzi_structure"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查汉字组合结构。"
+  },
+  {
+    "id": "chinese_q_0069",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "一个句子说完了,末尾一般用什么标点？",
+    "passage": "",
+    "options": [
+      "句号",
+      "逗号",
+      "问号",
+      "顿号"
+    ],
+    "answer": "句号",
+    "knowledge_point_ids": [
+      "chinese_g2_punctuation"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查标点认识。"
+  },
+  {
+    "id": "chinese_q_0070",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "苹果、香蕉、梨子都是？",
+    "passage": "",
+    "options": [
+      "水果",
+      "蔬菜",
+      "文具",
+      "玩具"
+    ],
+    "answer": "水果",
+    "knowledge_point_ids": [
+      "chinese_g2_word_class"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查词语简单分类。"
+  },
+  {
+    "id": "chinese_q_0071",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "「床前明月光」的下一句是？",
+    "passage": "床前明月光,疑是地上霜。——李白《静夜思》",
+    "options": [
+      "疑是地上霜",
+      "低头思故乡",
+      "处处闻啼鸟",
+      "春风吹又生"
+    ],
+    "answer": "疑是地上霜",
+    "knowledge_point_ids": [
+      "chinese_g2_poem_basic"
+    ],
+    "difficulty": 2,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查古诗启蒙背诵。"
+  },
+  {
+    "id": "chinese_q_0072",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "「疑是地上霜」中「霜」一般是哪个季节出现？",
+    "passage": "床前明月光,疑是地上霜。",
+    "options": [
+      "秋冬",
+      "春夏",
+      "春天",
+      "夏天"
+    ],
+    "answer": "秋冬",
+    "knowledge_point_ids": [
+      "chinese_g2_poem_scene"
+    ],
+    "difficulty": 2,
+    "error_types": [
+      "inference_error"
+    ],
+    "rubric": "检查诗句画面联想。"
+  },
+  {
+    "id": "chinese_q_0073",
+    "subject": "chinese",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "「人」字加一横变成什么字？",
+    "passage": "",
+    "options": [
+      "大",
+      "小",
+      "天",
+      "夫"
+    ],
+    "answer": "大",
+    "knowledge_point_ids": [
+      "chinese_g1_basic_strokes"
+    ],
+    "difficulty": 1,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查笔画与字形变化。"
+  },
+  {
+    "id": "chinese_q_0074",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "「小狗汪汪叫」中「汪汪」模仿了什么声音？",
+    "passage": "",
+    "options": [
+      "狗叫",
+      "猫叫",
+      "鸟叫",
+      "羊叫"
+    ],
+    "answer": "狗叫",
+    "knowledge_point_ids": [
+      "chinese_g2_sentence_reading"
+    ],
+    "difficulty": 2,
+    "error_types": [
+      "word_meaning"
+    ],
+    "rubric": "检查拟声词理解。"
+  },
+  {
+    "id": "chinese_q_0075",
+    "subject": "chinese",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "把「我 吃 苹果」排成通顺的句子,正确的是？",
+    "passage": "",
+    "options": [
+      "我吃苹果",
+      "苹果吃我",
+      "吃我苹果",
+      "我苹果吃"
+    ],
+    "answer": "我吃苹果",
+    "knowledge_point_ids": [
+      "chinese_g2_make_sentence"
+    ],
+    "difficulty": 2,
+    "error_types": [
+      "expression_weak"
+    ],
+    "rubric": "检查基本造句语序。"
+  }
+]
