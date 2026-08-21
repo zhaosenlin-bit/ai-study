@@ -1,7 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import { BottomBar } from "@/components/layout/BottomBar";
 import { LeftRail, RightRail } from "@/components/layout/EdgeRail";
 import { TopBar } from "@/components/layout/TopBar";
+import { useAppStore } from "@/stores/appStore";
 
 /** 沉浸式背景：深空渐变 + 柔和光斑 + 星点 */
 function StageBackground() {
@@ -15,6 +17,16 @@ function StageBackground() {
 
 /** 沉浸式学习空间：中央舞台 + 左右边缘功能 + 顶部状态 + 底部操作 */
 export function AppShell() {
+  const nav = useNavigate();
+  const grade = useAppStore((s) => s.grade);
+
+  // 尚未选择年级的用户自动去选年级页
+  useEffect(() => {
+    if (grade === 0) {
+      nav("/setup/grade", { replace: true });
+    }
+  }, [grade, nav]);
+
   return (
     <div className="flex h-full flex-col overflow-hidden">
       <StageBackground />

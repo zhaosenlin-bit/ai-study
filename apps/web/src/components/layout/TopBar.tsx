@@ -50,9 +50,17 @@ export function TopBar() {
           </div>
           <div className="hidden leading-tight sm:block">
             <div className="text-sm font-bold text-foreground">{studentName}</div>
-            <div className="text-xs text-muted-foreground">
-              {[3, 4, 5, 6].includes(grade) ? `${["", "", "三年级", "四年级", "五年级", "六年级"][grade]} · 小学` : "未选年级 · 小学"}
-            </div>
+            <button
+              onClick={() => nav("/setup/grade")}
+              title={[3, 4, 5, 6].includes(grade) ? "点击修改年级" : "尚未选择年级，点击选择"}
+              className={`text-xs transition hover:underline ${
+                [3, 4, 5, 6].includes(grade) ? "text-muted-foreground" : "font-semibold text-amber-500"
+              }`}
+            >
+              {[3, 4, 5, 6].includes(grade)
+                ? `${["", "", "三年级", "四年级", "五年级", "六年级"][grade]} · 小学（点击修改）`
+                : "未选年级 · 点此选择"}
+            </button>
           </div>
         </div>
         <button
