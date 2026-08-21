@@ -17,7 +17,7 @@ import {
 
 export function DiagnosisPage() {
   const navigate = useNavigate();
-  const { studentId, setCompanion } = useAppStore();
+  const { studentId, grade, setCompanion } = useAppStore();
   const {
     sessionId,
     questions,
@@ -46,7 +46,7 @@ export function DiagnosisPage() {
     setStarting(true);
     setCompanion("开始三科小诊断啦，我会根据你的回答找出薄弱点～", "thinking");
     try {
-      const session = await api.startDiagnosis(studentId, 4, ["math", "chinese", "english"], 3);
+      const session = await api.startDiagnosis(studentId, grade, ["math", "chinese", "english"], 3);
       startSession(session.session_id, session.questions);
       setToolTrace(TOOL_TRACES["diagnosis"]);
       setCompanion("第一题来啦，慢慢来，不着急！", "greeting");
