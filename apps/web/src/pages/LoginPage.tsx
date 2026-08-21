@@ -12,7 +12,7 @@ const ROLES: { value: AuthRole; label: string }[] = [
 function Logo() {
   return (
     <div className="flex flex-col items-center gap-1 pt-2 pb-4">
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 text-2xl shadow-md">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 text-2xl shadow-md">
         🤖
       </div>
       <div className="text-lg font-bold tracking-wide text-slate-500">ai-study</div>
@@ -72,24 +72,24 @@ export function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-slate-100 to-slate-200 flex items-center justify-center px-4">
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-md rounded-3xl bg-white px-8 pb-8 pt-2 shadow-xl ring-1 ring-slate-100"
+        className="w-full max-w-md rounded-3xl bg-white px-8 pb-8 pt-2 shadow-xl ring-1 ring-slate-200"
       >
         <Logo />
         <h1 className="text-center text-2xl font-semibold text-slate-600 mb-6">
           欢迎使用 <span className="text-blue-700">ai-study</span>
         </h1>
 
-        <div className="mb-5 flex rounded-xl bg-slate-100 p-1 text-sm font-medium">
+        <div className="mb-5 flex rounded-xl bg-slate-200 p-1 text-sm font-medium">
           {ROLES.map((r) => (
             <button
               key={r.value}
               type="button"
               onClick={() => setRole(r.value)}
               className={`flex-1 rounded-lg py-2 transition ${
-                role === r.value ? "bg-blue-500 text-white shadow" : "text-slate-500"
+                role === r.value ? "bg-blue-600 text-white shadow" : "text-slate-500"
               }`}
             >
               {r.label}
@@ -128,7 +128,7 @@ export function LoginPage() {
             type="button"
             onClick={refreshCaptcha}
             title="点击刷新"
-            className="mt-0 h-12 shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50"
+            className="mt-0 h-12 shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100"
           >
             {captchaImg ? (
               <img src={captchaImg} alt="验证码" className="h-12 w-28 object-contain" />
@@ -145,7 +145,7 @@ export function LoginPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="mt-6 w-full rounded-xl bg-blue-500 py-3 text-base font-semibold text-white shadow-md transition hover:bg-blue-600 disabled:opacity-60"
+          className="mt-6 w-full rounded-xl bg-blue-600 py-3 text-base font-semibold text-white shadow-md transition hover:bg-blue-700 disabled:opacity-60"
         >
           {submitting ? "登录中..." : "立即登录"}
         </button>
