@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0012",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_fruits"
+  ],
+  "stem": "Which one is a fruit?",
+  "options": [
+    "rice",
+    "egg",
+    "apple",
+    "bread"
+  ],
+  "answer": "apple",
+  "rubric": "检查水果词汇分类；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

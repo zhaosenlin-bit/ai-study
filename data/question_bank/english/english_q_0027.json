@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0027",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_weather"
+  ],
+  "stem": "What do you need on a rainy day?",
+  "options": [
+    "umbrella",
+    "T-shirt",
+    "shorts",
+    "sandals"
+  ],
+  "answer": "umbrella",
+  "rubric": "检查天气与物品关联；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

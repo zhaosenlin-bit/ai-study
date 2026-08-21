@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0028",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_weather"
+  ],
+  "stem": "Spell the word: 下雪的 → s___wy",
+  "options": [],
+  "answer": "snowy",
+  "rubric": "检查拼写；常见错误 snowey，可标记 spelling_error。",
+  "difficulty": 2
+}

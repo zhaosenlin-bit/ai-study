@@ -1,0 +1,18 @@
+{
+  "id": "english_q_0087",
+  "subject": "english",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+  ],
+  "stem": "Which word describes “下雪的”？",
+  "options": [
+    "snowy",
+    "rainy",
+    "sunny",
+    "windy"
+  ],
+  "answer": "snowy",
+  "difficulty": 1
+}

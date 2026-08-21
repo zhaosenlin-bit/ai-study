@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0047",
+  "subject": "english",
+  "grade": 5,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g5_present_tense_s"
+  ],
+  "stem": "He ___ (go) to school by bike.",
+  "options": [],
+  "answer": "goes",
+  "rubric": "检查三单变化规则；go 忘加 es 可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

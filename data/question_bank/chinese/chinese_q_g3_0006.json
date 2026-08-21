@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0006",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_sentence_metaphor"
+  ],
+  "stem": "下面哪个句子是比喻句?",
+  "options": [
+    "妹妹的脸红得像苹果",
+    "花儿在风中点头",
+    "小鸟在枝头唱歌",
+    "太阳公公露出了笑脸"
+  ],
+  "answer": "妹妹的脸红得像苹果",
+  "rubric": "考察知识点:比喻句",
+  "explanation": "比喻句要有本体、喻体,常用“像、好像、仿佛”连接。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

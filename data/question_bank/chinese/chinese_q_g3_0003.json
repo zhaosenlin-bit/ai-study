@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0003",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_poem_basic"
+  ],
+  "stem": "《山行》中“远上寒山石径斜”的下一句是?",
+  "options": [
+    "白云生处有人家",
+    "霜叶红于二月花",
+    "停车坐爱枫林晚",
+    "两个黄鹂鸣翠柳"
+  ],
+  "answer": "白云生处有人家",
+  "rubric": "考察知识点:古诗积累(所见·山行)",
+  "explanation": "按诗句顺序背诵:远上寒山石径斜,白云生处有人家。",
+  "error_type": "careless",
+  "difficulty": 2
+}

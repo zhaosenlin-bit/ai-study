@@ -1,0 +1,28 @@
+{
+  "id": "english_g4_transportation",
+  "subject": "english",
+  "grade": 4,
+  "name": "交通工具",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_basic_greetings"
+  ],
+  "next": [
+    "english_g5_asking_directions"
+  ],
+  "vocabulary": [
+    "bus",
+    "bike",
+    "car",
+    "train",
+    "plane",
+    "subway",
+    "by bus",
+    "on foot"
+  ],
+  "common_misconceptions": [
+    "by bike 前不加 the",
+    "on foot 用 at foot 错误"
+  ],
+  "demo_value": "适合展示上学方式问答 How do you go to school?"
+}

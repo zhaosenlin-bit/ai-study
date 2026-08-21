@@ -1,0 +1,24 @@
+{
+  "id": "english_g6_abilities",
+  "subject": "english",
+  "grade": 6,
+  "name": "能力表达",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_can_sentence",
+    "english_g5_sports"
+  ],
+  "next": [],
+  "vocabulary": [
+    "be good at",
+    "be bad at",
+    "do well in",
+    "excellent",
+    "practice"
+  ],
+  "common_misconceptions": [
+    "be good at 后动词忘加 ing",
+    "do well in 与 be good at 混淆"
+  ],
+  "demo_value": "适合展示自我介绍和成长档案"
+}

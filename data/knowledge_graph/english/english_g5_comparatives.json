@@ -1,0 +1,26 @@
+{
+  "id": "english_g5_comparatives",
+  "subject": "english",
+  "grade": 5,
+  "name": "形容词比较级",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g4_animal_words"
+  ],
+  "next": [
+    "english_g6_describing_people"
+  ],
+  "vocabulary": [
+    "bigger",
+    "smaller",
+    "taller",
+    "faster",
+    "longer",
+    "than"
+  ],
+  "common_misconceptions": [
+    "比较级后忘加 than",
+    "双写辅音字母规则遗忘"
+  ],
+  "demo_value": "适合展示比较句型 A is bigger than B"
+}

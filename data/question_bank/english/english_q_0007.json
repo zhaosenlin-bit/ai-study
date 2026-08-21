@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0007",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g3_alphabet"
+  ],
+  "stem": "大写字母 A 的小写形式是 ___。",
+  "options": [],
+  "answer": "a",
+  "rubric": "检查大小写对应；错写可标记 spelling_error。",
+  "difficulty": 1
+}

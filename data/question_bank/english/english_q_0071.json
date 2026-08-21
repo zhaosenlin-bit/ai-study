@@ -1,0 +1,20 @@
+{
+  "id": "english_q_0071",
+  "subject": "english",
+  "grade": 4,
+  "type": "multiple_choice",
+  "knowledge_point_ids": [
+    "english_g4_like_sentence",
+    "english_g3_fruits"
+  ],
+  "stem": "Select ALL the fruits you like:",
+  "options": [
+    "apple",
+    "banana",
+    "desk",
+    "milk"
+  ],
+  "answer": "apple, banana",
+  "rubric": "检查 I like + 名词与水果分类；漏选/多选可标记 meaning_confusion。",
+  "difficulty": 2
+}

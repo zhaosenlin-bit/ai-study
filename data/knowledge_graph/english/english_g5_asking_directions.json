@@ -1,0 +1,26 @@
+{
+  "id": "english_g5_asking_directions",
+  "subject": "english",
+  "grade": 5,
+  "name": "问路指路",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g4_transportation"
+  ],
+  "next": [
+    "english_g6_travel"
+  ],
+  "vocabulary": [
+    "turn left",
+    "turn right",
+    "go straight",
+    "next to",
+    "far from",
+    "Excuse me"
+  ],
+  "common_misconceptions": [
+    "go straight 与 go straightly 混淆",
+    "Excuse me 与 Sorry 场景混淆"
+  ],
+  "demo_value": "适合展示真实场景角色扮演对话"
+}

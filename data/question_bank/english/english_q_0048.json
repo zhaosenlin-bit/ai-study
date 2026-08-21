@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0048",
+  "subject": "english",
+  "grade": 5,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g5_there_be"
+  ],
+  "stem": "There ___ a book on the desk. (单数)",
+  "options": [],
+  "answer": "is",
+  "rubric": "检查 There be 主谓一致；用 are 可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

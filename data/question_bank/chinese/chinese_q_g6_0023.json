@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0023",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_character_detail"
+  ],
+  "stem": "句子“他紧紧握住拳头,咬紧牙关”属于什么描写?",
+  "options": [
+    "动作描写",
+    "外貌描写",
+    "心理描写",
+    "语言描写"
+  ],
+  "answer": "动作描写",
+  "rubric": "考察知识点:人物描写方法",
+  "explanation": "写人物的动作的词是动作描写。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

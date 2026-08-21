@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0001",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_pinyin"
+  ],
+  "stem": "下列加点字的读音完全正确的一组是?",
+  "options": [
+    "牛(niú) 羊(yán)",
+    "山(shān) 水(shuǐ)",
+    "花(huā) 火(hǒ)",
+    "月(yuè) 日(rì)"
+  ],
+  "answer": "山(shān) 水(shuǐ)",
+  "rubric": "考察知识点:拼音与声调",
+  "explanation": "注意声母、韵母和声调要读准。",
+  "error_type": "careless",
+  "difficulty": 2
+}

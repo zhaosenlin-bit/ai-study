@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0010",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_body_parts"
+  ],
+  "stem": "Which one is on your face?",
+  "options": [
+    "hand",
+    "foot",
+    "nose",
+    "arm"
+  ],
+  "answer": "nose",
+  "rubric": "检查身体部位词义；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

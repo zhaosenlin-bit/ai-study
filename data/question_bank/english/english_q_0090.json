@@ -1,0 +1,23 @@
+{
+  "id": "english_q_0090",
+  "subject": "english",
+  "grade": 5,
+  "type": "multiple_choice",
+  "knowledge_point_ids": [
+    "english_g5_shopping",
+    "english_g4_like_sentence"
+  ],
+  "stem": "去商店买东西，下面哪些表达正确？(可多选)",
+  "options": [
+    "Can I help you?",
+    "How much is it?",
+    "I want go home.",
+    "How many is it?"
+  ],
+  "answer": [
+    "Can I help you?",
+    "How much is it?"
+  ],
+  "rubric": "How much (价格不可数) 与 How many (数量可数) 区分。",
+  "difficulty": 2
+}

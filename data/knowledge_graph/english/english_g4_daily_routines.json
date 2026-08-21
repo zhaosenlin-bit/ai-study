@@ -1,0 +1,27 @@
+{
+  "id": "english_g4_daily_routines",
+  "subject": "english",
+  "grade": 4,
+  "name": "日常活动",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_time_clock",
+    "english_g4_school_places"
+  ],
+  "next": [
+    "english_g5_present_tense_s"
+  ],
+  "vocabulary": [
+    "get up",
+    "brush teeth",
+    "have breakfast",
+    "go to school",
+    "do homework",
+    "go to bed"
+  ],
+  "common_misconceptions": [
+    "get up 与 wake up 混淆",
+    "主语第三人称动词忘加 s"
+  ],
+  "demo_value": "适合展示作息表话题和一般现在时三单"
+}

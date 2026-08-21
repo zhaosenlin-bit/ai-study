@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0024",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_sentence_abbreviation"
+  ],
+  "stem": "缩写句子:“勤劳的蜜蜂在美丽的花丛中采蜜。”",
+  "options": [
+    "蜜蜂采蜜。",
+    "蜜蜂在花丛中。",
+    "勤劳的蜜蜂采蜜。",
+    "蜜蜂在花丛中采蜜。"
+  ],
+  "answer": "蜜蜂采蜜。",
+  "rubric": "考察知识点:缩写句子",
+  "explanation": "缩写句子保留主干:谁+干什么。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "english_g4_daily_actions",
+  "subject": "english",
+  "grade": 4,
+  "name": "日常动作",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_body_parts"
+  ],
+  "next": [
+    "english_g5_hobbies"
+  ],
+  "vocabulary": [
+    "run",
+    "jump",
+    "walk",
+    "sit",
+    "stand",
+    "swim",
+    "sing",
+    "dance",
+    "draw",
+    "sleep"
+  ],
+  "common_misconceptions": [
+    "swim 与 swimming 混",
+    "现在时第三人称忘加 s"
+  ],
+  "demo_value": "适合展示动作链与现在时第三人称"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "english_g3_toys",
+  "subject": "english",
+  "grade": 3,
+  "name": "玩具",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_colors"
+  ],
+  "next": [],
+  "vocabulary": [
+    "ball",
+    "doll",
+    "kite",
+    "toy car",
+    "teddy bear",
+    "robot"
+  ],
+  "common_misconceptions": [
+    "doll 与 door 混淆",
+    "kite 静音 e 不发音"
+  ],
+  "demo_value": "适合展示单复数句型 This is a toy car."
+}

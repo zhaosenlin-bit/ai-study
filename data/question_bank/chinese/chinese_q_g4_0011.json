@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0011",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_idiom_usage"
+  ],
+  "stem": "下面成语运用不正确的一项是?",
+  "options": [
+    "他做事总是画蛇添足,多此一举",
+    "小明学习很认真,成绩画蛇添足",
+    "这篇文章结尾多余,真是画蛇添足",
+    "你别画蛇添足了,直接说重点"
+  ],
+  "answer": "小明学习很认真,成绩画蛇添足",
+  "rubric": "考察知识点:成语运用",
+  "explanation": "画蛇添足是贬义,指做多余的事。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

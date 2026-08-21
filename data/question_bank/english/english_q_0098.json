@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0098",
+  "subject": "english",
+  "grade": 6,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g6_health_medicine"
+  ],
+  "stem": "Spell the word “胃痛” → stom_______e",
+  "options": [],
+  "answer": "stomachache",
+  "rubric": "stomachache 拼写漏 a 可标记 spelling_error。",
+  "difficulty": 3
+}

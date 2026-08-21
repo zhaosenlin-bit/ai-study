@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0022",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_essay_revision"
+  ],
+  "stem": "修改病句:“我断定他大概是小明。”应改为?",
+  "options": [
+    "我断定他是小明。",
+    "我大概是小明。",
+    "他断定我是小明。",
+    "我断定他大概不是小明。"
+  ],
+  "answer": "我断定他是小明。",
+  "rubric": "考察知识点:习作修改",
+  "explanation": "“断定”与“大概”矛盾,删去一个。",
+  "error_type": "careless",
+  "difficulty": 3
+}

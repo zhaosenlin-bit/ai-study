@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0070",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_weather"
+  ],
+  "stem": "和朋友聊天气，用英语说一句完整的话描述今天的天气。",
+  "options": [],
+  "answer": "It's sunny today.",
+  "rubric": "检查天气句型 It's + 天气词；结构错误可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

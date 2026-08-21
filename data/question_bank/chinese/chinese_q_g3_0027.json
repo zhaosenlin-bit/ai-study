@@ -1,0 +1,16 @@
+{
+  "id": "chinese_q_g3_0027",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "chinese_g3_poem_basic"
+  ],
+  "stem": "《所见》中“意欲捕鸣蝉,______。”",
+  "options": null,
+  "answer": "忽然闭口立",
+  "rubric": "考察知识点:古诗积累(所见·山行)",
+  "explanation": "默写时注意“闭”字结构。",
+  "error_type": "careless",
+  "difficulty": 3
+}

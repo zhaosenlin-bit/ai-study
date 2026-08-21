@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0008",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_classroom_objects"
+  ],
+  "stem": "Which one can you use to write?",
+  "options": [
+    "pen",
+    "ruler",
+    "bag",
+    "chair"
+  ],
+  "answer": "pen",
+  "rubric": "检查教室物品词义；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

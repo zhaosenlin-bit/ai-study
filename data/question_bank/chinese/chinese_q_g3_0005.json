@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0005",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_idiom_basic"
+  ],
+  "stem": "“亡羊补牢”这个成语告诉我们?",
+  "options": [
+    "丢了羊就再买一只",
+    "出了问题及时补救,还不算晚",
+    "羊圈不用修补",
+    "羊喜欢跑出去"
+  ],
+  "answer": "出了问题及时补救,还不算晚",
+  "rubric": "考察知识点:常用成语",
+  "explanation": "理解成语要结合寓言故事的本意。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

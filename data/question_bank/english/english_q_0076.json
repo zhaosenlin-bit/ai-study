@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0076",
+  "subject": "english",
+  "grade": 4,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g4_daily_routines"
+  ],
+  "stem": "What time do you get up in the morning? 请用完整英语句子回答。",
+  "options": [],
+  "answer": "I get up at seven.",
+  "rubric": "检查完整句与时间表达；句子不完整可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

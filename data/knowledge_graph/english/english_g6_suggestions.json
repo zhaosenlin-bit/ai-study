@@ -1,0 +1,25 @@
+{
+  "id": "english_g6_suggestions",
+  "subject": "english",
+  "grade": 6,
+  "name": "建议句型",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_healthy_food",
+    "english_g6_invitations"
+  ],
+  "next": [],
+  "vocabulary": [
+    "should",
+    "shouldn't",
+    "You should",
+    "You'd better",
+    "Why not",
+    "advice"
+  ],
+  "common_misconceptions": [
+    "should 后动词原形",
+    "shouldn't 拼写"
+  ],
+  "demo_value": "适合展示健康建议和书信建议段落"
+}

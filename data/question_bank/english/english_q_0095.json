@@ -1,0 +1,18 @@
+{
+  "id": "english_q_0095",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_customs_traditions"
+  ],
+  "stem": "Which festival do people eat moon cakes?",
+  "options": [
+    "Mid-Autumn Festival",
+    "Halloween",
+    "Thanksgiving",
+    "Christmas"
+  ],
+  "answer": "Mid-Autumn Festival",
+  "difficulty": 1
+}

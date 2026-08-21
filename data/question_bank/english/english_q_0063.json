@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0063",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_abilities"
+  ],
+  "stem": "\"be good at\" 的中文意思是？",
+  "options": [
+    "擅长",
+    "讨厌",
+    "害怕",
+    "喜欢"
+  ],
+  "answer": "擅长",
+  "rubric": "检查能力短语理解；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

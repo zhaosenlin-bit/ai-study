@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0025",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_animal_words"
+  ],
+  "stem": "Which animal lives in water?",
+  "options": [
+    "lion",
+    "fish",
+    "tiger",
+    "monkey"
+  ],
+  "answer": "fish",
+  "rubric": "检查动物词义；错选可标记 meaning_confusion。",
+  "difficulty": 1
+}

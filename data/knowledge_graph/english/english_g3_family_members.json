@@ -1,0 +1,12 @@
+{
+  "id": "english_g3_family_members",
+  "subject": "english",
+  "grade": 3,
+  "name": "家庭成员",
+  "difficulty": 2,
+  "prerequisites": ["english_g3_numbers"],
+  "next": ["english_g3_basic_greetings"],
+  "vocabulary": ["father", "mother", "brother", "sister", "grandpa", "grandma"],
+  "common_misconceptions": ["father 与 farther 读音混淆", "brother 拼写漏字母"],
+  "demo_value": "适合展示词义识别和家庭成员情景对话"
+}

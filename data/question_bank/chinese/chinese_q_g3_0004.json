@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g3_0004",
+  "subject": "chinese",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g3_reading_nature"
+  ],
+  "stem": "读短文《秋天的雨》,下面哪句话最能概括全文?",
+  "options": [
+    "秋天的雨把颜色给了银杏树",
+    "秋天的雨藏着非常好闻的气味",
+    "秋天的雨,是一把钥匙,打开了秋天的大门",
+    "秋天的雨带来了寒冷"
+  ],
+  "answer": "秋天的雨,是一把钥匙,打开了秋天的大门",
+  "rubric": "考察知识点:自然主题阅读",
+  "explanation": "中心句常出现在开头或结尾,概括全文内容。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

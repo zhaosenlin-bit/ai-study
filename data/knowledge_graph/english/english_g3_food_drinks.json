@@ -1,0 +1,27 @@
+{
+  "id": "english_g3_food_drinks",
+  "subject": "english",
+  "grade": 3,
+  "name": "食物与饮料",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_fruits",
+    "english_g3_basic_greetings"
+  ],
+  "next": [
+    "english_g4_food_words"
+  ],
+  "vocabulary": [
+    "rice",
+    "bread",
+    "milk",
+    "egg",
+    "water",
+    "juice"
+  ],
+  "common_misconceptions": [
+    "rice 与 rise 读音混淆",
+    "可数/不可数名词概念不清"
+  ],
+  "demo_value": "适合展示三餐话题和餐厅点餐对话"
+}

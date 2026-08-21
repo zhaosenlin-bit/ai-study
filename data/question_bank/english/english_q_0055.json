@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0055",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_environment"
+  ],
+  "stem": "Which one is good for the environment?",
+  "options": [
+    "saving water",
+    "wasting food",
+    "dropping litter",
+    "using more plastic"
+  ],
+  "answer": "saving water",
+  "rubric": "检查环保行为判断；错选可标记 meaning_confusion。",
+  "difficulty": 3
+}

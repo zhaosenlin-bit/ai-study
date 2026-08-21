@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0021",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_speech_reading"
+  ],
+  "stem": "读演讲稿《读书的快乐》,作者最想表达的核心观点是?",
+  "options": [
+    "读书很累",
+    "读书能带来快乐和收获",
+    "大家都应该多买书",
+    "图书馆很大"
+  ],
+  "answer": "读书能带来快乐和收获",
+  "rubric": "考察知识点:演讲稿阅读",
+  "explanation": "演讲稿要抓住作者反复强调的观点。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0067",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_school_places"
+  ],
+  "stem": "在图书馆想借一本书，用英语对图书管理员说一句完整的话。",
+  "options": [],
+  "answer": "May I borrow this book?",
+  "rubric": "检查礼貌请求句型；May I 缺失可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

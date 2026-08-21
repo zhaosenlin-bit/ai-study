@@ -1,0 +1,26 @@
+{
+  "id": "english_g4_food_words",
+  "subject": "english",
+  "grade": 4,
+  "name": "食物词汇",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_food_drinks"
+  ],
+  "next": [
+    "english_g4_like_sentence"
+  ],
+  "vocabulary": [
+    "noodles",
+    "dumplings",
+    "chicken",
+    "fish",
+    "tomato",
+    "vegetables"
+  ],
+  "common_misconceptions": [
+    "tomato 复数加 es",
+    "dumplings 与 noodles 混淆"
+  ],
+  "demo_value": "适合展示点餐对话和 I like 句型"
+}

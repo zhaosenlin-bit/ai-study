@@ -1,0 +1,108 @@
+[
+  {
+    "id": "math_g3_addition_within_10000",
+    "subject": "math",
+    "grade": 3,
+    "name": "万以内加法",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "进位时忘记加 1",
+      "数位没对齐"
+    ]
+  },
+  {
+    "id": "math_g3_subtraction_within_10000",
+    "subject": "math",
+    "grade": 3,
+    "name": "万以内减法",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g3_addition_within_10000"
+    ],
+    "common_misconceptions": [
+      "退位后忘记减 1"
+    ]
+  },
+  {
+    "id": "math_g3_multi_digit_times_one_digit",
+    "subject": "math",
+    "grade": 3,
+    "name": "多位数乘一位数",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_multiples"
+    ],
+    "common_misconceptions": [
+      "忘记进位",
+      "末尾 0 漏乘"
+    ]
+  },
+  {
+    "id": "math_g3_multiples",
+    "subject": "math",
+    "grade": 3,
+    "name": "倍的认识",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g3_addition_within_10000"
+    ],
+    "common_misconceptions": [
+      "把\"几倍\"当成\"多几\""
+    ]
+  },
+  {
+    "id": "math_g3_word_problem_modeling",
+    "subject": "math",
+    "grade": 3,
+    "name": "应用题建模",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_multi_digit_times_one_digit",
+      "math_g3_addition_within_10000"
+    ],
+    "common_misconceptions": [
+      "列式时数量关系搞反"
+    ]
+  },
+  {
+    "id": "math_g3_division_meaning",
+    "subject": "math",
+    "grade": 3,
+    "name": "除法含义",
+    "difficulty": 2,
+    "prerequisites": [
+      "math_g3_multiples"
+    ],
+    "common_misconceptions": [
+      "分不清平均分与包含除"
+    ]
+  },
+  {
+    "id": "math_g3_remainder_division",
+    "subject": "math",
+    "grade": 3,
+    "name": "有余数除法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_division_meaning"
+    ],
+    "common_misconceptions": [
+      "余数比除数大"
+    ]
+  },
+  {
+    "id": "math_g3_fraction_initial",
+    "subject": "math",
+    "grade": 3,
+    "name": "分数的初步认识",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g3_division_meaning"
+    ],
+    "common_misconceptions": [
+      "把分母相加",
+      "不能理解平均分"
+    ]
+  }
+]

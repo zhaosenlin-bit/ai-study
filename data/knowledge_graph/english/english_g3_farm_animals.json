@@ -1,0 +1,26 @@
+{
+  "id": "english_g3_farm_animals",
+  "subject": "english",
+  "grade": 3,
+  "name": "农场动物",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_numbers"
+  ],
+  "next": [
+    "english_g4_animal_words"
+  ],
+  "vocabulary": [
+    "cat",
+    "dog",
+    "cow",
+    "duck",
+    "pig",
+    "sheep"
+  ],
+  "common_misconceptions": [
+    "sheep 单复数同形不会用",
+    "cow 与 cat 首字母混淆"
+  ],
+  "demo_value": "适合展示听音辨词和动物叫声情景"
+}

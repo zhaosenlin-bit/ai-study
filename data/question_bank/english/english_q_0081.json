@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0081",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_daily_actions"
+  ],
+  "stem": "Which word means “跑”？",
+  "options": [
+    "run",
+    "jump",
+    "walk",
+    "sit"
+  ],
+  "answer": "run",
+  "rubric": "动作词义映射；错选 walk 可标记 meaning_confusion。",
+  "difficulty": 1
+}

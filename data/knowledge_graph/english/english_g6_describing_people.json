@@ -1,0 +1,26 @@
+{
+  "id": "english_g6_describing_people",
+  "subject": "english",
+  "grade": 6,
+  "name": "人物描述",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_comparatives",
+    "english_g5_jobs",
+    "english_g5_emotions"
+  ],
+  "next": [],
+  "vocabulary": [
+    "tall",
+    "short",
+    "wear glasses",
+    "kind",
+    "friendly",
+    "long hair"
+  ],
+  "common_misconceptions": [
+    "wear 与 put on 混淆",
+    "描述外貌与性格顺序混乱"
+  ],
+  "demo_value": "适合展示人物介绍写作和口语表达"
+}

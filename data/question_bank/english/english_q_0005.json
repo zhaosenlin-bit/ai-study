@@ -1,0 +1,12 @@
+{
+  "id": "english_q_0005",
+  "subject": "english",
+  "grade": 3,
+  "type": "dialogue",
+  "knowledge_point_ids": ["english_g3_basic_greetings"],
+  "stem": "早上在学校门口遇见老师，请用英语打招呼，并完整回应老师的问候。",
+  "options": [],
+  "answer": "Good morning, teacher!",
+  "rubric": "检查问候语与回应是否完整；听不清可标记 listening_error，句子不完整可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

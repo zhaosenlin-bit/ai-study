@@ -1,0 +1,12 @@
+{
+  "id": "english_q_0004",
+  "subject": "english",
+  "grade": 3,
+  "type": "fill_blank",
+  "knowledge_point_ids": ["english_g3_colors"],
+  "stem": "Complete the sentence: I like ___（蓝色）. I like ___.",
+  "options": [],
+  "answer": "blue",
+  "rubric": "检查 I like + 颜色词句型完整输出；漏词/句型残缺可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

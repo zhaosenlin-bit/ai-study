@@ -1,0 +1,27 @@
+{
+  "id": "english_g4_time_clock",
+  "subject": "english",
+  "grade": 4,
+  "name": "时间表达",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_days_week",
+    "english_g3_numbers"
+  ],
+  "next": [
+    "english_g4_daily_routines"
+  ],
+  "vocabulary": [
+    "o'clock",
+    "half past",
+    "quarter",
+    "in the morning",
+    "at noon",
+    "in the evening"
+  ],
+  "common_misconceptions": [
+    "at 与 in 时间介词混淆",
+    "half past 表达顺序错误"
+  ],
+  "demo_value": "适合展示钟表读法问答 What time is it?"
+}

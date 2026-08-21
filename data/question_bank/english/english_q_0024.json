@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0024",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_food_words"
+  ],
+  "stem": "Spell the word: 面条 → noo___es",
+  "options": [],
+  "answer": "noodles",
+  "rubric": "检查拼写与复数；常见错误 nodles，可标记 spelling_error。",
+  "difficulty": 2
+}

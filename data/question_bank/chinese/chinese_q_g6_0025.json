@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g6_0025",
+  "subject": "chinese",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g6_sentence_parallelism"
+  ],
+  "stem": "句子“爱心是一缕阳光,爱心是一股清泉,爱心是一盏明灯”用了什么修辞?",
+  "options": [
+    "排比",
+    "拟人",
+    "夸张",
+    "反问"
+  ],
+  "answer": "排比",
+  "rubric": "考察知识点:排比句",
+  "explanation": "三个或以上结构相似的句子连用是排比。",
+  "error_type": "concept_missing",
+  "difficulty": 2
+}

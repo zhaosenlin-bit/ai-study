@@ -1,0 +1,12 @@
+{
+  "id": "english_g3_numbers",
+  "subject": "english",
+  "grade": 3,
+  "name": "数字 1-10",
+  "difficulty": 1,
+  "prerequisites": ["english_g3_alphabet"],
+  "next": ["english_g3_family_members"],
+  "vocabulary": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"],
+  "common_misconceptions": ["three 与 tree 读音混淆", "拼写漏字母（如 eight）"],
+  "demo_value": "适合展示拼写题与听辨题"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0016",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_narrative_reading"
+  ],
+  "stem": "短文写雷锋雨中送大娘回家,塑造了雷锋怎样的形象?",
+  "options": [
+    "乐于助人、无私奉献",
+    "勤劳勇敢",
+    "聪明机智",
+    "热爱学习"
+  ],
+  "answer": "乐于助人、无私奉献",
+  "rubric": "考察知识点:记叙文阅读",
+  "explanation": "通过人物的行为概括其品质。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

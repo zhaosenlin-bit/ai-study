@@ -1,0 +1,41 @@
+"""共享数据模型包：角色 A 与三科/前端共用的 Pydantic Schema 草案。"""
+
+from .models import (
+    AgentChatRequest,
+    AgentChatResponse,
+    Answer,
+    DiagnosisResult,
+    DiagnosisSession,
+    DiagnosisStartRequest,
+    DiagnosisSubmitRequest,
+    KnowledgePoint,
+    LearningPath,
+    LearningTask,
+    MistakeRecord,
+    ParentReport,
+    Question,
+    ReviewItem,
+    ReviewNextRequest,
+    StudentProfile,
+    Subject,
+)
+
+__all__ = [
+    "AgentChatRequest",
+    "AgentChatResponse",
+    "Answer",
+    "DiagnosisResult",
+    "DiagnosisSession",
+    "DiagnosisStartRequest",
+    "DiagnosisSubmitRequest",
+    "KnowledgePoint",
+    "LearningPath",
+    "LearningTask",
+    "MistakeRecord",
+    "ParentReport",
+    "Question",
+    "ReviewItem",
+    "ReviewNextRequest",
+    "StudentProfile",
+    "Subject",
+]

@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0014",
+  "subject": "english",
+  "grade": 3,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g3_farm_animals"
+  ],
+  "stem": "Which animal says \"moo\"?",
+  "options": [
+    "cat",
+    "dog",
+    "cow",
+    "duck"
+  ],
+  "answer": "cow",
+  "rubric": "检查动物与叫声对应；错选可标记 listening_error。",
+  "difficulty": 1
+}

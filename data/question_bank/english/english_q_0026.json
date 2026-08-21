@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0026",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_animal_words"
+  ],
+  "stem": "Spell the word: 熊猫 → pa___a",
+  "options": [],
+  "answer": "panda",
+  "rubric": "检查拼写；常见错误 pandar，可标记 spelling_error。",
+  "difficulty": 2
+}

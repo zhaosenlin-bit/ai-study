@@ -1,0 +1,76 @@
+[
+  {
+    "id": "chinese_g4_poem_image",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "古诗画面与情感",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g3_poem_basic"
+    ],
+    "common_misconceptions": [
+      "只看字面翻译,体会不到情感"
+    ]
+  },
+  {
+    "id": "chinese_g4_reading_main_idea",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "阅读抓主旨",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g3_reading_nature"
+    ],
+    "common_misconceptions": [
+      "复述情节代替概括中心"
+    ]
+  },
+  {
+    "id": "chinese_g4_character_meaning",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "多义字辨析",
+    "difficulty": 3,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "脱离语境猜字义"
+    ]
+  },
+  {
+    "id": "chinese_g4_idiom_usage",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "成语运用",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g3_idiom_basic"
+    ],
+    "common_misconceptions": [
+      "成语感情色彩误用"
+    ]
+  },
+  {
+    "id": "chinese_g4_essay_structure",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "段落结构(总分总)",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g4_reading_main_idea"
+    ],
+    "common_misconceptions": [
+      "写段没有中心句"
+    ]
+  },
+  {
+    "id": "chinese_g4_connective",
+    "subject": "chinese",
+    "grade": 4,
+    "name": "关联词运用",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "关联词搭配错误"
+    ]
+  }
+]

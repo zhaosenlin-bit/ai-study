@@ -1,0 +1,27 @@
+{
+  "id": "english_g5_healthy_food",
+  "subject": "english",
+  "grade": 5,
+  "name": "健康饮食",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_food_words",
+    "english_g5_sports"
+  ],
+  "next": [
+    "english_g6_suggestions"
+  ],
+  "vocabulary": [
+    "healthy",
+    "junk food",
+    "vegetables",
+    "fruit",
+    "sweets",
+    "more water"
+  ],
+  "common_misconceptions": [
+    "healthy 与 health 词性混淆",
+    "junk food 直译错误"
+  ],
+  "demo_value": "适合展示健康习惯建议和饮食话题"
+}

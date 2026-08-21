@@ -1,0 +1,15 @@
+{
+  "id": "english_q_0083",
+  "subject": "english",
+  "grade": 4,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g4_weather",
+    "english_g4_months_seasons"
+  ],
+  "stem": "同学问你：What’s the weather like today in your city? 请用一句话回答，并说出温度感受。",
+  "options": [],
+  "answer": "It’s sunny and hot, about 30 degrees.",
+  "rubric": "检查天气形容词 + 温度表达；缺温度可标记 sentence_pattern_error。",
+  "difficulty": 2
+}

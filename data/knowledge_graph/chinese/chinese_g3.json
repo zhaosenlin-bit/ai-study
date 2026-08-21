@@ -1,0 +1,75 @@
+[
+  {
+    "id": "chinese_g3_pinyin",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "拼音与声调",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "平翘舌音混淆",
+      "第三声调号位置写错"
+    ]
+  },
+  {
+    "id": "chinese_g3_radical",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "偏旁部首",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g3_pinyin"
+    ],
+    "common_misconceptions": [
+      "形声字声旁与形旁混淆"
+    ]
+  },
+  {
+    "id": "chinese_g3_poem_basic",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "古诗积累(所见·山行)",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g3_pinyin"
+    ],
+    "common_misconceptions": [
+      "古诗名句与作者对不上"
+    ]
+  },
+  {
+    "id": "chinese_g3_reading_nature",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "自然主题阅读",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g3_radical"
+    ],
+    "common_misconceptions": [
+      "概括自然段内容不完整"
+    ]
+  },
+  {
+    "id": "chinese_g3_idiom_basic",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "常用成语",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "成语意思望文生义"
+    ]
+  },
+  {
+    "id": "chinese_g3_sentence_metaphor",
+    "subject": "chinese",
+    "grade": 3,
+    "name": "比喻句",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "分不清比喻与拟人"
+    ]
+  }
+]

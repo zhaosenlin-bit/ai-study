@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0022",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_school_places"
+  ],
+  "stem": "Spell the word: 操场 → playgr___d",
+  "options": [],
+  "answer": "playground",
+  "rubric": "检查拼写；常见错误 playgroud，可标记 spelling_error。",
+  "difficulty": 2
+}

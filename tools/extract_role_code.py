@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""一次性工具:从角色 A/B 的 Markdown 代码合集文档中提取代码块,还原到仓库正确目录。
+
+文档格式:## <文件名>（<行数> 行) 后跟一个 ```python ... ``` 代码块。
+同名文件(如 __init__.py)按文档出现顺序映射到不同目录。
+用法: python tools/extract_role_code.py
+"""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+# (源文档, 目标路径列表——按代码块出现顺序)
+PLANS = [
+    (
+        ROOT / "Agent后端与接口",
+        [
+            "packages/contracts/__init__.py",
+            "packages/contracts/models.py",
+            "services/agent/__init__.py",
+            "services/agent/state.py",
+            "services/agent/tools.py",
+            "services/agent/model_gateway.py",
+            "services/agent/nodes.py",
+            "services/api/app/__init__.py",
+            "services/api/app/main.py",
+            "services/api/app/db.py",
+            "services/api/app/routers/__init__.py",
+            "services/api/app/routers/diagnosis.py",
+            "services/api/app/routers/students.py",
+            "services/api/app/routers/agent.py",
+            "services/api/app/routers/review.py",
+            "services/api/app/routers/reports.py",
+            "services/api/app/services/__init__.py",
+            "services/api/app/services/tutor.py",
+            "tests/api/test_health.py",
+            "tests/agent/test_agent.py",
+        ],
+    ),
+    (
+        ROOT / "角色B数学模块代码合集",
+        [
+            "packages/subject_math/__init__.py",
+            "packages/subject_math/loader.py",
+            "packages/subject_math/error_analysis.py",
+            "packages/subject_math/path.py",
+            "packages/subject_math/prompts.py",
+            "tests/subject_math/test_subject_math.py",
+        ],
+    ),
+]
+
+HEADER_RE = re.compile(r"^## (.+?)(?:（|\()")
+FENCE_RE = re.compile(r"^```python\s*$", re.MULTILINE)
+
+
+def extract_blocks(md: Path) -> list[str]:
+    """按 ## 标题顺序提取每个代码块。"""
+    text = md.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    blocks: list[str] = []
+    current: list[str] | None = None
+    for line in lines:
+        if line.startswith("```python"):
+            current = []
+        elif line.strip() == "```" and current is not None:
+            blocks.append("\n".join(current).rstrip() + "\n")
+            current = None
+        elif current is not None:
+            current.append(line)
+    return blocks
+
+
+def main() -> int:
+    total = 0
+    for md, targets in PLANS:
+        if not md.exists():
+            print(f"[skip] 源文件不存在: {md}")
+            continue
+        blocks = extract_blocks(md)
+        if len(blocks) != len(targets):
+            print(f"[error] {md.name}: 提取 {len(blocks)} 个代码块,但映射表只有 {len(targets)} 个,需检查")
+            return 1
+        for target, code in zip(targets, blocks):
+            out = ROOT / target
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(code, encoding="utf-8")
+            print(f"[ok] {target} ({len(code.splitlines())} 行)")
+            total += 1
+    print(f"完成:共还原 {total} 个文件")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

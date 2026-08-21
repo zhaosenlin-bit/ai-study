@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g4_0012",
+  "subject": "chinese",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g4_essay_structure"
+  ],
+  "stem": "写一段话,“我们的校园真美丽”最适合放在段落的?",
+  "options": [
+    "开头(中心句)",
+    "中间",
+    "结尾",
+    "哪里都行"
+  ],
+  "answer": "开头(中心句)",
+  "rubric": "考察知识点:段落结构(总分总)",
+  "explanation": "总分总结构中,中心句常放在段首。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0014",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_exposition_reading"
+  ],
+  "stem": "说明文中,“鲸的体重约三十吨”使用了什么说明方法?",
+  "options": [
+    "列数字",
+    "打比方",
+    "作比较",
+    "举例子"
+  ],
+  "answer": "列数字",
+  "rubric": "考察知识点:说明文阅读",
+  "explanation": "用具体数字说明事物特征就是列数字。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

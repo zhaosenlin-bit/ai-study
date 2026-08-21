@@ -1,0 +1,18 @@
+{
+  "id": "english_q_0097",
+  "subject": "english",
+  "grade": 6,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g6_health_medicine"
+  ],
+  "stem": "“头痛”的英文是？",
+  "options": [
+    "headache",
+    "stomachache",
+    "toothache",
+    "backache"
+  ],
+  "answer": "headache",
+  "difficulty": 1
+}

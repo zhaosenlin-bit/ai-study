@@ -1,0 +1,26 @@
+{
+  "id": "english_g3_fruits",
+  "subject": "english",
+  "grade": 3,
+  "name": "水果",
+  "difficulty": 1,
+  "prerequisites": [
+    "english_g3_colors"
+  ],
+  "next": [
+    "english_g3_food_drinks"
+  ],
+  "vocabulary": [
+    "apple",
+    "banana",
+    "orange",
+    "pear",
+    "grape",
+    "watermelon"
+  ],
+  "common_misconceptions": [
+    "banana 双写 n 拼错",
+    "orange 既是水果又是颜色混淆"
+  ],
+  "demo_value": "适合展示词义识别和购物情景对话"
+}

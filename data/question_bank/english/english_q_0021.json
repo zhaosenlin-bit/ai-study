@@ -1,0 +1,19 @@
+{
+  "id": "english_q_0021",
+  "subject": "english",
+  "grade": 4,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "english_g4_school_places"
+  ],
+  "stem": "Where do you read books at school?",
+  "options": [
+    "kitchen",
+    "library",
+    "bedroom",
+    "zoo"
+  ],
+  "answer": "library",
+  "rubric": "检查学校场所词义；错选可标记 meaning_confusion。",
+  "difficulty": 2
+}

@@ -37,4 +37,8 @@ Thumbs.db
 # Local databases
 *.sqlite
 *.sqlite3
+*.db
 chroma_db/
+
+# Temp
+.tmp_*

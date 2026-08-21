@@ -1,0 +1,25 @@
+{
+  "id": "english_g4_animal_words",
+  "subject": "english",
+  "grade": 4,
+  "name": "动物词汇",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g3_farm_animals"
+  ],
+  "next": [],
+  "vocabulary": [
+    "panda",
+    "tiger",
+    "monkey",
+    "elephant",
+    "lion",
+    "giraffe",
+    "rabbit"
+  ],
+  "common_misconceptions": [
+    "elephant 拼写漏字母",
+    "tiger 与 lion 混淆"
+  ],
+  "demo_value": "适合展示动物园话题和比较级句型"
+}

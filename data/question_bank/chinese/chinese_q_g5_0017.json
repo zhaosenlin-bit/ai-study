@@ -1,0 +1,21 @@
+{
+  "id": "chinese_q_g5_0017",
+  "subject": "chinese",
+  "grade": 5,
+  "type": "single_choice",
+  "knowledge_point_ids": [
+    "chinese_g5_essay_detail"
+  ],
+  "stem": "写《我的妈妈》,下面哪个是“详”的正确做法?",
+  "options": [
+    "妈妈的外貌、爱好、性格都只写一句",
+    "重点写一件事体现妈妈的爱,写具体",
+    "只写妈妈的外貌",
+    "把全家人都写一遍"
+  ],
+  "answer": "重点写一件事体现妈妈的爱,写具体",
+  "rubric": "考察知识点:习作技巧(详略得当)",
+  "explanation": "详略得当:重点内容要写具体,次要内容简写。",
+  "error_type": "concept_missing",
+  "difficulty": 3
+}

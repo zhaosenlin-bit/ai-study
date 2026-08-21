@@ -1,0 +1,28 @@
+{
+  "id": "english_g6_past_tense",
+  "subject": "english",
+  "grade": 6,
+  "name": "一般过去时",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_present_tense_s"
+  ],
+  "next": [
+    "english_g6_story_reading"
+  ],
+  "vocabulary": [
+    "went",
+    "ate",
+    "saw",
+    "had",
+    "was",
+    "were",
+    "yesterday",
+    "last week"
+  ],
+  "common_misconceptions": [
+    "不规则动词过去式记忆错误",
+    "过去时间词与现在时搭配"
+  ],
+  "demo_value": "适合展示假期分享话题和故事讲述"
+}

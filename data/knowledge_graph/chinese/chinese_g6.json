@@ -1,0 +1,78 @@
+[
+  {
+    "id": "chinese_g6_poem_classic",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "古诗词积累(春夜喜雨)",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g5_poem_emotion"
+    ],
+    "common_misconceptions": [
+      "名句默写错别字"
+    ]
+  },
+  {
+    "id": "chinese_g6_speech_reading",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "演讲稿阅读",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g5_narrative_reading"
+    ],
+    "common_misconceptions": [
+      "抓不住演讲者的核心观点"
+    ]
+  },
+  {
+    "id": "chinese_g6_essay_revision",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "习作修改",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g5_essay_detail"
+    ],
+    "common_misconceptions": [
+      "只会删不会改"
+    ]
+  },
+  {
+    "id": "chinese_g6_character_detail",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "人物描写方法",
+    "difficulty": 3,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "动作描写与神态描写混淆"
+    ]
+  },
+  {
+    "id": "chinese_g6_sentence_abbreviation",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "缩写句子",
+    "difficulty": 3,
+    "prerequisites": [
+      "chinese_g5_sentence_exaggeration"
+    ],
+    "common_misconceptions": [
+      "删掉了关键成分"
+    ]
+  },
+  {
+    "id": "chinese_g6_sentence_parallelism",
+    "subject": "chinese",
+    "grade": 6,
+    "name": "排比句",
+    "difficulty": 2,
+    "prerequisites": [
+      "chinese_g5_sentence_exaggeration"
+    ],
+    "common_misconceptions": [
+      "排比与反复混淆"
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "id": "english_g5_hobbies",
+  "subject": "english",
+  "grade": 5,
+  "name": "兴趣爱好",
+  "difficulty": 2,
+  "prerequisites": [
+    "english_g4_like_sentence",
+    "english_g4_daily_actions"
+  ],
+  "next": [
+    "english_g6_letter_writing"
+  ],
+  "vocabulary": [
+    "reading",
+    "drawing",
+    "singing",
+    "dancing",
+    "collecting stamps",
+    "playing chess"
+  ],
+  "common_misconceptions": [
+    "like doing 与 like to do 混淆",
+    "collecting 拼写漏字母"
+  ],
+  "demo_value": "适合展示爱好介绍和书信写作素材"
+}

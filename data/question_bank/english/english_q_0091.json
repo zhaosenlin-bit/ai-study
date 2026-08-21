@@ -1,0 +1,15 @@
+{
+  "id": "english_q_0091",
+  "subject": "english",
+  "grade": 5,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g5_hobbies",
+    "english_g4_can_sentence"
+  ],
+  "stem": "请用 2 句话介绍你的一项爱好：My hobby is ___. I can ___.",
+  "options": [],
+  "answer": "My hobby is playing basketball. I can play it with my friends after school.",
+  "rubric": "检查 hobby + V-ing 与 can + V 原形结构。",
+  "difficulty": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0032",
+  "subject": "english",
+  "grade": 4,
+  "type": "fill_blank",
+  "knowledge_point_ids": [
+    "english_g4_months_seasons"
+  ],
+  "stem": "Spell the word: 六月 → J___e",
+  "options": [],
+  "answer": "June",
+  "rubric": "检查月份拼写与首字母大写；可标记 spelling_error。",
+  "difficulty": 2
+}

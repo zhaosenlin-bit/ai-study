@@ -1,5 +1,22 @@
 # ai-study 文档版本记录
 
+## v0.4 MVP 集成版
+
+日期：2026-08-21
+
+用途：五条分支代码首次完整集成，前端 + 后端 + 三科真实数据全链路跑通，作为 9 月 9 日初赛提交的可运行基线。
+
+变更：
+
+- 角色 A：20 个 Python 文件（FastAPI 8 接口 + LangGraph 8 节点 + 模型网关 + SQLite）从 `docs/contributions/` 代码合集还原到 `packages/contracts`、`services/agent`、`services/api`、`tests`。
+- 角色 B：6 个 Python 文件（数据加载器/错因/路径/Prompt）还原到 `packages/subject_math`；数学数据补齐（32 节点 + 72 题 + 3 套 Prompt）。
+- 角色 C：语文数据补齐（24 节点 + 30 题 + 3 套 Prompt）。
+- 角色 D：英语分支合并（52 节点 + 100 题 + 3 套 Prompt + 词卡花园方案）。
+- 角色 E：前端 7 页面保持；`VITE_USE_MOCK=false` 切真实后端联调通过。
+- 工具层 `services/agent/tools.py` 改为读取 `data/` 真实 JSON；诊断按学生年级抽题。
+- 测试：34 项全部通过（接口 9 / Agent 11 / 数学 14）；`tools/verify_mvp.py` 全链路 26 项检查通过。
+- 文档：README 增加一键启动与验收说明；代码合集归档到 `docs/contributions/`。
+
 ## v0.3 课前讨论版
 
 日期：2026-08-18

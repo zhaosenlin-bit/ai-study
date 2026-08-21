@@ -1,0 +1,104 @@
+[
+  {
+    "id": "math_g6_fraction_multiply",
+    "subject": "math",
+    "grade": 6,
+    "name": "分数乘法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g5_fraction_add_sub"
+    ],
+    "common_misconceptions": [
+      "约分时机不当"
+    ]
+  },
+  {
+    "id": "math_g6_fraction_divide",
+    "subject": "math",
+    "grade": 6,
+    "name": "分数除法",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g6_fraction_multiply"
+    ],
+    "common_misconceptions": [
+      "除以分数忘乘倒数"
+    ]
+  },
+  {
+    "id": "math_g6_ratio",
+    "subject": "math",
+    "grade": 6,
+    "name": "比的认识",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g6_fraction_divide"
+    ],
+    "common_misconceptions": [
+      "比与除法关系不清"
+    ]
+  },
+  {
+    "id": "math_g6_percent",
+    "subject": "math",
+    "grade": 6,
+    "name": "百分数",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g6_ratio"
+    ],
+    "common_misconceptions": [
+      "百分数大小比较出错"
+    ]
+  },
+  {
+    "id": "math_g6_circle",
+    "subject": "math",
+    "grade": 6,
+    "name": "圆的认识与面积",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g5_polygon_area"
+    ],
+    "common_misconceptions": [
+      "圆周率取值混乱"
+    ]
+  },
+  {
+    "id": "math_g6_negative_number",
+    "subject": "math",
+    "grade": 6,
+    "name": "负数",
+    "difficulty": 2,
+    "prerequisites": [],
+    "common_misconceptions": [
+      "负数大小比较出错"
+    ]
+  },
+  {
+    "id": "math_g6_cylinder_cone",
+    "subject": "math",
+    "grade": 6,
+    "name": "圆柱与圆锥",
+    "difficulty": 4,
+    "prerequisites": [
+      "math_g6_circle"
+    ],
+    "common_misconceptions": [
+      "圆锥体积忘记乘 1/3"
+    ]
+  },
+  {
+    "id": "math_g6_proportion",
+    "subject": "math",
+    "grade": 6,
+    "name": "比例",
+    "difficulty": 3,
+    "prerequisites": [
+      "math_g6_ratio"
+    ],
+    "common_misconceptions": [
+      "正反比例判断混淆"
+    ]
+  }
+]

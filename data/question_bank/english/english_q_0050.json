@@ -1,0 +1,14 @@
+{
+  "id": "english_q_0050",
+  "subject": "english",
+  "grade": 5,
+  "type": "dialogue",
+  "knowledge_point_ids": [
+    "english_g5_future_will"
+  ],
+  "stem": "朋友问你：What will you do this weekend? 请用 will 说一个完整句子。",
+  "options": [],
+  "answer": "I will go to the park.",
+  "rubric": "检查 will + 动词原形结构；will 后加三单可标记 sentence_pattern_error。",
+  "difficulty": 3
+}

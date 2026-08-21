@@ -1,0 +1,15 @@
+{
+  "id": "english_q_0078",
+  "subject": "english",
+  "grade": 6,
+  "type": "short_answer",
+  "knowledge_point_ids": [
+    "english_g6_travel",
+    "english_g6_past_tense"
+  ],
+  "stem": "Where did you go last summer? 请用过去式写一个完整句子。",
+  "options": [],
+  "answer": "I went to Beijing last summer.",
+  "rubric": "检查一般过去时不规则动词；用 go 可标记 sentence_pattern_error。",
+  "difficulty": 4
+}

@@ -1,0 +1,24 @@
+{
+  "id": "english_g6_environment",
+  "subject": "english",
+  "grade": 6,
+  "name": "环保主题",
+  "difficulty": 3,
+  "prerequisites": [
+    "english_g5_season_activities"
+  ],
+  "next": [],
+  "vocabulary": [
+    "protect",
+    "environment",
+    "save water",
+    "recycle",
+    "plant trees",
+    "litter"
+  ],
+  "common_misconceptions": [
+    "environment 拼写长词困难",
+    "protect 与 prevent 混淆"
+  ],
+  "demo_value": "适合展示倡议书写作和建议句型"
+}
