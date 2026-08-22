@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "@/components/layout/AppShell";
 import { ChatPage } from "@/pages/ChatPage";
 import { DemoConsolePage } from "@/pages/DemoConsolePage";
@@ -43,6 +43,13 @@ function RoleHome() {
   return role === "parent" ? <ParentHomePage /> : <HomePage />;
 }
 
+/** 根路径：未登录显示 Landing，已登录跳学习空间 */
+function RootLanding() {
+  const user = getStoredUser();
+  if (!user) return <LandingPage />;
+  return <Navigate to="/home" replace />;
+}
+
 /** 顶层：如有本地登录态，启动时从 /me 拉取最新 grade/displayName 同步到 store。 */
 function useBootstrapUser() {
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
@@ -62,6 +69,7 @@ export function App() {
   return (
     <Routes>
       <Route path="/landing" element={<LandingPage />} />
+      <Route index element={<RootLanding />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route
@@ -79,7 +87,7 @@ export function App() {
           </RequireAuth>
         }
       >
-        <Route index element={<RoleHome />} />
+        <Route path="home" element={<RoleHome />} />
         <Route path="diagnosis" element={<DiagnosisPage />} />
         <Route path="chat/:subject" element={<ChatPage />} />
         <Route path="path" element={<PathPage />} />
