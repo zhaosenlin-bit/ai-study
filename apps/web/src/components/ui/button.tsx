@@ -1,8 +1,8 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "default" | "secondary" | "ghost" | "destructive" | "outline";
-type Size = "default" | "sm" | "lg" | "icon";
+type Variant = "default" | "secondary" | "ghost" | "destructive" | "outline" | "hero" | "hero-outline";
+type Size = "default" | "sm" | "lg" | "icon" | "xl";
 
 const variants: Record<Variant, string> = {
   default:
@@ -11,6 +11,9 @@ const variants: Record<Variant, string> = {
   ghost: "hover:bg-accent hover:text-accent-foreground",
   destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
   outline: "border border-white/15 bg-transparent hover:bg-white/5",
+  hero: "bg-gradient-to-b from-[hsl(24,100%,72%)] to-[hsl(18,98%,53%)] text-white hover:opacity-90 rounded-lg text-lg font-medium",
+  "hero-outline":
+    "bg-white text-[hsl(240,10%,10%)] hover:bg-[hsl(240,10%,88%)] rounded-lg text-lg font-medium",
 };
 
 const sizes: Record<Size, string> = {
@@ -18,6 +21,7 @@ const sizes: Record<Size, string> = {
   sm: "h-8 rounded-md px-3 text-xs",
   lg: "h-12 rounded-xl px-8 text-base",
   icon: "h-10 w-10",
+  xl: "h-14 px-10 py-4",
 };
 
 export interface ButtonProps

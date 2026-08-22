@@ -5,6 +5,7 @@ import { ChatPage } from "@/pages/ChatPage";
 import { DemoConsolePage } from "@/pages/DemoConsolePage";
 import { DiagnosisPage } from "@/pages/DiagnosisPage";
 import { HomePage } from "@/pages/HomePage";
+import { LandingPage } from "@/pages/LandingPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MistakesPage } from "@/pages/MistakesPage";
 import { ParentHomePage } from "@/pages/ParentHomePage";
@@ -60,6 +61,7 @@ export function App() {
   useBootstrapUser();
   return (
     <Routes>
+      <Route path="/landing" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route
