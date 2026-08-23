@@ -1,0 +1,209 @@
+"""掌握度模型：跟踪每个知识点的学习状态并更新掌握度。
+
+轻量实现（v0.2，纯标准库）：
+- 平滑正确率：score = (correct + alpha) / (attempts + 2*alpha)，避免样本少时 0/1 极端
+- 遗忘衰减：距离上次作答时间越久，分数按指数衰减（recency = exp(-days / tau)）
+- 置信度：attempts 越多越可信，confidence = attempts / (attempts + k)
+
+用法示例：
+    tracker = MasteryTracker()
+    score = tracker.update("math_g3_word_problem_modeling", correct=True)
+    state = tracker.state()          # {kp_id: {"score": .., "attempts": .., ...}}
+"""
+from __future__ import annotations
+
+import time
+from dataclasses import dataclass, field
+
+
+@dataclass
+class KnowledgeMastery:
+    """单个知识点的掌握度状态。"""
+
+    kp_id: str
+    attempts: int = 0
+    correct: int = 0
+    score: float = 0.0
+    confidence: float = 0.0
+    last_update_ts: float | None = None
+
+
+class MasteryTracker:
+    """掌握度更新器。
+
+    :param alpha: 平滑参数（默认 1.0），越大越保守
+    :param tau: 遗忘时间常数（天，默认 30），越小遗忘越快
+    :param confidence_k: 置信度形状参数（默认 4），越大需要越多样本才接近 1
+    """
+
+    def __init__(self, alpha: float = 1.0, tau: float = 30.0, confidence_k: float = 4.0):
+        self.alpha = alpha
+        self.tau = tau
+        self.confidence_k = confidence_k
+        self._items: dict[str, KnowledgeMastery] = {}
+
+    def update(self, kp_id: str, correct: bool, now: float | None = None) -> float:
+        """记录一次作答并返回更新后的掌握度（0~1）。"""
+        ts = time.time() if now is None else now
+        m = self._items.setdefault(kp_id, KnowledgeMastery(kp_id=kp_id))
+
+        elapsed_days = 0.0
+        if m.last_update_ts is not None:
+            elapsed_days = max(0.0, (ts - m.last_update_ts) / 86400.0)
+        # 距上次作答越久，掌握度衰减越多
+        decay = _exp_decay(elapsed_days, self.tau)
+
+        m.attempts += 1
+        m.correct += 1 if correct else 0
+        # 平滑正确率（样本少时避免 0/1 极端），再乘遗忘衰减
+        base = (m.correct + self.alpha) / (m.attempts + 2 * self.alpha)
+        m.score = base * decay
+        m.confidence = m.attempts / (m.attempts + self.confidence_k)
+        m.last_update_ts = ts
+        return m.score
+
+    def score_of(self, kp_id: str) -> float:
+        m = self._items.get(kp_id)
+        return m.score if m else 0.0
+
+    def state(self) -> dict[str, dict]:
+        """导出全部知识点状态（用于画像持久化）。"""
+        return {
+            kp_id: {
+                "attempts": m.attempts,
+                "correct": m.correct,
+                "score": m.score,
+                "confidence": m.confidence,
+                "last_update_ts": m.last_update_ts,
+            }
+            for kp_id, m in self._items.items()
+        }
+
+    def load_state(self, state: dict[str, dict]) -> None:
+        """从持久化状态恢复（与 state() 输出互逆）。"""
+        for kp_id, s in state.items():
+            self._items[kp_id] = KnowledgeMastery(
+                kp_id=kp_id,
+                attempts=s["attempts"],
+                correct=s["correct"],
+                score=s["score"],
+                confidence=s["confidence"],
+                last_update_ts=s.get("last_update_ts"),
+            )
+
+    def weak_points(self, threshold: float = 0.6) -> list[str]:
+        """返回低于阈值的薄弱知识点 id（按分数升序）。"""
+        return [
+            kp_id
+            for kp_id, m in sorted(self._items.items(), key=lambda kv: kv[1].score)
+            if m.score < threshold
+        ]
+
+
+def _exp_decay(elapsed_days: float, tau: float) -> float:
+    import math
+
+    if tau <= 0 or elapsed_days <= 0:
+        return 1.0
+    return math.exp(-elapsed_days / tau)
+"""错题复习调度：SM-2 简化版间隔重复算法（纯标准库）。
+
+SM-2 核心思路：
+- 每次作答按 0~5 分评估记忆质量（quality）
+- quality >= 3：间隔翻倍或按公式增长；quality < 3：重复次数清零、间隔重置
+- ease 因子随质量微调，控制整体复习节奏
+
+用法示例：
+    scheduler = SM2ReviewScheduler()
+    item = scheduler.schedule("math_q_g3_0005", "math_g3_word_problem_modeling", quality=4)
+    item.next_review_ts   # 下次复习时间戳
+    due = scheduler.due_items([item1, item2], now=time.time())  # 到期题目
+"""
+from __future__ import annotations
+
+import time
+from dataclasses import dataclass
+
+
+@dataclass
+class ReviewItem:
+    """一条错题复习记录（对齐 OpenAPI MistakeRecord 的复习字段）。"""
+
+    question_id: str
+    knowledge_point_id: str
+    quality: int            # 0~5 记忆质量
+    repetitions: int        # 连续答对次数（quality>=3 递增，否则清零）
+    ease: float             # 难度因子，约 1.3~2.5
+    interval_days: int      # 当前间隔（天）
+    next_review_ts: float   # 下次复习时间戳
+
+
+class SM2ReviewScheduler:
+    """SM-2 简化复习调度器。
+
+    :param initial_ease: 初始难度因子（默认 2.5）
+    :param min_interval: 最小间隔天数（默认 1）
+    """
+
+    def __init__(self, initial_ease: float = 2.5, min_interval: int = 1):
+        self.initial_ease = initial_ease
+        self.min_interval = min_interval
+
+    def schedule(
+        self,
+        question_id: str,
+        knowledge_point_id: str,
+        quality: int,
+        now: float | None = None,
+        prev: ReviewItem | None = None,
+    ) -> ReviewItem:
+        """根据本次作答质量安排下一次复习。
+
+        :param quality: 0~5（5=完美回忆，0=完全忘记）
+        :param prev: 上一条复习记录（首次复习传 None）
+        """
+        quality = max(0, min(5, int(quality)))
+        ts = time.time() if now is None else now
+
+        if prev is None:
+            repetitions = 0
+            ease = self.initial_ease
+            interval = self.min_interval
+        else:
+            repetitions = prev.repetitions
+            ease = prev.ease
+
+        if quality >= 3:
+            repetitions += 1
+            if repetitions == 1:
+                interval = self.min_interval
+            elif repetitions == 2:
+                interval = self.min_interval * 3
+            else:
+                interval = round(prev.interval_days * ease) if prev else self.min_interval
+        else:
+            repetitions = 0
+            interval = self.min_interval
+
+        # ease 微调：质量高则增大（更难遗忘），低则减小（更容易遗忘），下限 1.3
+        ease = max(1.3, ease + (0.1 - (5 - quality) * (0.08 if quality < 3 else 0.02)))
+        if prev:
+            ease = max(1.3, ease)
+
+        return ReviewItem(
+            question_id=question_id,
+            knowledge_point_id=knowledge_point_id,
+            quality=quality,
+            repetitions=repetitions,
+            ease=round(ease, 2),
+            interval_days=interval,
+            next_review_ts=ts + interval * 86400.0,
+        )
+
+    def due_items(self, items: list[ReviewItem], now: float | None = None) -> list[ReviewItem]:
+        """筛选到期（next_review_ts <= now）的复习项，按到期时间升序。"""
+        ts = time.time() if now is None else now
+        return sorted(
+            (i for i in items if i.next_review_ts <= ts),
+            key=lambda i: i.next_review_ts,
+        )
