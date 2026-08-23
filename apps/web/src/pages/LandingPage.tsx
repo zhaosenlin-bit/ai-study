@@ -1,4 +1,4 @@
-/** Landing 落地页：浮动导航（极简，仅 Logo + 登录入口）+ Hero 区（左侧内嵌登录表单，右侧视频）。 */
+/** Landing 落地页：Hero 区直接占满全屏（左侧登录表单，右侧视频，无顶部导航）。 */
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import type { CaptchaResponse, UserInfo } from "@contracts";
@@ -6,33 +6,6 @@ import { realGetCaptcha, realLogin } from "@/api/auth";
 import { getMe } from "@/api/me";
 import { useAppStore } from "@/stores/appStore";
 import { Button } from "@/components/ui/button";
-
-/** 浮动导航：仅 Logo + 右侧 Log in/Get started */
-export function LandingNavbar() {
-  return (
-    <div className="px-6 pt-4 lg:px-8">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-xl bg-white px-8 py-5 shadow-sm">
-        <Link to="/landing" className="flex items-center gap-2.5 text-2xl font-bold tracking-tight text-[hsl(240,10%,10%)]">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[hsl(240,10%,10%)]">
-            <span className="h-3 w-3 rounded-sm bg-white" />
-          </span>
-          nickel
-        </Link>
-        <div className="flex items-center gap-4">
-          <Link
-            to="/login"
-            className="hidden text-base font-medium text-[hsl(240,10%,10%)]/80 transition-colors hover:text-[hsl(240,10%,10%)] sm:block"
-          >
-            Log in
-          </Link>
-          <Link to="/register">
-            <Button variant="hero">Get started</Button>
-          </Link>
-        </div>
-      </nav>
-    </div>
-  );
-}
 
 /** Hero 内嵌登录表单（账号/密码/验证码，校验与现有 LoginPage 一致） */
 function HeroLoginForm() {
@@ -212,11 +185,10 @@ function HeroSection() {
   );
 }
 
-/** Landing 页：Navbar + HeroSection */
+/** Landing 页：Hero 区直接顶到页面顶端（无顶部导航条） */
 export function LandingPage() {
   return (
     <div className="min-h-screen bg-[hsl(249,18%,95%)] font-[Inter,system-ui,sans-serif]">
-      <LandingNavbar />
       <HeroSection />
     </div>
   );
