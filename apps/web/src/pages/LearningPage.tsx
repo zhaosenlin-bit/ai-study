@@ -72,12 +72,14 @@ export function LearningPage() {
   }
 
   return (
-    <div className="mx-auto flex h-full max-w-5xl flex-col gap-5 py-2">
+    <div className="relative mx-auto flex h-full w-full max-w-6xl flex-col gap-5 py-2">
+      {/* 左侧内容区 */}
+      <div className="flex flex-col gap-5 md:max-w-3xl">
       {/* 课程标题 + 学科 Tab */}
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="text-2xl font-black text-foreground">
-            {SUBJECTS.find((s) => s.value === subject)?.label}课程
+            学习进度 · {SUBJECTS.find((s) => s.value === subject)?.label}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             {[3, 4, 5, 6].includes(grade)
@@ -119,8 +121,6 @@ export function LearningPage() {
         </div>
       )}
 
-      <AiCompanion size={56} showBubble={false} />
-
       {/* 单元分组 + 课时卡片网格 */}
       {isLoading && (
         <div className="rounded-2xl bg-white/5 p-6 text-center text-sm text-muted-foreground ring-1 ring-white/10">
@@ -161,6 +161,12 @@ export function LearningPage() {
           ))}
         </div>
       )}
+      </div>
+
+      {/* AI 伙伴：缩小后固定在右上角 */}
+      <div className="absolute right-0 top-0 hidden md:block">
+        <AiCompanion size={44} showBubble={false} />
+      </div>
     </div>
   );
 }
