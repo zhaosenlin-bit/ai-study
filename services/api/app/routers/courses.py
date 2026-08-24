@@ -64,15 +64,30 @@ class CompleteRequest(BaseModel):
 
 # ---------- 课程构建 ----------
 
-def _app_questions(subject: str, grade: int) -> list[dict]:
-    """该学科+年级的应用题（题库中取，均匀分成 APP_ROUND 门课）。"""
+def _pool_questions(subject: str, grade: int) -> list[dict]:
+    """该学科+年级题库题（稳定顺序）。"""
     pool = [q for q in QUESTION_BANK if q.subject == subject and q.grade == grade]
-    # 打散成稳定顺序
-    pool = sorted(pool, key=lambda q: q.id)
-    return pool
+    return sorted(pool, key=lambda q: q.id)
 
 
-def _course_name(kind: str, round_no: int, slot: int) -> str:
+def _app_questions(subject: str, grade: int) -> list[dict]:
+    """应用题/拓展题 = 题库全量（数学区分口算与其它；语文英语基础+阅读都在题库）。"""
+    return _pool_questions(subject, grade)
+
+
+def _oral_pool(subject: str, grade: int) -> list[dict] | None:
+    """返回基础题库池；math 返回 None（走生成器）。"""
+    if subject == "math":
+        return None
+    return _pool_questions(subject, grade)
+
+
+def _course_name(subject: str, kind: str, round_no: int, slot: int) -> str:
+    if subject != "math":
+        if kind == "oral":
+            names = ["基础入门", "基础进阶", "基础挑战"]
+            return f"基础练习{round_no}·{names[slot]}"
+        return f"综合拓展{round_no}·{slot + 1}"
     if kind == "oral":
         names = ["口算入门", "口算进阶", "口算挑战"]
         return f"口算练习{round_no}·{names[slot]}"
@@ -80,36 +95,46 @@ def _course_name(kind: str, round_no: int, slot: int) -> str:
 
 
 def build_courses(subject: str, grade: int) -> list[Course]:
-    app_pool = _app_questions(subject, grade)
-    app_per_course = max(1, len(app_pool) // APP_ROUND)
+    pool = _pool_questions(subject, grade)
+    oral_pool = _oral_pool(subject, grade)
+    # 数学口算 75 题；语文英语基础课 = 题库均分 3 门（取每门题数）
+    if subject == "math":
+        oral_count = ORAL_PER_COURSE
+        oral_per_course = ORAL_PER_COURSE
+    else:
+        oral_per_course = max(1, len(oral_pool) // ORAL_ROUND) if oral_pool else 0
+        oral_count = oral_per_course
+    app_per_course = max(1, len(pool) // APP_ROUND)
     courses: list[Course] = []
     idx = 0
     for r in range(1, TOTAL_ROUNDS + 1):
-        # 3 门口算
+        # 3 门口算/基础
         for slot in range(ORAL_ROUND):
+            if oral_count <= 0:
+                break
             courses.append(
                 Course(
                     course_id=f"{subject}_g{grade}_oral_{r}_{slot}",
                     index=idx,
-                    name=_course_name("oral", r, slot),
+                    name=_course_name(subject, "oral", r, slot),
                     kind="oral",
-                    question_count=ORAL_PER_COURSE,
+                    question_count=oral_count,
                     completed=False,
                     locked=idx > 0,
                 )
             )
             idx += 1
-        # 3 门应用题（题库够才生成，不够则跳过补空课）
+        # 3 门应用题/拓展
         for slot in range(APP_ROUND):
             start = slot * app_per_course
-            count = min(app_per_course, len(app_pool) - start)
+            count = min(app_per_course, len(pool) - start)
             if count <= 0:
                 continue
             courses.append(
                 Course(
                     course_id=f"{subject}_g{grade}_app_{r}_{slot}",
                     index=idx,
-                    name=_course_name("app", r, slot),
+                    name=_course_name(subject, "app", r, slot),
                     kind="app",
                     question_count=count,
                     completed=False,
@@ -137,9 +162,16 @@ def _attach_progress(courses: list[Course], student_id: str) -> list[Course]:
 def _questions_of(course_id: str, subject: str, grade: int, kind: str) -> list[dict]:
     parts = course_id.split("_")
     if kind == "oral":
+        if subject == "math":
+            r, slot = int(parts[-2]), int(parts[-1])
+            return mental_math.generate_mental_math(grade, ORAL_PER_COURSE, seed=int(r) * 31 + int(slot))
+        # 语文/英语基础课：题库均分
+        pool = _pool_questions(subject, grade)
+        per = max(1, len(pool) // ORAL_ROUND)
         r, slot = int(parts[-2]), int(parts[-1])
-        return mental_math.generate_mental_math(grade, ORAL_PER_COURSE, seed=int(r) * 31 + int(slot))
-    pool = _app_questions(subject, grade)
+        start = slot * per
+        return pool[start:start + per]
+    pool = _pool_questions(subject, grade)
     app_per_course = max(1, len(pool) // APP_ROUND)
     r, slot = int(parts[-2]), int(parts[-1])
     start = slot * app_per_course

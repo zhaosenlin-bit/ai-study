@@ -162,7 +162,7 @@ function CourseCard({
                   : "border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese"
               }
             >
-              {course.kind === "oral" ? "口算" : "应用"}
+              {course.kind === "oral" ? (subject === "math" ? "口算" : "基础") : subject === "math" ? "应用" : "拓展"}
             </Badge>
           </div>
           <div className="mt-1 text-xs text-muted-foreground">

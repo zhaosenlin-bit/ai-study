@@ -119,7 +119,14 @@ export function CoursePracticePage() {
       {/* 进度头 */}
       <div className="flex items-center justify-between text-sm">
         <div className="font-semibold text-foreground">
-          {SUBJECT_LABEL[subject]} · {courseId.includes("oral") ? "口算" : "应用题"}
+          {SUBJECT_LABEL[subject]} ·{" "}
+          {courseId.includes("oral")
+            ? subject === "math"
+              ? "口算"
+              : "基础练习"
+            : subject === "math"
+              ? "应用题"
+              : "综合拓展"}
         </div>
         <div className="text-muted-foreground">
           {Math.min(cur + 1, questions.length)}/{questions.length} · 已答对 {correctIds.size} 题
