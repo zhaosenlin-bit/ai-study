@@ -1,5 +1,5 @@
-/** 学习页：学科 Tab（数学/语文/英语切换）+ 有序课时列表（按 grade 过滤）。 */
-import { useState } from "react";
+/** 学习页（借鉴可汗学院）：课程掌握度进度条 + 单元分组 + 课时卡片网格（按 grade 过滤、学科 Tab 切换）。 */
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import type { LearningItem } from "@contracts";
@@ -17,10 +17,18 @@ const SUBJECTS: { value: "math" | "chinese" | "english"; label: string; icon: st
 const GRADE_LABEL = ["", "", "三年级", "四年级", "五年级", "六年级"];
 
 const SUBJECT_TINT: Record<string, string> = {
-  math: "from-subject-math/30 to-subject-math/5 ring-subject-math/40",
-  chinese: "from-subject-chinese/30 to-subject-chinese/5 ring-subject-chinese/40",
-  english: "from-subject-english/30 to-subject-english/5 ring-subject-english/40",
+  math: "from-subject-math/25 to-subject-math/5 ring-subject-math/30",
+  chinese: "from-subject-chinese/25 to-subject-chinese/5 ring-subject-chinese/30",
+  english: "from-subject-english/25 to-subject-english/5 ring-subject-english/30",
 };
+
+const BAR_TINT: Record<string, string> = {
+  math: "from-subject-math to-cyan-300",
+  chinese: "from-subject-chinese to-amber-300",
+  english: "from-subject-english to-emerald-300",
+};
+
+const UNIT_SIZE = 4; // 每个单元包含的课时数
 
 export function LearningPage() {
   const nav = useNavigate();
@@ -33,22 +41,47 @@ export function LearningPage() {
     enabled: [3, 4, 5, 6].includes(grade),
   });
 
+  // 单元分组：按有序列表每 UNIT_SIZE 个一组
+  const units = useMemo(() => {
+    if (!data) return [];
+    const groups: { title: string; items: LearningItem[] }[] = [];
+    for (let i = 0; i < data.items.length; i += UNIT_SIZE) {
+      const chunk = data.items.slice(i, i + UNIT_SIZE);
+      const first = chunk[0];
+      groups.push({
+        title: `单元 ${groups.length + 1}${first ? ` · ${first.name}` : ""}`,
+        items: chunk,
+      });
+    }
+    return groups;
+  }, [data]);
+
+  // 总体掌握度：该学科该年级所有课时 mastery 平均
+  const masteryPct = useMemo(() => {
+    if (!data || data.items.length === 0) return 0;
+    return Math.round((data.items.reduce((s, x) => s + x.mastery, 0) / data.items.length) * 100);
+  }, [data]);
+
+  const unlockedCount = data?.items.filter((x) => !x.locked).length ?? 0;
+  const masteredCount = data?.items.filter((x) => x.status === "mastered").length ?? 0;
+
   function pick(item: LearningItem) {
     if (item.locked) return;
     setCompanion(`我们一起学：${item.name}`, "greeting");
-    // 进入学科聊天页（带知识点 query），让 AI 出题练习
     nav(`/chat/${subject}?kp=${encodeURIComponent(item.id)}`);
   }
 
   return (
-    <div className="mx-auto flex h-full max-w-4xl flex-col gap-5 py-2">
-      {/* 标题 + 学科 Tab */}
-      <div className="flex items-end justify-between gap-4">
+    <div className="mx-auto flex h-full max-w-5xl flex-col gap-5 py-2">
+      {/* 课程标题 + 学科 Tab */}
+      <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-black text-foreground">学习 · 课程目录</h2>
+          <h2 className="text-2xl font-black text-foreground">
+            {SUBJECTS.find((s) => s.value === subject)?.label}课程
+          </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             {[3, 4, 5, 6].includes(grade)
-              ? `${GRADE_LABEL[grade]} · 顺序学习，完成前置后解锁`
+              ? `${GRADE_LABEL[grade]} · 顺序学习，完成前置后解锁 · ${masteredCount}/${data?.items.length ?? 0} 已掌握`
               : "请先在顶部选择年级"}
           </p>
         </div>
@@ -68,9 +101,27 @@ export function LearningPage() {
         </div>
       </div>
 
-      <AiCompanion size={60} showBubble={false} />
+      {/* 课程掌握度进度条（可汗学院式） */}
+      {data && data.items.length > 0 && (
+        <div className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+          <div className="mb-2 flex items-center justify-between text-sm">
+            <span className="font-medium text-foreground">课程掌握度</span>
+            <span className="text-muted-foreground">
+              已解锁 {unlockedCount}/{data.items.length} 课时
+            </span>
+          </div>
+          <div className="h-3 overflow-hidden rounded-full bg-white/10">
+            <div
+              className={`h-full rounded-full bg-gradient-to-r ${BAR_TINT[subject]} transition-all`}
+              style={{ width: `${masteryPct}%` }}
+            />
+          </div>
+        </div>
+      )}
 
-      {/* 课时列表 */}
+      <AiCompanion size={56} showBubble={false} />
+
+      {/* 单元分组 + 课时卡片网格 */}
       {isLoading && (
         <div className="rounded-2xl bg-white/5 p-6 text-center text-sm text-muted-foreground ring-1 ring-white/10">
           加载中…
@@ -85,17 +136,30 @@ export function LearningPage() {
       )}
 
       {data && data.items.length > 0 && (
-        <ol className="space-y-2">
-          {data.items.map((item, idx) => (
-            <LessonCard
-              key={item.id}
-              index={idx + 1}
-              subject={subject}
-              item={item}
-              onPick={() => pick(item)}
-            />
+        <div className="space-y-6">
+          {units.map((unit, ui) => (
+            <section key={ui}>
+              <div className="mb-2 flex items-center gap-2">
+                <span className="text-sm font-bold text-foreground">{unit.title}</span>
+                <span className="h-px flex-1 bg-white/10" />
+                <span className="text-xs text-muted-foreground">
+                  {unit.items.filter((x) => x.status === "mastered").length}/{unit.items.length} 掌握
+                </span>
+              </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {unit.items.map((item, idx) => (
+                  <LessonCard
+                    key={item.id}
+                    index={(ui * UNIT_SIZE) + idx + 1}
+                    subject={subject}
+                    item={item}
+                    onPick={() => pick(item)}
+                  />
+                ))}
+              </div>
+            </section>
           ))}
-        </ol>
+        </div>
       )}
     </div>
   );
@@ -114,51 +178,46 @@ function LessonCard({
 }) {
   const disabled = item.locked;
   return (
-    <li>
-      <button
-        type="button"
-        disabled={disabled}
-        onClick={onPick}
-        className={`group flex w-full items-center gap-4 rounded-2xl bg-gradient-to-r p-4 text-left ring-1 backdrop-blur transition ${
-          SUBJECT_TINT[subject]
-        } ${
-          disabled
-            ? "cursor-not-allowed opacity-50"
-            : "hover:scale-[1.01] hover:shadow-lg active:scale-[0.99]"
-        }`}
-      >
-        {/* 序号 */}
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/10 text-lg font-black text-foreground">
-          {disabled ? "🔒" : index}
+    <button
+      type="button"
+      disabled={disabled}
+      onClick={onPick}
+      className={`flex flex-col gap-3 rounded-2xl bg-gradient-to-br p-4 text-left ring-1 backdrop-blur transition ${
+        SUBJECT_TINT[subject]
+      } ${
+        disabled ? "cursor-not-allowed opacity-45" : "hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
+      }`}
+    >
+      {/* 顶部：序号圆标 + 状态 */}
+      <div className="flex items-center justify-between">
+        <div
+          className={`flex h-10 w-10 items-center justify-center rounded-full text-base font-black ${
+            item.status === "mastered"
+              ? "bg-subject-english/20 text-subject-english"
+              : disabled
+                ? "bg-white/5 text-muted-foreground"
+                : "bg-white/10 text-foreground"
+          }`}
+        >
+          {item.status === "mastered" ? "✓" : disabled ? "🔒" : index}
         </div>
+        <StatusBadge status={item.status} locked={disabled} />
+      </div>
 
-        {/* 信息 */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2">
-            <div className="truncate font-semibold text-foreground">{item.name}</div>
-            <StatusBadge status={item.status} locked={disabled} />
-          </div>
-          <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
-            <span>难度 {"★".repeat(item.difficulty)}<span className="opacity-30">{"★".repeat(5 - item.difficulty)}</span></span>
-            <span>·</span>
-            <span>{item.question_count} 题</span>
-            {item.mastery > 0 && (
-              <>
-                <span>·</span>
-                <span>掌握度 {Math.round(item.mastery * 100)}%</span>
-              </>
-            )}
-          </div>
-        </div>
+      {/* 名称 */}
+      <div className={`min-h-10 text-sm font-semibold leading-snug ${disabled ? "text-muted-foreground" : "text-foreground"}`}>
+        {item.name}
+      </div>
 
-        {/* 右侧箭头 */}
-        {!disabled && (
-          <div className="text-2xl text-foreground/40 transition group-hover:translate-x-1 group-hover:text-foreground">
-            ›
-          </div>
-        )}
-      </button>
-    </li>
+      {/* 底部：难度 + 题数 */}
+      <div className="mt-auto flex items-center justify-between text-xs text-muted-foreground">
+        <span>
+          {"★".repeat(item.difficulty)}
+          <span className="opacity-25">{"★".repeat(5 - item.difficulty)}</span>
+        </span>
+        <span>{item.question_count} 题{item.mastery > 0 ? ` · ${Math.round(item.mastery * 100)}%` : ""}</span>
+      </div>
+    </button>
   );
 }
 
