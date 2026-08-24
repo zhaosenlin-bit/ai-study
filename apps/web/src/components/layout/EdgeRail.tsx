@@ -10,7 +10,7 @@ export interface RailItem {
 }
 
 const LEFT_ITEMS: RailItem[] = [
-  { to: "/learn", icon: "📚", label: "学习", matchPrefix: "/learn" },
+  { to: "/learn", icon: "📚", label: "学习进度", matchPrefix: "/learn" },
   { to: "/chat/math", icon: "🔢", label: "数学" },
   { to: "/chat/chinese", icon: "📖", label: "语文" },
   { to: "/chat/english", icon: "🌎", label: "英语" },
