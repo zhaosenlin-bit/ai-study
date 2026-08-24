@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { AppShell } from "@/components/layout/AppShell";
 import { ChatPage } from "@/pages/ChatPage";
+import { CoursePracticePage } from "@/pages/CoursePracticePage";
 import { DemoConsolePage } from "@/pages/DemoConsolePage";
 import { DiagnosisPage } from "@/pages/DiagnosisPage";
 import { HomePage } from "@/pages/HomePage";
@@ -90,6 +91,7 @@ export function App() {
       >
         <Route path="home" element={<RoleHome />} />
         <Route path="learn" element={<LearningPage />} />
+        <Route path="course/:subject/:courseId" element={<CoursePracticePage />} />
         <Route path="diagnosis" element={<DiagnosisPage />} />
         <Route path="chat/:subject" element={<ChatPage />} />
         <Route path="path" element={<PathPage />} />

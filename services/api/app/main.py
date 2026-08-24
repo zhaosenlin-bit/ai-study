@@ -13,7 +13,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import db
-from app.routers import agent, auth, diagnosis, learning, me, reports, review, students
+from app.routers import agent, auth, courses, diagnosis, learning, me, reports, review, students
 
 
 @asynccontextmanager
@@ -38,7 +38,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for router in (diagnosis.router, students.router, agent.router, review.router, reports.router, auth.router, me.router, learning.router):
+for router in (diagnosis.router, students.router, agent.router, review.router, reports.router, auth.router, me.router, learning.router, courses.router):
     app.include_router(router)
 
 

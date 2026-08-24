@@ -53,6 +53,13 @@ def init_db() -> None:
                 linked_student_id TEXT,
                 created_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS course_progress (
+                student_id TEXT NOT NULL,
+                course_id TEXT NOT NULL,
+                completed INTEGER NOT NULL DEFAULT 0,
+                updated_at TEXT,
+                PRIMARY KEY (student_id, course_id)
+            );
             """
         )
     seed_demo_student()
@@ -221,3 +228,23 @@ def get_or_create_student(student_id: str) -> dict:
     }
     upsert_student(profile)
     return profile
+
+
+def get_course_progress(student_id: str, course_id: str) -> bool:
+    with _connect() as conn:
+        row = conn.execute(
+            "SELECT completed FROM course_progress WHERE student_id = ? AND course_id = ?",
+            (student_id, course_id),
+        ).fetchone()
+    return bool(row and row["completed"])
+
+
+def set_course_progress(student_id: str, course_id: str, completed: bool) -> None:
+    with _connect() as conn:
+        conn.execute(
+            "INSERT INTO course_progress (student_id, course_id, completed, updated_at)"
+            " VALUES (?, ?, ?, ?)"
+            " ON CONFLICT(student_id, course_id) DO UPDATE SET completed=excluded.completed,"
+            " updated_at=excluded.updated_at",
+            (student_id, course_id, 1 if completed else 0, datetime.now().isoformat(timespec="seconds")),
+        )

@@ -225,3 +225,33 @@ export interface MeResponse {
     updated_at?: string;
   };
 }
+
+/** 角色 A：课程（口算 75 题 + 经典应用题交替，严格顺序解锁，全对才完成） */
+export interface Course {
+  course_id: string;
+  index: number;
+  name: string;
+  kind: "oral" | "app";
+  question_count: number;
+  completed: boolean;
+  locked: boolean;
+}
+
+export interface CourseListResponse {
+  subject: string;
+  grade: number;
+  courses: Course[];
+}
+
+export interface CourseQuestion {
+  id: string;
+  type: string;
+  stem: string;
+  options: string[] | null;
+  difficulty: number;
+}
+
+export interface CourseAnswerResponse {
+  correct: boolean;
+  explanation: string;
+}
