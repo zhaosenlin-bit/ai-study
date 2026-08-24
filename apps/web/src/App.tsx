@@ -6,6 +6,7 @@ import { DemoConsolePage } from "@/pages/DemoConsolePage";
 import { DiagnosisPage } from "@/pages/DiagnosisPage";
 import { HomePage } from "@/pages/HomePage";
 import { LandingPage } from "@/pages/LandingPage";
+import { LearningPage } from "@/pages/LearningPage";
 import { LoginPage } from "@/pages/LoginPage";
 import { MistakesPage } from "@/pages/MistakesPage";
 import { ParentHomePage } from "@/pages/ParentHomePage";
@@ -37,10 +38,10 @@ function RequireAuth({ children }: { children: React.ReactElement }) {
   return children;
 }
 
-/** 按登录角色分流首页：家长 → 家长看板；学生 → 学习主页 */
+/** 按登录角色分流首页：家长 → 家长看板；学生 → 学习课程目录 */
 function RoleHome() {
   const role = useAppStore((s) => s.role);
-  return role === "parent" ? <ParentHomePage /> : <HomePage />;
+  return role === "parent" ? <ParentHomePage /> : <LearningPage />;
 }
 
 /** 根路径：未登录显示 Landing，已登录跳学习空间 */
@@ -88,6 +89,7 @@ export function App() {
         }
       >
         <Route path="home" element={<RoleHome />} />
+        <Route path="learn" element={<LearningPage />} />
         <Route path="diagnosis" element={<DiagnosisPage />} />
         <Route path="chat/:subject" element={<ChatPage />} />
         <Route path="path" element={<PathPage />} />

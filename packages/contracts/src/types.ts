@@ -188,6 +188,27 @@ export interface UserInfo {
   display_name: string;
 }
 
+export type LearningStatus = "mastered" | "learning" | "unstarted";
+
+export interface LearningItem {
+  id: string;
+  subject: "math" | "chinese" | "english";
+  grade: number;
+  name: string;
+  difficulty: number;
+  prerequisites: string[];
+  status: LearningStatus;
+  mastery: number;
+  question_count: number;
+  locked: boolean;
+}
+
+export interface LearningResponse {
+  subject: string;
+  grade: number;
+  items: LearningItem[];
+}
+
 export interface MeResponse {
   user_id: string;
   username: string;
