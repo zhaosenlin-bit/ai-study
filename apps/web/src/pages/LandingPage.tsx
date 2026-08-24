@@ -7,10 +7,11 @@ import { getMe } from "@/api/me";
 import { useAppStore } from "@/stores/appStore";
 import { Button } from "@/components/ui/button";
 
-/** Hero 内嵌登录表单（账号/密码/验证码，校验与现有 LoginPage 一致） */
+/** Hero 内嵌登录表单（账号/密码/验证码 + 学生/家长 Tab，校验与现有 LoginPage 一致） */
 function HeroLoginForm() {
   const nav = useNavigate();
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
+  const [role, setRole] = useState<"student" | "parent">("student");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [captchaId, setCaptchaId] = useState("");
@@ -77,6 +78,22 @@ function HeroLoginForm() {
       <h2 className="mb-1 text-2xl font-bold text-[hsl(240,10%,10%)]">登录 ai-study</h2>
       <p className="mb-5 text-sm text-[hsl(240,5%,46%)]">输入账号密码，开启自适应学习之旅。</p>
 
+      {/* 学生 / 家长 Tab */}
+      <div className="mb-4 flex rounded-xl bg-slate-100 p-1 text-sm font-medium">
+        {(["student", "parent"] as const).map((v) => (
+          <button
+            key={v}
+            type="button"
+            onClick={() => setRole(v)}
+            className={`flex-1 rounded-lg py-2 transition ${
+              role === v ? "bg-[hsl(18,98%,53%)] text-white shadow" : "text-[hsl(240,10%,10%)]"
+            }`}
+          >
+            {v === "student" ? "学生" : "家长"}
+          </button>
+        ))}
+      </div>
+
       <Field
         icon="👤"
         placeholder="账号"
@@ -126,8 +143,8 @@ function HeroLoginForm() {
 
       <div className="mt-4 text-center text-sm text-[hsl(240,5%,46%)]">
         还没有账号？
-        <Link to="/register" className="ml-1 font-medium text-[hsl(18,98%,53%)] hover:underline">
-          立即注册
+        <Link to={`/register?role=${role}`} className="ml-1 font-medium text-[hsl(18,98%,53%)] hover:underline">
+          立即注册（{role === "student" ? "学生" : "家长"}）
         </Link>
       </div>
     </form>

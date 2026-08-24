@@ -1,6 +1,6 @@
 /** 注册页：学生/家长 + 账号/密码/确认密码/验证码（仿登录页样式）。 */
 import { useCallback, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import type { AuthRole, CaptchaResponse, UserInfo } from "@contracts";
 import { realGetCaptcha, realRegister } from "@/api/auth";
 import { getMe } from "@/api/me";
@@ -25,8 +25,10 @@ function Logo() {
 
 export function RegisterPage() {
   const nav = useNavigate();
+  const [searchParams] = useSearchParams();
   const setCurrentUser = useAppStore((s) => s.setCurrentUser);
-  const [role, setRole] = useState<AuthRole>("student");
+  const initialRole: AuthRole = searchParams.get("role") === "parent" ? "parent" : "student";
+  const [role, setRole] = useState<AuthRole>(initialRole);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
