@@ -1,7 +1,9 @@
 """课程服务：3 门口算(75题) + 3 门应用题交替的课程序列，严格按顺序解锁，全对才完成。
 
-- 口算课：程序生成 75 道口算题（按年级难度）
-- 应用题课：该学科+年级题库中的应用题（均分 3 门）
+- 数学：口算课程序生成 75 题、应用题课程序生成（购物/行程/面积等模板）
+- 语文：基础课古诗填空、拓展课词语选择（内置语料生成）
+- 英语：基础课看中文选英文、拓展课看英文选中文（词汇生成）
+- 全部程序生成且去重：同课程内、跨课程题目都不重复
 - 解锁：index 0 解锁，之后每门需前一门 completed
 - 完成：全对（前端全对后调 complete 接口）
 """
@@ -10,13 +12,17 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from app import db
-from app.services import mental_math
+from app.services import mental_math, subject_gen
 from services.agent.tools import QUESTION_BANK
 
 router = APIRouter(prefix="/api/v1/courses", tags=["courses"])
 
 ORAL_PER_COURSE = 75
 APP_PER_COURSE = 7   # 数学应用题课每门题数（生成）
+CHINESE_ORAL_PER_COURSE = 3  # 语文基础课每门题数（古诗填空）
+CHINESE_APP_PER_COURSE = 2   # 语文拓展课每门题数（词语选择）
+ENGLISH_ORAL_PER_COURSE = 4  # 英语基础课每门题数（看中文选英文）
+ENGLISH_APP_PER_COURSE = 4   # 英语拓展课每门题数（看英文选中文）
 ORAL_ROUND = 3   # 每轮 3 门口算
 APP_ROUND = 3    # 每轮 3 门应用题
 TOTAL_ROUNDS = 4  # 共 4 轮 → 每年级 24 门课
@@ -96,35 +102,24 @@ def _course_name(subject: str, kind: str, round_no: int, slot: int) -> str:
 
 
 def build_courses(subject: str, grade: int) -> list[Course]:
-    pool = _pool_questions(subject, grade)
-    oral_pool = _oral_pool(subject, grade)
     if subject == "math":
         # 数学：口算与应用题都程序生成（不重复），每门固定题数，共 24 门
         per_oral = ORAL_PER_COURSE
         per_app = APP_PER_COURSE
         total_oral = ORAL_ROUND * TOTAL_ROUNDS
         total_app = APP_ROUND * TOTAL_ROUNDS
+    elif subject == "chinese":
+        # 语文：基础=古诗填空3题（18首×2方向=36点→12门×3）、拓展=词语选择2题（24组→12门×2）
+        per_oral = CHINESE_ORAL_PER_COURSE
+        per_app = CHINESE_APP_PER_COURSE
+        total_oral = ORAL_ROUND * TOTAL_ROUNDS
+        total_app = APP_ROUND * TOTAL_ROUNDS
     else:
-        # 语文/英语：题库全局切分，不重复不空课（题库有限 → 课程数相应减少）
-        per_oral = max(1, len(oral_pool) // (ORAL_ROUND * TOTAL_ROUNDS)) if oral_pool else 0
-        per_app = max(1, len(oral_pool) // (APP_ROUND * TOTAL_ROUNDS)) if oral_pool else 0
-        # 交替序列：oral×3, app×3 ... 取前 N 门（池能支撑的）
-        per = max(per_oral, per_app)
-        total_courses = min(24, len(oral_pool) // per) if per else 0
-        total_oral = 0
-        total_app = 0
-        seq = 0
-        while seq < total_courses:
-            for _ in range(ORAL_ROUND):
-                if seq >= total_courses:
-                    break
-                total_oral += 1
-                seq += 1
-            for _ in range(APP_ROUND):
-                if seq >= total_courses:
-                    break
-                total_app += 1
-                seq += 1
+        # 英语：基础/拓展都用 50 词词汇库（正向/反向题干），每门 4 题
+        per_oral = ENGLISH_ORAL_PER_COURSE
+        per_app = ENGLISH_APP_PER_COURSE
+        total_oral = ORAL_ROUND * TOTAL_ROUNDS
+        total_app = APP_ROUND * TOTAL_ROUNDS
     courses: list[Course] = []
     idx = 0
     oral_built = 0
@@ -196,20 +191,23 @@ def _questions_of(course_id: str, subject: str, grade: int, kind: str) -> list[d
             seq = (r - 1) * ORAL_ROUND + slot
             all_qs = mental_math.generate_mental_math_all(grade, ORAL_PER_COURSE * ORAL_ROUND * TOTAL_ROUNDS, seed=grade * 1000)
             return _slice_pool(all_qs, seq, ORAL_PER_COURSE)
-        # 语文/英语基础课：交替序列全局切分（不重复）
-        pool = _pool_questions(subject, grade)
-        per = max(1, len(pool) // (ORAL_ROUND * TOTAL_ROUNDS)) if pool else 0
-        seq = (r - 1) * (ORAL_ROUND + APP_ROUND) + slot
-        return _slice_pool(pool, seq, per)
+        if subject == "chinese":
+            seq = (r - 1) * ORAL_ROUND + slot
+            return subject_gen.generate_chinese_poem(grade, CHINESE_ORAL_PER_COURSE, seed=grade * 1000 + seq * 7, offset=seq)
+        # 英语基础：看中文选英文
+        seq = (r - 1) * ORAL_ROUND + slot
+        return subject_gen.generate_english(grade, ENGLISH_ORAL_PER_COURSE, seed=grade * 2000 + seq * 7, reverse=False, offset=seq)
     # 应用题/拓展
     if subject == "math":
         seq = (r - 1) * APP_ROUND + slot
         all_qs = mental_math.generate_app_questions_all(grade, APP_PER_COURSE * APP_ROUND * TOTAL_ROUNDS, seed=grade * 777)
         return _slice_pool(all_qs, seq, APP_PER_COURSE)
-    pool = _pool_questions(subject, grade)
-    per = max(1, len(pool) // (APP_ROUND * TOTAL_ROUNDS)) if pool else 0
-    seq = (r - 1) * (ORAL_ROUND + APP_ROUND) + ORAL_ROUND + slot
-    return _slice_pool(pool, seq, per)
+    if subject == "chinese":
+        seq = (r - 1) * APP_ROUND + slot
+        return subject_gen.generate_chinese_words(grade, CHINESE_APP_PER_COURSE, seed=grade * 3000 + seq * 7, offset=seq)
+    # 英语拓展：看英文选中文
+    seq = (r - 1) * APP_ROUND + slot
+    return subject_gen.generate_english(grade, ENGLISH_APP_PER_COURSE, seed=grade * 4000 + seq * 7, reverse=True, offset=seq)
 
 
 # ---------- 判题 ----------
