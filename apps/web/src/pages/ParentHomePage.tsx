@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api";
 import { realGetCourses } from "@/api/courses";
+import { realGetStudyTime } from "@/api/study";
 import { AiCompanion } from "@/components/companion/AiCompanion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,6 +43,12 @@ export function ParentHomePage() {
     },
     enabled: Boolean(profile),
   });
+  // 近 7 天学习时长
+  const { data: studyTime } = useQuery({
+    queryKey: ["parent-study-time", studentId],
+    queryFn: () => realGetStudyTime(studentId, 7),
+    enabled: Boolean(profile),
+  });
 
   const mastery = (profile?.mastery ?? {}) as Record<string, number>;
   const hasData = Object.keys(mastery).length > 0;
@@ -57,8 +64,19 @@ export function ParentHomePage() {
     const avgMastery = SUBJECT_ORDER.length
       ? Math.round((SUBJECT_ORDER.reduce((s, sub) => s + (mastery[sub] ?? 0), 0) / SUBJECT_ORDER.length) * 100)
       : 0;
-    return { masteredKp, completedCourses, totalCourses, avgMastery, mistakeCount: mistakes?.length ?? 0 };
-  }, [mastery, coursesData, mistakes]);
+    const totalSeconds = studyTime?.total ?? 0;
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.round((totalSeconds % 3600) / 60);
+    return {
+      masteredKp,
+      completedCourses,
+      totalCourses,
+      avgMastery,
+      mistakeCount: mistakes?.length ?? 0,
+      totalSeconds,
+      timeLabel: hours > 0 ? `${hours}h${minutes}m` : `${minutes}m`,
+    };
+  }, [mastery, coursesData, mistakes, studyTime]);
 
   return (
     <div className="mx-auto flex h-full max-w-6xl flex-col gap-5 py-3">
@@ -94,11 +112,12 @@ export function ParentHomePage() {
       {hasData && (
         <div className="space-y-5">
           {/* KPI 统计卡（可汗风格） */}
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
             <KpiCard label="掌握知识点" value={stats.masteredKp} suffix="个" icon="🎯" />
             <KpiCard label="完成课程" value={stats.completedCourses} suffix={`/${stats.totalCourses}`} icon="📚" />
             <KpiCard label="错题" value={stats.mistakeCount} suffix="道" icon="📒" />
             <KpiCard label="掌握度均分" value={stats.avgMastery} suffix="%" icon="📈" />
+            <KpiCard label="本周学习" value={stats.timeLabel} suffix="（7天）" icon="⏱️" />
           </div>
 
           {/* 三科进度 + 学习建议 */}
@@ -193,7 +212,7 @@ export function ParentHomePage() {
   );
 }
 
-function KpiCard({ label, value, suffix, icon }: { label: string; value: number; suffix: string; icon: string }) {
+function KpiCard({ label, value, suffix, icon }: { label: string; value: string | number; suffix: string; icon: string }) {
   return (
     <div className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
       <div className="flex items-center gap-2 text-xs text-muted-foreground">

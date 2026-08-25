@@ -60,6 +60,12 @@ def init_db() -> None:
                 updated_at TEXT,
                 PRIMARY KEY (student_id, course_id)
             );
+            CREATE TABLE IF NOT EXISTS study_log (
+                student_id TEXT NOT NULL,
+                subject TEXT NOT NULL,
+                seconds INTEGER NOT NULL DEFAULT 0,
+                recorded_at TEXT NOT NULL
+            );
             """
         )
     seed_demo_student()
@@ -248,3 +254,32 @@ def set_course_progress(student_id: str, course_id: str, completed: bool) -> Non
             " updated_at=excluded.updated_at",
             (student_id, course_id, 1 if completed else 0, datetime.now().isoformat(timespec="seconds")),
         )
+
+
+def add_study_time(student_id: str, subject: str, seconds: int) -> None:
+    """记录一段学习时长（秒）。"""
+    if seconds <= 0:
+        return
+    with _connect() as conn:
+        conn.execute(
+            "INSERT INTO study_log (student_id, subject, seconds, recorded_at) VALUES (?, ?, ?, ?)",
+            (student_id, subject, int(seconds), datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def get_study_time(student_id: str, days: int = 7) -> dict[str, int]:
+    """近 days 天学习时长汇总：{total, math, chinese, english}（秒）。"""
+    from datetime import timedelta
+
+    since = (datetime.now() - timedelta(days=days - 1)).isoformat(timespec="seconds")
+    with _connect() as conn:
+        rows = conn.execute(
+            "SELECT subject, seconds FROM study_log WHERE student_id = ? AND recorded_at >= ?",
+            (student_id, since),
+        ).fetchall()
+    total = 0
+    per: dict[str, int] = {}
+    for r in rows:
+        total += r["seconds"]
+        per[r["subject"]] = per.get(r["subject"], 0) + r["seconds"]
+    return {"total": total, "math": per.get("math", 0), "chinese": per.get("chinese", 0), "english": per.get("english", 0)}

@@ -1,8 +1,9 @@
 /** 课程答题页：逐题作答，答错提示重做，全部答对才算完成并解锁下一门。 */
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { CourseQuestion } from "@contracts";
 import { realAnswerCourseQuestion, realCompleteCourse, realGetCourseQuestions } from "@/api/courses";
+import { realRecordStudyTime } from "@/api/study";
 import { useAppStore } from "@/stores/appStore";
 
 const SUBJECT_LABEL: Record<string, string> = { math: "数学", chinese: "语文", english: "英语" };
@@ -21,6 +22,19 @@ export function CoursePracticePage() {
   const [correctIds, setCorrectIds] = useState<Set<string>>(new Set());
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  // 学习时长：进入页面开始计时，离开页面/完成时上报
+  const startAtRef = useRef<number>(Date.now());
+  const reportTime = useCallback(() => {
+    const seconds = Math.max(1, Math.round((Date.now() - startAtRef.current) / 1000));
+    realRecordStudyTime(studentId, subject as "math" | "chinese" | "english", seconds).catch(() => {});
+    startAtRef.current = Date.now();
+  }, [studentId, subject]);
+  useEffect(() => {
+    startAtRef.current = Date.now();
+    return () => reportTime();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [subject, courseId]);
 
   const load = useCallback(async () => {
     setLoading(true);
