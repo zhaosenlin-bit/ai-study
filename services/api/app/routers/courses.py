@@ -16,6 +16,7 @@ from services.agent.tools import QUESTION_BANK
 router = APIRouter(prefix="/api/v1/courses", tags=["courses"])
 
 ORAL_PER_COURSE = 75
+APP_PER_COURSE = 7   # 数学应用题课每门题数（生成）
 ORAL_ROUND = 3   # 每轮 3 门口算
 APP_ROUND = 3    # 每轮 3 门应用题
 TOTAL_ROUNDS = 4  # 共 4 轮 → 每年级 24 门课
@@ -97,20 +98,41 @@ def _course_name(subject: str, kind: str, round_no: int, slot: int) -> str:
 def build_courses(subject: str, grade: int) -> list[Course]:
     pool = _pool_questions(subject, grade)
     oral_pool = _oral_pool(subject, grade)
-    # 数学口算 75 题；语文英语基础课 = 题库均分 3 门（取每门题数）
     if subject == "math":
-        oral_count = ORAL_PER_COURSE
-        oral_per_course = ORAL_PER_COURSE
+        # 数学：口算与应用题都程序生成（不重复），每门固定题数，共 24 门
+        per_oral = ORAL_PER_COURSE
+        per_app = APP_PER_COURSE
+        total_oral = ORAL_ROUND * TOTAL_ROUNDS
+        total_app = APP_ROUND * TOTAL_ROUNDS
     else:
-        oral_per_course = max(1, len(oral_pool) // ORAL_ROUND) if oral_pool else 0
-        oral_count = oral_per_course
-    app_per_course = max(1, len(pool) // APP_ROUND)
+        # 语文/英语：题库全局切分，不重复不空课（题库有限 → 课程数相应减少）
+        per_oral = max(1, len(oral_pool) // (ORAL_ROUND * TOTAL_ROUNDS)) if oral_pool else 0
+        per_app = max(1, len(oral_pool) // (APP_ROUND * TOTAL_ROUNDS)) if oral_pool else 0
+        # 交替序列：oral×3, app×3 ... 取前 N 门（池能支撑的）
+        per = max(per_oral, per_app)
+        total_courses = min(24, len(oral_pool) // per) if per else 0
+        total_oral = 0
+        total_app = 0
+        seq = 0
+        while seq < total_courses:
+            for _ in range(ORAL_ROUND):
+                if seq >= total_courses:
+                    break
+                total_oral += 1
+                seq += 1
+            for _ in range(APP_ROUND):
+                if seq >= total_courses:
+                    break
+                total_app += 1
+                seq += 1
     courses: list[Course] = []
     idx = 0
+    oral_built = 0
+    app_built = 0
     for r in range(1, TOTAL_ROUNDS + 1):
         # 3 门口算/基础
         for slot in range(ORAL_ROUND):
-            if oral_count <= 0:
+            if oral_built >= total_oral:
                 break
             courses.append(
                 Course(
@@ -118,27 +140,30 @@ def build_courses(subject: str, grade: int) -> list[Course]:
                     index=idx,
                     name=_course_name(subject, "oral", r, slot),
                     kind="oral",
-                    question_count=oral_count,
+                    question_count=per_oral,
                     completed=False,
                     locked=idx > 0,
                 )
             )
             idx += 1
-        # 3 门应用题/拓展（题库不足时循环取题，保证每门满 app_per_course）
-        if pool:
-            for slot in range(APP_ROUND):
-                courses.append(
-                    Course(
-                        course_id=f"{subject}_g{grade}_app_{r}_{slot}",
-                        index=idx,
-                        name=_course_name(subject, "app", r, slot),
-                        kind="app",
-                        question_count=app_per_course,
-                        completed=False,
-                        locked=idx > 0,
-                    )
+            oral_built += 1
+        # 3 门应用题/拓展
+        for slot in range(APP_ROUND):
+            if app_built >= total_app:
+                break
+            courses.append(
+                Course(
+                    course_id=f"{subject}_g{grade}_app_{r}_{slot}",
+                    index=idx,
+                    name=_course_name(subject, "app", r, slot),
+                    kind="app",
+                    question_count=per_app,
+                    completed=False,
+                    locked=idx > 0,
                 )
-                idx += 1
+            )
+            idx += 1
+            app_built += 1
     return courses
 
 
@@ -156,28 +181,35 @@ def _attach_progress(courses: list[Course], student_id: str) -> list[Course]:
 
 # ---------- 题目 ----------
 
-def _round_robin(pool: list[dict], start: int, count: int) -> list[dict]:
-    """不足时循环取题，保证每门课固定 count 题（经典题重复练习）。"""
-    if not pool:
-        return []
-    return [pool[(start + i) % len(pool)] for i in range(count)]
+def _slice_pool(pool: list[dict], index: int, per: int) -> list[dict]:
+    """按课程序号全局切分（不重复）；池用尽则返回空。"""
+    start = index * per
+    return pool[start:start + per]
 
 
 def _questions_of(course_id: str, subject: str, grade: int, kind: str) -> list[dict]:
     parts = course_id.split("_")
+    r, slot = int(parts[-2]), int(parts[-1])
     if kind == "oral":
         if subject == "math":
-            r, slot = int(parts[-2]), int(parts[-1])
-            return mental_math.generate_mental_math(grade, ORAL_PER_COURSE, seed=int(r) * 31 + int(slot))
-        # 语文/英语基础课：题库均分（不足循环）
+            # 一次性生成 12 门 × 75 = 900 题（全局去重），按课程切分
+            seq = (r - 1) * ORAL_ROUND + slot
+            all_qs = mental_math.generate_mental_math_all(grade, ORAL_PER_COURSE * ORAL_ROUND * TOTAL_ROUNDS, seed=grade * 1000)
+            return _slice_pool(all_qs, seq, ORAL_PER_COURSE)
+        # 语文/英语基础课：交替序列全局切分（不重复）
         pool = _pool_questions(subject, grade)
-        per = max(1, len(pool) // ORAL_ROUND)
-        r, slot = int(parts[-2]), int(parts[-1])
-        return _round_robin(pool, slot * per, per)
+        per = max(1, len(pool) // (ORAL_ROUND * TOTAL_ROUNDS)) if pool else 0
+        seq = (r - 1) * (ORAL_ROUND + APP_ROUND) + slot
+        return _slice_pool(pool, seq, per)
+    # 应用题/拓展
+    if subject == "math":
+        seq = (r - 1) * APP_ROUND + slot
+        all_qs = mental_math.generate_app_questions_all(grade, APP_PER_COURSE * APP_ROUND * TOTAL_ROUNDS, seed=grade * 777)
+        return _slice_pool(all_qs, seq, APP_PER_COURSE)
     pool = _pool_questions(subject, grade)
-    app_per_course = max(1, len(pool) // APP_ROUND)
-    r, slot = int(parts[-2]), int(parts[-1])
-    return _round_robin(pool, slot * app_per_course, app_per_course)
+    per = max(1, len(pool) // (APP_ROUND * TOTAL_ROUNDS)) if pool else 0
+    seq = (r - 1) * (ORAL_ROUND + APP_ROUND) + ORAL_ROUND + slot
+    return _slice_pool(pool, seq, per)
 
 
 # ---------- 判题 ----------

@@ -31,8 +31,134 @@ def _q(grade: int, stem: str, answer: str) -> dict:
 def generate_mental_math(grade: int, count: int = 75, seed: int | None = None) -> list[dict]:
     rng = random.Random(seed if seed is not None else grade * 1000 + count)
     items: list[dict] = []
-    while len(items) < count:
-        items.append(_make_one(grade, rng))
+    seen: set[str] = set()
+    guard = 0
+    while len(items) < count and guard < count * 50:
+        guard += 1
+        q = _make_one(grade, rng)
+        key = (q["stem"], q["answer"])
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(q)
+    return items
+
+
+def generate_mental_math_all(grade: int, total: int = 900, seed: int | None = None) -> list[dict]:
+    """一次性生成 total 道口算，全局去重（跨课程也不重复）。"""
+    rng = random.Random(seed if seed is not None else grade * 1000)
+    items: list[dict] = []
+    seen: set[str] = set()
+    guard = 0
+    while len(items) < total and guard < total * 80:
+        guard += 1
+        q = _make_one(grade, rng)
+        key = (q["stem"], q["answer"])
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(q)
+    return items
+
+
+# ---------- 经典应用题生成（数学，single_choice） ----------
+
+def _app_q(grade: int, stem: str, answer: float, options: list[str]) -> dict:
+    """answer 是正确数值，options 是含正确项的 4 选项（字符 A/B/C/D 命中）。"""
+    right = str(answer)
+    letters = ["A", "B", "C", "D"]
+    # 确保正确项在选项里
+    final_opts = list(options[:3])
+    right_letter = ""
+    if right not in final_opts:
+        final_opts.append(right)
+    else:
+        # 正确项已在选项中，补足 4 个
+        while len(final_opts) < 4:
+            final_opts.append(str(answer + len(final_opts) + 1))
+    right_letter = letters[final_opts.index(right)]
+    return {
+        "id": f"appq_{uuid.uuid4().hex[:8]}",
+        "subject": "math",
+        "grade": grade,
+        "type": "single_choice",
+        "knowledge_point_ids": [f"math_g{grade}_word_problem"],
+        "stem": stem,
+        "options": final_opts,
+        "answer": right_letter,
+        "rubric": f"{right}",
+        "explanation": f"正确答案：{right}",
+        "error_type": "概念混淆",
+        "difficulty": 2,
+    }
+
+
+def _distractors(rng: random.Random, right: float) -> list[str]:
+    cands: set[str] = set()
+    while len(cands) < 3:
+        delta = rng.choice([-2, -1, 1, 2, 10, 0.5, 5])
+        v = round(right + delta, 2)
+        if v != right and v > 0:
+            cands.add(str(v))
+    return list(cands)
+
+
+def _make_app_one(grade: int, rng: random.Random) -> dict:
+    kind = rng.choice(["buy", "trip", "share", "area"])
+    if kind == "buy":  # 购物总价
+        price = rng.randint(2, 50)
+        n = rng.randint(2, 12)
+        total = price * n
+        return _app_q(grade, f"小明买了 {n} 个笔记本，每个 {price} 元，一共要付多少元？", total, _distractors(rng, total))
+    if kind == "trip":  # 行程
+        speed = rng.randint(30, 120)
+        hours = rng.choice([2, 3, 4, 5])
+        dist = speed * hours
+        return _app_q(grade, f"一辆汽车每小时行驶 {speed} 千米，行驶 {hours} 小时，共行驶多少千米？", dist, _distractors(rng, dist))
+    if kind == "share":  # 平均分配
+        total = rng.randint(24, 120)
+        n = rng.choice([3, 4, 6, 8])
+        per = total // n
+        if per <= 0:
+            return _make_app_one(grade, rng)
+        return _app_q(grade, f"把 {total} 个苹果平均分给 {n} 个小朋友，每人分到几个？", per, _distractors(rng, per))
+    # 面积（长方形）
+    w = rng.randint(3, 20)
+    h = rng.randint(3, 20)
+    area = w * h
+    return _app_q(grade, f"一块长方形菜地长 {w} 米，宽 {h} 米，面积是多少平方米？", area, _distractors(rng, area))
+
+
+def generate_app_questions(grade: int, count: int = 7, seed: int | None = None) -> list[dict]:
+    rng = random.Random(seed if seed is not None else grade * 100 + count)
+    items: list[dict] = []
+    seen: set[str] = set()
+    guard = 0
+    while len(items) < count and guard < count * 50:
+        guard += 1
+        q = _make_app_one(grade, rng)
+        key = (q["stem"], q["rubric"])
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(q)
+    return items
+
+
+def generate_app_questions_all(grade: int, total: int = 84, seed: int | None = None) -> list[dict]:
+    """一次性生成 total 道应用题，全局去重（跨课程也不重复）。"""
+    rng = random.Random(seed if seed is not None else grade * 777)
+    items: list[dict] = []
+    seen: set[str] = set()
+    guard = 0
+    while len(items) < total and guard < total * 80:
+        guard += 1
+        q = _make_app_one(grade, rng)
+        key = (q["stem"], q["rubric"])
+        if key in seen:
+            continue
+        seen.add(key)
+        items.append(q)
     return items
 
 
