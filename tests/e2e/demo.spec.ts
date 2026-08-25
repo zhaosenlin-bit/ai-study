@@ -5,15 +5,19 @@ import { expect, test } from "@playwright/test";
  * 学生首页 → 诊断 → 结果 → 路径 → 对话 → 错题 → 报告
  */
 test("完整跑通三科演示闭环", async ({ page }) => {
-  // 1. 首页：AI 伙伴问候 + 今日任务
+  // 0. 登录：未登录会被守卫跳到 /login，用演示账号登入
   await page.goto("/");
-  await expect(page.getByRole("heading", { name: "今日任务" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "三科掌握度" })).toBeVisible();
-  await expect(page.getByText("AI 伙伴")).toBeVisible();
+  await page.getByRole("button", { name: "小明" }).click();
 
-  // 2. 诊断：进入 → 发起 → 答题 → 提交
-  await page.getByRole("button", { name: /开始三科诊断/ }).click();
-  await expect(page.getByText(/三科小诊断/)).toBeVisible();
+  // 1. 首页：沉浸式学习空间中央舞台（问候 + AI 精灵 + 诊断卡）
+  await expect(page.getByText(/你好呀，小明/)).toBeVisible();
+  await expect(page.getByText("ai-study")).toBeVisible();
+  await expect(page.getByRole("heading", { name: /三科小诊断/ })).toBeVisible();
+  await expect(page.getByText(/开始诊断/)).toBeVisible();
+
+  // 2. 诊断：跳到 /diagnosis 起始页 → 发起 → 答题 → 提交
+  await page.getByRole("button", { name: /开始诊断/ }).click();
+  await expect(page.getByText(/只要 3 分钟/)).toBeVisible();
   await page.getByRole("button", { name: /开始诊断/ }).click();
   await expect(page.getByText("把一个苹果平均分成 4 份")).toBeVisible();
 

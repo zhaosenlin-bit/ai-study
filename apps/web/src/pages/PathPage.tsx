@@ -49,7 +49,7 @@ export function PathPage() {
 
         {/* 路径线 */}
         <div className="relative">
-          <div className="absolute bottom-6 left-[27px] top-2 w-0.5 bg-gradient-to-b from-primary/60 via-white/15 to-white/5" />
+          <div className="absolute bottom-6 left-[27px] top-2 w-0.5 bg-gradient-to-b from-primary/40 via-border to-border/50" />
           <div className="space-y-3">
             {tasks.map((task, i) => {
               const meta = subjectMeta(task.subject);
@@ -69,7 +69,7 @@ export function PathPage() {
                         ? "border-subject-english/50 bg-subject-english/15"
                         : task.status === "doing"
                           ? "border-primary bg-primary/20 shadow-[0_0_16px_rgba(139,92,246,0.4)]"
-                          : "border-white/15 bg-white/5",
+                          : "border-border bg-muted/70",
                     )}
                   >
                     {task.status === "done" ? "✅" : meta.icon}
@@ -80,10 +80,10 @@ export function PathPage() {
                     className={cn(
                       "flex-1 rounded-xl border px-4 py-3",
                       task.status === "done"
-                        ? "border-white/8 bg-white/3 opacity-70"
+                        ? "border-border bg-muted/50 opacity-70"
                         : task.status === "doing"
                           ? "border-primary/40 bg-primary/10"
-                          : "border-white/12 bg-white/5",
+                          : "border-border bg-muted/70",
                     )}
                   >
                     <div className="flex items-center justify-between gap-2">

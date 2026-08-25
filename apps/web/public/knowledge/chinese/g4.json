@@ -1,0 +1,277 @@
+{
+ "grade": 4,
+ "subject": "chinese",
+ "knowledge_points": [
+  {
+   "id": "chinese_g4_poem_image",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "古诗画面与情感",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g3_poem_basic"
+   ],
+   "common_misconceptions": [
+    "只看字面翻译,体会不到情感"
+   ]
+  },
+  {
+   "id": "chinese_g4_reading_main_idea",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "阅读抓主旨",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g3_reading_nature"
+   ],
+   "common_misconceptions": [
+    "复述情节代替概括中心"
+   ]
+  },
+  {
+   "id": "chinese_g4_character_meaning",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "多义字辨析",
+   "difficulty": 3,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "脱离语境猜字义"
+   ]
+  },
+  {
+   "id": "chinese_g4_idiom_usage",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "成语运用",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g3_idiom_basic"
+   ],
+   "common_misconceptions": [
+    "成语感情色彩误用"
+   ]
+  },
+  {
+   "id": "chinese_g4_essay_structure",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "段落结构(总分总)",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g4_reading_main_idea"
+   ],
+   "common_misconceptions": [
+    "写段没有中心句"
+   ]
+  },
+  {
+   "id": "chinese_g4_connective",
+   "subject": "chinese",
+   "grade": 4,
+   "name": "关联词运用",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "关联词搭配错误"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "chinese_q_g4_0007",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_poem_image"
+   ],
+   "stem": "《静夜思》中“举头望明月”,诗人当时最可能是什么心情?",
+   "options": [
+    "高兴",
+    "想念家乡",
+    "生气",
+    "害怕"
+   ],
+   "answer": "想念家乡",
+   "rubric": "考察知识点:古诗画面与情感",
+   "explanation": "结合“思故乡”体会诗歌画面背后的情感。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g4_0008",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_poem_image"
+   ],
+   "stem": "《望庐山瀑布》中“飞流直下三千尺”主要用了什么手法?",
+   "options": [
+    "比喻",
+    "夸张",
+    "拟人",
+    "排比"
+   ],
+   "answer": "夸张",
+   "rubric": "考察知识点:古诗画面与情感",
+   "explanation": "三千尺是夸张的说法,突出瀑布的壮观。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g4_0009",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_reading_main_idea"
+   ],
+   "stem": "短文讲小明扶起摔倒的老人并送他回家,这篇短文主要想告诉我们?",
+   "options": [
+    "小明跑步很快",
+    "要乐于助人、关爱他人",
+    "老人摔倒了很疼",
+    "放学路上要小心"
+   ],
+   "answer": "要乐于助人、关爱他人",
+   "rubric": "考察知识点:阅读抓主旨",
+   "explanation": "概括主旨要从事情中提炼道理或品质。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g4_0010",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_character_meaning"
+   ],
+   "stem": "下面哪个词语中的“熟”表示“熟练”的意思?",
+   "options": [
+    "饭熟了",
+    "这条路我很熟",
+    "果子熟了",
+    "熟透了"
+   ],
+   "answer": "这条路我很熟",
+   "rubric": "考察知识点:多义字辨析",
+   "explanation": "“熟”在不同词语中意思不同,要结合语境判断。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g4_0011",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_idiom_usage"
+   ],
+   "stem": "下面成语运用不正确的一项是?",
+   "options": [
+    "他做事总是画蛇添足,多此一举",
+    "小明学习很认真,成绩画蛇添足",
+    "这篇文章结尾多余,真是画蛇添足",
+    "你别画蛇添足了,直接说重点"
+   ],
+   "answer": "小明学习很认真,成绩画蛇添足",
+   "rubric": "考察知识点:成语运用",
+   "explanation": "画蛇添足是贬义,指做多余的事。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g4_0012",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_essay_structure"
+   ],
+   "stem": "写一段话,“我们的校园真美丽”最适合放在段落的?",
+   "options": [
+    "开头(中心句)",
+    "中间",
+    "结尾",
+    "哪里都行"
+   ],
+   "answer": "开头(中心句)",
+   "rubric": "考察知识点:段落结构(总分总)",
+   "explanation": "总分总结构中,中心句常放在段首。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g4_0013",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g4_connective"
+   ],
+   "stem": "选词填空:小明( )生病了,( )坚持来上学。",
+   "options": [
+    "因为……所以……",
+    "虽然……但是……",
+    "不但……而且……",
+    "如果……就……"
+   ],
+   "answer": "虽然……但是……",
+   "rubric": "考察知识点:关联词运用",
+   "explanation": "前后是转折关系,用“虽然……但是……”。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g4_0026",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "chinese_g4_reading_main_idea"
+   ],
+   "stem": "短文《倔强的小红军》讲了小红军宁可牺牲也不拖累别人的故事。用一两句话概括这篇短文的中心。",
+   "options": null,
+   "answer": "赞美小红军宁可牺牲自己也不拖累别人的高贵品质",
+   "rubric": "考察知识点:阅读抓主旨",
+   "explanation": "概括中心:通过主要事件提炼人物品质。",
+   "error_type": "concept_missing",
+   "difficulty": 4
+  },
+  {
+   "id": "chinese_q_g4_0028",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "chinese_g4_essay_structure"
+   ],
+   "stem": "请以“美丽的校园”为总起句,补写一句分述(写出校园的一个具体角落)。",
+   "options": null,
+   "answer": "操场的梧桐树像一把大伞,遮出一片阴凉",
+   "rubric": "考察知识点:段落结构(总分总)",
+   "explanation": "分述要具体,围绕总起句展开。",
+   "error_type": "concept_missing",
+   "difficulty": 4
+  },
+  {
+   "id": "chinese_q_g4_0030",
+   "subject": "chinese",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "chinese_g4_connective"
+   ],
+   "stem": "用关联词填空:( )遇到多大的困难,他( )不放弃。",
+   "options": null,
+   "answer": "无论……都……",
+   "rubric": "考察知识点:关联词运用",
+   "explanation": "条件关系的关联词用“无论……都……”。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  }
+ ]
+}

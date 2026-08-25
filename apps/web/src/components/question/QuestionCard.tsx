@@ -59,9 +59,9 @@ export function QuestionCard({
                   }
                 }}
                 className={cn(
-                  "question-option rounded-xl border border-white/12 bg-white/5 px-4 py-3.5 text-left text-base font-medium text-foreground transition-all hover:border-primary/40 hover:bg-white/10",
+                  "question-option rounded-xl border border-border bg-muted/70 px-4 py-3.5 text-left text-base font-medium text-foreground transition-all hover:border-primary/40 hover:bg-muted/80",
                   selected &&
-                    "border-primary bg-primary/15 text-primary shadow-[0_0_14px_rgba(139,92,246,0.25)]",
+                    "border-primary bg-primary/15 text-primary shadow-[0_0_14px_rgba(217,119,6,0.28)]",
                 )}
               >
                 {opt}

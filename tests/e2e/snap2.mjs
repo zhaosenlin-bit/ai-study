@@ -1,0 +1,17 @@
+import { chromium } from 'playwright';
+const browser = await chromium.launch({ headless: true });
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 820 }, locale: 'zh-CN' });
+const page = await ctx.newPage();
+page.on('console', msg => console.log('CON:', msg.type(), msg.text()));
+page.on('pageerror', err => console.log('ERR:', err.message));
+await page.goto('http://127.0.0.1:5174/', { waitUntil: 'networkidle', timeout: 30000 });
+await page.waitForTimeout(2000);
+const html = await page.content();
+const hasGreeting = html.includes('你好呀');
+const hasHeading = html.includes('三科小诊断');
+const hasCompanion = html.includes('AI 伙伴');
+console.log('hasGreeting:', hasGreeting, 'hasHeading:', hasHeading, 'hasCompanion:', hasCompanion);
+const mainText = await page.locator('body').innerText();
+console.log('--- mainText ---');
+console.log(mainText.slice(0, 800));
+await browser.close();

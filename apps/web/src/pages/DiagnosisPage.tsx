@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { subjectMeta } from "@/lib/subjects";
 import { useAppStore } from "@/stores/appStore";
+import type { Subject } from "@contracts";
 import {
   collectAnswers,
   useLearningStore,
@@ -17,7 +18,10 @@ import {
 
 export function DiagnosisPage() {
   const navigate = useNavigate();
-  const { studentId, setCompanion } = useAppStore();
+  const { studentId, grade, setCompanion } = useAppStore();
+  // 英语为三年级起点：1-2 年级仅诊断数学+语文
+  const subjects: Subject[] =
+    grade <= 2 ? ["math", "chinese"] : ["math", "chinese", "english"];
   const {
     sessionId,
     questions,
@@ -46,7 +50,7 @@ export function DiagnosisPage() {
     setStarting(true);
     setCompanion("开始三科小诊断啦，我会根据你的回答找出薄弱点～", "thinking");
     try {
-      const session = await api.startDiagnosis(studentId, 4, ["math", "chinese", "english"], 3);
+      const session = await api.startDiagnosis(studentId, grade, subjects, 3);
       startSession(session.session_id, session.questions);
       setToolTrace(TOOL_TRACES["diagnosis"]);
       setCompanion("第一题来啦，慢慢来，不着急！", "greeting");
@@ -119,7 +123,7 @@ export function DiagnosisPage() {
                   return (
                     <div
                       key={t.task_id}
-                      className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5"
+                      className="flex items-center gap-3 rounded-xl border border-border bg-muted/70 px-4 py-2.5"
                     >
                       <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20 text-xs font-bold text-primary">
                         {i + 1}
@@ -206,11 +210,13 @@ export function DiagnosisPage() {
             三科小诊断 · 只要 3 分钟
           </h2>
           <p className="mx-auto max-w-md text-sm leading-relaxed text-muted-foreground">
-            数学、语文、英语各 3 道题。答完之后，我会根据你的表现更新学习画像，
-            找出薄弱点并生成今天的专属学习路径。
+            根据你选择的 {grade} 年级，从教材知识库为你准备题目。
+            {grade <= 2
+              ? "一年级、二年级暂未开设英语课（英语三年级起学），先诊断数学和语文。"
+              : "数学、语文、英语各 3 道题。答完之后，我会根据你的表现更新学习画像，找出薄弱点并生成今天的专属学习路径。"}
           </p>
           <div className="flex justify-center gap-2 pt-2">
-            {["math", "chinese", "english"].map((s) => {
+            {subjects.map((s) => {
               const meta = subjectMeta(s);
               return (
                 <span key={s} className={`subject-chip border ${meta.chipClass}`}>

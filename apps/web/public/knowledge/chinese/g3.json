@@ -1,0 +1,223 @@
+{
+ "grade": 3,
+ "subject": "chinese",
+ "knowledge_points": [
+  {
+   "id": "chinese_g3_pinyin",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "拼音与声调",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "平翘舌音混淆",
+    "第三声调号位置写错"
+   ]
+  },
+  {
+   "id": "chinese_g3_radical",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "偏旁部首",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g3_pinyin"
+   ],
+   "common_misconceptions": [
+    "形声字声旁与形旁混淆"
+   ]
+  },
+  {
+   "id": "chinese_g3_poem_basic",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "古诗积累(所见·山行)",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g3_pinyin"
+   ],
+   "common_misconceptions": [
+    "古诗名句与作者对不上"
+   ]
+  },
+  {
+   "id": "chinese_g3_reading_nature",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "自然主题阅读",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g3_radical"
+   ],
+   "common_misconceptions": [
+    "概括自然段内容不完整"
+   ]
+  },
+  {
+   "id": "chinese_g3_idiom_basic",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "常用成语",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "成语意思望文生义"
+   ]
+  },
+  {
+   "id": "chinese_g3_sentence_metaphor",
+   "subject": "chinese",
+   "grade": 3,
+   "name": "比喻句",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "分不清比喻与拟人"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "chinese_q_g3_0001",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_pinyin"
+   ],
+   "stem": "下列加点字的读音完全正确的一组是?",
+   "options": [
+    "牛(niú) 羊(yán)",
+    "山(shān) 水(shuǐ)",
+    "花(huā) 火(hǒ)",
+    "月(yuè) 日(rì)"
+   ],
+   "answer": "山(shān) 水(shuǐ)",
+   "rubric": "考察知识点:拼音与声调",
+   "explanation": "注意声母、韵母和声调要读准。",
+   "error_type": "careless",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g3_0002",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_radical"
+   ],
+   "stem": "“江、河、湖、海”这些字的偏旁都跟什么有关?",
+   "options": [
+    "水",
+    "木头",
+    "金属",
+    "火"
+   ],
+   "answer": "水",
+   "rubric": "考察知识点:偏旁部首",
+   "explanation": "三点水偏旁的字大多与水有关。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g3_0003",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_poem_basic"
+   ],
+   "stem": "《山行》中“远上寒山石径斜”的下一句是?",
+   "options": [
+    "白云生处有人家",
+    "霜叶红于二月花",
+    "停车坐爱枫林晚",
+    "两个黄鹂鸣翠柳"
+   ],
+   "answer": "白云生处有人家",
+   "rubric": "考察知识点:古诗积累(所见·山行)",
+   "explanation": "按诗句顺序背诵:远上寒山石径斜,白云生处有人家。",
+   "error_type": "careless",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g3_0004",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_reading_nature"
+   ],
+   "stem": "读短文《秋天的雨》,下面哪句话最能概括全文?",
+   "options": [
+    "秋天的雨把颜色给了银杏树",
+    "秋天的雨藏着非常好闻的气味",
+    "秋天的雨,是一把钥匙,打开了秋天的大门",
+    "秋天的雨带来了寒冷"
+   ],
+   "answer": "秋天的雨,是一把钥匙,打开了秋天的大门",
+   "rubric": "考察知识点:自然主题阅读",
+   "explanation": "中心句常出现在开头或结尾,概括全文内容。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g3_0005",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_idiom_basic"
+   ],
+   "stem": "“亡羊补牢”这个成语告诉我们?",
+   "options": [
+    "丢了羊就再买一只",
+    "出了问题及时补救,还不算晚",
+    "羊圈不用修补",
+    "羊喜欢跑出去"
+   ],
+   "answer": "出了问题及时补救,还不算晚",
+   "rubric": "考察知识点:常用成语",
+   "explanation": "理解成语要结合寓言故事的本意。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g3_0006",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g3_sentence_metaphor"
+   ],
+   "stem": "下面哪个句子是比喻句?",
+   "options": [
+    "妹妹的脸红得像苹果",
+    "花儿在风中点头",
+    "小鸟在枝头唱歌",
+    "太阳公公露出了笑脸"
+   ],
+   "answer": "妹妹的脸红得像苹果",
+   "rubric": "考察知识点:比喻句",
+   "explanation": "比喻句要有本体、喻体,常用“像、好像、仿佛”连接。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g3_0027",
+   "subject": "chinese",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "chinese_g3_poem_basic"
+   ],
+   "stem": "《所见》中“意欲捕鸣蝉,______。”",
+   "options": null,
+   "answer": "忽然闭口立",
+   "rubric": "考察知识点:古诗积累(所见·山行)",
+   "explanation": "默写时注意“闭”字结构。",
+   "error_type": "careless",
+   "difficulty": 3
+  }
+ ]
+}

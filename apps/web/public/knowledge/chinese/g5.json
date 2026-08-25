@@ -1,0 +1,210 @@
+{
+ "grade": 5,
+ "subject": "chinese",
+ "knowledge_points": [
+  {
+   "id": "chinese_g5_exposition_reading",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "说明文阅读",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g4_reading_main_idea"
+   ],
+   "common_misconceptions": [
+    "分不清说明方法"
+   ]
+  },
+  {
+   "id": "chinese_g5_poem_emotion",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "古诗情感(示儿·题临安邸)",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g4_poem_image"
+   ],
+   "common_misconceptions": [
+    "忽略写作背景谈情感"
+   ]
+  },
+  {
+   "id": "chinese_g5_narrative_reading",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "记叙文阅读",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g4_reading_main_idea"
+   ],
+   "common_misconceptions": [
+    "人物品质概括不准确"
+   ]
+  },
+  {
+   "id": "chinese_g5_essay_detail",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "习作技巧(详略得当)",
+   "difficulty": 3,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "重点内容一笔带过"
+   ]
+  },
+  {
+   "id": "chinese_g5_classical_quotes",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "文言文启蒙",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g4_character_meaning"
+   ],
+   "common_misconceptions": [
+    "虚词理解困难"
+   ]
+  },
+  {
+   "id": "chinese_g5_sentence_exaggeration",
+   "subject": "chinese",
+   "grade": 5,
+   "name": "夸张句",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g3_sentence_metaphor"
+   ],
+   "common_misconceptions": [
+    "夸张与比喻混淆"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "chinese_q_g5_0014",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_exposition_reading"
+   ],
+   "stem": "说明文中,“鲸的体重约三十吨”使用了什么说明方法?",
+   "options": [
+    "列数字",
+    "打比方",
+    "作比较",
+    "举例子"
+   ],
+   "answer": "列数字",
+   "rubric": "考察知识点:说明文阅读",
+   "explanation": "用具体数字说明事物特征就是列数字。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g5_0015",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_poem_emotion"
+   ],
+   "stem": "《示儿》中陆游“但悲不见九州同”,表达了他怎样的情感?",
+   "options": [
+    "悲伤自己老了",
+    "渴望祖国统一的爱国之情",
+    "害怕死亡",
+    "思念家人"
+   ],
+   "answer": "渴望祖国统一的爱国之情",
+   "rubric": "考察知识点:古诗情感(示儿·题临安邸)",
+   "explanation": "结合诗人写作背景理解诗句情感。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g5_0016",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_narrative_reading"
+   ],
+   "stem": "短文写雷锋雨中送大娘回家,塑造了雷锋怎样的形象?",
+   "options": [
+    "乐于助人、无私奉献",
+    "勤劳勇敢",
+    "聪明机智",
+    "热爱学习"
+   ],
+   "answer": "乐于助人、无私奉献",
+   "rubric": "考察知识点:记叙文阅读",
+   "explanation": "通过人物的行为概括其品质。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g5_0017",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_essay_detail"
+   ],
+   "stem": "写《我的妈妈》,下面哪个是“详”的正确做法?",
+   "options": [
+    "妈妈的外貌、爱好、性格都只写一句",
+    "重点写一件事体现妈妈的爱,写具体",
+    "只写妈妈的外貌",
+    "把全家人都写一遍"
+   ],
+   "answer": "重点写一件事体现妈妈的爱,写具体",
+   "rubric": "考察知识点:习作技巧(详略得当)",
+   "explanation": "详略得当:重点内容要写具体,次要内容简写。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g5_0018",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_classical_quotes"
+   ],
+   "stem": "“知之为知之,不知为不知,是知也”中最后一个“知”的意思是?",
+   "options": [
+    "知道",
+    "智慧",
+    "知识",
+    "知道的事"
+   ],
+   "answer": "智慧",
+   "rubric": "考察知识点:文言文启蒙",
+   "explanation": "通假字:“知”通“智”,指智慧。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g5_0019",
+   "subject": "chinese",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g5_sentence_exaggeration"
+   ],
+   "stem": "下面哪个句子用了夸张的修辞手法?",
+   "options": [
+    "教室里静得连针掉在地上都能听见",
+    "弯弯的月亮像小船",
+    "太阳像个大火球",
+    "花儿在跳舞"
+   ],
+   "answer": "教室里静得连针掉在地上都能听见",
+   "rubric": "考察知识点:夸张句",
+   "explanation": "夸张是对事物进行扩大或缩小的描述。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  }
+ ]
+}

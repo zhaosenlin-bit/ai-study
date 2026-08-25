@@ -12,7 +12,7 @@ const SUBJECT_ORDER = ["math", "chinese", "english"] as const;
 const STAT_COLOR: Record<string, string> = {
   概念混淆: "bg-subject-chinese/15 text-subject-chinese border-subject-chinese/30",
   规则不熟: "bg-subject-math/15 text-subject-math border-subject-math/30",
-  粗心: "bg-white/8 text-muted-foreground border-white/15",
+  粗心: "bg-muted/80 text-muted-foreground border-border",
   计算失误: "bg-subject-math/15 text-subject-math border-subject-math/30",
   表达不清: "bg-subject-chinese/15 text-subject-chinese border-subject-chinese/30",
 };
@@ -88,18 +88,18 @@ export function ReportPage() {
               </CardHeader>
               <CardContent className="space-y-2.5">
                 {Object.entries(report.mistake_stats).map(([type, count]) => {
-                  const color = STAT_COLOR[type] ?? "bg-white/8 text-muted-foreground border-white/15";
+                  const color = STAT_COLOR[type] ?? "bg-muted/80 text-muted-foreground border-border";
                   return (
                     <div
                       key={type}
-                      className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3.5 py-2.5"
+                      className="flex items-center justify-between rounded-xl border border-border bg-muted/70 px-3.5 py-2.5"
                     >
                       <Badge className={`border ${color}`}>{type}</Badge>
                       <span className="text-lg font-black text-foreground">{count}</span>
                     </div>
                   );
                 })}
-                <div className="rounded-xl border border-white/10 bg-white/5 px-3.5 py-2.5 text-xs text-muted-foreground">
+                <div className="rounded-xl border border-border bg-muted/70 px-3.5 py-2.5 text-xs text-muted-foreground">
                   合计 {Object.values(report.mistake_stats).reduce((a, b) => a + b, 0)} 条错题记录
                 </div>
               </CardContent>
@@ -115,7 +115,7 @@ export function ReportPage() {
                   {report.suggestions.map((s, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm leading-relaxed text-foreground/90"
+                      className="flex items-start gap-2.5 rounded-xl border border-border bg-muted/70 px-4 py-3 text-sm leading-relaxed text-foreground/90"
                     >
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20 text-[11px] font-bold text-primary">
                         {i + 1}

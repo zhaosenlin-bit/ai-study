@@ -12,7 +12,7 @@ export function Progress({
   return (
     <div
       className={cn(
-        "relative h-2.5 w-full overflow-hidden rounded-full bg-white/8",
+        "relative h-2.5 w-full overflow-hidden rounded-full bg-muted/80",
         className,
       )}
       role="progressbar"

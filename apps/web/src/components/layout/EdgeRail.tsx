@@ -14,6 +14,8 @@ const LEFT_ITEMS: RailItem[] = [
   { to: "/chat/math", icon: "🔢", label: "数学" },
   { to: "/chat/chinese", icon: "📖", label: "语文" },
   { to: "/chat/english", icon: "🌎", label: "英语" },
+  { to: "/textbooks", icon: "📚", label: "教材" },
+  { to: "/weekly-quiz", icon: "📝", label: "每周小测" },
   { to: "/path", icon: "🗺️", label: "知识地图" },
 ];
 
@@ -34,7 +36,7 @@ function Rail({ items, side }: { items: RailItem[]; side: "left" | "right" }) {
   return (
     <nav
       className={cn(
-        "z-10 flex w-[72px] shrink-0 flex-col items-center gap-3 border-white/8 px-2 py-4",
+        "z-10 hidden w-[72px] shrink-0 flex-col items-center gap-3 border-border px-2 py-4 md:flex",
         side === "left" ? "border-r" : "border-l",
       )}
       aria-label={side === "left" ? "学习导航" : "功能导航"}

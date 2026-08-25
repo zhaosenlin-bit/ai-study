@@ -1,0 +1,157 @@
+{
+ "grade": 2,
+ "subject": "math",
+ "knowledge_points": [
+  {
+   "id": "math_g2_unit1_01",
+   "subject": "math",
+   "grade": 2,
+   "name": "加与减（100 以内笔算加减）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_02",
+   "subject": "math",
+   "grade": 2,
+   "name": "购物（认识人民币）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_03",
+   "subject": "math",
+   "grade": 2,
+   "name": "数一数与乘法（乘法的初步认识）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_04",
+   "subject": "math",
+   "grade": 2,
+   "name": "图形的变化",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_05",
+   "subject": "math",
+   "grade": 2,
+   "name": "2-5 的乘法口诀",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_06",
+   "subject": "math",
+   "grade": 2,
+   "name": "测量（厘米和米）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_07",
+   "subject": "math",
+   "grade": 2,
+   "name": "6-9 的乘法口诀",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit1_08",
+   "subject": "math",
+   "grade": 2,
+   "name": "乘法口诀表",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_01",
+   "subject": "math",
+   "grade": 2,
+   "name": "除法（表内除法）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_02",
+   "subject": "math",
+   "grade": 2,
+   "name": "方向与位置",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_03",
+   "subject": "math",
+   "grade": 2,
+   "name": "生活中的大数（万以内数的认识）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_04",
+   "subject": "math",
+   "grade": 2,
+   "name": "测量（分米、毫米、千米）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_05",
+   "subject": "math",
+   "grade": 2,
+   "name": "认识图形（角与四边形）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_06",
+   "subject": "math",
+   "grade": 2,
+   "name": "时、分、秒",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g2_unit2_07",
+   "subject": "math",
+   "grade": 2,
+   "name": "调查与记录（数据收集整理）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  }
+ ],
+ "questions": []
+}

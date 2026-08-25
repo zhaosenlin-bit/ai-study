@@ -42,3 +42,9 @@ chroma_db/
 
 # Temp
 .tmp_*
+
+# 教材原始 PDF（过大不入库；渲染页图在 apps/web/public/textbooks/）
+data/textbooks/
+
+# 构建备份
+dist.bak*/

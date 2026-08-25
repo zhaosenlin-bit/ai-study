@@ -1,0 +1,765 @@
+{
+ "grade": 4,
+ "subject": "english",
+ "knowledge_points": [
+  {
+   "id": "english_g4_animal_words",
+   "subject": "english",
+   "grade": 4,
+   "name": "动物词汇",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_farm_animals"
+   ],
+   "next": [],
+   "vocabulary": [
+    "panda",
+    "tiger",
+    "monkey",
+    "elephant",
+    "lion",
+    "giraffe",
+    "rabbit"
+   ],
+   "common_misconceptions": [
+    "elephant 拼写漏字母",
+    "tiger 与 lion 混淆"
+   ],
+   "demo_value": "适合展示动物园话题和比较级句型"
+  },
+  {
+   "id": "english_g4_can_sentence",
+   "subject": "english",
+   "grade": 4,
+   "name": "Can 句型",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_basic_greetings"
+   ],
+   "next": [
+    "english_g5_sports"
+   ],
+   "vocabulary": [
+    "can",
+    "can't",
+    "Can you",
+    "Yes, I can",
+    "No, I can't",
+    "swim",
+    "run",
+    "jump"
+   ],
+   "common_misconceptions": [
+    "can 后动词用原形",
+    "can't 读音与 can 混淆"
+   ],
+   "demo_value": "适合展示能力问答和运动会话题"
+  },
+  {
+   "id": "english_g4_clothes",
+   "subject": "english",
+   "grade": 4,
+   "name": "衣物",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_weather"
+   ],
+   "next": [],
+   "vocabulary": [
+    "shirt",
+    "T-shirt",
+    "coat",
+    "dress",
+    "shoes",
+    "socks",
+    "hat"
+   ],
+   "common_misconceptions": [
+    "shirt 与 skirt 混淆",
+    "shoes 常以复数出现"
+   ],
+   "demo_value": "适合展示穿衣话题和购物对话"
+  },
+  {
+   "id": "english_g4_daily_actions",
+   "subject": "english",
+   "grade": 4,
+   "name": "日常动作",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_body_parts"
+   ],
+   "next": [
+    "english_g5_hobbies"
+   ],
+   "vocabulary": [
+    "run",
+    "jump",
+    "walk",
+    "sit",
+    "stand",
+    "swim",
+    "sing",
+    "dance",
+    "draw",
+    "sleep"
+   ],
+   "common_misconceptions": [
+    "swim 与 swimming 混",
+    "现在时第三人称忘加 s"
+   ],
+   "demo_value": "适合展示动作链与现在时第三人称"
+  },
+  {
+   "id": "english_g4_daily_routines",
+   "subject": "english",
+   "grade": 4,
+   "name": "日常活动",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_time_clock",
+    "english_g4_school_places"
+   ],
+   "next": [
+    "english_g5_present_tense_s"
+   ],
+   "vocabulary": [
+    "get up",
+    "brush teeth",
+    "have breakfast",
+    "go to school",
+    "do homework",
+    "go to bed"
+   ],
+   "common_misconceptions": [
+    "get up 与 wake up 混淆",
+    "主语第三人称动词忘加 s"
+   ],
+   "demo_value": "适合展示作息表话题和一般现在时三单"
+  },
+  {
+   "id": "english_g4_food_words",
+   "subject": "english",
+   "grade": 4,
+   "name": "食物词汇",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_food_drinks"
+   ],
+   "next": [
+    "english_g4_like_sentence"
+   ],
+   "vocabulary": [
+    "noodles",
+    "dumplings",
+    "chicken",
+    "fish",
+    "tomato",
+    "vegetables"
+   ],
+   "common_misconceptions": [
+    "tomato 复数加 es",
+    "dumplings 与 noodles 混淆"
+   ],
+   "demo_value": "适合展示点餐对话和 I like 句型"
+  },
+  {
+   "id": "english_g4_like_sentence",
+   "subject": "english",
+   "grade": 4,
+   "name": "I like 句型",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_food_words",
+    "english_g3_family_members"
+   ],
+   "next": [
+    "english_g5_hobbies"
+   ],
+   "vocabulary": [
+    "like",
+    "I like",
+    "I don't like",
+    "Do you like",
+    "Yes, I do"
+   ],
+   "common_misconceptions": [
+    "like 后动词忘加 ing",
+    "Don't like 主语搭配错误"
+   ],
+   "demo_value": "适合展示喜好问答和食物话题"
+  },
+  {
+   "id": "english_g4_months_seasons",
+   "subject": "english",
+   "grade": 4,
+   "name": "月份与季节",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_days_week"
+   ],
+   "next": [
+    "english_g5_festivals"
+   ],
+   "vocabulary": [
+    "January",
+    "June",
+    "September",
+    "December",
+    "spring",
+    "summer",
+    "autumn",
+    "winter"
+   ],
+   "common_misconceptions": [
+    "月份首字母大写规则遗忘",
+    "autumn 与 winter 混淆"
+   ],
+   "demo_value": "适合展示生日月份话题和季节活动"
+  },
+  {
+   "id": "english_g4_positions",
+   "subject": "english",
+   "grade": 4,
+   "name": "方位介词",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_classroom_objects"
+   ],
+   "next": [
+    "english_g5_there_be"
+   ],
+   "vocabulary": [
+    "in",
+    "on",
+    "under",
+    "behind",
+    "in front of",
+    "next to"
+   ],
+   "common_misconceptions": [
+    "in 与 on 混淆",
+    "behind 与 before 混淆"
+   ],
+   "demo_value": "适合展示物品位置问答 Where is...?"
+  },
+  {
+   "id": "english_g4_school_places",
+   "subject": "english",
+   "grade": 4,
+   "name": "学校场所",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_classroom_objects"
+   ],
+   "next": [
+    "english_g4_daily_routines"
+   ],
+   "vocabulary": [
+    "classroom",
+    "library",
+    "playground",
+    "canteen",
+    "office",
+    "gym"
+   ],
+   "common_misconceptions": [
+    "playground 与 classroom 场景混淆",
+    "library 拼写漏 r"
+   ],
+   "demo_value": "适合展示问路指路和校园情景对话"
+  },
+  {
+   "id": "english_g4_time_clock",
+   "subject": "english",
+   "grade": 4,
+   "name": "时间表达",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_days_week",
+    "english_g3_numbers"
+   ],
+   "next": [
+    "english_g4_daily_routines"
+   ],
+   "vocabulary": [
+    "o'clock",
+    "half past",
+    "quarter",
+    "in the morning",
+    "at noon",
+    "in the evening"
+   ],
+   "common_misconceptions": [
+    "at 与 in 时间介词混淆",
+    "half past 表达顺序错误"
+   ],
+   "demo_value": "适合展示钟表读法问答 What time is it?"
+  },
+  {
+   "id": "english_g4_transportation",
+   "subject": "english",
+   "grade": 4,
+   "name": "交通工具",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_basic_greetings"
+   ],
+   "next": [
+    "english_g5_asking_directions"
+   ],
+   "vocabulary": [
+    "bus",
+    "bike",
+    "car",
+    "train",
+    "plane",
+    "subway",
+    "by bus",
+    "on foot"
+   ],
+   "common_misconceptions": [
+    "by bike 前不加 the",
+    "on foot 用 at foot 错误"
+   ],
+   "demo_value": "适合展示上学方式问答 How do you go to school?"
+  },
+  {
+   "id": "english_g4_weather",
+   "subject": "english",
+   "grade": 4,
+   "name": "天气",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_days_week"
+   ],
+   "next": [
+    "english_g4_clothes"
+   ],
+   "vocabulary": [
+    "sunny",
+    "rainy",
+    "cloudy",
+    "snowy",
+    "windy",
+    "hot",
+    "cold"
+   ],
+   "common_misconceptions": [
+    "sunny 双写 n 拼错",
+    "rainy 与 raining 时态混淆"
+   ],
+   "demo_value": "适合展示天气问答 How's the weather?"
+  }
+ ],
+ "questions": [
+  {
+   "id": "english_q_0021",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_school_places"
+   ],
+   "stem": "Where do you read books at school?",
+   "options": [
+    "kitchen",
+    "library",
+    "bedroom",
+    "zoo"
+   ],
+   "answer": "library",
+   "rubric": "检查学校场所词义；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0022",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_school_places"
+   ],
+   "stem": "Spell the word: 操场 → playgr___d",
+   "options": [],
+   "answer": "playground",
+   "rubric": "检查拼写；常见错误 playgroud，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0023",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_food_words"
+   ],
+   "stem": "Which one is a vegetable?",
+   "options": [
+    "fish",
+    "chicken",
+    "tomato",
+    "milk"
+   ],
+   "answer": "tomato",
+   "rubric": "检查食物分类；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0024",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_food_words"
+   ],
+   "stem": "Spell the word: 面条 → noo___es",
+   "options": [],
+   "answer": "noodles",
+   "rubric": "检查拼写与复数；常见错误 nodles，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0025",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_animal_words"
+   ],
+   "stem": "Which animal lives in water?",
+   "options": [
+    "lion",
+    "fish",
+    "tiger",
+    "monkey"
+   ],
+   "answer": "fish",
+   "rubric": "检查动物词义；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0026",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_animal_words"
+   ],
+   "stem": "Spell the word: 熊猫 → pa___a",
+   "options": [],
+   "answer": "panda",
+   "rubric": "检查拼写；常见错误 pandar，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0027",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_weather"
+   ],
+   "stem": "What do you need on a rainy day?",
+   "options": [
+    "umbrella",
+    "T-shirt",
+    "shorts",
+    "sandals"
+   ],
+   "answer": "umbrella",
+   "rubric": "检查天气与物品关联；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0028",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_weather"
+   ],
+   "stem": "Spell the word: 下雪的 → s___wy",
+   "options": [],
+   "answer": "snowy",
+   "rubric": "检查拼写；常见错误 snowey，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0029",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_daily_routines"
+   ],
+   "stem": "老师问你：What do you do in the morning? 请用完整英语句子回答一件你早上做的事。",
+   "options": [],
+   "answer": "I brush my teeth.",
+   "rubric": "检查完整句输出；动词缺失可标记 sentence_pattern_error，听不清可标记 listening_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0030",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_time_clock"
+   ],
+   "stem": "七点整用英语怎么说：s___ o'clock",
+   "options": [],
+   "answer": "seven",
+   "rubric": "检查时间表达；常见错误 sewen，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0031",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_months_seasons"
+   ],
+   "stem": "How many months are there in a year?",
+   "options": [
+    "7",
+    "10",
+    "12",
+    "24"
+   ],
+   "answer": "12",
+   "rubric": "检查月份常识；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0032",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_months_seasons"
+   ],
+   "stem": "Spell the word: 六月 → J___e",
+   "options": [],
+   "answer": "June",
+   "rubric": "检查月份拼写与首字母大写；可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0033",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_clothes"
+   ],
+   "stem": "Which one do you wear in winter?",
+   "options": [
+    "T-shirt",
+    "shorts",
+    "coat",
+    "sandals"
+   ],
+   "answer": "coat",
+   "rubric": "检查衣物与季节关联；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0034",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_positions"
+   ],
+   "stem": "The cat is ___ the box. (猫在盒子里)",
+   "options": [
+    "in",
+    "at",
+    "for",
+    "and"
+   ],
+   "answer": "in",
+   "rubric": "检查方位介词；in/on 混淆可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0035",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_transportation"
+   ],
+   "stem": "同学问你：How do you go to school? 请用完整英语句子回答你的上学方式。",
+   "options": [],
+   "answer": "I go to school by bus.",
+   "rubric": "检查 by + 交通方式结构；漏 by 可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0066",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_food_words"
+   ],
+   "stem": "在餐厅，服务员问：What would you like? 请用完整英语句子说出你想要的食物或饮料。",
+   "options": [],
+   "answer": "I'd like some noodles, please.",
+   "rubric": "检查点餐表达；I'd like 结构错误可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0067",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_school_places"
+   ],
+   "stem": "在图书馆想借一本书，用英语对图书管理员说一句完整的话。",
+   "options": [],
+   "answer": "May I borrow this book?",
+   "rubric": "检查礼貌请求句型；May I 缺失可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0070",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_weather"
+   ],
+   "stem": "和朋友聊天气，用英语说一句完整的话描述今天的天气。",
+   "options": [],
+   "answer": "It's sunny today.",
+   "rubric": "检查天气句型 It's + 天气词；结构错误可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0071",
+   "subject": "english",
+   "grade": 4,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g4_like_sentence",
+    "english_g3_fruits"
+   ],
+   "stem": "Select ALL the fruits you like:",
+   "options": [
+    "apple",
+    "banana",
+    "desk",
+    "milk"
+   ],
+   "answer": "apple, banana",
+   "rubric": "检查 I like + 名词与水果分类；漏选/多选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0072",
+   "subject": "english",
+   "grade": 4,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g4_can_sentence",
+    "english_g5_sports"
+   ],
+   "stem": "What can you do at the gym? Select ALL.",
+   "options": [
+    "swim",
+    "play basketball",
+    "read a book",
+    "run"
+   ],
+   "answer": "swim, play basketball, run",
+   "rubric": "检查 can + 动词原形与运动场景；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0074",
+   "subject": "english",
+   "grade": 4,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g4_transportation"
+   ],
+   "stem": "Which are ways to go to school? Select ALL.",
+   "options": [
+    "by bus",
+    "on foot",
+    "by bike",
+    "by moon"
+   ],
+   "answer": "by bus, on foot, by bike",
+   "rubric": "检查 by + 交通方式结构；多选错误可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0076",
+   "subject": "english",
+   "grade": 4,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g4_daily_routines"
+   ],
+   "stem": "What time do you get up in the morning? 请用完整英语句子回答。",
+   "options": [],
+   "answer": "I get up at seven.",
+   "rubric": "检查完整句与时间表达；句子不完整可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0081",
+   "subject": "english",
+   "grade": 4,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g4_daily_actions"
+   ],
+   "stem": "Which word means “跑”？",
+   "options": [
+    "run",
+    "jump",
+    "walk",
+    "sit"
+   ],
+   "answer": "run",
+   "rubric": "动作词义映射；错选 walk 可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0082",
+   "subject": "english",
+   "grade": 4,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g4_daily_actions"
+   ],
+   "stem": "He ______ (jump) high every day. → 现在时第三人称单数",
+   "options": [],
+   "answer": "jumps",
+   "rubric": "检查第三人称单数 -s；漏 s 可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0083",
+   "subject": "english",
+   "grade": 4,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g4_weather",
+    "english_g4_months_seasons"
+   ],
+   "stem": "同学问你：What’s the weather like today in your city? 请用一句话回答，并说出温度感受。",
+   "options": [],
+   "answer": "It’s sunny and hot, about 30 degrees.",
+   "rubric": "检查天气形容词 + 温度表达；缺温度可标记 sentence_pattern_error。",
+   "difficulty": 2
+  }
+ ]
+}

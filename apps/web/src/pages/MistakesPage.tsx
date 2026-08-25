@@ -24,7 +24,7 @@ function formatReview(dateStr: string) {
 const ERROR_COLOR: Record<string, string> = {
   概念混淆: "bg-subject-chinese/15 text-subject-chinese border-subject-chinese/30",
   规则不熟: "bg-subject-math/15 text-subject-math border-subject-math/30",
-  粗心: "bg-white/8 text-muted-foreground border-white/15",
+  粗心: "bg-muted/80 text-muted-foreground border-border",
   计算失误: "bg-subject-math/15 text-subject-math border-subject-math/30",
   表达不清: "bg-subject-chinese/15 text-subject-chinese border-subject-chinese/30",
 };
@@ -62,7 +62,7 @@ export function MistakesPage() {
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
           {mistakes?.map((m) => {
             const meta = subjectMeta(m.subject);
-            const color = ERROR_COLOR[m.error_type] ?? "bg-white/8 text-muted-foreground border-white/15";
+            const color = ERROR_COLOR[m.error_type] ?? "bg-muted/80 text-muted-foreground border-border";
             return (
               <Card key={m.mistake_id} className="animate-fade-in">
                 <CardContent className="p-5">

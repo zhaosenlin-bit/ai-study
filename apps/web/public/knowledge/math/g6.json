@@ -1,0 +1,420 @@
+{
+ "grade": 6,
+ "subject": "math",
+ "knowledge_points": [
+  {
+   "id": "math_g6_fraction_multiply",
+   "subject": "math",
+   "grade": 6,
+   "name": "分数乘法",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g5_fraction_add_sub"
+   ],
+   "common_misconceptions": [
+    "约分时机不当"
+   ]
+  },
+  {
+   "id": "math_g6_fraction_divide",
+   "subject": "math",
+   "grade": 6,
+   "name": "分数除法",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g6_fraction_multiply"
+   ],
+   "common_misconceptions": [
+    "除以分数忘乘倒数"
+   ]
+  },
+  {
+   "id": "math_g6_ratio",
+   "subject": "math",
+   "grade": 6,
+   "name": "比的认识",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g6_fraction_divide"
+   ],
+   "common_misconceptions": [
+    "比与除法关系不清"
+   ]
+  },
+  {
+   "id": "math_g6_percent",
+   "subject": "math",
+   "grade": 6,
+   "name": "百分数",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g6_ratio"
+   ],
+   "common_misconceptions": [
+    "百分数大小比较出错"
+   ]
+  },
+  {
+   "id": "math_g6_circle",
+   "subject": "math",
+   "grade": 6,
+   "name": "圆的认识与面积",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g5_polygon_area"
+   ],
+   "common_misconceptions": [
+    "圆周率取值混乱"
+   ]
+  },
+  {
+   "id": "math_g6_negative_number",
+   "subject": "math",
+   "grade": 6,
+   "name": "负数",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "负数大小比较出错"
+   ]
+  },
+  {
+   "id": "math_g6_cylinder_cone",
+   "subject": "math",
+   "grade": 6,
+   "name": "圆柱与圆锥",
+   "difficulty": 4,
+   "prerequisites": [
+    "math_g6_circle"
+   ],
+   "common_misconceptions": [
+    "圆锥体积忘记乘 1/3"
+   ]
+  },
+  {
+   "id": "math_g6_proportion",
+   "subject": "math",
+   "grade": 6,
+   "name": "比例",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g6_ratio"
+   ],
+   "common_misconceptions": [
+    "正反比例判断混淆"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "math_q_g6_0025",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_fraction_multiply"
+   ],
+   "stem": "2/5 × 15 = ?",
+   "options": [
+    "6",
+    "30/5",
+    "6/5",
+    "10"
+   ],
+   "answer": "6",
+   "rubric": "考察知识点:分数乘法",
+   "explanation": "整数与分数相乘:2×15÷5=6。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0026",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_fraction_divide"
+   ],
+   "stem": "6 ÷ 2/3 = ?",
+   "options": [
+    "4",
+    "9",
+    "12",
+    "18/3"
+   ],
+   "answer": "9",
+   "rubric": "考察知识点:分数除法",
+   "explanation": "除以一个分数等于乘它的倒数:6×3/2=9。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0027",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_ratio"
+   ],
+   "stem": "化简比 12 : 16 = ?",
+   "options": [
+    "3 : 4",
+    "4 : 3",
+    "6 : 8",
+    "2 : 3"
+   ],
+   "answer": "3 : 4",
+   "rubric": "考察知识点:比的认识",
+   "explanation": "同时除以最大公因数 4。",
+   "error_type": "calculation_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g6_0028",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_percent"
+   ],
+   "stem": "一件衣服原价 200 元,打八折出售,现价多少?",
+   "options": [
+    "160 元",
+    "180 元",
+    "40 元",
+    "120 元"
+   ],
+   "answer": "160 元",
+   "rubric": "考察知识点:百分数",
+   "explanation": "八折 = 80%,200×80%=160。",
+   "error_type": "modeling_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g6_0029",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_circle"
+   ],
+   "stem": "圆的直径是 10 厘米,它的周长是?(π取3.14)",
+   "options": [
+    "31.4 厘米",
+    "78.5 厘米",
+    "314 厘米",
+    "15.7 厘米"
+   ],
+   "answer": "31.4 厘米",
+   "rubric": "考察知识点:圆的认识与面积",
+   "explanation": "周长 = πd = 3.14×10。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0030",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_negative_number"
+   ],
+   "stem": "下面哪个数最大?",
+   "options": [
+    "-5",
+    "-2",
+    "0",
+    "-8"
+   ],
+   "answer": "0",
+   "rubric": "考察知识点:负数",
+   "explanation": "负数都小于 0,正数大于 0。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g6_0031",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_cylinder_cone"
+   ],
+   "stem": "圆锥底面积 12 平方厘米、高 9 厘米,体积是?",
+   "options": [
+    "36 立方厘米",
+    "108 立方厘米",
+    "54 立方厘米",
+    "27 立方厘米"
+   ],
+   "answer": "36 立方厘米",
+   "rubric": "考察知识点:圆柱与圆锥",
+   "explanation": "圆锥体积 = 底面积×高÷3 = 12×9÷3。",
+   "error_type": "calculation_error",
+   "difficulty": 4
+  },
+  {
+   "id": "math_q_g6_0032",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_proportion"
+   ],
+   "stem": "速度一定,路程与时间成什么比例?",
+   "options": [
+    "正比例",
+    "反比例",
+    "不成比例",
+    "无法判断"
+   ],
+   "answer": "正比例",
+   "rubric": "考察知识点:比例",
+   "explanation": "路程÷时间=速度(一定),商一定成正比例。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0033",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_percent"
+   ],
+   "stem": "把 3/5 化成百分数是?",
+   "options": [
+    "60%",
+    "35%",
+    "65%",
+    "0.6%"
+   ],
+   "answer": "60%",
+   "rubric": "考察知识点:百分数",
+   "explanation": "3/5 = 0.6 = 60%。",
+   "error_type": "unit_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g6_0036",
+   "subject": "math",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g6_circle"
+   ],
+   "stem": "一个圆的半径是 3 厘米,它的面积是______平方厘米。(π取3.14)",
+   "options": null,
+   "answer": "28.26",
+   "rubric": "考察知识点:圆的认识与面积",
+   "explanation": "圆面积 = πr² = 3.14 × 9。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0041",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_fraction_multiply"
+   ],
+   "stem": "3/4 × 2/3 = ?",
+   "options": [
+    "6/7",
+    "1/2",
+    "9/8",
+    "1"
+   ],
+   "answer": "1/2",
+   "rubric": "考察知识点:分数乘法",
+   "explanation": "分子乘分子、分母乘分母,能约分先约分。",
+   "error_type": "careless",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0025_r",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_fraction_multiply"
+   ],
+   "stem": "2/5 × 15 = ?",
+   "options": [
+    "6",
+    "30/5",
+    "6/5",
+    "10"
+   ],
+   "answer": "6",
+   "rubric": "考察知识点:分数乘法",
+   "explanation": "整数与分数相乘:2×15÷5=6。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0026_r",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_fraction_divide"
+   ],
+   "stem": "6 ÷ 2/3 = ?",
+   "options": [
+    "4",
+    "9",
+    "12",
+    "18/3"
+   ],
+   "answer": "9",
+   "rubric": "考察知识点:分数除法",
+   "explanation": "除以一个分数等于乘它的倒数:6×3/2=9。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g6_0028_r",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_percent"
+   ],
+   "stem": "一件衣服原价 200 元,打八折出售,现价多少?",
+   "options": [
+    "160 元",
+    "180 元",
+    "40 元",
+    "120 元"
+   ],
+   "answer": "160 元",
+   "rubric": "考察知识点:百分数",
+   "explanation": "八折 = 80%,200×80%=160。",
+   "error_type": "modeling_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g6_0029_r",
+   "subject": "math",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g6_circle"
+   ],
+   "stem": "圆的直径是 10 厘米,它的周长是?(π取3.14)",
+   "options": [
+    "31.4 厘米",
+    "78.5 厘米",
+    "314 厘米",
+    "15.7 厘米"
+   ],
+   "answer": "31.4 厘米",
+   "rubric": "考察知识点:圆的认识与面积",
+   "explanation": "周长 = πd = 3.14×10。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  }
+ ]
+}

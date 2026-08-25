@@ -22,6 +22,7 @@ export default {
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
+          destructiveForeground: "hsl(var(--destructive-foreground))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
@@ -44,6 +45,14 @@ export default {
           math: "hsl(var(--subject-math))",
           chinese: "hsl(var(--subject-chinese))",
           english: "hsl(var(--subject-english))",
+        },
+        leaf: {
+          DEFAULT: "#b45309",
+          hover: "#92400e",
+        },
+        orange: {
+          DEFAULT: "#E86A10",
+          hover: "#d45e0d",
         },
       },
       borderRadius: {

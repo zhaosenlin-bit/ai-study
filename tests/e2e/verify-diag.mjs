@@ -1,0 +1,17 @@
+import { chromium } from "@playwright/test";
+import { PNG } from "pngjs";
+const BASE = "http://localhost:5174";
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await page.goto(BASE + "/login", { waitUntil: "networkidle" });
+await page.getByRole("button", { name: "小明" }).click();
+await page.waitForURL(BASE + "/");
+await page.goto(BASE + "/diagnosis", { waitUntil: "networkidle" });
+await page.waitForTimeout(600);
+const png = PNG.sync.read(await page.screenshot());
+const s = (x, y) => { const i = (y * png.width + x) << 2; return `${png.data[i]},${png.data[i+1]},${png.data[i+2]}`; };
+console.log("天空顶部:", s(720, 12));
+console.log("左侧rail区:", s(36, 300), "(应半透明白，不是纯蓝)");
+console.log("中央卡片区:", s(720, 300), "(应是白/浅色卡片，不是纯蓝)");
+console.log("底部按钮区:", s(720, 860));
+await browser.close();

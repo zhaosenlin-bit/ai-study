@@ -1,0 +1,157 @@
+{
+ "grade": 1,
+ "subject": "math",
+ "knowledge_points": [
+  {
+   "id": "math_g1_unit1_01",
+   "subject": "math",
+   "grade": 1,
+   "name": "生活中的数（1-10 的认识）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_02",
+   "subject": "math",
+   "grade": 1,
+   "name": "比较（大小、多少、长短、高矮）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_03",
+   "subject": "math",
+   "grade": 1,
+   "name": "加与减（一）（10 以内加减法）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_04",
+   "subject": "math",
+   "grade": 1,
+   "name": "分类",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_05",
+   "subject": "math",
+   "grade": 1,
+   "name": "位置与顺序",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_06",
+   "subject": "math",
+   "grade": 1,
+   "name": "认识图形（立体图形）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit1_07",
+   "subject": "math",
+   "grade": 1,
+   "name": "加与减（二）（20 以内进位加法）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_01",
+   "subject": "math",
+   "grade": 1,
+   "name": "加与减（三）（20 以内退位减法）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_02",
+   "subject": "math",
+   "grade": 1,
+   "name": "观察物体",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_03",
+   "subject": "math",
+   "grade": 1,
+   "name": "生活中的数（100 以内数的认识）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_04",
+   "subject": "math",
+   "grade": 1,
+   "name": "加与减（一）（整十数加减）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_05",
+   "subject": "math",
+   "grade": 1,
+   "name": "加与减（二）（两位数加减）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_06",
+   "subject": "math",
+   "grade": 1,
+   "name": "有趣的图形（平面图形）",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_07",
+   "subject": "math",
+   "grade": 1,
+   "name": "整理与复习",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  },
+  {
+   "id": "math_g1_unit2_08",
+   "subject": "math",
+   "grade": 1,
+   "name": "数学好玩",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_framework"
+  }
+ ],
+ "questions": []
+}

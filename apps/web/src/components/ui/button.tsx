@@ -6,11 +6,11 @@ type Size = "default" | "sm" | "lg" | "icon";
 
 const variants: Record<Variant, string> = {
   default:
-    "bg-primary text-primary-foreground shadow-[0_4px_14px_rgba(139,92,246,0.35)] hover:bg-primary/90",
+    "bg-primary text-primary-foreground shadow-[0_4px_14px_rgba(217,119,6,0.30)] hover:bg-primary/90",
   secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-  ghost: "hover:bg-accent hover:text-accent-foreground",
+  ghost: "hover:bg-accent/10 hover:text-accent-foreground",
   destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-  outline: "border border-white/15 bg-transparent hover:bg-white/5",
+  outline: "border border-border bg-transparent hover:bg-muted",
 };
 
 const sizes: Record<Size, string> = {

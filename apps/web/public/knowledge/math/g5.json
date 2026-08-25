@@ -1,0 +1,484 @@
+{
+ "grade": 5,
+ "subject": "math",
+ "knowledge_points": [
+  {
+   "id": "math_g5_decimal_multiply",
+   "subject": "math",
+   "grade": 5,
+   "name": "小数乘法",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g4_decimal_initial",
+    "math_g4_three_digit_times_two_digit"
+   ],
+   "common_misconceptions": [
+    "积的小数位数数错"
+   ]
+  },
+  {
+   "id": "math_g5_decimal_divide",
+   "subject": "math",
+   "grade": 5,
+   "name": "小数除法",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g5_decimal_multiply"
+   ],
+   "common_misconceptions": [
+    "商的小数点位置错误"
+   ]
+  },
+  {
+   "id": "math_g5_equation_simple",
+   "subject": "math",
+   "grade": 5,
+   "name": "简易方程",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g5_decimal_multiply"
+   ],
+   "common_misconceptions": [
+    "移项不变号"
+   ]
+  },
+  {
+   "id": "math_g5_polygon_area",
+   "subject": "math",
+   "grade": 5,
+   "name": "多边形面积",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g4_rectangle_area"
+   ],
+   "common_misconceptions": [
+    "三角形面积忘记除以 2"
+   ]
+  },
+  {
+   "id": "math_g5_fraction_add_sub",
+   "subject": "math",
+   "grade": 5,
+   "name": "分数加减法(异分母)",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g4_fraction_compare"
+   ],
+   "common_misconceptions": [
+    "通分后分子漏乘"
+   ]
+  },
+  {
+   "id": "math_g5_prime_composite",
+   "subject": "math",
+   "grade": 5,
+   "name": "因数与倍数",
+   "difficulty": 2,
+   "prerequisites": [
+    "math_g3_division_meaning"
+   ],
+   "common_misconceptions": [
+    "质数与奇数混淆"
+   ]
+  },
+  {
+   "id": "math_g5_volume_cuboid",
+   "subject": "math",
+   "grade": 5,
+   "name": "长方体正方体体积",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g5_polygon_area"
+   ],
+   "common_misconceptions": [
+    "体积单位与面积单位混淆"
+   ]
+  },
+  {
+   "id": "math_g5_position_coordinates",
+   "subject": "math",
+   "grade": 5,
+   "name": "位置与数对",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "行与列顺序颠倒"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "math_q_g5_0017",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_multiply"
+   ],
+   "stem": "0.25 × 0.4 = ?",
+   "options": [
+    "0.1",
+    "0.01",
+    "1",
+    "0.100"
+   ],
+   "answer": "0.1",
+   "rubric": "考察知识点:小数乘法",
+   "explanation": "25×4=100,积有 3 位小数:0.100=0.1。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0018",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_divide"
+   ],
+   "stem": "4.8 ÷ 0.6 = ?",
+   "options": [
+    "0.8",
+    "8",
+    "80",
+    "0.08"
+   ],
+   "answer": "8",
+   "rubric": "考察知识点:小数除法",
+   "explanation": "除数变整数:4.8÷0.6=48÷6=8。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0019",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_equation_simple"
+   ],
+   "stem": "3x = 15, x = ?",
+   "options": [
+    "5",
+    "45",
+    "12",
+    "18"
+   ],
+   "answer": "5",
+   "rubric": "考察知识点:简易方程",
+   "explanation": "等式两边同时除以 3。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0020",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_polygon_area"
+   ],
+   "stem": "三角形底 10 厘米、高 6 厘米,面积是?",
+   "options": [
+    "60 平方厘米",
+    "30 平方厘米",
+    "16 平方厘米",
+    "120 平方厘米"
+   ],
+   "answer": "30 平方厘米",
+   "rubric": "考察知识点:多边形面积",
+   "explanation": "三角形面积 = 底×高÷2 = 60÷2。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0021",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_fraction_add_sub"
+   ],
+   "stem": "1/3 + 1/6 = ?",
+   "options": [
+    "2/9",
+    "1/2",
+    "2/6",
+    "1/9"
+   ],
+   "answer": "1/2",
+   "rubric": "考察知识点:分数加减法(异分母)",
+   "explanation": "通分:1/3=2/6,2/6+1/6=3/6=1/2。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0022",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_prime_composite"
+   ],
+   "stem": "下面哪个数是质数?",
+   "options": [
+    "15",
+    "21",
+    "23",
+    "27"
+   ],
+   "answer": "23",
+   "rubric": "考察知识点:因数与倍数",
+   "explanation": "质数只有 1 和它本身两个因数。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g5_0023",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_volume_cuboid"
+   ],
+   "stem": "长方体长 5 分米、宽 4 分米、高 3 分米,体积是?",
+   "options": [
+    "60 立方分米",
+    "47 立方分米",
+    "20 立方分米",
+    "120 立方分米"
+   ],
+   "answer": "60 立方分米",
+   "rubric": "考察知识点:长方体正方体体积",
+   "explanation": "体积 = 长×宽×高 = 5×4×3。",
+   "error_type": "unit_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0024",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_position_coordinates"
+   ],
+   "stem": "数对 (3, 5) 表示第 3 列第 5 行,那 (5, 3) 表示?",
+   "options": [
+    "第 5 列第 3 行",
+    "第 3 列第 5 行",
+    "第 8 列第 8 行",
+    "位置相同"
+   ],
+   "answer": "第 5 列第 3 行",
+   "rubric": "考察知识点:位置与数对",
+   "explanation": "数对中第一个数表示列,第二个数表示行,顺序不能颠倒。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g5_0034",
+   "subject": "math",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g5_equation_simple"
+   ],
+   "stem": "解方程:x + 4.5 = 9.3, x = ______。",
+   "options": null,
+   "answer": "4.8",
+   "rubric": "考察知识点:简易方程",
+   "explanation": "等式两边同时减去 4.5。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0035",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_divide"
+   ],
+   "stem": "7.5 ÷ 0.5 = ?",
+   "options": [
+    "1.5",
+    "15",
+    "150",
+    "0.15"
+   ],
+   "answer": "15",
+   "rubric": "考察知识点:小数除法",
+   "explanation": "除数是小数时,先移动小数点把除数变成整数。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0038",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_fraction_add_sub"
+   ],
+   "stem": "1/2 + 1/4 = ?",
+   "options": [
+    "2/6",
+    "3/4",
+    "2/4",
+    "1/6"
+   ],
+   "answer": "3/4",
+   "rubric": "考察知识点:分数加减法(异分母)",
+   "explanation": "先通分:1/2 = 2/4,再相加得 3/4。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0017_p",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_multiply"
+   ],
+   "stem": "0.25 × 0.4 = ?",
+   "options": [
+    "0.1",
+    "0.01",
+    "1",
+    "0.100"
+   ],
+   "answer": "0.1",
+   "rubric": "考察知识点:小数乘法",
+   "explanation": "25×4=100,积有 3 位小数:0.100=0.1。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0018_p",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_divide"
+   ],
+   "stem": "4.8 ÷ 0.6 = ?",
+   "options": [
+    "0.8",
+    "8",
+    "80",
+    "0.08"
+   ],
+   "answer": "8",
+   "rubric": "考察知识点:小数除法",
+   "explanation": "除数变整数:4.8÷0.6=48÷6=8。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0019_p",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_equation_simple"
+   ],
+   "stem": "3x = 15, x = ?",
+   "options": [
+    "5",
+    "45",
+    "12",
+    "18"
+   ],
+   "answer": "5",
+   "rubric": "考察知识点:简易方程",
+   "explanation": "等式两边同时除以 3。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0020_p",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_polygon_area"
+   ],
+   "stem": "三角形底 10 厘米、高 6 厘米,面积是?",
+   "options": [
+    "60 平方厘米",
+    "30 平方厘米",
+    "16 平方厘米",
+    "120 平方厘米"
+   ],
+   "answer": "30 平方厘米",
+   "rubric": "考察知识点:多边形面积",
+   "explanation": "三角形面积 = 底×高÷2 = 60÷2。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0018_r",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_decimal_divide"
+   ],
+   "stem": "4.8 ÷ 0.6 = ?",
+   "options": [
+    "0.8",
+    "8",
+    "80",
+    "0.08"
+   ],
+   "answer": "8",
+   "rubric": "考察知识点:小数除法",
+   "explanation": "除数变整数:4.8÷0.6=48÷6=8。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0019_r",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_equation_simple"
+   ],
+   "stem": "3x = 15, x = ?",
+   "options": [
+    "5",
+    "45",
+    "12",
+    "18"
+   ],
+   "answer": "5",
+   "rubric": "考察知识点:简易方程",
+   "explanation": "等式两边同时除以 3。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g5_0021_r",
+   "subject": "math",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g5_fraction_add_sub"
+   ],
+   "stem": "1/3 + 1/6 = ?",
+   "options": [
+    "2/9",
+    "1/2",
+    "2/6",
+    "1/9"
+   ],
+   "answer": "1/2",
+   "rubric": "考察知识点:分数加减法(异分母)",
+   "explanation": "通分:1/3=2/6,2/6+1/6=3/6=1/2。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  }
+ ]
+}

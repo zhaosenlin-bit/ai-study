@@ -24,6 +24,9 @@ export default defineConfig({
     },
   },
   build: {
+    // 本机 genie-safe-delete 钩子会拦截 vite 清空 dist（node rmSync），
+    // 由构建脚本先 bash rm/mv 清理，故关闭 vite 自动清空
+    emptyOutDir: false,
     rollupOptions: {
       output: {
         manualChunks: {

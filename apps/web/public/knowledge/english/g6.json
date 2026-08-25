@@ -1,0 +1,750 @@
+{
+ "grade": 6,
+ "subject": "english",
+ "knowledge_points": [
+  {
+   "id": "english_g6_abilities",
+   "subject": "english",
+   "grade": 6,
+   "name": "能力表达",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_can_sentence",
+    "english_g5_sports"
+   ],
+   "next": [],
+   "vocabulary": [
+    "be good at",
+    "be bad at",
+    "do well in",
+    "excellent",
+    "practice"
+   ],
+   "common_misconceptions": [
+    "be good at 后动词忘加 ing",
+    "do well in 与 be good at 混淆"
+   ],
+   "demo_value": "适合展示自我介绍和成长档案"
+  },
+  {
+   "id": "english_g6_customs_traditions",
+   "subject": "english",
+   "grade": 6,
+   "name": "中外文化与节日",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_festivals"
+   ],
+   "next": [],
+   "vocabulary": [
+    "Spring Festival",
+    "Mid-Autumn Festival",
+    "Dragon Boat Festival",
+    "Thanksgiving",
+    "Christmas",
+    "Halloween",
+    "traditional",
+    "custom",
+    "celebrate",
+    "dress up"
+   ],
+   "common_misconceptions": [
+    "Christmas 与 Chinese New Year 混",
+    "celebrate 介词用错"
+   ],
+   "demo_value": "适合展示节日对比与文化差异表达"
+  },
+  {
+   "id": "english_g6_describing_people",
+   "subject": "english",
+   "grade": 6,
+   "name": "人物描述",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_comparatives",
+    "english_g5_jobs",
+    "english_g5_emotions"
+   ],
+   "next": [],
+   "vocabulary": [
+    "tall",
+    "short",
+    "wear glasses",
+    "kind",
+    "friendly",
+    "long hair"
+   ],
+   "common_misconceptions": [
+    "wear 与 put on 混淆",
+    "描述外貌与性格顺序混乱"
+   ],
+   "demo_value": "适合展示人物介绍写作和口语表达"
+  },
+  {
+   "id": "english_g6_environment",
+   "subject": "english",
+   "grade": 6,
+   "name": "环保主题",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_season_activities"
+   ],
+   "next": [],
+   "vocabulary": [
+    "protect",
+    "environment",
+    "save water",
+    "recycle",
+    "plant trees",
+    "litter"
+   ],
+   "common_misconceptions": [
+    "environment 拼写长词困难",
+    "protect 与 prevent 混淆"
+   ],
+   "demo_value": "适合展示倡议书写作和建议句型"
+  },
+  {
+   "id": "english_g6_health_medicine",
+   "subject": "english",
+   "grade": 6,
+   "name": "健康与就医",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_healthy_food",
+    "english_g6_describing_people"
+   ],
+   "next": [],
+   "vocabulary": [
+    "headache",
+    "fever",
+    "stomachache",
+    "toothache",
+    "cough",
+    "see a doctor",
+    "take medicine",
+    "rest",
+    "drink water",
+    "feel ill"
+   ],
+   "common_misconceptions": [
+    "headache 拼写漏 a",
+    "see a doctor 与 look a doctor 混"
+   ],
+   "demo_value": "适合展示就医情景对话与症状表达"
+  },
+  {
+   "id": "english_g6_invitations",
+   "subject": "english",
+   "grade": 6,
+   "name": "邀请与提议",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g5_future_will"
+   ],
+   "next": [
+    "english_g6_suggestions"
+   ],
+   "vocabulary": [
+    "Would you like to",
+    "Let's",
+    "Shall we",
+    "Why don't you",
+    "Sure",
+    "Sounds great",
+    "How about",
+    "This weekend",
+    "park",
+    "see a movie"
+   ],
+   "common_misconceptions": [
+    "Let's 后忘接动词原形",
+    "Would you like to 与 Do you like 混"
+   ],
+   "demo_value": "适合展示周末活动邀请对话"
+  },
+  {
+   "id": "english_g6_letter_writing",
+   "subject": "english",
+   "grade": 6,
+   "name": "书信写作",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_hobbies",
+    "english_g6_story_reading"
+   ],
+   "next": [],
+   "vocabulary": [
+    "Dear",
+    "Your friend",
+    "Yours",
+    "I'm writing to",
+    "Best wishes"
+   ],
+   "common_misconceptions": [
+    "信头称呼格式错误",
+    "落款 Your friend 顺序错误"
+   ],
+   "demo_value": "适合展示完整写作任务和格式规范"
+  },
+  {
+   "id": "english_g6_past_tense",
+   "subject": "english",
+   "grade": 6,
+   "name": "一般过去时",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_present_tense_s"
+   ],
+   "next": [
+    "english_g6_story_reading"
+   ],
+   "vocabulary": [
+    "went",
+    "ate",
+    "saw",
+    "had",
+    "was",
+    "were",
+    "yesterday",
+    "last week"
+   ],
+   "common_misconceptions": [
+    "不规则动词过去式记忆错误",
+    "过去时间词与现在时搭配"
+   ],
+   "demo_value": "适合展示假期分享话题和故事讲述"
+  },
+  {
+   "id": "english_g6_present_perfect",
+   "subject": "english",
+   "grade": 6,
+   "name": "现在完成时（初步）",
+   "difficulty": 4,
+   "prerequisites": [
+    "english_g6_past_tense"
+   ],
+   "next": [],
+   "vocabulary": [
+    "have been to",
+    "have visited",
+    "have seen",
+    "Have you ever",
+    "ever",
+    "already"
+   ],
+   "common_misconceptions": [
+    "过去分词与过去式混淆",
+    "have been to 与 have gone to 混淆"
+   ],
+   "demo_value": "适合展示拓展语法亮点和旅行经历分享"
+  },
+  {
+   "id": "english_g6_story_reading",
+   "subject": "english",
+   "grade": 6,
+   "name": "故事阅读",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_there_be",
+    "english_g6_past_tense"
+   ],
+   "next": [
+    "english_g6_letter_writing"
+   ],
+   "vocabulary": [
+    "Once upon a time",
+    "king",
+    "princess",
+    "magic",
+    "clever",
+    "happily"
+   ],
+   "common_misconceptions": [
+    "故事时态混乱",
+    "Once upon a time 不会使用"
+   ],
+   "demo_value": "适合展示阅读理解和故事复述"
+  },
+  {
+   "id": "english_g6_suggestions",
+   "subject": "english",
+   "grade": 6,
+   "name": "建议句型",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_healthy_food",
+    "english_g6_invitations"
+   ],
+   "next": [],
+   "vocabulary": [
+    "should",
+    "shouldn't",
+    "You should",
+    "You'd better",
+    "Why not",
+    "advice"
+   ],
+   "common_misconceptions": [
+    "should 后动词原形",
+    "shouldn't 拼写"
+   ],
+   "demo_value": "适合展示健康建议和书信建议段落"
+  },
+  {
+   "id": "english_g6_telephone_english",
+   "subject": "english",
+   "grade": 6,
+   "name": "电话英语",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_can_sentence",
+    "english_g3_basic_greetings"
+   ],
+   "next": [],
+   "vocabulary": [
+    "This is Tom speaking",
+    "May I speak to",
+    "Hold on",
+    "call back",
+    "wrong number"
+   ],
+   "common_misconceptions": [
+    "电话中 I am Tom 中式表达",
+    "Hold on 与 wait 场景混淆"
+   ],
+   "demo_value": "适合展示电话情景角色扮演"
+  },
+  {
+   "id": "english_g6_travel",
+   "subject": "english",
+   "grade": 6,
+   "name": "旅行话题",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_future_will",
+    "english_g5_asking_directions"
+   ],
+   "next": [],
+   "vocabulary": [
+    "trip",
+    "hotel",
+    "ticket",
+    "camera",
+    "suitcase",
+    "take photos",
+    "go sightseeing"
+   ],
+   "common_misconceptions": [
+    "trip 与 travel 用法混淆",
+    "ticket 与 letter 混淆"
+   ],
+   "demo_value": "适合展示旅行计划完整对话"
+  }
+ ],
+ "questions": [
+  {
+   "id": "english_q_0051",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_past_tense"
+   ],
+   "stem": "I ___ (go) to Beijing yesterday.",
+   "options": [],
+   "answer": "went",
+   "rubric": "检查不规则动词过去式；用 go 或 goed 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0052",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_past_tense"
+   ],
+   "stem": "Which is the past tense of \"eat\"?",
+   "options": [
+    "ate",
+    "eating",
+    "eats",
+    "eaten"
+   ],
+   "answer": "ate",
+   "rubric": "检查不规则过去式记忆；错选可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0053",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_travel"
+   ],
+   "stem": "旅行时你会带哪件物品？用完整英语句子说明原因。",
+   "options": [],
+   "answer": "I take a camera because I want to take photos.",
+   "rubric": "检查 because 原因从句结构；句子不完整可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0054",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_environment"
+   ],
+   "stem": "We should ___ trees. (保护树木)",
+   "options": [],
+   "answer": "protect",
+   "rubric": "检查环保词汇；拼写错误可标记 spelling_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0055",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_environment"
+   ],
+   "stem": "Which one is good for the environment?",
+   "options": [
+    "saving water",
+    "wasting food",
+    "dropping litter",
+    "using more plastic"
+   ],
+   "answer": "saving water",
+   "rubric": "检查环保行为判断；错选可标记 meaning_confusion。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0056",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_story_reading"
+   ],
+   "stem": "Long long ago, there ___ a king. (be 动词过去式)",
+   "options": [],
+   "answer": "was",
+   "rubric": "检查故事时态与 be 动词过去式；用 is 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0057",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_story_reading"
+   ],
+   "stem": "请用英语讲一个你读过的小故事的开头（一句话）。",
+   "options": [],
+   "answer": "Once upon a time, there was a clever rabbit.",
+   "rubric": "检查故事开头句型；时态混乱可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0058",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_letter_writing"
+   ],
+   "stem": "信的结尾写\"你的朋友\"：Your ___",
+   "options": [],
+   "answer": "friend",
+   "rubric": "检查书信格式；落款错误可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0059",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_telephone_english"
+   ],
+   "stem": "接电话时，用英语说\"你好，我是 Tom\"。",
+   "options": [],
+   "answer": "Hello, this is Tom speaking.",
+   "rubric": "检查电话英语表达；I am Tom 中式表达可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0060",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_describing_people"
+   ],
+   "stem": "Which word describes a person's height?",
+   "options": [
+    "tall",
+    "hot",
+    "new",
+    "fast"
+   ],
+   "answer": "tall",
+   "rubric": "检查人物描述词汇；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0061",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_describing_people"
+   ],
+   "stem": "她戴眼镜：She ___ glasses.",
+   "options": [],
+   "answer": "wears",
+   "rubric": "检查 wear 三单形式；忘加 s 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0062",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_suggestions"
+   ],
+   "stem": "你应该多喝水：You ___ drink more water.",
+   "options": [],
+   "answer": "should",
+   "rubric": "检查建议句型；should 后动词形式错误可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0063",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_abilities"
+   ],
+   "stem": "\"be good at\" 的中文意思是？",
+   "options": [
+    "擅长",
+    "讨厌",
+    "害怕",
+    "喜欢"
+   ],
+   "answer": "擅长",
+   "rubric": "检查能力短语理解；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0064",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_present_perfect"
+   ],
+   "stem": "I have ___ (visit) the Great Wall.",
+   "options": [],
+   "answer": "visited",
+   "rubric": "检查过去分词；用 visit 可标记 sentence_pattern_error。",
+   "difficulty": 4
+  },
+  {
+   "id": "english_q_0065",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_present_perfect"
+   ],
+   "stem": "Have you ever seen a panda? 肯定的完整回答是？",
+   "options": [
+    "Yes, I have.",
+    "Yes, I do.",
+    "Yes, I did.",
+    "Yes, I am."
+   ],
+   "answer": "Yes, I have.",
+   "rubric": "检查现在完成时回答结构；错选可标记 sentence_pattern_error。",
+   "difficulty": 4
+  },
+  {
+   "id": "english_q_0078",
+   "subject": "english",
+   "grade": 6,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g6_travel",
+    "english_g6_past_tense"
+   ],
+   "stem": "Where did you go last summer? 请用过去式写一个完整句子。",
+   "options": [],
+   "answer": "I went to Beijing last summer.",
+   "rubric": "检查一般过去时不规则动词；用 go 可标记 sentence_pattern_error。",
+   "difficulty": 4
+  },
+  {
+   "id": "english_q_0079",
+   "subject": "english",
+   "grade": 6,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g6_suggestions"
+   ],
+   "stem": "给你的朋友一条健康建议，用 You should... 写一个完整句子。",
+   "options": [],
+   "answer": "You should drink more water.",
+   "rubric": "检查 should + 动词原形建议句；结构错误可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0092",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_invitations"
+   ],
+   "stem": "邀请朋友去公园，最地道的表达是？",
+   "options": [
+    "Let’s go to the park.",
+    "Let us to the park.",
+    "We go park.",
+    "Go park with I."
+   ],
+   "answer": "Let’s go to the park.",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0093",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_invitations"
+   ],
+   "stem": "______ (Why don’t) you come to my party this Saturday?",
+   "options": [],
+   "answer": "Why don’t",
+   "rubric": "Why don’t you + V 原形；拼写缩写 don’t 可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0094",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_invitations"
+   ],
+   "stem": "朋友邀请你这周末去看电影，你欣然同意。请写出 2 轮对话（邀请 + 同意 + 追问）。",
+   "options": [],
+   "answer": "A: Would you like to see a movie this weekend? B: Sure! That sounds great. What time? A: How about Saturday afternoon at 3?",
+   "rubric": "检查 Would you like to + 同意回应 + 时间追问。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0095",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_customs_traditions"
+   ],
+   "stem": "Which festival do people eat moon cakes?",
+   "options": [
+    "Mid-Autumn Festival",
+    "Halloween",
+    "Thanksgiving",
+    "Christmas"
+   ],
+   "answer": "Mid-Autumn Festival",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0096",
+   "subject": "english",
+   "grade": 6,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g6_customs_traditions",
+    "english_g5_festivals"
+   ],
+   "stem": "用 3 句话介绍你最喜欢的一个中国节日（名称 + 时间 + 活动）。",
+   "options": [],
+   "answer": "My favorite Chinese festival is the Spring Festival. It is in January or February. We eat dumplings and say happy new year to our family.",
+   "rubric": "检查节日拼写 + 时间介词 + 动词搭配。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0097",
+   "subject": "english",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g6_health_medicine"
+   ],
+   "stem": "“头痛”的英文是？",
+   "options": [
+    "headache",
+    "stomachache",
+    "toothache",
+    "backache"
+   ],
+   "answer": "headache",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0098",
+   "subject": "english",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g6_health_medicine"
+   ],
+   "stem": "Spell the word “胃痛” → stom_______e",
+   "options": [],
+   "answer": "stomachache",
+   "rubric": "stomachache 拼写漏 a 可标记 spelling_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0099",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_health_medicine"
+   ],
+   "stem": "校医问：What’s the matter? 你头疼。请写出 2 轮对话（问诊 + 建议）。",
+   "options": [],
+   "answer": "Doctor: What’s the matter? Student: I have a headache. Doctor: You should take some medicine and rest.",
+   "rubric": "检查 I have a + 病症 + 建议句型 should + V。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0100",
+   "subject": "english",
+   "grade": 6,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g6_suggestions"
+   ],
+   "stem": "朋友说他很累，请用 2-3 句话给出 3 条建议（should / Why don’t you / How about）。",
+   "options": [],
+   "answer": "You should take a rest. Why don’t you drink some hot water? How about going to bed early tonight?",
+   "rubric": "检查三种建议句型至少用上 2 种。",
+   "difficulty": 3
+  }
+ ]
+}

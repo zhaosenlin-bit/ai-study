@@ -179,7 +179,7 @@ export function DemoConsolePage() {
                   "flex-1 rounded-xl border px-4 py-3 text-left transition-all",
                   studentId === s.student_id
                     ? "border-primary bg-primary/15"
-                    : "border-white/12 bg-white/5 hover:bg-white/8",
+                    : "border-border bg-muted/70 hover:bg-muted/80",
                 )}
               >
                 <div className="text-sm font-bold text-foreground">{s.name}</div>
@@ -212,7 +212,7 @@ export function DemoConsolePage() {
                     "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
                     currentStep === i
                       ? "bg-primary text-primary-foreground"
-                      : "bg-white/8 text-muted-foreground",
+                      : "bg-muted/80 text-muted-foreground",
                   )}
                 >
                   {i + 1}
@@ -232,7 +232,7 @@ export function DemoConsolePage() {
             <CardTitle>🛠️ Agent 工具痕迹（评分证据）</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-1.5 rounded-xl bg-black/30 p-4">
+            <ul className="space-y-1.5 rounded-xl bg-muted p-4">
               {logs.length === 0 && (
                 <li className="font-mono text-xs text-muted-foreground">
                   点击「一键自动演示」开始，这里会实时展示 Agent 的工具调用日志…

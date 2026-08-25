@@ -1,0 +1,426 @@
+{
+ "grade": 3,
+ "subject": "math",
+ "knowledge_points": [
+  {
+   "id": "math_g3_addition_within_10000",
+   "subject": "math",
+   "grade": 3,
+   "name": "万以内加法",
+   "difficulty": 2,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "进位时忘记加 1",
+    "数位没对齐"
+   ]
+  },
+  {
+   "id": "math_g3_subtraction_within_10000",
+   "subject": "math",
+   "grade": 3,
+   "name": "万以内减法",
+   "difficulty": 2,
+   "prerequisites": [
+    "math_g3_addition_within_10000"
+   ],
+   "common_misconceptions": [
+    "退位后忘记减 1"
+   ]
+  },
+  {
+   "id": "math_g3_multi_digit_times_one_digit",
+   "subject": "math",
+   "grade": 3,
+   "name": "多位数乘一位数",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g3_multiples"
+   ],
+   "common_misconceptions": [
+    "忘记进位",
+    "末尾 0 漏乘"
+   ]
+  },
+  {
+   "id": "math_g3_multiples",
+   "subject": "math",
+   "grade": 3,
+   "name": "倍的认识",
+   "difficulty": 2,
+   "prerequisites": [
+    "math_g3_addition_within_10000"
+   ],
+   "common_misconceptions": [
+    "把\"几倍\"当成\"多几\""
+   ]
+  },
+  {
+   "id": "math_g3_word_problem_modeling",
+   "subject": "math",
+   "grade": 3,
+   "name": "应用题建模",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g3_multi_digit_times_one_digit",
+    "math_g3_addition_within_10000"
+   ],
+   "common_misconceptions": [
+    "列式时数量关系搞反"
+   ]
+  },
+  {
+   "id": "math_g3_division_meaning",
+   "subject": "math",
+   "grade": 3,
+   "name": "除法含义",
+   "difficulty": 2,
+   "prerequisites": [
+    "math_g3_multiples"
+   ],
+   "common_misconceptions": [
+    "分不清平均分与包含除"
+   ]
+  },
+  {
+   "id": "math_g3_remainder_division",
+   "subject": "math",
+   "grade": 3,
+   "name": "有余数除法",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g3_division_meaning"
+   ],
+   "common_misconceptions": [
+    "余数比除数大"
+   ]
+  },
+  {
+   "id": "math_g3_fraction_initial",
+   "subject": "math",
+   "grade": 3,
+   "name": "分数的初步认识",
+   "difficulty": 3,
+   "prerequisites": [
+    "math_g3_division_meaning"
+   ],
+   "common_misconceptions": [
+    "把分母相加",
+    "不能理解平均分"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "math_q_g3_0001",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_addition_within_10000"
+   ],
+   "stem": "367 + 489 = ______。",
+   "options": null,
+   "answer": "856",
+   "rubric": "考察知识点:万以内加法",
+   "explanation": "相同数位对齐,从个位加起,满十进一。",
+   "error_type": "calculation_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0002",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_subtraction_within_10000"
+   ],
+   "stem": "803 - 456 = ______。",
+   "options": null,
+   "answer": "347",
+   "rubric": "考察知识点:万以内减法",
+   "explanation": "退位减法:个位 3 不够减,向十位借一。",
+   "error_type": "calculation_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0003",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_multi_digit_times_one_digit"
+   ],
+   "stem": "305 × 4 = ?",
+   "options": [
+    "1200",
+    "1220",
+    "1250",
+    "1500"
+   ],
+   "answer": "1220",
+   "rubric": "考察知识点:多位数乘一位数",
+   "explanation": "末尾 0 也要参与进位,3×4=12 后面补两个 0。",
+   "error_type": "careless",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0004",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_multiples"
+   ],
+   "stem": "小红有 8 支铅笔,小明的铅笔数是小红的 3 倍,小明有几支?",
+   "options": [
+    "11 支",
+    "24 支",
+    "5 支",
+    "16 支"
+   ],
+   "answer": "24 支",
+   "rubric": "考察知识点:倍的认识",
+   "explanation": "“几倍”用乘法:8×3=24。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0005",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_word_problem_modeling"
+   ],
+   "stem": "果园里摘了 46 个苹果,每 2 个装一袋,可以装______袋。",
+   "options": null,
+   "answer": "23",
+   "rubric": "考察知识点:应用题建模",
+   "explanation": "平均分用除法:46÷2=23。",
+   "error_type": "modeling_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0006",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_division_meaning"
+   ],
+   "stem": "12 个桃子平均分给 3 只小猴,每只分几个?",
+   "options": [
+    "4 个",
+    "3 个",
+    "9 个",
+    "15 个"
+   ],
+   "answer": "4 个",
+   "rubric": "考察知识点:除法含义",
+   "explanation": "平均分用除法:12÷3=4。",
+   "error_type": "modeling_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0007",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_remainder_division"
+   ],
+   "stem": "20 ÷ 6 = ______余______。",
+   "options": null,
+   "answer": "3余2",
+   "rubric": "考察知识点:有余数除法",
+   "explanation": "6×3=18,20-18=2,余数 2 小于除数 6。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0008",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_fraction_initial"
+   ],
+   "stem": "把一个西瓜平均切成 4 份,吃了 1 份,吃了这个西瓜的几分之几?",
+   "options": [
+    "1/4",
+    "1/3",
+    "4/1",
+    "3/4"
+   ],
+   "answer": "1/4",
+   "rubric": "考察知识点:分数的初步认识",
+   "explanation": "分母表示平均分的总份数,分子表示取的份数。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0042",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_fraction_initial"
+   ],
+   "stem": "把一个月饼平均分成 8 块,吃了 3 块,吃了这个月饼的______。",
+   "options": null,
+   "answer": "3/8",
+   "rubric": "考察知识点:分数的初步认识",
+   "explanation": "分子表示取了几份,分母表示总份数,不要写反。",
+   "error_type": "careless",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0001_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_addition_within_10000"
+   ],
+   "stem": "367 + 489 = ______。",
+   "options": null,
+   "answer": "856",
+   "rubric": "考察知识点:万以内加法",
+   "explanation": "相同数位对齐,从个位加起,满十进一。",
+   "error_type": "calculation_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0002_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_subtraction_within_10000"
+   ],
+   "stem": "803 - 456 = ______。",
+   "options": null,
+   "answer": "347",
+   "rubric": "考察知识点:万以内减法",
+   "explanation": "退位减法:个位 3 不够减,向十位借一。",
+   "error_type": "calculation_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0003_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_multi_digit_times_one_digit"
+   ],
+   "stem": "305 × 4 = ?",
+   "options": [
+    "1200",
+    "1220",
+    "1250",
+    "1500"
+   ],
+   "answer": "1220",
+   "rubric": "考察知识点:多位数乘一位数",
+   "explanation": "末尾 0 也要参与进位,3×4=12 后面补两个 0。",
+   "error_type": "careless",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0004_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_multiples"
+   ],
+   "stem": "小红有 8 支铅笔,小明的铅笔数是小红的 3 倍,小明有几支?",
+   "options": [
+    "11 支",
+    "24 支",
+    "5 支",
+    "16 支"
+   ],
+   "answer": "24 支",
+   "rubric": "考察知识点:倍的认识",
+   "explanation": "“几倍”用乘法:8×3=24。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0005_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_word_problem_modeling"
+   ],
+   "stem": "果园里摘了 46 个苹果,每 2 个装一袋,可以装______袋。",
+   "options": null,
+   "answer": "23",
+   "rubric": "考察知识点:应用题建模",
+   "explanation": "平均分用除法:46÷2=23。",
+   "error_type": "modeling_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0006_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_division_meaning"
+   ],
+   "stem": "12 个桃子平均分给 3 只小猴,每只分几个?",
+   "options": [
+    "4 个",
+    "3 个",
+    "9 个",
+    "15 个"
+   ],
+   "answer": "4 个",
+   "rubric": "考察知识点:除法含义",
+   "explanation": "平均分用除法:12÷3=4。",
+   "error_type": "modeling_error",
+   "difficulty": 2
+  },
+  {
+   "id": "math_q_g3_0007_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "math_g3_remainder_division"
+   ],
+   "stem": "20 ÷ 6 = ______余______。",
+   "options": null,
+   "answer": "3余2",
+   "rubric": "考察知识点:有余数除法",
+   "explanation": "6×3=18,20-18=2,余数 2 小于除数 6。",
+   "error_type": "calculation_error",
+   "difficulty": 3
+  },
+  {
+   "id": "math_q_g3_0008_p",
+   "subject": "math",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "math_g3_fraction_initial"
+   ],
+   "stem": "把一个西瓜平均切成 4 份,吃了 1 份,吃了这个西瓜的几分之几?",
+   "options": [
+    "1/4",
+    "1/3",
+    "4/1",
+    "3/4"
+   ],
+   "answer": "1/4",
+   "rubric": "考察知识点:分数的初步认识",
+   "explanation": "分母表示平均分的总份数,分子表示取的份数。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  }
+ ]
+}

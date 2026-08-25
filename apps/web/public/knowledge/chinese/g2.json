@@ -1,0 +1,397 @@
+{
+ "grade": 2,
+ "subject": "chinese",
+ "knowledge_points": [
+  {
+   "id": "chinese_g2_toc01",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·小蝌蚪找妈妈",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc02",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·我是什么",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc03",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·植物妈妈有办法",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc04",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·读读童话故事",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc05",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·场景歌",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc06",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·树之歌",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc07",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·拍手歌",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc08",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·田家四季歌",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc09",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·曹冲称象",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc10",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·玲玲的画",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc11",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·一封信",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc12",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·妈妈睡了",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc13",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·古诗二首",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc14",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·登鹳雀楼",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc15",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·望庐山瀑布",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc16",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·黄山奇石",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc17",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·日月潭",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc18",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "语文园地三\t....................·葡萄沟",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc01",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·古诗二首",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc02",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·村居",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc03",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·咏柳",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc04",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·找春天",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc05",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·开满鲜花的小路",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc06",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·邓小平爷爷植树",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc07",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·注意说话的语气",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc08",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·读读儿童故事",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc09",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·雷锋叔叔，你在哪里",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc10",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·千人糕",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc11",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·一匹出色的马",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc12",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "快乐读书吧：·语文园地二",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc13",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·传统节日",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc14",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·“贝”的故事",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc15",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "识字·中国美食",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc16",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "口语交际：·长大以后做什么",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc17",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "口语交际：·语文园地三",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc18",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·彩色的梦",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc19",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·枫树上的喜鹊",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc20",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·沙滩上的童话",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  },
+  {
+   "id": "chinese_g2_toc21",
+   "subject": "chinese",
+   "grade": 2,
+   "name": "课文·我是一只小虫子",
+   "difficulty": 1,
+   "prerequisites": [],
+   "common_misconceptions": [],
+   "source": "textbook_toc"
+  }
+ ],
+ "questions": []
+}

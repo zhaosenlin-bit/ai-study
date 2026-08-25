@@ -1,0 +1,674 @@
+{
+ "grade": 3,
+ "subject": "english",
+ "knowledge_points": [
+  {
+   "id": "english_g3_alphabet",
+   "subject": "english",
+   "grade": 3,
+   "name": "26 个英文字母",
+   "difficulty": 1,
+   "prerequisites": [],
+   "next": [
+    "english_g3_colors",
+    "english_g3_numbers"
+   ],
+   "vocabulary": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+   ],
+   "common_misconceptions": [
+    "大小写混淆",
+    "字母读音与汉语拼音混淆"
+   ],
+   "demo_value": "展示基础字母识别与读音纠正"
+  },
+  {
+   "id": "english_g3_basic_greetings",
+   "subject": "english",
+   "grade": 3,
+   "name": "基础问候语",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_family_members"
+   ],
+   "next": [
+    "english_g4_can_sentence"
+   ],
+   "vocabulary": [
+    "hello",
+    "good morning",
+    "goodbye",
+    "thank you",
+    "how are you"
+   ],
+   "common_misconceptions": [
+    "问候回应不完整",
+    "How are you 的回答忘记 I'm fine"
+   ],
+   "demo_value": "适合展示情景对话和完整句子引导"
+  },
+  {
+   "id": "english_g3_body_parts",
+   "subject": "english",
+   "grade": 3,
+   "name": "身体部位",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_alphabet"
+   ],
+   "next": [],
+   "vocabulary": [
+    "head",
+    "eye",
+    "ear",
+    "nose",
+    "mouth",
+    "hand",
+    "foot",
+    "arm"
+   ],
+   "common_misconceptions": [
+    "ear 与 eye 混淆",
+    "foot 复数 feet 不会用"
+   ],
+   "demo_value": "适合展示单词跟读和 head 系列指令游戏"
+  },
+  {
+   "id": "english_g3_classroom_objects",
+   "subject": "english",
+   "grade": 3,
+   "name": "教室物品",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_basic_greetings"
+   ],
+   "next": [
+    "english_g4_school_places"
+   ],
+   "vocabulary": [
+    "desk",
+    "chair",
+    "book",
+    "pen",
+    "pencil",
+    "ruler",
+    "bag",
+    "eraser"
+   ],
+   "common_misconceptions": [
+    "book 与 box 混淆",
+    "ruler 拼写漏字母"
+   ],
+   "demo_value": "适合展示物品名词识别和教室情景对话"
+  },
+  {
+   "id": "english_g3_colors",
+   "subject": "english",
+   "grade": 3,
+   "name": "颜色词汇",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_alphabet"
+   ],
+   "next": [
+    "english_g3_fruits"
+   ],
+   "vocabulary": [
+    "red",
+    "yellow",
+    "blue",
+    "green",
+    "black",
+    "white"
+   ],
+   "common_misconceptions": [
+    "green 拼写漏字母",
+    "blue 与 blow 读音混淆"
+   ],
+   "demo_value": "适合展示单词识别与拼写纠错"
+  },
+  {
+   "id": "english_g3_days_week",
+   "subject": "english",
+   "grade": 3,
+   "name": "星期",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_numbers"
+   ],
+   "next": [
+    "english_g4_time_clock"
+   ],
+   "vocabulary": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+   ],
+   "common_misconceptions": [
+    "Tuesday 与 Thursday 混淆",
+    "首字母大写规则遗忘"
+   ],
+   "demo_value": "适合展示课程表话题和星期歌谣"
+  },
+  {
+   "id": "english_g3_family_members",
+   "subject": "english",
+   "grade": 3,
+   "name": "家庭成员",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_numbers"
+   ],
+   "next": [
+    "english_g3_basic_greetings"
+   ],
+   "vocabulary": [
+    "father",
+    "mother",
+    "brother",
+    "sister",
+    "grandpa",
+    "grandma"
+   ],
+   "common_misconceptions": [
+    "father 与 farther 读音混淆",
+    "brother 拼写漏字母"
+   ],
+   "demo_value": "适合展示词义识别和家庭成员情景对话"
+  },
+  {
+   "id": "english_g3_farm_animals",
+   "subject": "english",
+   "grade": 3,
+   "name": "农场动物",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_numbers"
+   ],
+   "next": [
+    "english_g4_animal_words"
+   ],
+   "vocabulary": [
+    "cat",
+    "dog",
+    "cow",
+    "duck",
+    "pig",
+    "sheep"
+   ],
+   "common_misconceptions": [
+    "sheep 单复数同形不会用",
+    "cow 与 cat 首字母混淆"
+   ],
+   "demo_value": "适合展示听音辨词和动物叫声情景"
+  },
+  {
+   "id": "english_g3_food_drinks",
+   "subject": "english",
+   "grade": 3,
+   "name": "食物与饮料",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g3_fruits",
+    "english_g3_basic_greetings"
+   ],
+   "next": [
+    "english_g4_food_words"
+   ],
+   "vocabulary": [
+    "rice",
+    "bread",
+    "milk",
+    "egg",
+    "water",
+    "juice"
+   ],
+   "common_misconceptions": [
+    "rice 与 rise 读音混淆",
+    "可数/不可数名词概念不清"
+   ],
+   "demo_value": "适合展示三餐话题和餐厅点餐对话"
+  },
+  {
+   "id": "english_g3_fruits",
+   "subject": "english",
+   "grade": 3,
+   "name": "水果",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_colors"
+   ],
+   "next": [
+    "english_g3_food_drinks"
+   ],
+   "vocabulary": [
+    "apple",
+    "banana",
+    "orange",
+    "pear",
+    "grape",
+    "watermelon"
+   ],
+   "common_misconceptions": [
+    "banana 双写 n 拼错",
+    "orange 既是水果又是颜色混淆"
+   ],
+   "demo_value": "适合展示词义识别和购物情景对话"
+  },
+  {
+   "id": "english_g3_numbers",
+   "subject": "english",
+   "grade": 3,
+   "name": "数字 1-10",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_alphabet"
+   ],
+   "next": [
+    "english_g3_family_members"
+   ],
+   "vocabulary": [
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten"
+   ],
+   "common_misconceptions": [
+    "three 与 tree 读音混淆",
+    "拼写漏字母（如 eight）"
+   ],
+   "demo_value": "适合展示拼写题与听辨题"
+  },
+  {
+   "id": "english_g3_toys",
+   "subject": "english",
+   "grade": 3,
+   "name": "玩具",
+   "difficulty": 1,
+   "prerequisites": [
+    "english_g3_colors"
+   ],
+   "next": [],
+   "vocabulary": [
+    "ball",
+    "doll",
+    "kite",
+    "toy car",
+    "teddy bear",
+    "robot"
+   ],
+   "common_misconceptions": [
+    "doll 与 door 混淆",
+    "kite 静音 e 不发音"
+   ],
+   "demo_value": "适合展示单复数句型 This is a toy car."
+  }
+ ],
+ "questions": [
+  {
+   "id": "english_q_0001",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_colors"
+   ],
+   "stem": "Which word means \"红色\"?",
+   "options": [
+    "red",
+    "blue",
+    "green",
+    "black"
+   ],
+   "answer": "red",
+   "rubric": "检查颜色词汇词义映射；错选 green 可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0002",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_numbers"
+   ],
+   "stem": "Spell the word: 数字 3 → th___",
+   "options": [],
+   "answer": "three",
+   "rubric": "检查数字拼写；常见错误 three 写成 tree，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0003",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_family_members"
+   ],
+   "stem": "Which one is NOT a family member?",
+   "options": [
+    "mother",
+    "brother",
+    "teacher",
+    "sister"
+   ],
+   "answer": "teacher",
+   "rubric": "检查家庭成员词汇分类；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0004",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_colors"
+   ],
+   "stem": "Complete the sentence: I like ___（蓝色）. I like ___.",
+   "options": [],
+   "answer": "blue",
+   "rubric": "检查 I like + 颜色词句型完整输出；漏词/句型残缺可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0005",
+   "subject": "english",
+   "grade": 3,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g3_basic_greetings"
+   ],
+   "stem": "早上在学校门口遇见老师，请用英语打招呼，并完整回应老师的问候。",
+   "options": [],
+   "answer": "Good morning, teacher!",
+   "rubric": "检查问候语与回应是否完整；听不清可标记 listening_error，句子不完整可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0006",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_alphabet"
+   ],
+   "stem": "Which letter comes after C?",
+   "options": [
+    "B",
+    "D",
+    "E",
+    "A"
+   ],
+   "answer": "D",
+   "rubric": "检查字母顺序；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0007",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_alphabet"
+   ],
+   "stem": "大写字母 A 的小写形式是 ___。",
+   "options": [],
+   "answer": "a",
+   "rubric": "检查大小写对应；错写可标记 spelling_error。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0008",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_classroom_objects"
+   ],
+   "stem": "Which one can you use to write?",
+   "options": [
+    "pen",
+    "ruler",
+    "bag",
+    "chair"
+   ],
+   "answer": "pen",
+   "rubric": "检查教室物品词义；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0009",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_classroom_objects"
+   ],
+   "stem": "Spell the word: 书 → b___k",
+   "options": [],
+   "answer": "book",
+   "rubric": "检查拼写；常见错误 bok，可标记 spelling_error。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0010",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_body_parts"
+   ],
+   "stem": "Which one is on your face?",
+   "options": [
+    "hand",
+    "foot",
+    "nose",
+    "arm"
+   ],
+   "answer": "nose",
+   "rubric": "检查身体部位词义；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0011",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_body_parts"
+   ],
+   "stem": "Spell the word: 耳朵 → e___r",
+   "options": [],
+   "answer": "ear",
+   "rubric": "检查拼写；ear 与 eye 混淆可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0012",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_fruits"
+   ],
+   "stem": "Which one is a fruit?",
+   "options": [
+    "rice",
+    "egg",
+    "apple",
+    "bread"
+   ],
+   "answer": "apple",
+   "rubric": "检查水果词汇分类；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0013",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_fruits"
+   ],
+   "stem": "Spell the word: 香蕉 → ba___na",
+   "options": [],
+   "answer": "banana",
+   "rubric": "检查拼写；常见错误 banna，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0014",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_farm_animals"
+   ],
+   "stem": "Which animal says \"moo\"?",
+   "options": [
+    "cat",
+    "dog",
+    "cow",
+    "duck"
+   ],
+   "answer": "cow",
+   "rubric": "检查动物与叫声对应；错选可标记 listening_error。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0015",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_farm_animals"
+   ],
+   "stem": "Spell the word: 鸭子 → d___k",
+   "options": [],
+   "answer": "duck",
+   "rubric": "检查拼写；常见错误 dack，可标记 spelling_error。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0016",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_food_drinks"
+   ],
+   "stem": "Which one is a drink?",
+   "options": [
+    "rice",
+    "milk",
+    "bread",
+    "egg"
+   ],
+   "answer": "milk",
+   "rubric": "检查食物饮料分类；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0017",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_food_drinks"
+   ],
+   "stem": "Spell the word: 米饭 → r___e",
+   "options": [],
+   "answer": "rice",
+   "rubric": "检查拼写；rice 与 rise 混淆可标记 pronunciation_weak。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0018",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_days_week"
+   ],
+   "stem": "What day comes after Monday?",
+   "options": [
+    "Sunday",
+    "Tuesday",
+    "Friday",
+    "Saturday"
+   ],
+   "answer": "Tuesday",
+   "rubric": "检查星期顺序；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0019",
+   "subject": "english",
+   "grade": 3,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g3_days_week"
+   ],
+   "stem": "Spell the word: 星期日 → S___day",
+   "options": [],
+   "answer": "Sunday",
+   "rubric": "检查拼写与首字母大写；小写可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0020",
+   "subject": "english",
+   "grade": 3,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g3_toys"
+   ],
+   "stem": "Which one is a toy?",
+   "options": [
+    "ball",
+    "book",
+    "pen",
+    "ruler"
+   ],
+   "answer": "ball",
+   "rubric": "检查玩具词汇分类；错选可标记 meaning_confusion。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0073",
+   "subject": "english",
+   "grade": 3,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g3_farm_animals"
+   ],
+   "stem": "Which animals live on a farm? Select ALL.",
+   "options": [
+    "cow",
+    "duck",
+    "lion",
+    "pig"
+   ],
+   "answer": "cow, duck, pig",
+   "rubric": "检查动物分类；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  }
+ ]
+}

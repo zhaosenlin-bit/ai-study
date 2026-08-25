@@ -1,0 +1,226 @@
+{
+ "grade": 6,
+ "subject": "chinese",
+ "knowledge_points": [
+  {
+   "id": "chinese_g6_poem_classic",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "古诗词积累(春夜喜雨)",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g5_poem_emotion"
+   ],
+   "common_misconceptions": [
+    "名句默写错别字"
+   ]
+  },
+  {
+   "id": "chinese_g6_speech_reading",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "演讲稿阅读",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g5_narrative_reading"
+   ],
+   "common_misconceptions": [
+    "抓不住演讲者的核心观点"
+   ]
+  },
+  {
+   "id": "chinese_g6_essay_revision",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "习作修改",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g5_essay_detail"
+   ],
+   "common_misconceptions": [
+    "只会删不会改"
+   ]
+  },
+  {
+   "id": "chinese_g6_character_detail",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "人物描写方法",
+   "difficulty": 3,
+   "prerequisites": [],
+   "common_misconceptions": [
+    "动作描写与神态描写混淆"
+   ]
+  },
+  {
+   "id": "chinese_g6_sentence_abbreviation",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "缩写句子",
+   "difficulty": 3,
+   "prerequisites": [
+    "chinese_g5_sentence_exaggeration"
+   ],
+   "common_misconceptions": [
+    "删掉了关键成分"
+   ]
+  },
+  {
+   "id": "chinese_g6_sentence_parallelism",
+   "subject": "chinese",
+   "grade": 6,
+   "name": "排比句",
+   "difficulty": 2,
+   "prerequisites": [
+    "chinese_g5_sentence_exaggeration"
+   ],
+   "common_misconceptions": [
+    "排比与反复混淆"
+   ]
+  }
+ ],
+ "questions": [
+  {
+   "id": "chinese_q_g6_0020",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "chinese_g6_poem_classic"
+   ],
+   "stem": "《春夜喜雨》中“随风潜入夜,______。”",
+   "options": null,
+   "answer": "润物细无声",
+   "rubric": "考察知识点:古诗词积累(春夜喜雨)",
+   "explanation": "注意“润”字不要写成“闰”。",
+   "error_type": "careless",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g6_0021",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_speech_reading"
+   ],
+   "stem": "读演讲稿《读书的快乐》,作者最想表达的核心观点是?",
+   "options": [
+    "读书很累",
+    "读书能带来快乐和收获",
+    "大家都应该多买书",
+    "图书馆很大"
+   ],
+   "answer": "读书能带来快乐和收获",
+   "rubric": "考察知识点:演讲稿阅读",
+   "explanation": "演讲稿要抓住作者反复强调的观点。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g6_0022",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_essay_revision"
+   ],
+   "stem": "修改病句:“我断定他大概是小明。”应改为?",
+   "options": [
+    "我断定他是小明。",
+    "我大概是小明。",
+    "他断定我是小明。",
+    "我断定他大概不是小明。"
+   ],
+   "answer": "我断定他是小明。",
+   "rubric": "考察知识点:习作修改",
+   "explanation": "“断定”与“大概”矛盾,删去一个。",
+   "error_type": "careless",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g6_0023",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_character_detail"
+   ],
+   "stem": "句子“他紧紧握住拳头,咬紧牙关”属于什么描写?",
+   "options": [
+    "动作描写",
+    "外貌描写",
+    "心理描写",
+    "语言描写"
+   ],
+   "answer": "动作描写",
+   "rubric": "考察知识点:人物描写方法",
+   "explanation": "写人物的动作的词是动作描写。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g6_0024",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_sentence_abbreviation"
+   ],
+   "stem": "缩写句子:“勤劳的蜜蜂在美丽的花丛中采蜜。”",
+   "options": [
+    "蜜蜂采蜜。",
+    "蜜蜂在花丛中。",
+    "勤劳的蜜蜂采蜜。",
+    "蜜蜂在花丛中采蜜。"
+   ],
+   "answer": "蜜蜂采蜜。",
+   "rubric": "考察知识点:缩写句子",
+   "explanation": "缩写句子保留主干:谁+干什么。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  },
+  {
+   "id": "chinese_q_g6_0025",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_sentence_parallelism"
+   ],
+   "stem": "句子“爱心是一缕阳光,爱心是一股清泉,爱心是一盏明灯”用了什么修辞?",
+   "options": [
+    "排比",
+    "拟人",
+    "夸张",
+    "反问"
+   ],
+   "answer": "排比",
+   "rubric": "考察知识点:排比句",
+   "explanation": "三个或以上结构相似的句子连用是排比。",
+   "error_type": "concept_missing",
+   "difficulty": 2
+  },
+  {
+   "id": "chinese_q_g6_0029",
+   "subject": "chinese",
+   "grade": 6,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "chinese_g6_character_detail"
+   ],
+   "stem": "句子“妈妈笑了,眼角的皱纹像菊花一样绽放”用了哪些描写?",
+   "options": [
+    "神态描写和比喻",
+    "动作描写",
+    "语言描写",
+    "心理描写"
+   ],
+   "answer": "神态描写和比喻",
+   "rubric": "考察知识点:人物描写方法",
+   "explanation": "写“笑”是神态描写,“像菊花”是比喻。",
+   "error_type": "concept_missing",
+   "difficulty": 3
+  }
+ ]
+}

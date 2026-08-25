@@ -50,6 +50,8 @@ export interface Question {
   answer?: string;
   knowledge_point_ids: string[];
   rubric?: string;
+  /** 答案解析（知识库题目自带，课堂/小测判分后展示） */
+  explanation?: string;
   difficulty: number;
 }
 

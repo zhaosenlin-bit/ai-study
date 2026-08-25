@@ -47,7 +47,7 @@ export function BottomBar() {
   if (pathname === "/demo") return null;
 
   return (
-    <footer className="relative z-20 flex h-16 shrink-0 items-center justify-between gap-4 border-t border-white/8 bg-background/60 px-6 backdrop-blur-md">
+    <footer className="relative z-20 flex h-16 shrink-0 items-center justify-between gap-4 border-t border-border bg-background/70 px-6 backdrop-blur-md">
       <p className="hidden text-sm text-muted-foreground sm:block">{hint}</p>
       <div className="ml-auto flex items-center gap-3">
         {actions.map((a) => (

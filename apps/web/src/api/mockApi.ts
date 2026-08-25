@@ -30,12 +30,51 @@ function delay<T>(data: T, ms = LATENCY): Promise<T> {
   return new Promise((resolve) => setTimeout(() => resolve(data), ms));
 }
 
+/**
+ * 知识库融合：从 public/knowledge/{subject}/g{grade}.json 加载该年级题目。
+ * 数据由 tools/sync_knowledge.py 从 data/question_bank + data/knowledge_graph 聚合生成。
+ */
+async function loadGradeQuestions(subject: string, grade: number): Promise<Question[]> {
+  try {
+    const res = await fetch(`/knowledge/${subject}/g${grade}.json`);
+    if (!res.ok) return [];
+    const data = (await res.json()) as { questions?: Question[] };
+    return data.questions ?? [];
+  } catch {
+    return [];
+  }
+}
+
+/** 简单随机打乱（诊断题每次出场顺序不同） */
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export async function mockStartDiagnosis(
   studentId: string,
-  _grade: number,
+  grade: number,
   subjects: string[],
   countPerSubject = 3,
 ): Promise<DiagnosisSession> {
+  // 优先：按年级从知识库取题（1-6 年级全覆盖）
+  const picked: Question[] = [];
+  for (const subject of subjects) {
+    const qs = shuffle(await loadGradeQuestions(subject, grade));
+    picked.push(...qs.slice(0, countPerSubject));
+  }
+  if (picked.length >= Math.min(countPerSubject, 1)) {
+    return delay({
+      session_id: `diag_${Date.now()}`,
+      student_id: studentId,
+      questions: picked,
+    });
+  }
+  // 回退：演示学生静态题库（知识库缺失时兜底）
   const pool = QUESTIONS_BY_STUDENT[studentId] ?? [];
   const questions = pool
     .filter((q) => subjects.includes(q.subject))

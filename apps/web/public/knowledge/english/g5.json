@@ -1,0 +1,833 @@
+{
+ "grade": 5,
+ "subject": "english",
+ "knowledge_points": [
+  {
+   "id": "english_g5_asking_directions",
+   "subject": "english",
+   "grade": 5,
+   "name": "问路指路",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g4_transportation"
+   ],
+   "next": [
+    "english_g6_travel"
+   ],
+   "vocabulary": [
+    "turn left",
+    "turn right",
+    "go straight",
+    "next to",
+    "far from",
+    "Excuse me"
+   ],
+   "common_misconceptions": [
+    "go straight 与 go straightly 混淆",
+    "Excuse me 与 Sorry 场景混淆"
+   ],
+   "demo_value": "适合展示真实场景角色扮演对话"
+  },
+  {
+   "id": "english_g5_comparatives",
+   "subject": "english",
+   "grade": 5,
+   "name": "形容词比较级",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g4_animal_words"
+   ],
+   "next": [
+    "english_g6_describing_people"
+   ],
+   "vocabulary": [
+    "bigger",
+    "smaller",
+    "taller",
+    "faster",
+    "longer",
+    "than"
+   ],
+   "common_misconceptions": [
+    "比较级后忘加 than",
+    "双写辅音字母规则遗忘"
+   ],
+   "demo_value": "适合展示比较句型 A is bigger than B"
+  },
+  {
+   "id": "english_g5_emotions",
+   "subject": "english",
+   "grade": 5,
+   "name": "情绪表达",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_daily_routines"
+   ],
+   "next": [
+    "english_g6_describing_people"
+   ],
+   "vocabulary": [
+    "happy",
+    "sad",
+    "angry",
+    "excited",
+    "tired",
+    "bored",
+    "afraid",
+    "surprised",
+    "feel",
+    "How do you feel"
+   ],
+   "common_misconceptions": [
+    "excited about 介词漏",
+    "How do you feel 与 What do you feel 混"
+   ],
+   "demo_value": "适合展示情绪问答与 I feel 句型"
+  },
+  {
+   "id": "english_g5_festivals",
+   "subject": "english",
+   "grade": 5,
+   "name": "中外节日",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_months_seasons",
+    "english_g5_season_activities"
+   ],
+   "next": [],
+   "vocabulary": [
+    "Spring Festival",
+    "Mid-Autumn Festival",
+    "Christmas",
+    "Halloween",
+    "Dragon Boat Festival"
+   ],
+   "common_misconceptions": [
+    "节日名称大小写规则",
+    "Mid-Autumn 拼写"
+   ],
+   "demo_value": "适合展示文化对比话题和中西节日对话"
+  },
+  {
+   "id": "english_g5_future_will",
+   "subject": "english",
+   "grade": 5,
+   "name": "一般将来时 will",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g5_present_tense_s"
+   ],
+   "next": [
+    "english_g6_travel"
+   ],
+   "vocabulary": [
+    "will",
+    "won't",
+    "tomorrow",
+    "next week",
+    "this weekend",
+    "go",
+    "visit"
+   ],
+   "common_misconceptions": [
+    "will 后动词用原形",
+    "tomorrow 前不加 at"
+   ],
+   "demo_value": "适合展示周末计划和旅行计划"
+  },
+  {
+   "id": "english_g5_healthy_food",
+   "subject": "english",
+   "grade": 5,
+   "name": "健康饮食",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_food_words",
+    "english_g5_sports"
+   ],
+   "next": [
+    "english_g6_suggestions"
+   ],
+   "vocabulary": [
+    "healthy",
+    "junk food",
+    "vegetables",
+    "fruit",
+    "sweets",
+    "more water"
+   ],
+   "common_misconceptions": [
+    "healthy 与 health 词性混淆",
+    "junk food 直译错误"
+   ],
+   "demo_value": "适合展示健康习惯建议和饮食话题"
+  },
+  {
+   "id": "english_g5_hobbies",
+   "subject": "english",
+   "grade": 5,
+   "name": "兴趣爱好",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_like_sentence",
+    "english_g4_daily_actions"
+   ],
+   "next": [
+    "english_g6_letter_writing"
+   ],
+   "vocabulary": [
+    "reading",
+    "drawing",
+    "singing",
+    "dancing",
+    "collecting stamps",
+    "playing chess"
+   ],
+   "common_misconceptions": [
+    "like doing 与 like to do 混淆",
+    "collecting 拼写漏字母"
+   ],
+   "demo_value": "适合展示爱好介绍和书信写作素材"
+  },
+  {
+   "id": "english_g5_jobs",
+   "subject": "english",
+   "grade": 5,
+   "name": "职业",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_daily_routines"
+   ],
+   "next": [
+    "english_g6_describing_people"
+   ],
+   "vocabulary": [
+    "teacher",
+    "doctor",
+    "nurse",
+    "driver",
+    "police officer",
+    "cook",
+    "farmer"
+   ],
+   "common_misconceptions": [
+    "police officer 与 police 混淆",
+    "doctor 与 driver 混淆"
+   ],
+   "demo_value": "适合展示职业问答 What do you do?"
+  },
+  {
+   "id": "english_g5_present_tense_s",
+   "subject": "english",
+   "grade": 5,
+   "name": "一般现在时三单",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g4_daily_routines"
+   ],
+   "next": [
+    "english_g6_past_tense"
+   ],
+   "vocabulary": [
+    "goes",
+    "likes",
+    "has",
+    "watches",
+    "studies",
+    "does"
+   ],
+   "common_misconceptions": [
+    "三单忘加 s/es",
+    "has 与 have 混淆"
+   ],
+   "demo_value": "适合展示语法诊断点和造句任务"
+  },
+  {
+   "id": "english_g5_season_activities",
+   "subject": "english",
+   "grade": 5,
+   "name": "季节活动",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_months_seasons",
+    "english_g4_weather",
+    "english_g5_weather_extreme"
+   ],
+   "next": [
+    "english_g5_festivals"
+   ],
+   "vocabulary": [
+    "fly a kite",
+    "make a snowman",
+    "swim",
+    "pick apples",
+    "plant trees",
+    "go hiking"
+   ],
+   "common_misconceptions": [
+    "make a snowman 拼写",
+    "plant 与 plan 混淆"
+   ],
+   "demo_value": "适合展示四季话题和节日铺垫"
+  },
+  {
+   "id": "english_g5_shopping",
+   "subject": "english",
+   "grade": 5,
+   "name": "购物用语",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_like_sentence"
+   ],
+   "next": [],
+   "vocabulary": [
+    "How much",
+    "Can I help you",
+    "I want",
+    "size",
+    "too expensive",
+    "Here you are"
+   ],
+   "common_misconceptions": [
+    "How much 与 How many 混淆",
+    "I'd like 与 I like 混淆"
+   ],
+   "demo_value": "适合展示购物情景角色扮演"
+  },
+  {
+   "id": "english_g5_sports",
+   "subject": "english",
+   "grade": 5,
+   "name": "运动",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_can_sentence"
+   ],
+   "next": [
+    "english_g5_healthy_food"
+   ],
+   "vocabulary": [
+    "basketball",
+    "football",
+    "table tennis",
+    "badminton",
+    "swimming",
+    "running"
+   ],
+   "common_misconceptions": [
+    "play 与球类搭配无 the",
+    "basketball 拼写"
+   ],
+   "demo_value": "适合展示运动会话题和 Can you 问答"
+  },
+  {
+   "id": "english_g5_there_be",
+   "subject": "english",
+   "grade": 5,
+   "name": "There be 句型",
+   "difficulty": 3,
+   "prerequisites": [
+    "english_g4_positions"
+   ],
+   "next": [
+    "english_g6_story_reading"
+   ],
+   "vocabulary": [
+    "There is",
+    "There are",
+    "There isn't",
+    "There aren't",
+    "some",
+    "any"
+   ],
+   "common_misconceptions": [
+    "is/are 就近原则错误",
+    "some 用于肯定 any 用于否定混淆"
+   ],
+   "demo_value": "适合展示场景描述和故事开头"
+  },
+  {
+   "id": "english_g5_weather_extreme",
+   "subject": "english",
+   "grade": 5,
+   "name": "天气进阶",
+   "difficulty": 2,
+   "prerequisites": [
+    "english_g4_weather"
+   ],
+   "next": [
+    "english_g5_season_activities"
+   ],
+   "vocabulary": [
+    "windy",
+    "cloudy",
+    "snowy",
+    "foggy",
+    "storm",
+    "thunder",
+    "lightning",
+    "temperature",
+    "degree",
+    "rainy"
+   ],
+   "common_misconceptions": [
+    "temperature 拼写漏 e",
+    "thunder 与 lightning 混"
+   ],
+   "demo_value": "适合展示复合天气形容词与温度问答"
+  }
+ ],
+ "questions": [
+  {
+   "id": "english_q_0036",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_hobbies"
+   ],
+   "stem": "Which one can be a hobby?",
+   "options": [
+    "reading",
+    "desk",
+    "red",
+    "rice"
+   ],
+   "answer": "reading",
+   "rubric": "检查爱好类词汇；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0037",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_hobbies"
+   ],
+   "stem": "Spell the word: 绘画 → dr___ing",
+   "options": [],
+   "answer": "drawing",
+   "rubric": "检查拼写；常见错误 drawning，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0038",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_jobs"
+   ],
+   "stem": "Who helps sick people?",
+   "options": [
+    "teacher",
+    "doctor",
+    "driver",
+    "cook"
+   ],
+   "answer": "doctor",
+   "rubric": "检查职业词义；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0039",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_jobs"
+   ],
+   "stem": "Spell the word: 警察 → p___ce officer",
+   "options": [],
+   "answer": "police",
+   "rubric": "检查拼写；常见错误 plice，可标记 spelling_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0040",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_season_activities"
+   ],
+   "stem": "What do we often do in summer?",
+   "options": [
+    "make a snowman",
+    "swim",
+    "pick leaves",
+    "fly a kite"
+   ],
+   "answer": "swim",
+   "rubric": "检查季节活动关联；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0041",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_festivals"
+   ],
+   "stem": "春节的英文：___ Festival",
+   "options": [],
+   "answer": "Spring",
+   "rubric": "检查节日名称；大小写错误可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0042",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_festivals"
+   ],
+   "stem": "Which festival is in December?",
+   "options": [
+    "Christmas",
+    "Mid-Autumn Festival",
+    "Dragon Boat Festival",
+    "Spring Festival"
+   ],
+   "answer": "Christmas",
+   "rubric": "检查节日时间；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0043",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_asking_directions"
+   ],
+   "stem": "Where is the park? 这句话是在问什么？",
+   "options": [
+    "问路",
+    "问价格",
+    "问时间",
+    "问姓名"
+   ],
+   "answer": "问路",
+   "rubric": "检查问路句型理解；错选可标记 listening_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0044",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_sports"
+   ],
+   "stem": "Spell the word: 篮球 → bas___ball",
+   "options": [],
+   "answer": "basketball",
+   "rubric": "检查拼写；常见错误 basketbal，可标记 spelling_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0045",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_healthy_food"
+   ],
+   "stem": "Which one is healthy?",
+   "options": [
+    "candy",
+    "fried chicken",
+    "apple",
+    "cola"
+   ],
+   "answer": "apple",
+   "rubric": "检查健康饮食概念；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0046",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_present_tense_s"
+   ],
+   "stem": "She ___ (like) apples.",
+   "options": [],
+   "answer": "likes",
+   "rubric": "检查三单形式；忘加 s 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0047",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_present_tense_s"
+   ],
+   "stem": "He ___ (go) to school by bike.",
+   "options": [],
+   "answer": "goes",
+   "rubric": "检查三单变化规则；go 忘加 es 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0048",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_there_be"
+   ],
+   "stem": "There ___ a book on the desk. (单数)",
+   "options": [],
+   "answer": "is",
+   "rubric": "检查 There be 主谓一致；用 are 可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0049",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_comparatives"
+   ],
+   "stem": "The elephant is ___ than the cat.",
+   "options": [
+    "big",
+    "bigger",
+    "biggest",
+    "more big"
+   ],
+   "answer": "bigger",
+   "rubric": "检查比较级形式；选原级可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0050",
+   "subject": "english",
+   "grade": 5,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g5_future_will"
+   ],
+   "stem": "朋友问你：What will you do this weekend? 请用 will 说一个完整句子。",
+   "options": [],
+   "answer": "I will go to the park.",
+   "rubric": "检查 will + 动词原形结构；will 后加三单可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0068",
+   "subject": "english",
+   "grade": 5,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g5_shopping"
+   ],
+   "stem": "在商店想买一件衣服，用英语问价格（完整句子）。",
+   "options": [],
+   "answer": "How much is this coat?",
+   "rubric": "检查 How much 问价句型；How many 混淆可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0069",
+   "subject": "english",
+   "grade": 5,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g5_asking_directions"
+   ],
+   "stem": "你在街上迷路了，用英语礼貌地向陌生人问去车站的路。",
+   "options": [],
+   "answer": "Excuse me, where is the bus station?",
+   "rubric": "检查礼貌问路句型；Excuse me 缺失可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0075",
+   "subject": "english",
+   "grade": 5,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g5_healthy_food"
+   ],
+   "stem": "Which are healthy food and drinks? Select ALL.",
+   "options": [
+    "vegetables",
+    "fruit",
+    "cola",
+    "candy"
+   ],
+   "answer": "vegetables, fruit",
+   "rubric": "检查健康饮食概念；错选可标记 meaning_confusion。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0077",
+   "subject": "english",
+   "grade": 5,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g5_future_will"
+   ],
+   "stem": "What will you do next weekend? 请用 will 写一个完整句子。",
+   "options": [],
+   "answer": "I will visit my grandparents.",
+   "rubric": "检查 will + 动词原形；will 后加三单可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0080",
+   "subject": "english",
+   "grade": 5,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g5_comparatives"
+   ],
+   "stem": "用比较级比较大象和猫，写一个完整句子（提示：big）。",
+   "options": [],
+   "answer": "The elephant is bigger than the cat.",
+   "rubric": "检查比较级 + than 结构；用原级可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0084",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_emotions"
+   ],
+   "stem": "Which word means “高兴的”？",
+   "options": [
+    "happy",
+    "tired",
+    "angry",
+    "bored"
+   ],
+   "answer": "happy",
+   "rubric": "情绪词义映射；错选 excited 时教师可补充进阶。",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0085",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_emotions"
+   ],
+   "stem": "I am very ______ (excited) ______ (about) the trip.",
+   "options": [],
+   "answer": "excited about",
+   "rubric": "检查 excited about 搭配；漏 about 可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0086",
+   "subject": "english",
+   "grade": 5,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g5_emotions"
+   ],
+   "stem": "朋友问你：You look tired. How do you feel? 请用完整英语回答。",
+   "options": [],
+   "answer": "I feel tired today. I didn’t sleep well last night.",
+   "rubric": "检查 I feel + 情绪词；只说 I’m tired 可标记 sentence_pattern_error。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0087",
+   "subject": "english",
+   "grade": 5,
+   "type": "single_choice",
+   "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+   ],
+   "stem": "Which word describes “下雪的”？",
+   "options": [
+    "snowy",
+    "rainy",
+    "sunny",
+    "windy"
+   ],
+   "answer": "snowy",
+   "difficulty": 1
+  },
+  {
+   "id": "english_q_0088",
+   "subject": "english",
+   "grade": 5,
+   "type": "fill_blank",
+   "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+   ],
+   "stem": "Spell the word “温度” → t_______e",
+   "options": [],
+   "answer": "temperature",
+   "rubric": "temperature 拼写漏 e 可标记 spelling_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0089",
+   "subject": "english",
+   "grade": 5,
+   "type": "dialogue",
+   "knowledge_point_ids": [
+    "english_g5_weather_extreme"
+   ],
+   "stem": "天气预报主播请你播报：今天上海 stormy，温度 18 度。请用 2-3 句英语播报。",
+   "options": [],
+   "answer": "It is stormy in Shanghai today. The temperature is about 18 degrees. Please stay safe!",
+   "rubric": "检查复合形容词 + 温度句型 + 安全提示；缺温度可标记 sentence_pattern_error。",
+   "difficulty": 3
+  },
+  {
+   "id": "english_q_0090",
+   "subject": "english",
+   "grade": 5,
+   "type": "multiple_choice",
+   "knowledge_point_ids": [
+    "english_g5_shopping",
+    "english_g4_like_sentence"
+   ],
+   "stem": "去商店买东西，下面哪些表达正确？(可多选)",
+   "options": [
+    "Can I help you?",
+    "How much is it?",
+    "I want go home.",
+    "How many is it?"
+   ],
+   "answer": [
+    "Can I help you?",
+    "How much is it?"
+   ],
+   "rubric": "How much (价格不可数) 与 How many (数量可数) 区分。",
+   "difficulty": 2
+  },
+  {
+   "id": "english_q_0091",
+   "subject": "english",
+   "grade": 5,
+   "type": "short_answer",
+   "knowledge_point_ids": [
+    "english_g5_hobbies",
+    "english_g4_can_sentence"
+   ],
+   "stem": "请用 2 句话介绍你的一项爱好：My hobby is ___. I can ___.",
+   "options": [],
+   "answer": "My hobby is playing basketball. I can play it with my friends after school.",
+   "rubric": "检查 hobby + V-ing 与 can + V 原形结构。",
+   "difficulty": 2
+  }
+ ]
+}
