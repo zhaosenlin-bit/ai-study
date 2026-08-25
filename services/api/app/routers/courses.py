@@ -77,18 +77,6 @@ def _pool_questions(subject: str, grade: int) -> list[dict]:
     return sorted(pool, key=lambda q: q.id)
 
 
-def _app_questions(subject: str, grade: int) -> list[dict]:
-    """应用题/拓展题 = 题库全量（数学区分口算与其它；语文英语基础+阅读都在题库）。"""
-    return _pool_questions(subject, grade)
-
-
-def _oral_pool(subject: str, grade: int) -> list[dict] | None:
-    """返回基础题库池；math 返回 None（走生成器）。"""
-    if subject == "math":
-        return None
-    return _pool_questions(subject, grade)
-
-
 def _course_name(subject: str, kind: str, round_no: int, slot: int) -> str:
     if subject != "math":
         if kind == "oral":

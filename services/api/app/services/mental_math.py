@@ -28,22 +28,6 @@ def _q(grade: int, stem: str, answer: str) -> dict:
     }
 
 
-def generate_mental_math(grade: int, count: int = 75, seed: int | None = None) -> list[dict]:
-    rng = random.Random(seed if seed is not None else grade * 1000 + count)
-    items: list[dict] = []
-    seen: set[str] = set()
-    guard = 0
-    while len(items) < count and guard < count * 50:
-        guard += 1
-        q = _make_one(grade, rng)
-        key = (q["stem"], q["answer"])
-        if key in seen:
-            continue
-        seen.add(key)
-        items.append(q)
-    return items
-
-
 def generate_mental_math_all(grade: int, total: int = 900, seed: int | None = None) -> list[dict]:
     """一次性生成 total 道口算，全局去重（跨课程也不重复）。"""
     rng = random.Random(seed if seed is not None else grade * 1000)
@@ -127,22 +111,6 @@ def _make_app_one(grade: int, rng: random.Random) -> dict:
     h = rng.randint(3, 20)
     area = w * h
     return _app_q(grade, f"一块长方形菜地长 {w} 米，宽 {h} 米，面积是多少平方米？", area, _distractors(rng, area))
-
-
-def generate_app_questions(grade: int, count: int = 7, seed: int | None = None) -> list[dict]:
-    rng = random.Random(seed if seed is not None else grade * 100 + count)
-    items: list[dict] = []
-    seen: set[str] = set()
-    guard = 0
-    while len(items) < count and guard < count * 50:
-        guard += 1
-        q = _make_app_one(grade, rng)
-        key = (q["stem"], q["rubric"])
-        if key in seen:
-            continue
-        seen.add(key)
-        items.append(q)
-    return items
 
 
 def generate_app_questions_all(grade: int, total: int = 84, seed: int | None = None) -> list[dict]:

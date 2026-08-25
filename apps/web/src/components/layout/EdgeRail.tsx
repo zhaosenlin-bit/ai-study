@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useAppStore } from "@/stores/appStore";
 
 export interface RailItem {
   to: string;
@@ -9,12 +10,16 @@ export interface RailItem {
   matchPrefix?: string;
 }
 
-const LEFT_ITEMS: RailItem[] = [
+const STUDENT_LEFT: RailItem[] = [
   { to: "/learn", icon: "📚", label: "学习进度", matchPrefix: "/learn" },
   { to: "/chat/math", icon: "🔢", label: "数学" },
   { to: "/chat/chinese", icon: "📖", label: "语文" },
   { to: "/chat/english", icon: "🌎", label: "英语" },
   { to: "/path", icon: "🗺️", label: "知识地图" },
+];
+
+const PARENT_LEFT: RailItem[] = [
+  { to: "/home", icon: "🧑‍💼", label: "家长看板", matchPrefix: "/home" },
 ];
 
 const RIGHT_ITEMS: RailItem[] = [
@@ -60,7 +65,8 @@ function Rail({ items, side }: { items: RailItem[]; side: "left" | "right" }) {
 }
 
 export function LeftRail() {
-  return <Rail items={LEFT_ITEMS} side="left" />;
+  const role = useAppStore((s) => s.role);
+  return <Rail items={role === "parent" ? PARENT_LEFT : STUDENT_LEFT} side="left" />;
 }
 
 export function RightRail() {
