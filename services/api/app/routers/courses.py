@@ -18,7 +18,7 @@ router = APIRouter(prefix="/api/v1/courses", tags=["courses"])
 ORAL_PER_COURSE = 75
 ORAL_ROUND = 3   # 每轮 3 门口算
 APP_ROUND = 3    # 每轮 3 门应用题
-TOTAL_ROUNDS = 3  # 共 3 轮
+TOTAL_ROUNDS = 4  # 共 4 轮 → 每年级 24 门课
 
 SUBJECTS = ("math", "chinese", "english")
 
@@ -124,24 +124,21 @@ def build_courses(subject: str, grade: int) -> list[Course]:
                 )
             )
             idx += 1
-        # 3 门应用题/拓展
-        for slot in range(APP_ROUND):
-            start = slot * app_per_course
-            count = min(app_per_course, len(pool) - start)
-            if count <= 0:
-                continue
-            courses.append(
-                Course(
-                    course_id=f"{subject}_g{grade}_app_{r}_{slot}",
-                    index=idx,
-                    name=_course_name(subject, "app", r, slot),
-                    kind="app",
-                    question_count=count,
-                    completed=False,
-                    locked=idx > 0,
+        # 3 门应用题/拓展（题库不足时循环取题，保证每门满 app_per_course）
+        if pool:
+            for slot in range(APP_ROUND):
+                courses.append(
+                    Course(
+                        course_id=f"{subject}_g{grade}_app_{r}_{slot}",
+                        index=idx,
+                        name=_course_name(subject, "app", r, slot),
+                        kind="app",
+                        question_count=app_per_course,
+                        completed=False,
+                        locked=idx > 0,
+                    )
                 )
-            )
-            idx += 1
+                idx += 1
     return courses
 
 
@@ -159,23 +156,28 @@ def _attach_progress(courses: list[Course], student_id: str) -> list[Course]:
 
 # ---------- 题目 ----------
 
+def _round_robin(pool: list[dict], start: int, count: int) -> list[dict]:
+    """不足时循环取题，保证每门课固定 count 题（经典题重复练习）。"""
+    if not pool:
+        return []
+    return [pool[(start + i) % len(pool)] for i in range(count)]
+
+
 def _questions_of(course_id: str, subject: str, grade: int, kind: str) -> list[dict]:
     parts = course_id.split("_")
     if kind == "oral":
         if subject == "math":
             r, slot = int(parts[-2]), int(parts[-1])
             return mental_math.generate_mental_math(grade, ORAL_PER_COURSE, seed=int(r) * 31 + int(slot))
-        # 语文/英语基础课：题库均分
+        # 语文/英语基础课：题库均分（不足循环）
         pool = _pool_questions(subject, grade)
         per = max(1, len(pool) // ORAL_ROUND)
         r, slot = int(parts[-2]), int(parts[-1])
-        start = slot * per
-        return pool[start:start + per]
+        return _round_robin(pool, slot * per, per)
     pool = _pool_questions(subject, grade)
     app_per_course = max(1, len(pool) // APP_ROUND)
     r, slot = int(parts[-2]), int(parts[-1])
-    start = slot * app_per_course
-    return pool[start:start + app_per_course]
+    return _round_robin(pool, slot * app_per_course, app_per_course)
 
 
 # ---------- 判题 ----------
