@@ -1,6 +1,6 @@
 """共享数据模型包：角色 A 与三科/前端共用的 Pydantic Schema 草案。"""
 
-from .models import (
+from .模型 import (
     AgentChatRequest,
     AgentChatResponse,
     Answer,

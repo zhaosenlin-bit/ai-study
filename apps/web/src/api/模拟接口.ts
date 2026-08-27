@@ -22,7 +22,7 @@ import {
   QUESTIONS_BY_STUDENT,
   REPORTS,
   TOOL_TRACES,
-} from "./mockData";
+} from "./模拟数据";
 
 const LATENCY = 400;
 

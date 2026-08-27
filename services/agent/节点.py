@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from uuid import uuid4
 
 from app import 数据库
-from packages.contracts.models import Question
+from packages.contracts.模型 import Question
 from services.agent import 模型网关
 from services.agent.状态 import AgentState
 from services.agent.工具 import (

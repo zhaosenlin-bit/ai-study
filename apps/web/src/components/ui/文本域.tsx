@@ -1,7 +1,7 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/工具函数";
 
-export const Textarea = React.forwardRef<
+export const 文本域 = React.forwardRef<
   HTMLTextAreaElement,
   React.TextareaHTMLAttributes<HTMLTextAreaElement>
 >(({ className, ...props }, ref) => (
@@ -14,4 +14,4 @@ export const Textarea = React.forwardRef<
     {...props}
   />
 ));
-Textarea.displayName = "Textarea";
+文本域.displayName = "文本域";

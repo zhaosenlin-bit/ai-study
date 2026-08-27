@@ -7,7 +7,7 @@
 from datetime import datetime, timedelta
 from uuid import uuid4
 
-from packages.contracts.models import (
+from packages.contracts.模型 import (
     AgentChatRequest,
     AgentChatResponse,
     Answer,

@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "@/api";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { cn } from "@/lib/utils";
+import { 按钮 } from "@/components/ui/按钮";
+import { 文本域 } from "@/components/ui/文本域";
+import { cn } from "@/lib/工具函数";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 import type { AgentStrategy } from "@contracts";
@@ -173,7 +173,7 @@ export function 对话页() {
           {/* 输入区 */}
           <div className="border-t border-white/8 p-3">
             <div className="flex gap-2">
-              <Textarea
+              <文本域
                 rows={2}
                 value={input}
                 placeholder={`和${meta.label}有关的任何问题都可以问我…`}
@@ -185,14 +185,14 @@ export function 对话页() {
                   }
                 }}
               />
-              <Button
+              <按钮
                 size="lg"
                 className="self-end"
                 disabled={sending || !input.trim()}
                 onClick={() => void handleSend()}
               >
                 发送
-              </Button>
+              </按钮>
             </div>
           </div>
         </div>

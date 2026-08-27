@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/工具函数";
 
 type Variant = "default" | "secondary" | "ghost" | "destructive" | "outline" | "hero" | "hero-outline";
 type Size = "default" | "sm" | "lg" | "icon" | "xl";
@@ -30,7 +30,7 @@ export interface ButtonProps
   size?: Size;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const 按钮 = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", ...props }, ref) => (
     <button
       ref={ref}
@@ -44,4 +44,4 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     />
   ),
 );
-Button.displayName = "Button";
+按钮.displayName = "按钮";

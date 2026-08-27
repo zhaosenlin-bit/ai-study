@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { 按钮 } from "@/components/ui/按钮";
 
 interface Action {
   label: string;
@@ -51,7 +51,7 @@ export function 底部栏() {
       <p className="hidden text-sm text-muted-foreground sm:block">{hint}</p>
       <div className="ml-auto flex items-center gap-3">
         {actions.map((a) => (
-          <Button
+          <按钮
             key={a.label}
             variant={a.primary ? "default" : "outline"}
             size="lg"
@@ -59,7 +59,7 @@ export function 底部栏() {
           >
             {a.icon && <span aria-hidden>{a.icon}</span>}
             {a.label}
-          </Button>
+          </按钮>
         ))}
       </div>
     </footer>

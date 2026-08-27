@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { api } from "@/api";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { 卡片, 卡片内容, 卡片头, 卡片标题 } from "@/components/ui/卡片";
+import { 进度条 } from "@/components/ui/进度条";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
@@ -48,14 +48,14 @@ export function 首页() {
 
       <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
         {/* 今日任务 */}
-        <Card className="animate-fade-in">
-          <CardHeader className="flex-row items-center justify-between">
-            <CardTitle>今日任务</CardTitle>
+        <卡片 className="animate-fade-in">
+          <卡片头 className="flex-row items-center justify-between">
+            <卡片标题>今日任务</卡片标题>
             <span className="text-xs text-muted-foreground">
               已完成 {doneCount}/{path?.tasks.length ?? 0}
             </span>
-          </CardHeader>
-          <CardContent className="space-y-2.5">
+          </卡片头>
+          <卡片内容 className="space-y-2.5">
             {isLoading && <p className="py-6 text-center text-sm text-muted-foreground">加载中…</p>}
             {!isLoading &&
               (todoTasks.length ? (
@@ -92,15 +92,15 @@ export function 首页() {
                   今天的任务都完成啦，真棒！🎉
                 </p>
               ))}
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
 
         {/* 三科掌握度 */}
-        <Card className="animate-fade-in [animation-delay:80ms]">
-          <CardHeader>
-            <CardTitle>三科掌握度</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+        <卡片 className="animate-fade-in [animation-delay:80ms]">
+          <卡片头>
+            <卡片标题>三科掌握度</卡片标题>
+          </卡片头>
+          <卡片内容 className="space-y-4">
             {isLoading && <p className="py-6 text-center text-sm text-muted-foreground">加载中…</p>}
             {!isLoading &&
               mastery.map((m) => {
@@ -116,7 +116,7 @@ export function 首页() {
                         {m.value}%
                       </span>
                     </div>
-                    <Progress
+                    <进度条
                       value={m.value}
                       indicatorClassName={m.value < 60 ? "bg-subject-chinese" : "bg-primary"}
                     />
@@ -128,8 +128,8 @@ export function 首页() {
                 我是{studentName}的 AI 学习伙伴，掌握度低于 60% 的知识点我会优先安排进你的学习路径哦。
               </p>
             )}
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
       </div>
     </div>
   );

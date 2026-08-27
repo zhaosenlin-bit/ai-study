@@ -1,5 +1,5 @@
 import { useAppStore } from "@/stores/应用状态";
-import { COMPANION, type CompanionState } from "@/config/companion";
+import { COMPANION, type CompanionState } from "@/config/伙伴配置";
 
 /** 伙伴状态对应的表情与光效 */
 const EYE_STYLE: Record<CompanionState, string> = {

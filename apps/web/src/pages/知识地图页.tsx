@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api";
-import { KNOWLEDGE_POINTS } from "@/api/mockData";
+import { KNOWLEDGE_POINTS } from "@/api/模拟数据";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { 卡片, 卡片内容 } from "@/components/ui/卡片";
+import { cn } from "@/lib/工具函数";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 import type { LearningTask } from "@contracts";
@@ -42,9 +42,9 @@ export function 知识地图页() {
         <p className="mb-4 text-sm text-muted-foreground">{path?.reason}</p>
 
         {isLoading && (
-          <Card>
-            <CardContent className="p-8 text-center text-sm text-muted-foreground">加载中…</CardContent>
-          </Card>
+          <卡片>
+            <卡片内容 className="p-8 text-center text-sm text-muted-foreground">加载中…</卡片内容>
+          </卡片>
         )}
 
         {/* 路径线 */}
@@ -123,11 +123,11 @@ export function 知识地图页() {
         </div>
 
         {todo.length === 0 && (
-          <Card className="mt-4">
-            <CardContent className="p-6 text-center text-sm text-muted-foreground">
+          <卡片 className="mt-4">
+            <卡片内容 className="p-6 text-center text-sm text-muted-foreground">
               所有任务都完成啦！明天 AI 伙伴会为你规划新的挑战 🎉
-            </CardContent>
-          </Card>
+            </卡片内容>
+          </卡片>
         )}
       </div>
     </div>

@@ -5,8 +5,8 @@ import { api } from "@/api";
 import { realGetCourses } from "@/api/课程";
 import { realGetStudyTime } from "@/api/学习时长";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 徽章 } from "@/components/ui/徽章";
+import { 卡片, 卡片内容, 卡片头, 卡片标题 } from "@/components/ui/卡片";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
@@ -83,7 +83,7 @@ export function 家长看板页() {
       {/* 标题 */}
       <div className="flex items-center gap-3">
         <h2 className="text-xl font-black text-foreground">家长端 · 学习看板</h2>
-        <Badge className="border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese">家长模式</Badge>
+        <徽章 className="border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese">家长模式</徽章>
         <span className="text-sm text-muted-foreground">
           {studentName} · {[3, 4, 5, 6].includes(grade) ? ["", "", "三年级", "四年级", "五年级", "六年级"][grade] : ""} · 学习进度概览
         </span>
@@ -92,21 +92,21 @@ export function 家长看板页() {
       <AI伙伴 size={56} showBubble={false} />
 
       {isLoading && (
-        <Card>
-          <CardContent className="p-8 text-center text-sm text-muted-foreground">加载中…</CardContent>
-        </Card>
+        <卡片>
+          <卡片内容 className="p-8 text-center text-sm text-muted-foreground">加载中…</卡片内容>
+        </卡片>
       )}
 
       {!isLoading && !hasData && (
-        <Card>
-          <CardContent className="flex flex-col items-center gap-3 p-10 text-center">
+        <卡片>
+          <卡片内容 className="flex flex-col items-center gap-3 p-10 text-center">
             <div className="text-4xl">📭</div>
             <div className="font-semibold text-foreground">孩子还没有学习记录</div>
             <p className="max-w-sm text-sm text-muted-foreground">
               请让孩子使用自己的账号登录，完成「选年级 → 学习课程」，这里就会展示学习情况。
             </p>
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
       )}
 
       {hasData && (
@@ -122,11 +122,11 @@ export function 家长看板页() {
 
           {/* 三科进度 + 学习建议 */}
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-            <Card className="lg:col-span-2">
-              <CardHeader>
-                <CardTitle>课程进度</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
+            <卡片 className="lg:col-span-2">
+              <卡片头>
+                <卡片标题>课程进度</卡片标题>
+              </卡片头>
+              <卡片内容 className="space-y-4">
                 {SUBJECT_ORDER.map((s) => {
                   const meta = subjectMeta(s);
                   const courses = coursesData?.[s].courses ?? [];
@@ -150,15 +150,15 @@ export function 家长看板页() {
                     </div>
                   );
                 })}
-              </CardContent>
-            </Card>
+              </卡片内容>
+            </卡片>
 
             {/* 学习建议（可汗 Recommended） */}
-            <Card>
-              <CardHeader>
-                <CardTitle>学习建议</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <卡片>
+              <卡片头>
+                <卡片标题>学习建议</卡片标题>
+              </卡片头>
+              <卡片内容>
                 {report && report.suggestions.length > 0 ? (
                   <ul className="space-y-2.5">
                     {report.suggestions.map((sg, i) => (
@@ -171,39 +171,39 @@ export function 家长看板页() {
                 ) : (
                   <p className="text-sm text-muted-foreground">完成诊断后生成建议。</p>
                 )}
-              </CardContent>
-            </Card>
+              </卡片内容>
+            </卡片>
           </div>
 
           {/* 家长报告 + 错因 */}
           {report && (
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-              <Card className="lg:col-span-2">
-                <CardHeader>
-                  <CardTitle>给家长的一封信</CardTitle>
-                </CardHeader>
-                <CardContent>
+              <卡片 className="lg:col-span-2">
+                <卡片头>
+                  <卡片标题>给家长的一封信</卡片标题>
+                </卡片头>
+                <卡片内容>
                   <p className="text-sm leading-relaxed text-muted-foreground">{report.summary}</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>错因分布</CardTitle>
-                </CardHeader>
-                <CardContent>
+                </卡片内容>
+              </卡片>
+              <卡片>
+                <卡片头>
+                  <卡片标题>错因分布</卡片标题>
+                </卡片头>
+                <卡片内容>
                   {Object.keys(report.mistake_stats).length > 0 ? (
                     <div className="flex flex-wrap gap-2">
                       {Object.entries(report.mistake_stats).map(([k, v]) => (
-                        <Badge key={k} className="border-white/15 bg-white/8 text-muted-foreground">
+                        <徽章 key={k} className="border-white/15 bg-white/8 text-muted-foreground">
                           {k} × {v}
-                        </Badge>
+                        </徽章>
                       ))}
                     </div>
                   ) : (
                     <p className="text-sm text-muted-foreground">暂无错题数据。</p>
                   )}
-                </CardContent>
-              </Card>
+                </卡片内容>
+              </卡片>
             </div>
           )}
         </div>

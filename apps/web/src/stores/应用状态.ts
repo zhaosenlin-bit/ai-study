@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { COMPANION, type CompanionState } from "@/config/companion";
+import { COMPANION, type CompanionState } from "@/config/伙伴配置";
 import type { ModelProvider } from "@contracts";
-import { DEMO_STUDENTS } from "@/api/mockData";
+import { DEMO_STUDENTS } from "@/api/模拟数据";
 
 export type UserRole = "student" | "parent";
 

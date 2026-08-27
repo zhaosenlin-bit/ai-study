@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-# packages/subject_math/loader.py -> parents[2] 为仓库根目录
+# packages/学科数学/加载器.py -> parents[2] 为仓库根目录
 ROOT = Path(__file__).resolve().parents[2]
 KNOWLEDGE_DIR = ROOT / "data" / "knowledge_graph" / "math"
 QUESTION_DIR = ROOT / "data" / "question_bank" / "math"

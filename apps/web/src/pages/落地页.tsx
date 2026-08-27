@@ -5,7 +5,7 @@ import type { CaptchaResponse, UserInfo } from "@contracts";
 import { realGetCaptcha, realLogin } from "@/api/认证";
 import { getMe } from "@/api/用户信息";
 import { useAppStore } from "@/stores/应用状态";
-import { Button } from "@/components/ui/button";
+import { 按钮 } from "@/components/ui/按钮";
 
 /** Hero 内嵌登录表单（账号/密码/验证码 + 学生/家长 Tab，校验与现有 登录页 一致） */
 function HeroLoginForm() {

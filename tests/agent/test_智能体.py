@@ -12,7 +12,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app import 数据库
-from packages.contracts.models import Subject
+from packages.contracts.模型 import Subject
 from services.agent import 模型网关
 from services.agent.节点 import GRAPH
 from services.agent.工具 import (

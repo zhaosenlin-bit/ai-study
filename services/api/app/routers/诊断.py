@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app.services import 伴学服务
-from packages.contracts.models import (
+from packages.contracts.模型 import (
     DiagnosisResult,
     DiagnosisSession,
     DiagnosisStartRequest,

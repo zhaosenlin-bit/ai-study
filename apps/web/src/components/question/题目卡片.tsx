@@ -1,11 +1,11 @@
-import { KNOWLEDGE_POINTS } from "@/api/mockData";
-import { cn } from "@/lib/utils";
+import { KNOWLEDGE_POINTS } from "@/api/模拟数据";
+import { cn } from "@/lib/工具函数";
 import { subjectMeta } from "@/lib/学科";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { 输入框 } from "@/components/ui/输入框";
+import { 文本域 } from "@/components/ui/文本域";
 import type { Question } from "@contracts";
 
-export function QuestionCard({
+export function 题目卡片({
   question,
   value,
   onChange,
@@ -70,14 +70,14 @@ export function QuestionCard({
           })}
         </div>
       ) : question.type === "fill_blank" ? (
-        <Input
+        <输入框
           placeholder="在这里填写答案…"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           className="text-base"
         />
       ) : (
-        <Textarea
+        <文本域
           placeholder="用你自己的话回答，我会引导你一步步想清楚～"
           value={value}
           onChange={(e) => onChange(e.target.value)}

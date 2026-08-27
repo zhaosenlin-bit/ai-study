@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAppStore } from "@/stores/应用状态";
-import { Badge } from "@/components/ui/badge";
+import { 徽章 } from "@/components/ui/徽章";
 
 export function 顶部栏() {
   const { studentName, streakDays, modelProvider, grade, role } = useAppStore();
@@ -26,7 +26,7 @@ export function 顶部栏() {
             </span>
           </h1>
         </div>
-        <Badge className="border-primary/30 bg-primary/10 text-primary">
+        <徽章 className="border-primary/30 bg-primary/10 text-primary">
           <span
             className={
               modelProvider === "mock"
@@ -35,11 +35,11 @@ export function 顶部栏() {
             }
           />
           模型：{modelProvider === "mock" ? "Mock" : modelProvider}
-        </Badge>
+        </徽章>
         {role === "parent" && (
-          <Badge className="border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese">
+          <徽章 className="border-subject-chinese/40 bg-subject-chinese/15 text-subject-chinese">
             👨‍👩‍👦 家长模式
-          </Badge>
+          </徽章>
         )}
       </div>
 

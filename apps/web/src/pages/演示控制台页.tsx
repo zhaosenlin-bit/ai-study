@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "@/api";
-import { DEMO_STUDENTS, TOOL_TRACES } from "@/api/mockData";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { DEMO_STUDENTS, TOOL_TRACES } from "@/api/模拟数据";
+import { 按钮 } from "@/components/ui/按钮";
+import { 卡片, 卡片内容, 卡片头, 卡片标题 } from "@/components/ui/卡片";
+import { cn } from "@/lib/工具函数";
 import { useAppStore } from "@/stores/应用状态";
-import { useDemoStore } from "@/stores/demoStore";
-import { useLearningStore } from "@/stores/learningStore";
+import { useDemoStore } from "@/stores/演示状态";
+import { useLearningStore } from "@/stores/学习状态";
 
 interface DemoStep {
   key: string;
@@ -151,23 +151,23 @@ export function 演示控制台页() {
           </p>
         </div>
         {running ? (
-          <Button variant="destructive" onClick={stop}>
+          <按钮 variant="destructive" onClick={stop}>
             ⏹ 停止
-          </Button>
+          </按钮>
         ) : (
-          <Button size="lg" onClick={() => void runAll()}>
+          <按钮 size="lg" onClick={() => void runAll()}>
             ▶️ 一键自动演示
-          </Button>
+          </按钮>
         )}
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {/* 演示学生切换 */}
-        <Card>
-          <CardHeader>
-            <CardTitle>演示学生</CardTitle>
-          </CardHeader>
-          <CardContent className="flex gap-3">
+        <卡片>
+          <卡片头>
+            <卡片标题>演示学生</卡片标题>
+          </卡片头>
+          <卡片内容 className="flex gap-3">
             {DEMO_STUDENTS.map((s) => (
               <button
                 key={s.student_id}
@@ -188,15 +188,15 @@ export function 演示控制台页() {
                 </div>
               </button>
             ))}
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
 
         {/* 演示步骤 */}
-        <Card>
-          <CardHeader>
-            <CardTitle>演示流程（3-5 分钟）</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-1.5">
+        <卡片>
+          <卡片头>
+            <卡片标题>演示流程（3-5 分钟）</卡片标题>
+          </卡片头>
+          <卡片内容 className="space-y-1.5">
             {steps.map((step, i) => (
               <div
                 key={step.key}
@@ -223,15 +223,15 @@ export function 演示控制台页() {
                 )}
               </div>
             ))}
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
 
         {/* Agent 痕迹 */}
-        <Card className="md:col-span-2">
-          <CardHeader>
-            <CardTitle>🛠️ Agent 工具痕迹（评分证据）</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <卡片 className="md:col-span-2">
+          <卡片头>
+            <卡片标题>🛠️ Agent 工具痕迹（评分证据）</卡片标题>
+          </卡片头>
+          <卡片内容>
             <ul className="space-y-1.5 rounded-xl bg-black/30 p-4">
               {logs.length === 0 && (
                 <li className="font-mono text-xs text-muted-foreground">
@@ -250,8 +250,8 @@ export function 演示控制台页() {
                 </li>
               ))}
             </ul>
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
       </div>
     </div>
   );

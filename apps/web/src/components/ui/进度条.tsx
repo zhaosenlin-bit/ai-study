@@ -1,6 +1,6 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/工具函数";
 
-export function Progress({
+export function 进度条({
   value,
   className,
   indicatorClassName,

@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app.services import 伴学服务
-from packages.contracts.models import LearningPath, MistakeRecord, StudentProfile
+from packages.contracts.模型 import LearningPath, MistakeRecord, StudentProfile
 
 router = APIRouter(prefix="/api/v1/students", tags=["students"])
 

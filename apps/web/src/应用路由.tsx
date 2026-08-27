@@ -66,7 +66,7 @@ function useBootstrapUser() {
   }, [setCurrentUser]);
 }
 
-export function App() {
+export function 应用路由() {
   useBootstrapUser();
   return (
     <Routes>

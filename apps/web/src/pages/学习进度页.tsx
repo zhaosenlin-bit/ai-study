@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { Course } from "@contracts";
 import { realGetCourses } from "@/api/课程";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Badge } from "@/components/ui/badge";
+import { 徽章 } from "@/components/ui/徽章";
 import { useAppStore } from "@/stores/应用状态";
 
 const SUBJECTS: { value: "math" | "chinese" | "english"; label: string; icon: string }[] = [
@@ -155,7 +155,7 @@ function CourseCard({
             <div className={`truncate font-semibold ${disabled ? "text-muted-foreground" : "text-foreground"}`}>
               {course.name}
             </div>
-            <Badge
+            <徽章
               className={
                 course.kind === "oral"
                   ? "border-subject-math/40 bg-subject-math/15 text-subject-math"
@@ -163,7 +163,7 @@ function CourseCard({
               }
             >
               {course.kind === "oral" ? (subject === "math" ? "口算" : "基础") : subject === "math" ? "应用" : "拓展"}
-            </Badge>
+            </徽章>
           </div>
           <div className="mt-1 text-xs text-muted-foreground">
             {course.question_count} 题 · {course.completed ? "已完成" : disabled ? "完成前置课程后解锁" : "点击开始"}

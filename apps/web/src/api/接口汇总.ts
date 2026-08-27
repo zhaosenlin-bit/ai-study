@@ -20,7 +20,7 @@ import {
   realGetReport,
   realStartDiagnosis,
   realSubmitDiagnosis,
-} from "./client";
+} from "./请求客户端";
 import {
   mockAgentChat,
   mockGetMistakes,
@@ -29,7 +29,7 @@ import {
   mockGetReport,
   mockStartDiagnosis,
   mockSubmitDiagnosis,
-} from "./mockApi";
+} from "./模拟接口";
 
 export const USE_MOCK = import.meta.env.VITE_USE_MOCK !== "false";
 

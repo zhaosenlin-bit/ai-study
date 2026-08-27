@@ -1,4 +1,4 @@
-"""subject_math 包单元测试：使用仓库真实数据验证加载、校验、错因、路径、Prompt。"""
+"""学科数学 包单元测试：使用仓库真实数据验证加载、校验、错因、路径、Prompt。"""
 from __future__ import annotations
 
 import sys
@@ -8,7 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "packages"))
 
-from subject_math import (  # noqa: E402
+from 学科数学 import (  # noqa: E402
     SubjectMathData,
     analyze_error,
     build_diagnose_prompt,
@@ -80,7 +80,7 @@ class TestErrorAnalysis(unittest.TestCase):
 
     def test_all_five_error_types_covered(self):
         """5 类错因标签在题库中都有数据支撑。"""
-        from subject_math.error_analysis import ERROR_TYPE_LABELS
+        from 学科数学.错误分析 import ERROR_TYPE_LABELS
         seen = {q["error_type"] for q in self.data.questions}
         self.assertEqual(set(ERROR_TYPE_LABELS), seen)
 
@@ -122,14 +122,14 @@ class TestPrompts(unittest.TestCase):
             self.assertGreater(len(content), 100, f"{name} 内容过短")
 
     def test_build_diagnose_prompt(self):
-        from subject_math.loader import SubjectMathData
+        from 学科数学.加载器 import SubjectMathData
         q = SubjectMathData().get_question("math_q_g3_0005")
         text = build_diagnose_prompt(q, student_answer="73", hint_level=1)
         self.assertIn("# 本次输入", text)
         self.assertIn("math_q_g3_0005", text)
 
     def test_build_hint_and_mistake_prompts(self):
-        from subject_math.loader import SubjectMathData
+        from 学科数学.加载器 import SubjectMathData
         q = SubjectMathData().get_question("math_q_g3_0005")
         self.assertIn("hint_level", build_hint_prompt(q, "73", 2))
         self.assertIn("student_answer", build_mistake_prompt(q, "73"))

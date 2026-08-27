@@ -14,7 +14,7 @@ data/question_bank/{math,chinese,english}/（JSON 先行，决赛可迁移 Neo4j
 import json
 from pathlib import Path
 
-from packages.contracts.models import (
+from packages.contracts.模型 import (
     KnowledgePoint,
     LearningTask,
     Question,

@@ -2,7 +2,7 @@ import * as echarts from "echarts";
 import { useEffect, useRef } from "react";
 
 /** 掌握度雷达图（ECharts 封装） */
-export function RadarChart({
+export function 雷达图({
   indicators,
   values,
   name,

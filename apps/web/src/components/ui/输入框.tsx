@@ -1,7 +1,7 @@
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/工具函数";
 
-export const Input = React.forwardRef<
+export const 输入框 = React.forwardRef<
   HTMLInputElement,
   React.InputHTMLAttributes<HTMLInputElement>
 >(({ className, type, ...props }, ref) => (
@@ -15,4 +15,4 @@ export const Input = React.forwardRef<
     {...props}
   />
 ));
-Input.displayName = "Input";
+输入框.displayName = "输入框";

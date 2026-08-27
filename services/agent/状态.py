@@ -6,7 +6,7 @@ node_logs 记录每个节点的输入输出，供路演展示 Agent 规划、记
 
 from typing import TypedDict
 
-from packages.contracts.models import Question
+from packages.contracts.模型 import Question
 
 
 class AgentState(TypedDict, total=False):

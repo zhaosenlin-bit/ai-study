@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-# packages/subject_math/prompts.py -> parents[2] 为仓库根目录
+# packages/学科数学/提示词.py -> parents[2] 为仓库根目录
 PROMPT_DIR = Path(__file__).resolve().parents[2] / "prompts" / "math"
 
 AVAILABLE_PROMPTS = ("diagnose", "scaffold_hint", "mistake_analysis")

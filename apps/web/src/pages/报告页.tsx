@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api";
-import { RadarChart } from "@/components/chart/RadarChart";
+import { 雷达图 } from "@/components/chart/雷达图";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 徽章 } from "@/components/ui/徽章";
+import { 卡片, 卡片内容, 卡片头, 卡片标题 } from "@/components/ui/卡片";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
@@ -44,23 +44,23 @@ export function 报告页() {
         </p>
 
         {isLoading && (
-          <Card>
-            <CardContent className="p-8 text-center text-sm text-muted-foreground">加载中…</CardContent>
-          </Card>
+          <卡片>
+            <卡片内容 className="p-8 text-center text-sm text-muted-foreground">加载中…</卡片内容>
+          </卡片>
         )}
 
         {report && (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {/* 总览 */}
-            <Card className="animate-fade-in md:col-span-2">
-              <CardHeader>
-                <CardTitle>本周总结</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <卡片 className="animate-fade-in md:col-span-2">
+              <卡片头>
+                <卡片标题>本周总结</卡片标题>
+              </卡片头>
+              <卡片内容>
                 <p className="text-sm leading-relaxed text-muted-foreground">{report.summary}</p>
                 <div className="mt-4 flex items-center gap-4">
                   <div className="flex-1">
-                    <RadarChart indicators={indicators} values={values} name={studentName} className="h-56 w-full" />
+                    <雷达图 indicators={indicators} values={values} name={studentName} className="h-56 w-full" />
                   </div>
                   <div className="space-y-3 text-sm">
                     {SUBJECT_ORDER.map((s) => {
@@ -78,15 +78,15 @@ export function 报告页() {
                     })}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </卡片内容>
+            </卡片>
 
             {/* 错因统计 */}
-            <Card className="animate-fade-in [animation-delay:80ms]">
-              <CardHeader>
-                <CardTitle>错因统计</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2.5">
+            <卡片 className="animate-fade-in [animation-delay:80ms]">
+              <卡片头>
+                <卡片标题>错因统计</卡片标题>
+              </卡片头>
+              <卡片内容 className="space-y-2.5">
                 {Object.entries(report.mistake_stats).map(([type, count]) => {
                   const color = STAT_COLOR[type] ?? "bg-white/8 text-muted-foreground border-white/15";
                   return (
@@ -94,7 +94,7 @@ export function 报告页() {
                       key={type}
                       className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3.5 py-2.5"
                     >
-                      <Badge className={`border ${color}`}>{type}</Badge>
+                      <徽章 className={`border ${color}`}>{type}</徽章>
                       <span className="text-lg font-black text-foreground">{count}</span>
                     </div>
                   );
@@ -102,15 +102,15 @@ export function 报告页() {
                 <div className="rounded-xl border border-white/10 bg-white/5 px-3.5 py-2.5 text-xs text-muted-foreground">
                   合计 {Object.values(report.mistake_stats).reduce((a, b) => a + b, 0)} 条错题记录
                 </div>
-              </CardContent>
-            </Card>
+              </卡片内容>
+            </卡片>
 
             {/* 建议 */}
-            <Card className="animate-fade-in md:col-span-3 [animation-delay:160ms]">
-              <CardHeader>
-                <CardTitle>下周建议</CardTitle>
-              </CardHeader>
-              <CardContent>
+            <卡片 className="animate-fade-in md:col-span-3 [animation-delay:160ms]">
+              <卡片头>
+                <卡片标题>下周建议</卡片标题>
+              </卡片头>
+              <卡片内容>
                 <ol className="grid grid-cols-1 gap-3 md:grid-cols-3">
                   {report.suggestions.map((s, i) => (
                     <li
@@ -124,8 +124,8 @@ export function 报告页() {
                     </li>
                   ))}
                 </ol>
-              </CardContent>
-            </Card>
+              </卡片内容>
+            </卡片>
           </div>
         )}
       </div>

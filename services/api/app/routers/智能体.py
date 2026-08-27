@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app.services import 伴学服务
-from packages.contracts.models import AgentChatRequest, AgentChatResponse
+from packages.contracts.模型 import AgentChatRequest, AgentChatResponse
 
 router = APIRouter(prefix="/api/v1/agent", tags=["agent"])
 

@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app.services import 伴学服务
-from packages.contracts.models import ParentReport
+from packages.contracts.模型 import ParentReport
 
 router = APIRouter(prefix="/api/v1/reports", tags=["reports"])
 

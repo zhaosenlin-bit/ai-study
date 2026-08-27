@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { api } from "@/api";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { 徽章 } from "@/components/ui/徽章";
+import { 按钮 } from "@/components/ui/按钮";
+import { 卡片, 卡片内容 } from "@/components/ui/卡片";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
@@ -46,17 +46,17 @@ export function 错题本页() {
         </p>
 
         {isLoading && (
-          <Card>
-            <CardContent className="p-8 text-center text-sm text-muted-foreground">加载中…</CardContent>
-          </Card>
+          <卡片>
+            <卡片内容 className="p-8 text-center text-sm text-muted-foreground">加载中…</卡片内容>
+          </卡片>
         )}
 
         {!isLoading && mistakes?.length === 0 && (
-          <Card>
-            <CardContent className="p-8 text-center text-sm text-muted-foreground">
+          <卡片>
+            <卡片内容 className="p-8 text-center text-sm text-muted-foreground">
               还没有错题，继续保持！🎉
-            </CardContent>
-          </Card>
+            </卡片内容>
+          </卡片>
         )}
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -64,13 +64,13 @@ export function 错题本页() {
             const meta = subjectMeta(m.subject);
             const color = ERROR_COLOR[m.error_type] ?? "bg-white/8 text-muted-foreground border-white/15";
             return (
-              <Card key={m.mistake_id} className="animate-fade-in">
-                <CardContent className="p-5">
+              <卡片 key={m.mistake_id} className="animate-fade-in">
+                <卡片内容 className="p-5">
                   <div className="mb-3 flex items-center justify-between gap-2">
                     <span className={`subject-chip border ${meta.chipClass}`}>
                       {meta.icon} {meta.label}
                     </span>
-                    <Badge className={`border ${color}`}>{m.error_type}</Badge>
+                    <徽章 className={`border ${color}`}>{m.error_type}</徽章>
                   </div>
                   <div className="mb-1 text-sm font-bold text-foreground">
                     第 {m.review_count} 次复习
@@ -83,13 +83,13 @@ export function 错题本页() {
                       🔔 {formatReview(m.next_review_at)}
                     </span>
                     <Link to={`/chat/${m.subject}`}>
-                      <Button size="sm" variant="outline">
+                      <按钮 size="sm" variant="outline">
                         重新作答
-                      </Button>
+                      </按钮>
                     </Link>
                   </div>
-                </CardContent>
-              </Card>
+                </卡片内容>
+              </卡片>
             );
           })}
         </div>

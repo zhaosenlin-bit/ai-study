@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "@/api";
-import { TOOL_TRACES } from "@/api/mockData";
+import { TOOL_TRACES } from "@/api/模拟数据";
 import { AI伙伴 } from "@/components/companion/AI伙伴";
-import { QuestionCard } from "@/components/question/QuestionCard";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import { 题目卡片 } from "@/components/question/题目卡片";
+import { 徽章 } from "@/components/ui/徽章";
+import { 按钮 } from "@/components/ui/按钮";
+import { 卡片, 卡片内容 } from "@/components/ui/卡片";
+import { 进度条 } from "@/components/ui/进度条";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 import {
   collectAnswers,
   useLearningStore,
-} from "@/stores/learningStore";
+} from "@/stores/学习状态";
 
 export function 诊断页() {
   const navigate = useNavigate();
@@ -86,8 +86,8 @@ export function 诊断页() {
     return (
       <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-6 py-6">
         <AI伙伴 size={100} />
-        <Card className="w-full animate-fade-in">
-          <CardContent className="space-y-5 p-6">
+        <卡片 className="w-full animate-fade-in">
+          <卡片内容 className="space-y-5 p-6">
             <div>
               <h2 className="mb-1 text-xl font-black text-foreground">
                 诊断完成，画像已更新 🎉
@@ -103,9 +103,9 @@ export function 诊断页() {
                 {result.weak_points.map((w) => {
                   const meta = subjectMeta(w.split("_")[0]);
                   return (
-                    <Badge key={w} className={`border ${meta.chipClass}`}>
+                    <徽章 key={w} className={`border ${meta.chipClass}`}>
                       {meta.icon} {w}
-                    </Badge>
+                    </徽章>
                   );
                 })}
               </div>
@@ -134,22 +134,22 @@ export function 诊断页() {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-1">
-              <Button size="lg" onClick={() => navigate("/path")}>
+              <按钮 size="lg" onClick={() => navigate("/path")}>
                 🗺️ 查看学习路径
-              </Button>
-              <Button
+              </按钮>
+              <按钮
                 size="lg"
                 variant="outline"
                 onClick={() => navigate("/chat/math")}
               >
                 🧑‍🏫 先去辅导薄弱点
-              </Button>
-              <Button size="lg" variant="ghost" onClick={handleRestart}>
+              </按钮>
+              <按钮 size="lg" variant="ghost" onClick={handleRestart}>
                 重新诊断
-              </Button>
+              </按钮>
             </div>
-          </CardContent>
-        </Card>
+          </卡片内容>
+        </卡片>
       </div>
     );
   }
@@ -164,32 +164,32 @@ export function 诊断页() {
           <span className="text-sm font-bold text-foreground">
             {currentIndex + 1}/{questions.length}
           </span>
-          <Progress value={progress} className="flex-1" />
+          <进度条 value={progress} className="flex-1" />
           <span className="text-xs text-muted-foreground">已答 {answeredCount} 题</span>
         </div>
 
-        <QuestionCard
+        <题目卡片
           question={q}
           value={answers[q.id] ?? ""}
           onChange={(v) => setAnswer(q.id, v)}
         />
 
         <div className="flex w-full max-w-2xl items-center justify-between gap-3">
-          <Button variant="ghost" size="lg" disabled={currentIndex === 0} onClick={goPrev}>
+          <按钮 variant="ghost" size="lg" disabled={currentIndex === 0} onClick={goPrev}>
             ← 上一题
-          </Button>
+          </按钮>
           {isLast ? (
-            <Button
+            <按钮
               size="lg"
               disabled={submitting || answeredCount < questions.length}
               onClick={handleSubmit}
             >
               {submitting ? "分析中…" : "✅ 提交诊断"}
-            </Button>
+            </按钮>
           ) : (
-            <Button size="lg" onClick={goNext}>
+            <按钮 size="lg" onClick={goNext}>
               下一题 →
-            </Button>
+            </按钮>
           )}
         </div>
       </div>
@@ -200,8 +200,8 @@ export function 诊断页() {
   return (
     <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-6 py-6">
       <AI伙伴 size={110} />
-      <Card className="w-full animate-fade-in text-center">
-        <CardContent className="space-y-4 p-8">
+      <卡片 className="w-full animate-fade-in text-center">
+        <卡片内容 className="space-y-4 p-8">
           <h2 className="text-2xl font-black text-foreground">
             三科小诊断 · 只要 3 分钟
           </h2>
@@ -219,11 +219,11 @@ export function 诊断页() {
               );
             })}
           </div>
-          <Button size="lg" className="mt-2 min-w-48" disabled={starting} onClick={handleStart}>
+          <按钮 size="lg" className="mt-2 min-w-48" disabled={starting} onClick={handleStart}>
             {starting ? "准备题目中…" : "🚀 开始诊断"}
-          </Button>
-        </CardContent>
-      </Card>
+          </按钮>
+        </卡片内容>
+      </卡片>
     </div>
   );
 }
