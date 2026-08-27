@@ -42,3 +42,6 @@ chroma_db/
 
 # Temp
 .tmp_*
+
+# WorkBuddy 工具本地数据（不入仓库）
+.workbuddy/
