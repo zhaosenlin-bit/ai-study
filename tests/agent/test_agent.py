@@ -11,11 +11,11 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import db
+from app import 数据库
 from packages.contracts.models import Subject
-from services.agent import model_gateway
-from services.agent.nodes import GRAPH
-from services.agent.tools import (
+from services.agent import 模型网关
+from services.agent.节点 import GRAPH
+from services.agent.工具 import (
     get_diagnosis_questions,
     get_scaffold_hint,
     grade_answer,
@@ -23,9 +23,9 @@ from services.agent.tools import (
     search_knowledge_point,
 )
 
-db.init_db()
+数据库.init_db()
 # 清理上次运行残留,保证测试幂等
-with db._connect() as _conn:
+with 数据库._connect() as _conn:
     _conn.execute("DELETE FROM mistakes WHERE student_id = ?", ("stu_agent_test",))
     _conn.execute("DELETE FROM students WHERE student_id = ?", ("stu_agent_test",))
 STUDENT_ID = "stu_agent_test"
@@ -67,7 +67,7 @@ def test_recommend_next_tasks_empty_for_unknown_student():
 
 def test_model_gateway_mock_default(monkeypatch):
     monkeypatch.delenv("MODEL_PROVIDER", raising=False)
-    text, provider = model_gateway.complete("system", "这道题为什么这么做？")
+    text, provider = 模型网关.complete("system", "这道题为什么这么做？")
     assert provider == "mock"
     assert text
 
@@ -76,7 +76,7 @@ def test_model_gateway_fallback_without_key(monkeypatch):
     monkeypatch.setenv("MODEL_PROVIDER", "deepseek")
     monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
     monkeypatch.delenv("DEEPSEEK_BASE_URL", raising=False)
-    text, provider = model_gateway.complete("system", "这题怎么做")
+    text, provider = 模型网关.complete("system", "这题怎么做")
     assert provider == "mock"  # 无 Key 自动回退
 
 
@@ -114,5 +114,5 @@ def test_graph_judges_answer_and_records_mistake():
     assert result["is_correct"] is False
     assert any("错题入库" in log for log in result["node_logs"])
     assert any("掌握度更新" in log for log in result["node_logs"])
-    mistakes = db.list_mistakes(STUDENT_ID)
+    mistakes = 数据库.list_mistakes(STUDENT_ID)
     assert any(m["question_id"] == "math_q_g4_0012" for m in mistakes)

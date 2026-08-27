@@ -83,7 +83,7 @@
 python -m venv .venv && .venv/Scripts/pip install -r services/api/requirements.txt
 # 启动（从 services/api 目录）
 cd services/api
-../..//.venv/Scripts/python.exe -m uvicorn app.main:app --reload --port 8000
+../..//.venv/Scripts/python.exe -m uvicorn app.主程序:app --reload --port 8000
 # 打开 Swagger 文档: http://localhost:8000/docs
 ```
 

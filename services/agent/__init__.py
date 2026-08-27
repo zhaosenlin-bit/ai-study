@@ -3,6 +3,6 @@
 角色 A 核心：让 AI 精灵背后有可解释的 Agent 状态机、工具调用与记忆。
 """
 
-from services.agent.nodes import GRAPH
+from services.agent.节点 import GRAPH
 
 __all__ = ["GRAPH"]

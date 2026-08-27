@@ -1,6 +1,6 @@
 import { KNOWLEDGE_POINTS } from "@/api/mockData";
 import { cn } from "@/lib/utils";
-import { subjectMeta } from "@/lib/subjects";
+import { subjectMeta } from "@/lib/学科";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import type { Question } from "@contracts";

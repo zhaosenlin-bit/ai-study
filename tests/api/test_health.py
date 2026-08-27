@@ -13,12 +13,12 @@ if str(ROOT) not in sys.path:
 
 from fastapi.testclient import TestClient
 
-from app import db
-from app.main import app
+from app import 数据库
+from app.主程序 import app
 
-db.init_db()
+数据库.init_db()
 # 清理上次运行残留,保证测试幂等
-with db._connect() as _conn:
+with 数据库._connect() as _conn:
     _conn.execute("DELETE FROM mistakes WHERE student_id = ?", ("stu_test_001",))
     _conn.execute("DELETE FROM students WHERE student_id = ?", ("stu_test_001",))
 client = TestClient(app)

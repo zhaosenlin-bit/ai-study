@@ -2,5 +2,5 @@
 
 运行：
     cd services/api
-    uvicorn app.main:app --reload
+    uvicorn app.主程序:app --reload
 """

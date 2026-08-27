@@ -1,22 +1,22 @@
 import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { AppShell } from "@/components/layout/AppShell";
-import { ChatPage } from "@/pages/ChatPage";
-import { CoursePracticePage } from "@/pages/CoursePracticePage";
-import { DemoConsolePage } from "@/pages/DemoConsolePage";
-import { DiagnosisPage } from "@/pages/DiagnosisPage";
-import { HomePage } from "@/pages/HomePage";
-import { LandingPage } from "@/pages/LandingPage";
-import { LearningPage } from "@/pages/LearningPage";
-import { LoginPage } from "@/pages/LoginPage";
-import { MistakesPage } from "@/pages/MistakesPage";
-import { ParentHomePage } from "@/pages/ParentHomePage";
-import { PathPage } from "@/pages/PathPage";
-import { RegisterPage } from "@/pages/RegisterPage";
-import { ReportPage } from "@/pages/ReportPage";
-import { SetupGradePage } from "@/pages/SetupGradePage";
-import { getMe } from "@/api/me";
-import { useAppStore } from "@/stores/appStore";
+import { 应用框架 } from "@/components/layout/应用框架";
+import { 对话页 } from "@/pages/对话页";
+import { 课程答题页 } from "@/pages/课程答题页";
+import { 演示控制台页 } from "@/pages/演示控制台页";
+import { 诊断页 } from "@/pages/诊断页";
+import { 首页 } from "@/pages/首页";
+import { 落地页 } from "@/pages/落地页";
+import { 学习进度页 } from "@/pages/学习进度页";
+import { 登录页 } from "@/pages/登录页";
+import { 错题本页 } from "@/pages/错题本页";
+import { 家长看板页 } from "@/pages/家长看板页";
+import { 知识地图页 } from "@/pages/知识地图页";
+import { 注册页 } from "@/pages/注册页";
+import { 报告页 } from "@/pages/报告页";
+import { 选择年级页 } from "@/pages/选择年级页";
+import { getMe } from "@/api/用户信息";
+import { useAppStore } from "@/stores/应用状态";
 import type { UserInfo } from "@contracts";
 
 function getStoredUser(): UserInfo | null {
@@ -42,13 +42,13 @@ function RequireAuth({ children }: { children: React.ReactElement }) {
 /** 按登录角色分流首页：家长 → 家长看板；学生 → 学习课程目录 */
 function RoleHome() {
   const role = useAppStore((s) => s.role);
-  return role === "parent" ? <ParentHomePage /> : <LearningPage />;
+  return role === "parent" ? <家长看板页 /> : <学习进度页 />;
 }
 
 /** 根路径：未登录显示 Landing，已登录跳学习空间 */
 function RootLanding() {
   const user = getStoredUser();
-  if (!user) return <LandingPage />;
+  if (!user) return <落地页 />;
   return <Navigate to="/home" replace />;
 }
 
@@ -70,34 +70,34 @@ export function App() {
   useBootstrapUser();
   return (
     <Routes>
-      <Route path="/landing" element={<LandingPage />} />
+      <Route path="/landing" element={<落地页 />} />
       <Route index element={<RootLanding />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
+      <Route path="/login" element={<登录页 />} />
+      <Route path="/register" element={<注册页 />} />
       <Route
         path="/setup/grade"
         element={
           <RequireAuth>
-            <SetupGradePage />
+            <选择年级页 />
           </RequireAuth>
         }
       />
       <Route
         element={
           <RequireAuth>
-            <AppShell />
+            <应用框架 />
           </RequireAuth>
         }
       >
         <Route path="home" element={<RoleHome />} />
-        <Route path="learn" element={<LearningPage />} />
-        <Route path="course/:subject/:courseId" element={<CoursePracticePage />} />
-        <Route path="diagnosis" element={<DiagnosisPage />} />
-        <Route path="chat/:subject" element={<ChatPage />} />
-        <Route path="path" element={<PathPage />} />
-        <Route path="mistakes" element={<MistakesPage />} />
-        <Route path="report" element={<ReportPage />} />
-        <Route path="demo" element={<DemoConsolePage />} />
+        <Route path="learn" element={<学习进度页 />} />
+        <Route path="course/:subject/:courseId" element={<课程答题页 />} />
+        <Route path="diagnosis" element={<诊断页 />} />
+        <Route path="chat/:subject" element={<对话页 />} />
+        <Route path="path" element={<知识地图页 />} />
+        <Route path="mistakes" element={<错题本页 />} />
+        <Route path="report" element={<报告页 />} />
+        <Route path="demo" element={<演示控制台页 />} />
       </Route>
     </Routes>
   );
