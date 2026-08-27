@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 
 # 包/学科数学/提示词.py -> parents[2] 为仓库根目录
-PROMPT_DIR = Path(__file__).resolve().parents[2] / "prompts" / "math"
+PROMPT_DIR = Path(__file__).resolve().parents[2] / "提示词库" / "math"
 
 AVAILABLE_PROMPTS = ("diagnose", "scaffold_hint", "mistake_analysis")
 

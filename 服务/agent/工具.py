@@ -21,7 +21,7 @@ from 包.contracts.模型 import (
     Subject,
 )
 
-_DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+_DATA_DIR = Path(__file__).resolve().parents[2] / "数据"
 _SUBJECTS = ("math", "chinese", "english")
 
 

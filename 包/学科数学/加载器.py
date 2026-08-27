@@ -11,8 +11,8 @@ from pathlib import Path
 
 # 包/学科数学/加载器.py -> parents[2] 为仓库根目录
 ROOT = Path(__file__).resolve().parents[2]
-KNOWLEDGE_DIR = ROOT / "data" / "knowledge_graph" / "math"
-QUESTION_DIR = ROOT / "data" / "question_bank" / "math"
+KNOWLEDGE_DIR = ROOT / "数据" / "knowledge_graph" / "math"
+QUESTION_DIR = ROOT / "数据" / "question_bank" / "math"
 
 VALID_ERROR_TYPES = {
     "careless",
@@ -33,8 +33,8 @@ VALID_QUESTION_TYPES = {
 class SubjectMathData:
     """加载数学知识图谱与题库，校验数据完整性，并提供查询接口。
 
-    :param knowledge_dir: 知识图谱目录（默认仓库 数据/knowledge_graph/math）
-    :param question_dir: 题库目录（默认仓库 数据/question_bank/math）
+    :param knowledge_dir: 知识图谱目录（默认仓库 数据/知识图谱/math）
+    :param question_dir: 题库目录（默认仓库 数据/题库/math）
     """
 
     def __init__(self, knowledge_dir: str | Path | None = None, question_dir: str | Path | None = None):
