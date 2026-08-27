@@ -1,0 +1,13 @@
+"""复习调度接口。"""
+
+from fastapi import APIRouter
+
+from app.services import 伴学服务
+from 包.contracts.模型 import ReviewItem, ReviewNextRequest
+
+router = APIRouter(prefix="/api/v1/review", tags=["review"])
+
+
+@router.post("/next", response_model=ReviewItem, summary="Get next review item")
+def next_review(payload: ReviewNextRequest) -> ReviewItem:
+    return 伴学服务.review_next(payload.student_id, payload.subject)
