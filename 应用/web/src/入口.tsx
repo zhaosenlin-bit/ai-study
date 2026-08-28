@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { 应用路由 } from "@/应用路由";
-import "@/index.css";
+import "@/全局样式.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
