@@ -1,7 +1,7 @@
 /** 登录注册：图形验证码 + 注册 + 登录（真实 API）。 */
 import type { CaptchaResponse, RegisterRequest, UserInfo } from "@contracts";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 
 async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
