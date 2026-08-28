@@ -22,6 +22,12 @@ const SUBJECT_TINT: Record<string, string> = {
   english: "from-subject-english/25 to-subject-english/5 ring-subject-english/30",
 };
 
+const TEXTBOOKS = [
+  { subject: "math" as const, icon: "📗", name: "数学", press: "人教版（上册）", color: "from-blue-600/50 to-cyan-600/30 ring-blue-400/40" },
+  { subject: "chinese" as const, icon: "📕", name: "语文", press: "部编版（上册）", color: "from-orange-600/50 to-amber-600/30 ring-orange-400/40" },
+  { subject: "english" as const, icon: "📘", name: "英语", press: "人教版（上册）", color: "from-emerald-600/50 to-teal-600/30 ring-emerald-400/40" },
+];
+
 export function 学习进度页() {
   const nav = useNavigate();
   const { studentId, grade, setCompanion } = useAppStore();
@@ -72,6 +78,38 @@ export function 学习进度页() {
             ))}
           </div>
         </div>
+
+        {/* 教科书：该账号年级的三科课本 */}
+        {[3, 4, 5, 6].includes(grade) && (
+          <div>
+            <div className="mb-2 flex items-center gap-2">
+              <span className="text-lg" aria-hidden>📚</span>
+              <h3 className="text-base font-bold text-foreground">教科书 · {GRADE_LABEL[grade]}</h3>
+              <span className="text-xs text-muted-foreground">点击课本进入对应学科学习</span>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {TEXTBOOKS.map((tb) => {
+                const active = subject === tb.subject;
+                return (
+                  <button
+                    key={tb.subject}
+                    type="button"
+                    onClick={() => setSubject(tb.subject)}
+                    className={`group relative flex flex-col items-start gap-1 overflow-hidden rounded-xl bg-gradient-to-br ${tb.color} p-4 text-left ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:shadow-lg ${
+                      active ? "ring-2 ring-white/50" : ""
+                    }`}
+                  >
+                    {/* 书脊装饰 */}
+                    <span className="absolute inset-y-0 left-0 w-1.5 bg-black/30" aria-hidden />
+                    <span className="text-2xl drop-shadow" aria-hidden>{tb.icon}</span>
+                    <span className="text-base font-black text-white drop-shadow">{GRADE_LABEL[grade]}{tb.name}</span>
+                    <span className="text-[11px] text-white/80">{tb.press}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* 说明条 */}
         <div className="rounded-2xl bg-white/5 px-4 py-3 text-xs leading-relaxed text-muted-foreground ring-1 ring-white/10">
