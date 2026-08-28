@@ -12,6 +12,7 @@
 """
 
 import json
+from uuid import uuid4
 from pathlib import Path
 
 from 包.contracts.模型 import (

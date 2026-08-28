@@ -3,6 +3,7 @@
 数据库文件：服务/api/数据/ai_study.db（已被 .gitignore 忽略）。
 """
 
+from uuid import uuid4
 import json
 import sqlite3
 from datetime import datetime
