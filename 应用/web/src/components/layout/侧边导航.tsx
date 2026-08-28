@@ -45,7 +45,7 @@ function Rail({ items, side }: { items: RailItem[]; side: "left" | "right" }) {
   return (
     <nav
       className={cn(
-        "z-10 flex w-[72px] shrink-0 flex-col items-center gap-3 border-white/8 px-2 py-4",
+        "z-10 hidden w-[72px] shrink-0 flex-col items-center gap-3 border-white/8 px-2 py-4 md:flex",
         side === "left" ? "border-r" : "border-l",
       )}
       aria-label={side === "left" ? "学习导航" : "功能导航"}

@@ -34,7 +34,7 @@ export function 应用框架() {
       <顶部栏 />
       <div className="flex min-h-0 flex-1">
         <左侧导航 />
-        <main className="relative min-w-0 flex-1 overflow-y-auto px-6 py-6">
+        <main className="relative min-w-0 flex-1 overflow-y-auto px-4 pb-20 pt-4 md:px-6 md:pb-6 md:pt-6">
           <Outlet />
         </main>
         <右侧导航 />
