@@ -66,6 +66,16 @@ def init_db() -> None:
                 seconds INTEGER NOT NULL DEFAULT 0,
                 recorded_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS practice_records (
+                practice_id TEXT PRIMARY KEY,
+                student_id TEXT NOT NULL,
+                subject TEXT NOT NULL,
+                image_path TEXT,
+                note TEXT,
+                self_correct INTEGER,
+                ai_feedback TEXT,
+                created_at TEXT
+            );
             CREATE TABLE IF NOT EXISTS memories (
                 memory_id TEXT PRIMARY KEY,
                 student_id TEXT NOT NULL,
@@ -373,3 +383,30 @@ def list_memories(student_id: str, limit: int = 200) -> list[dict]:
         ).fetchall()
     return [{"memory_id": r["memory_id"], "kind": r["kind"], "content": r["content"],
              "meta": json.loads(r["meta"]), "created_at": r["created_at"]} for r in rows]
+
+
+def save_practice(record: dict) -> None:
+    """保存一次拍照改卷记录。"""
+    with _connect() as conn:
+        conn.execute(
+            "INSERT INTO practice_records (practice_id, student_id, subject, image_path,"
+            " note, self_correct, ai_feedback, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (record["practice_id"], record["student_id"], record["subject"], record.get("image_path"),
+             record.get("note"), record.get("self_correct"), record.get("ai_feedback"),
+             datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def list_practices(student_id: str, limit: int = 50) -> list[dict]:
+    """列出拍照改卷记录。"""
+    with _connect() as conn:
+        rows = conn.execute(
+            "SELECT * FROM practice_records WHERE student_id = ? ORDER BY created_at DESC LIMIT ?",
+            (student_id, limit),
+        ).fetchall()
+    return [
+        {"practice_id": r["practice_id"], "subject": r["subject"], "image_path": r["image_path"],
+         "note": r["note"], "self_correct": r["self_correct"], "ai_feedback": r["ai_feedback"],
+         "created_at": r["created_at"]}
+        for r in rows
+    ]

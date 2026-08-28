@@ -90,6 +90,11 @@ export function 错题本页() {
         <p className="mb-4 text-sm text-muted-foreground">
           错题会按记忆规律安排复习，到期系统会提醒你。
         </p>
+        <div className="mb-4 flex gap-2">
+          <Link to="/practice">
+            <按钮 size="sm" variant="outline">📸 AI 智能改卷（拍照批改）</按钮>
+          </Link>
+        </div>
 
         {isLoading && (
           <卡片>

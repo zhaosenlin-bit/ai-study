@@ -10,10 +10,11 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import 数据库
-from app.routers import 智能体, 认证, 课程, 诊断, 学习, 用户信息, 报告, 复习, 学生, 学习时长, 知识库
+from app.routers import 智能体, 认证, 课程, 诊断, 学习, 用户信息, 报告, 复习, 学生, 学习时长, 知识库, 拍照改卷
 
 
 @asynccontextmanager
@@ -38,8 +39,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for router in (诊断.router, 学生.router, 智能体.router, 复习.router, 报告.router, 认证.router, 用户信息.router, 学习.router, 课程.router, 学习时长.router, 知识库.router):
+for router in (诊断.router, 学生.router, 智能体.router, 复习.router, 报告.router, 认证.router, 用户信息.router, 学习.router, 课程.router, 学习时长.router, 知识库.router, 拍照改卷.router):
     app.include_router(router)
+
+# 静态资源：上传的练习图片（/data/practice/...）
+_DATA_DIR = Path(__file__).resolve().parent / "data"
+_DATA_DIR.mkdir(parents=True, exist_ok=True)
+app.mount("/data", StaticFiles(directory=str(_DATA_DIR)), name="data")
 
 
 @app.get("/api/v1/health", summary="Health check", tags=["system"])

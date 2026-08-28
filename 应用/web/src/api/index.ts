@@ -38,6 +38,19 @@ export const api = {
     USE_MOCK ? mockStartDiagnosis(studentId, grade, subjects, count) : realStartDiagnosis(studentId, grade, subjects, count),
   submitDiagnosis: (sessionId: string, studentId: string, answers: unknown[]): Promise<DiagnosisResult> =>
     apiPost("/api/v1/diagnosis/submit", { session_id: sessionId, student_id: studentId, answers }),
+  /** 拍照改卷：上传图片 + AI 批改 */
+  uploadPractice: (studentId: string, subject: string, note: string, selfCorrect: boolean, file: File): Promise<{ practice_id: string; subject: string; ai_feedback: string; image_path: string }> => {
+    const fd = new FormData();
+    fd.append("student_id", studentId);
+    fd.append("subject", subject);
+    fd.append("note", note);
+    fd.append("self_correct", String(selfCorrect));
+    fd.append("file", file);
+    return apiPostForm("/api/v1/practice/upload", fd);
+  },
+  /** 拍照改卷历史 */
+  listPractices: (studentId: string): Promise<{ practice_id: string; subject: string; image_path: string; note: string; self_correct: number; ai_feedback: string; created_at: string }[]> =>
+    apiGet(`/api/v1/practice/list?student_id=${studentId}`),
   /** 长期记忆知识库：写入一条记忆 */
   addMemory: (studentId: string, kind: string, content: string, meta?: Record<string, unknown>): Promise<{ kind: string; content: string }> =>
     apiPost("/api/v1/memory", { student_id: studentId, kind, content, meta: meta ?? {} }),

@@ -9,6 +9,7 @@ import { 落地页 } from "@/pages/落地页";
 import { 学习进度页 } from "@/pages/学习进度页";
 import { 今日诊断页 } from "@/pages/今日诊断页";
 import { AI画像页 } from "@/pages/AI画像页";
+import { 拍照改卷页 } from "@/pages/拍照改卷页";
 import { 登录页 } from "@/pages/登录页";
 import { 错题本页 } from "@/pages/错题本页";
 import { 家长看板页 } from "@/pages/家长看板页";
@@ -110,6 +111,7 @@ export function 应用路由() {
         <Route path="learn" element={<学习进度页 />} />
         <Route path="diagnosis/today" element={<今日诊断页 />} />
         <Route path="setup/profile" element={<AI画像页 />} />
+        <Route path="practice" element={<拍照改卷页 />} />
         <Route path="course/:subject/:courseId" element={<课程答题页 />} />
         <Route path="diagnosis" element={<诊断页 />} />
         <Route path="chat/:subject" element={<对话页 />} />
