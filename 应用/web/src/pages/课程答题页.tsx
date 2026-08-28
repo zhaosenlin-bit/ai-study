@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { CourseQuestion } from "@contracts";
 import { realAnswerCourseQuestion, realCompleteCourse, realGetCourseQuestions } from "@/api/课程";
 import { realRecordStudyTime } from "@/api/学习时长";
+import { AiCompanion } from "@/components/companion/AI伙伴";
 import { useAppStore } from "@/stores/应用状态";
 
 const SUBJECT_LABEL: Record<string, string> = { math: "数学", chinese: "语文", english: "英语" };
@@ -18,7 +19,7 @@ export function 课程答题页() {
   const [cur, setCur] = useState(0);
   const [input, setInput] = useState("");
   const [picked, setPicked] = useState<string | null>(null);
-  const [feedback, setFeedback] = useState<{ correct: boolean; explanation: string } | null>(null);
+  const [feedback, setFeedback] = useState<{ correct: boolean; explanation: string; ai_feedback?: string } | null>(null);
   const [correctIds, setCorrectIds] = useState<Set<string>>(new Set());
   const [done, setDone] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -68,7 +69,7 @@ export function 课程答题页() {
     setFeedback(null);
     try {
       const res = await realAnswerCourseQuestion(subject, courseId, studentId, q.id, answer);
-      setFeedback(res);
+      setFeedback({ correct: res.correct, explanation: res.explanation, ai_feedback: res.ai_feedback });
       if (res.correct) {
         setCorrectIds((s) => {
           const next = new Set(s);
@@ -129,7 +130,11 @@ export function 课程答题页() {
   }
 
   return (
-    <div className="mx-auto flex h-full max-w-2xl flex-col gap-4 py-2">
+    <div className="relative mx-auto flex h-full max-w-2xl flex-col gap-4 py-2">
+      {/* AI 伙伴：课程旁边 */}
+      <div className="absolute -top-1 right-0 z-10 hidden md:block">
+        <AiCompanion size={48} showBubble={false} />
+      </div>
       {/* 进度头 */}
       <div className="flex items-center justify-between text-sm">
         <div className="font-semibold text-foreground">
@@ -207,6 +212,11 @@ export function 课程答题页() {
             >
               <div className="font-bold">{feedback.correct ? "✓ 回答正确！" : "✗ 答错了，再试一次"}</div>
               {feedback.explanation && <div className="mt-1 text-xs opacity-80">{feedback.explanation}</div>}
+              {feedback.ai_feedback && (
+                <div className="mt-2 rounded-lg bg-primary/10 px-3 py-2 text-xs text-foreground ring-1 ring-primary/20">
+                  🤖 AI 批改：{feedback.ai_feedback}
+                </div>
+              )}
             </div>
           )}
 

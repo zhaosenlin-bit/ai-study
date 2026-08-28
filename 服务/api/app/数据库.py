@@ -283,3 +283,11 @@ def get_study_time(student_id: str, days: int = 7) -> dict[str, int]:
         total += r["seconds"]
         per[r["subject"]] = per.get(r["subject"], 0) + r["seconds"]
     return {"total": total, "math": per.get("math", 0), "chinese": per.get("chinese", 0), "english": per.get("english", 0)}
+
+def delete_mistake(student_id: str, question_id: str) -> None:
+    """答对后从错题本移除该题。"""
+    with _connect() as conn:
+        conn.execute(
+            "DELETE FROM mistakes WHERE student_id = ? AND question_id = ?",
+            (student_id, question_id),
+        )

@@ -254,4 +254,5 @@ export interface CourseQuestion {
 export interface CourseAnswerResponse {
   correct: boolean;
   explanation: string;
+  ai_feedback?: string;
 }

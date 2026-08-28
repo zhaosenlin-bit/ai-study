@@ -209,8 +209,8 @@ VOCAB_BY_GRADE: dict[int, list[tuple[str, str]]] = {
 }
 
 
-def _qid(prefix: str) -> str:
-    return f"{prefix}_{uuid.uuid4().hex[:8]}"
+def _qid(prefix: str, grade: int, index: int = 0) -> str:
+    return f"{prefix}_g{grade}_{index}"
 
 
 # ---------- 语文 ----------
@@ -234,7 +234,7 @@ def generate_chinese_poem(grade: int, count: int, seed: int | None = None, offse
         stem, ans = points[idx]
         items.append(
             {
-                "id": _qid("cn_poem"),
+                "id": _qid("cn_poem", grade, idx),
                 "subject": "chinese",
                 "grade": grade,
                 "type": "fill_blank",
@@ -265,7 +265,7 @@ def generate_chinese_words(grade: int, count: int, seed: int | None = None, offs
         w = pool[idx]
         items.append(
             {
-                "id": _qid("cn_word"),
+                "id": _qid("cn_word", grade, idx),
                 "subject": "chinese",
                 "grade": grade,
                 "type": "single_choice",
@@ -315,7 +315,7 @@ def generate_english(grade: int, count: int, seed: int | None = None, reverse: b
         if reverse:
             items.append(
                 {
-                    "id": _qid("en"),
+                    "id": _qid("en", grade, idx),
                     "subject": "english",
                     "grade": grade,
                     "type": "single_choice",
@@ -332,7 +332,7 @@ def generate_english(grade: int, count: int, seed: int | None = None, reverse: b
         else:
             items.append(
                 {
-                    "id": _qid("en"),
+                    "id": _qid("en", grade, idx),
                     "subject": "english",
                     "grade": grade,
                     "type": "single_choice",

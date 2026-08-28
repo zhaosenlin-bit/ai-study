@@ -8,13 +8,21 @@ import { 卡片, 卡片内容 } from "@/components/ui/卡片";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
+function diffDays(dateStr: string) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const target = new Date(dateStr);
+  target.setHours(0, 0, 0, 0);
+  return Math.round((target.getTime() - today.getTime()) / 86_400_000);
+}
+
 function formatReview(dateStr: string) {
   const d = new Date(dateStr);
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const target = new Date(d);
   target.setHours(0, 0, 0, 0);
-  const diff = Math.round((target.getTime() - today.getTime()) / 86_400_000);
+  const diff = diffDays(dateStr);
   if (diff === 0) return "今天到期";
   if (diff === 1) return "明天到期";
   if (diff > 1) return `${diff} 天后到期`;
@@ -28,6 +36,44 @@ const ERROR_COLOR: Record<string, string> = {
   计算失误: "bg-subject-math/15 text-subject-math border-subject-math/30",
   表达不清: "bg-subject-chinese/15 text-subject-chinese border-subject-chinese/30",
 };
+
+interface 错题卡Props {
+  m: {
+    mistake_id: string;
+    subject: string;
+    error_type: string;
+    review_count: number;
+    explanation?: string | null;
+    next_review_at: string;
+  };
+}
+
+function 错题卡({ m }: 错题卡Props) {
+  const meta = subjectMeta(m.subject);
+  const color = ERROR_COLOR[m.error_type] ?? "bg-white/8 text-muted-foreground border-white/15";
+  return (
+    <卡片 className="animate-fade-in">
+      <卡片内容 className="p-5">
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <span className={`subject-chip border ${meta.chipClass}`}>
+            {meta.icon} {meta.label}
+          </span>
+          <徽章 className={`border ${color}`}>{m.error_type}</徽章>
+        </div>
+        <div className="mb-1 text-sm font-bold text-foreground">第 {m.review_count} 次复习</div>
+        <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+          {m.explanation ?? "回顾一下当时的思路吧"}
+        </p>
+        <div className="flex items-center justify-between">
+          <span className="text-xs font-semibold text-subject-english">🔔 {formatReview(m.next_review_at)}</span>
+          <Link to={`/chat/${m.subject}`}>
+            <按钮 size="sm" variant="outline">重新作答</按钮>
+          </Link>
+        </div>
+      </卡片内容>
+    </卡片>
+  );
+}
 
 export function 错题本页() {
   const { studentId } = useAppStore();
@@ -59,40 +105,38 @@ export function 错题本页() {
           </卡片>
         )}
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {mistakes?.map((m) => {
-            const meta = subjectMeta(m.subject);
-            const color = ERROR_COLOR[m.error_type] ?? "bg-white/8 text-muted-foreground border-white/15";
-            return (
-              <卡片 key={m.mistake_id} className="animate-fade-in">
-                <卡片内容 className="p-5">
-                  <div className="mb-3 flex items-center justify-between gap-2">
-                    <span className={`subject-chip border ${meta.chipClass}`}>
-                      {meta.icon} {meta.label}
-                    </span>
-                    <徽章 className={`border ${color}`}>{m.error_type}</徽章>
+        {(() => {
+          const todayList = (mistakes ?? []).filter((m) => diffDays(m.next_review_at) <= 0);
+          const laterList = (mistakes ?? []).filter((m) => diffDays(m.next_review_at) > 0);
+          return (
+            <>
+              {todayList.length > 0 && (
+                <>
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="text-lg" aria-hidden>🔔</span>
+                    <h3 className="text-base font-bold text-foreground">今日待复习（{todayList.length}）</h3>
+                    <span className="text-xs text-muted-foreground">每天记得复习错题，巩固掌握</span>
                   </div>
-                  <div className="mb-1 text-sm font-bold text-foreground">
-                    第 {m.review_count} 次复习
+                  <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                    {todayList.map((m) => <错题卡 key={m.mistake_id} m={m} />)}
                   </div>
-                  <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                    {m.explanation ?? "回顾一下当时的思路吧"}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-semibold text-subject-english">
-                      🔔 {formatReview(m.next_review_at)}
-                    </span>
-                    <Link to={`/chat/${m.subject}`}>
-                      <按钮 size="sm" variant="outline">
-                        重新作答
-                      </按钮>
-                    </Link>
+                </>
+              )}
+              {laterList.length > 0 && (
+                <>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="text-lg" aria-hidden>🗓️</span>
+                    <h3 className="text-base font-bold text-foreground">待复习（{laterList.length}）</h3>
                   </div>
-                </卡片内容>
-              </卡片>
-            );
-          })}
-        </div>
+                  <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                    {laterList.map((m) => <错题卡 key={m.mistake_id} m={m} />)}
+                  </div>
+                </>
+              )}
+            </>
+          );
+        })()}
+
       </div>
     </div>
   );

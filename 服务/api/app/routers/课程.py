@@ -11,9 +11,12 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
+from datetime import datetime, timedelta
+
 from app import 数据库
 from app.services import 口算生成, 学科出题
 from 服务.agent.工具 import QUESTION_BANK
+from 服务.agent.模型网关 import active_provider, complete
 
 router = APIRouter(prefix="/api/v1/courses", tags=["courses"])
 
@@ -63,6 +66,7 @@ class AnswerRequest(BaseModel):
 class AnswerResponse(BaseModel):
     correct: bool
     explanation: str
+    ai_feedback: str = ""  # AI 批改评语（真实模型时生成）
 
 
 class CompleteRequest(BaseModel):
@@ -261,7 +265,46 @@ def answer_question(subject: str, course_id: str, payload: AnswerRequest) -> Ans
     if not q:
         raise HTTPException(status_code=404, detail={"code": "question_not_found", "message": "题目不存在"})
     correct = _grade(q, payload.answer)
-    return AnswerResponse(correct=correct, explanation=q.get("explanation", ""))
+    ai_feedback = _ai_mark(q, payload.answer, correct)
+    _sync_mistake(payload.student_id, subject, q, correct)
+    return AnswerResponse(correct=correct, explanation=q.get("explanation", ""), ai_feedback=ai_feedback)
+
+
+def _ai_mark(q: dict, answer: str, correct: bool) -> str:
+    """AI 批改：配置了真实模型时生成批改评语；mock 模式返回标准解析。"""
+    if active_provider() == "mock":
+        return ""
+    try:
+        system = "你是小学三到六年级的助教老师。请用一两句简短的中文点评学生的答题：答对时肯定并鼓励；答错时指出错误原因和改正方向。语气亲切，不超过50字。"
+        user = (
+            f"题目：{q['stem']}\n"
+            f"学生答案：{answer}\n"
+            f"正确答案：{q.get('answer', '')}\n"
+            f"标准解析：{q.get('explanation', '')}\n"
+            "请点评。"
+        )
+        text, _ = complete(system, user)
+        return text.strip()[:200]
+    except Exception:
+        return ""
+
+
+def _sync_mistake(student_id: str, subject: str, q: dict, correct: bool) -> None:
+    """答错→错题本（次日开始复习）；答对→从错题本移除该题。"""
+    if correct:
+        数据库.delete_mistake(student_id, q["id"])
+        return
+    mistake = {
+        "mistake_id": f"{student_id}_{q['id']}",
+        "student_id": student_id,
+        "question_id": q["id"],
+        "subject": subject,
+        "error_type": q.get("error_type", "概念不清"),
+        "explanation": q.get("explanation", ""),
+        "review_count": 0,
+        "next_review_at": (datetime.now() + timedelta(days=1)).isoformat(timespec="seconds"),
+    }
+    数据库.add_mistake(mistake)
 
 
 @router.post("/{subject}/{course_id}/complete", summary="标记课程完成（全对后调用）")
