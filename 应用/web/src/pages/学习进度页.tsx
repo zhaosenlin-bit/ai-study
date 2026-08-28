@@ -1,6 +1,6 @@
 /** 学习进度页：课程列表（3 口算 75 题 + 3 应用题交替，严格顺序解锁）。 */
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import type { Course } from "@contracts";
 import { realGetCourses } from "@/api/课程";
@@ -30,8 +30,18 @@ const TEXTBOOKS = [
 
 export function 学习进度页() {
   const nav = useNavigate();
+  const [searchParams] = useSearchParams();
   const { studentId, grade, setCompanion } = useAppStore();
-  const [subject, setSubject] = useState<"math" | "chinese" | "english">("math");
+  const initialSubject = (searchParams.get("subject") as "math" | "chinese" | "english") ?? "math";
+  const [subject, setSubject] = useState<"math" | "chinese" | "english">(
+    SUBJECTS.some((s) => s.value === initialSubject) ? initialSubject : "math",
+  );
+
+  // URL ?subject= 变化时同步学科（点击教科书/分享链接打开）
+  useEffect(() => {
+    const subj = searchParams.get("subject") as "math" | "chinese" | "english" | null;
+    if (subj && SUBJECTS.some((s) => s.value === subj)) setSubject(subj);
+  }, [searchParams]);
 
   const { data, isLoading } = useQuery({
     queryKey: ["courses", subject, studentId, grade],
@@ -94,7 +104,7 @@ export function 学习进度页() {
                   <button
                     key={tb.subject}
                     type="button"
-                    onClick={() => setSubject(tb.subject)}
+                    onClick={() => nav(`/learn?subject=${tb.subject}`)}
                     className={`group relative flex flex-col items-start gap-1 overflow-hidden rounded-xl bg-gradient-to-br ${tb.color} p-4 text-left ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:shadow-lg ${
                       active ? "ring-2 ring-white/50" : ""
                     }`}
@@ -104,6 +114,9 @@ export function 学习进度页() {
                     <span className="text-2xl drop-shadow" aria-hidden>{tb.icon}</span>
                     <span className="text-base font-black text-white drop-shadow">{GRADE_LABEL[grade]}{tb.name}</span>
                     <span className="text-[11px] text-white/80">{tb.press}</span>
+                    <span className="mt-1 text-[10px] font-semibold text-white/90 opacity-0 transition group-hover:opacity-100">
+                      打开课本 →
+                    </span>
                   </button>
                 );
               })}
