@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { CourseQuestion } from "@contracts";
 import { realAnswerCourseQuestion, realCompleteCourse, realGetCourseQuestions } from "@/api/课程";
 import { realRecordStudyTime } from "@/api/学习时长";
-import { AiCompanion } from "@/components/companion/AI伙伴";
+import { AI伙伴 } from "@/components/companion/AI伙伴";
 import { useAppStore } from "@/stores/应用状态";
 
 const SUBJECT_LABEL: Record<string, string> = { math: "数学", chinese: "语文", english: "英语" };
@@ -133,7 +133,7 @@ export function 课程答题页() {
     <div className="relative mx-auto flex h-full max-w-2xl flex-col gap-4 py-2">
       {/* AI 伙伴：课程旁边 */}
       <div className="absolute -top-1 right-0 z-10 hidden md:block">
-        <AiCompanion size={48} showBubble={false} />
+        <AI伙伴 size={48} showBubble={false} />
       </div>
       {/* 进度头 */}
       <div className="flex items-center justify-between text-sm">

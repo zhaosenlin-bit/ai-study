@@ -5,7 +5,6 @@ import { 对话页 } from "@/pages/对话页";
 import { 课程答题页 } from "@/pages/课程答题页";
 import { 演示控制台页 } from "@/pages/演示控制台页";
 import { 诊断页 } from "@/pages/诊断页";
-import { 首页 } from "@/pages/首页";
 import { 落地页 } from "@/pages/落地页";
 import { 学习进度页 } from "@/pages/学习进度页";
 import { 登录页 } from "@/pages/登录页";
