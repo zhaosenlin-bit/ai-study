@@ -171,7 +171,7 @@ function Field(props: {
           value={props.value}
           placeholder={props.placeholder}
           onChange={(e) => props.onChange(e.target.value)}
-          className="h-11 w-full bg-transparent text-sm text-black outline-none placeholder:text-[hsl(240,5%,46%)]"
+          className="h-11 w-full bg-transparent text-sm text-white outline-none placeholder:text-white/50"
         />
       </div>
       {props.error && <div className="mt-1 text-xs text-rose-500">{props.error}</div>}
@@ -180,22 +180,61 @@ function Field(props: {
 }
 
 /** Hero 区：左侧登录表单 + 右侧视频 */
+/** 星空装饰：散布的星点 */
+function StarField() {
+  const stars = Array.from({ length: 60 }, (_, i) => ({
+    id: i,
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    size: Math.random() > 0.85 ? 3 : Math.random() > 0.6 ? 2 : 1,
+    delay: Math.random() * 5,
+  }));
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      {stars.map((s) => (
+        <span
+          key={s.id}
+          className="absolute rounded-full bg-white/80 shadow-[0_0_6px_rgba(255,255,255,0.6)] animate-twinkle"
+          style={{
+            top: `${s.top}%`,
+            left: `${s.left}%`,
+            width: s.size,
+            height: s.size,
+            animationDelay: `${s.delay}s`,
+          }}
+        />
+      ))}
+      {/* 流星 */}
+      <span className="absolute top-[18%] right-[22%] h-px w-16 -rotate-12 bg-gradient-to-r from-transparent via-white/70 to-transparent blur-[0.5px]" />
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-[hsl(249,18%,95%)]">
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-7xl items-center px-6 lg:px-8">
-        <HeroLoginForm />
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-gradient-to-b from-[hsl(238,55%,14%)] via-[hsl(245,45%,10%)] to-[hsl(235,50%,6%)] px-6 py-8">
+      <StarField />
+
+      {/* 顶部品牌 */}
+      <div className="absolute left-6 top-5 z-20 flex items-center gap-2 text-white">
+        <span className="text-xl" aria-hidden>🚀</span>
+        <span className="font-black tracking-wide">AI 学伴</span>
       </div>
 
-      <div className="absolute right-0 top-0 hidden h-full w-[55%] lg:block">
-        <video
-          className="h-full w-full rounded-bl-2xl object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260319_192508_4eecde4c-f835-4f4b-b255-eafd1156da99.mp4"
-        />
+      {/* 中央立绘 + 登录 */}
+      <div className="relative z-10 flex w-full max-w-md flex-col items-center gap-5">
+        {/* AI 伙伴大立绘 */}
+        <div className="relative">
+          <span className="absolute -inset-10 rounded-full bg-primary/30 blur-3xl" />
+          <AI伙伴 size={200} showBubble={false} />
+        </div>
+
+        <div className="text-center">
+          <h1 className="text-3xl font-black tracking-wide text-white drop-shadow">AI 学伴 · 让学习更有趣</h1>
+          <p className="mt-1 text-sm text-white/70">自适应 · 智能批改 · 错题每日复习</p>
+        </div>
+
+        <HeroLoginForm />
       </div>
     </section>
   );
@@ -204,7 +243,7 @@ function HeroSection() {
 /** Landing 页：Hero 区直接顶到页面顶端（无顶部导航条） */
 export function 落地页() {
   return (
-    <div className="min-h-screen bg-[hsl(249,18%,95%)] font-[Inter,system-ui,sans-serif]">
+    <div className="min-h-screen bg-[hsl(238,45%,10%)] font-[Inter,system-ui,sans-serif] text-white">
       <HeroSection />
     </div>
   );

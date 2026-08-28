@@ -94,3 +94,12 @@
     @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
   }
 }
+
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
