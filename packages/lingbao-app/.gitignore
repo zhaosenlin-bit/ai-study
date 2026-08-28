@@ -1,0 +1,41 @@
+# Node / 前端
+node_modules/
+dist/
+.vite/
+.cache/
+*.local
+.env
+.env.*
+!.env.example
+
+# Python / 后端
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+
+# 数据与日志
+*.log
+*.err
+data/*.db
+data/*.sqlite*
+test_screenshots/
+backend_*.log
+backend_*.err
+backend.out
+frontend_*.log
+frontend_*.err
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 测试临时
+/tmp/
+.playwright/
+playwright-report/
+test-results/
