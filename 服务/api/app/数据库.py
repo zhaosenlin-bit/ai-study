@@ -66,6 +66,13 @@ def init_db() -> None:
                 seconds INTEGER NOT NULL DEFAULT 0,
                 recorded_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS daily_diagnosis (
+                student_id TEXT NOT NULL,
+                date TEXT NOT NULL,
+                result TEXT NOT NULL DEFAULT '{}',
+                created_at TEXT,
+                PRIMARY KEY (student_id, date)
+            );
             """
         )
     seed_demo_student()
@@ -291,3 +298,23 @@ def delete_mistake(student_id: str, question_id: str) -> None:
             "DELETE FROM mistakes WHERE student_id = ? AND question_id = ?",
             (student_id, question_id),
         )
+
+
+def save_daily_diagnosis(student_id: str, date: str, result: dict) -> None:
+    """保存某天的诊断结果（同一天覆盖）。"""
+    with _connect() as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO daily_diagnosis (student_id, date, result, created_at)"
+            " VALUES (?, ?, ?, ?)",
+            (student_id, date, json.dumps(result, ensure_ascii=False), datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def get_daily_diagnosis(student_id: str, date: str) -> dict | None:
+    """读取某天的诊断结果；没有则返回 None。"""
+    with _connect() as conn:
+        row = conn.execute(
+            "SELECT result FROM daily_diagnosis WHERE student_id = ? AND date = ?",
+            (student_id, date),
+        ).fetchone()
+    return json.loads(row["result"]) if row else None

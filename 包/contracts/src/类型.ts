@@ -256,3 +256,46 @@ export interface CourseAnswerResponse {
   explanation: string;
   ai_feedback?: string;
 }
+
+// ---------- 每日诊断 ----------
+export interface DailyQuestion {
+  id: string;
+  subject: string;
+  grade: number;
+  type: "fill_blank" | "choice";
+  stem: string;
+  options?: string[] | null;
+  answer?: string;
+  explanation?: string;
+  category: string;
+  category_label: string;
+  category_icon: string;
+}
+
+export interface TodayDiagnosis {
+  date: string;
+  done_today: boolean;
+  questions: DailyQuestion[];
+  result?: DailyDiagnosisResult | null;
+}
+
+export interface DailyAnswerItem {
+  category: string;
+  question_id: string;
+  answer: string;
+}
+
+export interface CategoryScore {
+  category: string;
+  label: string;
+  icon: string;
+  correct: number;
+  total: number;
+  score: number;
+}
+
+export interface DailyDiagnosisResult {
+  date: string;
+  category_scores: CategoryScore[];
+  weakness: CategoryScore[];
+}

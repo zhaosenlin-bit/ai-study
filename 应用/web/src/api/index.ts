@@ -37,6 +37,13 @@ export const api = {
   startDiagnosis: (studentId: string, grade: number, subjects: string[], count?: number): Promise<DiagnosisSession> =>
     USE_MOCK ? mockStartDiagnosis(studentId, grade, subjects, count) : realStartDiagnosis(studentId, grade, subjects, count),
   submitDiagnosis: (sessionId: string, studentId: string, answers: unknown[]): Promise<DiagnosisResult> =>
+    apiPost("/api/v1/diagnosis/submit", { session_id: sessionId, student_id: studentId, answers }),
+  /** 今日诊断：六类题型（每天一套），已诊断则返回结果 */
+  todayDiagnosis: (studentId: string, grade: number): Promise<TodayDiagnosis> =>
+    apiGet(`/api/v1/diagnosis/today?student_id=${studentId}&grade=${grade}`),
+  /** 提交每日诊断：判分 + 弱项识别 + 错题入本 */
+  submitDailyDiagnosis: (studentId: string, grade: number, answers: DailyAnswerItem[]): Promise<DailyDiagnosisResult> =>
+    apiPost("/api/v1/diagnosis/daily-submit", { student_id: studentId, grade, answers }),
     USE_MOCK ? mockSubmitDiagnosis(sessionId, studentId, answers) : realSubmitDiagnosis(sessionId, studentId, answers),
   getProfile: (studentId: string): Promise<StudentProfile> =>
     USE_MOCK ? mockGetProfile(studentId) : realGetProfile(studentId),

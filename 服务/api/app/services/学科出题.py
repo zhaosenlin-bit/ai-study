@@ -361,3 +361,93 @@ def _options_for(word: str, pool: list) -> list[str]:
 def _answer_for(word: str, pool: list) -> str:
     opts = _options_for(word, pool)
     return ["A", "B", "C", "D"][opts.index(word)]
+
+# ---------- 语文：古诗阅读题（根据上句选下句/理解） ----------
+
+def generate_chinese_reading(grade: int, count: int = 1, seed: int | None = None, offset: int = 0) -> list[dict]:
+    """古诗阅读题（choice）：给出上句，从 4 个选项中选正确下句。"""
+    import random
+
+    pool = POEMS_BY_GRADE.get(grade, POEMS_BY_GRADE[4])
+    rng = random.Random(seed if seed is not None else grade * 5000 + offset)
+    items: list[dict] = []
+    for i in range(count):
+        up, down = pool[(offset + i) % len(pool)]
+        # 干扰项：同年级其他诗的下句
+        distractors = [d for u, d in pool if d != down]
+        rng.shuffle(distractors)
+        options = [down] + distractors[:3]
+        rng.shuffle(options)
+        items.append({
+            "id": _qid("cn_read", grade, offset + i),
+            "subject": "chinese",
+            "grade": grade,
+            "type": "choice",
+            "knowledge_point_ids": [f"chinese_g{grade}_reading"],
+            "stem": f"阅读古诗：「{up}」，它的下一句是？",
+            "options": options,
+            "answer": down,
+            "rubric": f"上句「{up}」对应的下句是「{down}」。",
+            "explanation": f"「{up}」出自古诗，下句应为「{down}」。",
+            "error_type": "诗句记忆",
+            "difficulty": 2,
+        })
+    return items
+
+
+# ---------- 英语：连词成句（打乱单词选正确语序） ----------
+
+ENGLISH_SENTENCES: dict[int, list[str]] = {
+    3: ["I like apples.", "She is my friend.", "We go to school.", "He has a pen.", "This is a cat."],
+    4: ["I have a new book.", "They are playing games.", "She can swim fast.", "We are good friends.", "It is time for class."],
+    5: ["What time is it now?", "I do my homework.", "He is reading a book.", "There is a big tree.", "We like our school."],
+    6: ["I am going to the park.", "She likes playing basketball.", "We should help each other.", "It is a sunny day.", "He goes to bed early."],
+}
+
+
+def generate_english_sentence(grade: int, count: int = 1, seed: int | None = None, offset: int = 0) -> list[dict]:
+    """连词成句（choice）：打乱句子单词，从 4 个语序中选正确句子。"""
+    import random
+
+    pool = ENGLISH_SENTENCES.get(grade, ENGLISH_SENTENCES[4])
+    rng = random.Random(seed if seed is not None else grade * 7000 + offset)
+    items: list[dict] = []
+    for i in range(count):
+        sentence = pool[(offset + i) % len(pool)]
+        words = sentence.rstrip(".").split()
+        rng.shuffle(words)
+        scrambled = " ".join(words)
+        # 干扰项：再打乱两次
+        d1, d2, d3 = list(words), list(words), list(words)
+        rng.shuffle(d1)
+        rng.shuffle(d2)
+        rng.shuffle(d3)
+        options = [sentence, " ".join(d1) + ".", " ".join(d2) + ".", " ".join(d3) + "."]
+        # 去重保持 4 个
+        seen: set[str] = set()
+        uniq: list[str] = []
+        for o in options:
+            if o not in seen:
+                seen.add(o)
+                uniq.append(o)
+        while len(uniq) < 4:
+            extra = " ".join(list(words)) + "."
+            if extra not in seen:
+                seen.add(extra)
+                uniq.append(extra)
+        rng.shuffle(uniq)
+        items.append({
+            "id": _qid("en_sent", grade, offset + i),
+            "subject": "english",
+            "grade": grade,
+            "type": "choice",
+            "knowledge_point_ids": [f"english_g{grade}_sentence"],
+            "stem": f"连词成句：把单词排成正确的句子：{scrambled} .",
+            "options": uniq,
+            "answer": sentence,
+            "rubric": sentence,
+            "explanation": f"正确语序：{sentence}",
+            "error_type": "语序掌握",
+            "difficulty": 2,
+        })
+    return items
