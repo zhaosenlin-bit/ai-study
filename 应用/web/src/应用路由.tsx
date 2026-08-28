@@ -17,6 +17,7 @@ import { 知识地图页 } from "@/pages/知识地图页";
 import { 注册页 } from "@/pages/注册页";
 import { 报告页 } from "@/pages/报告页";
 import { 选择年级页 } from "@/pages/选择年级页";
+import { 教科书页 } from "@/pages/教科书页";
 import { getMe } from "@/api/用户信息";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api";
@@ -118,6 +119,7 @@ export function 应用路由() {
         <Route path="mistakes" element={<错题本页 />} />
         <Route path="report" element={<报告页 />} />
         <Route path="demo" element={<演示控制台页 />} />
+        <Route path="textbook" element={<教科书页 />} />
       </Route>
     </Routes>
   );

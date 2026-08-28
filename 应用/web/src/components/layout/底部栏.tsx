@@ -13,6 +13,7 @@ interface Action {
 /** 移动端固定导航 Tab */
 const MOBILE_TABS: { to: string; icon: string; label: string; role?: "student" | "parent" }[] = [
   { to: "/learn", icon: "🏠", label: "学习" },
+  { to: "/textbook", icon: "📖", label: "教材" },
   { to: "/chat/math", icon: "📚", label: "课程" },
   { to: "/mistakes", icon: "📒", label: "错题" },
   { to: "/report", icon: "📊", label: "报告" },
@@ -77,6 +78,9 @@ function DesktopActions() {
   } else if (pathname === "/report") {
     hint = "家长可以随时查看孩子的学习报告";
     actions = [{ label: "查看学习路径", onClick: () => navigate("/path") }];
+  } else if (pathname === "/textbook") {
+    hint = "教材配合课堂学习效果更好哦";
+    actions = [{ label: "开始学习", icon: "📚", primary: true, onClick: () => navigate("/chat/math") }];
   }
 
   if (pathname === "/demo") return null;
