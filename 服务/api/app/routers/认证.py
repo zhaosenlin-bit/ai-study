@@ -37,24 +37,24 @@ class UserInfo(BaseModel):
 
 @router.get("/captcha", response_model=CaptchaResponse, summary="获取图形验证码（SVG）")
 def get_captcha() -> CaptchaResponse:
-    return CaptchaResponse(**auth.issue_captcha())
+    return CaptchaResponse(**认证服务.issue_captcha())
 
 
 @router.post("/register", response_model=UserInfo, summary="注册（学生/家长）")
 def register(payload: RegisterRequest) -> UserInfo:
     try:
-        return UserInfo(**auth.register(
+        return UserInfo(**认证服务.register(
             payload.username, payload.password, payload.role, payload.captcha_id, payload.captcha
         ))
-    except auth.AuthError as e:
+    except 认证服务.AuthError as e:
         raise HTTPException(status_code=400, detail={"code": e.code, "message": e.message})
 
 
 @router.post("/login", response_model=UserInfo, summary="登录（学生/家长）")
 def login(payload: LoginRequest) -> UserInfo:
     try:
-        return UserInfo(**auth.login(
+        return UserInfo(**认证服务.login(
             payload.username, payload.password, payload.captcha_id, payload.captcha
         ))
-    except auth.AuthError as e:
+    except 认证服务.AuthError as e:
         raise HTTPException(status_code=400, detail={"code": e.code, "message": e.message})
