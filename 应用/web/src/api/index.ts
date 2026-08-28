@@ -38,6 +38,12 @@ export const api = {
     USE_MOCK ? mockStartDiagnosis(studentId, grade, subjects, count) : realStartDiagnosis(studentId, grade, subjects, count),
   submitDiagnosis: (sessionId: string, studentId: string, answers: unknown[]): Promise<DiagnosisResult> =>
     apiPost("/api/v1/diagnosis/submit", { session_id: sessionId, student_id: studentId, answers }),
+  /** 长期记忆知识库：写入一条记忆 */
+  addMemory: (studentId: string, kind: string, content: string, meta?: Record<string, unknown>): Promise<{ kind: string; content: string }> =>
+    apiPost("/api/v1/memory", { student_id: studentId, kind, content, meta: meta ?? {} }),
+  /** 长期记忆知识库：语义检索 */
+  searchMemory: (studentId: string, query: string, topK = 5): Promise<{ query: string; hits: { content: string; kind: string; score: number }[] }> =>
+    apiPost("/api/v1/memory/search", { student_id: studentId, query, top_k: topK }),
   /** AI 伴学画像：读取（长期记忆，用于个性化） */
   getAiProfile: (studentId: string): Promise<Record<string, string>> =>
     apiGet(`/api/v1/students/${studentId}/ai-profile`),

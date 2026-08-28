@@ -66,6 +66,14 @@ def init_db() -> None:
                 seconds INTEGER NOT NULL DEFAULT 0,
                 recorded_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS memories (
+                memory_id TEXT PRIMARY KEY,
+                student_id TEXT NOT NULL,
+                kind TEXT NOT NULL,
+                content TEXT NOT NULL,
+                meta TEXT NOT NULL DEFAULT '{}',
+                created_at TEXT
+            );
             CREATE TABLE IF NOT EXISTS student_profile (
                 student_id TEXT PRIMARY KEY,
                 profile TEXT NOT NULL DEFAULT '{}',
@@ -342,3 +350,26 @@ def get_student_profile(student_id: str) -> dict:
             "SELECT profile FROM student_profile WHERE student_id = ?", (student_id,)
         ).fetchone()
     return json.loads(row["profile"]) if row else {}
+
+
+def add_memory(student_id: str, kind: str, content: str, meta: dict | None = None) -> None:
+    """写入一条用户记忆（对话/诊断/练习/语音/图片描述）。"""
+    from uuid import uuid4
+    with _connect() as conn:
+        conn.execute(
+            "INSERT INTO memories (memory_id, student_id, kind, content, meta, created_at)"
+            " VALUES (?, ?, ?, ?, ?, ?)",
+            (uuid4().hex, student_id, kind, content,
+             json.dumps(meta or {}, ensure_ascii=False), datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def list_memories(student_id: str, limit: int = 200) -> list[dict]:
+    """列出用户全部记忆（近新到旧）。"""
+    with _connect() as conn:
+        rows = conn.execute(
+            "SELECT * FROM memories WHERE student_id = ? ORDER BY created_at DESC LIMIT ?",
+            (student_id, limit),
+        ).fetchall()
+    return [{"memory_id": r["memory_id"], "kind": r["kind"], "content": r["content"],
+             "meta": json.loads(r["meta"]), "created_at": r["created_at"]} for r in rows]

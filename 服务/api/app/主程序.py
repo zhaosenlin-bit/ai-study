@@ -13,7 +13,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import 数据库
-from app.routers import 智能体, 认证, 课程, 诊断, 学习, 用户信息, 报告, 复习, 学生, 学习时长
+from app.routers import 智能体, 认证, 课程, 诊断, 学习, 用户信息, 报告, 复习, 学生, 学习时长, 知识库
 
 
 @asynccontextmanager
@@ -38,7 +38,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-for router in (诊断.router, 学生.router, 智能体.router, 复习.router, 报告.router, 认证.router, 用户信息.router, 学习.router, 课程.router, 学习时长.router):
+for router in (诊断.router, 学生.router, 智能体.router, 复习.router, 报告.router, 认证.router, 用户信息.router, 学习.router, 课程.router, 学习时长.router, 知识库.router):
     app.include_router(router)
 
 

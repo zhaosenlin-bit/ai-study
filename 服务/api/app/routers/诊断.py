@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app import 数据库
-from app.services import 伴学服务
+from app.services import 伴学服务, 知识库
 from 包.contracts.模型 import (
     DiagnosisResult,
     DiagnosisSession,
@@ -141,4 +141,9 @@ def submit_daily_diagnosis(payload: DailySubmitRequest) -> dict:
     weakness = [s for s in scores if s["score"] < 0.6]
     result = {"date": today, "category_scores": scores, "weakness": weakness}
     数据库.save_daily_diagnosis(payload.student_id, today, result)
+    # 写入长期记忆知识库
+    summary = "；".join(f"{s['label']}{s['correct']}/{s['total']}" for s in scores)
+    知识库.remember(payload.student_id, "diagnosis", f"今日诊断：{summary}", {"date": today, "weakness": [w["label"] for w in weakness]})
+    if weakness:
+        知识库.remember(payload.student_id, "mistake", f"弱项：{'、'.join(w['label'] for w in weakness)}，需要重点加强", {"source": "diagnosis"})
     return result

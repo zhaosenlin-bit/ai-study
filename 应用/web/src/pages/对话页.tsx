@@ -7,6 +7,7 @@ import { 文本域 } from "@/components/ui/文本域";
 import { cn } from "@/lib/工具函数";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
+import { api } from "@/api";
 import type { AgentStrategy } from "@contracts";
 
 interface Message {
@@ -32,6 +33,26 @@ export function 对话页() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [listening, setListening] = useState(false);
+
+  function startVoice() {
+    const SR = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SR) {
+      alert("当前浏览器不支持语音输入，请用 Chrome/Edge");
+      return;
+    }
+    const rec = new SR();
+    rec.lang = "zh-CN";
+    rec.interimResults = false;
+    rec.onstart = () => setListening(true);
+    rec.onend = () => setListening(false);
+    rec.onresult = (e: any) => {
+      const text = e.results?.[0]?.[0]?.transcript ?? "";
+      if (text) setInput((v) => (v ? v + text : text));
+    };
+    rec.onerror = () => setListening(false);
+    rec.start();
+  }
   const [hintLevel, setHintLevel] = useState(0);
   const [showTrace, setShowTrace] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
@@ -60,6 +81,12 @@ export function 对话页() {
     const text = input.trim();
     if (!text || sending) return;
     setInput("");
+    // 用户说的话写入长期记忆知识库
+    try {
+      void api.addMemory(studentId, "chat", text, { subject });
+    } catch {
+      /* 记忆写入失败不影响对话 */
+    }
     setSending(true);
     setMessages((m) => [...m, { role: "user", text }]);
     setCompanion("让我想一想怎么帮你…", "thinking");
@@ -185,6 +212,15 @@ export function 对话页() {
                   }
                 }}
               />
+              <按钮
+                size="lg"
+                variant={listening ? "default" : "outline"}
+                className="self-end px-3"
+                onClick={startVoice}
+                title="语音输入"
+              >
+                {listening ? "🎙️…" : "🎤"}
+              </按钮>
               <按钮
                 size="lg"
                 className="self-end"

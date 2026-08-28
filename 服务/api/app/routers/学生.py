@@ -3,7 +3,7 @@
 from fastapi import APIRouter
 
 from app import 数据库
-from app.services import 伴学服务
+from app.services import 伴学服务, 知识库
 from 包.contracts.模型 import LearningPath, MistakeRecord, StudentProfile
 
 router = APIRouter(prefix="/api/v1/students", tags=["students"])
@@ -54,4 +54,8 @@ def save_ai_profile(payload: ProfileSubmitRequest) -> dict:
     for ans in payload.answers:
         profile[ans.key] = ans.value
     数据库.save_student_profile(payload.student_id, profile)
+    # 写入长期记忆知识库
+    if "talk" in profile:
+        知识库.remember(payload.student_id, "talk", f"谈心：{profile['talk']}", {"source": "profile"})
+    知识库.remember(payload.student_id, "profile", "画像：" + "；".join(f"{k}={v}" for k, v in profile.items() if v), {"source": "profile"})
     return profile
