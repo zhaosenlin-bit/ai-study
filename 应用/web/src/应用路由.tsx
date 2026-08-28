@@ -21,7 +21,6 @@ import { getMe } from "@/api/用户信息";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/api";
 import { useAppStore } from "@/stores/应用状态";
-import { Navigate } from "react-router-dom";
 import type { UserInfo } from "@contracts";
 
 function getStoredUser(): UserInfo | null {

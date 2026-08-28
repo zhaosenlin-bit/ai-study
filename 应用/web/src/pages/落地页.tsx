@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type { CaptchaResponse, UserInfo } from "@contracts";
 import { realGetCaptcha, realLogin } from "@/api/认证";
 import { getMe } from "@/api/用户信息";
+import { AI伙伴 } from "@/components/companion/AI伙伴";
 import { useAppStore } from "@/stores/应用状态";
 
 /** Hero 内嵌登录表单（账号/密码/验证码 + 学生/家长 Tab，校验与现有 登录页 一致） */

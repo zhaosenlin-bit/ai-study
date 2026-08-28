@@ -7,7 +7,6 @@ import { 文本域 } from "@/components/ui/文本域";
 import { cn } from "@/lib/工具函数";
 import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
-import { api } from "@/api";
 import type { AgentStrategy } from "@contracts";
 
 interface Message {
@@ -36,7 +35,7 @@ export function 对话页() {
   const [listening, setListening] = useState(false);
 
   function startVoice() {
-    const SR = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+    const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SR) {
       alert("当前浏览器不支持语音输入，请用 Chrome/Edge");
       return;

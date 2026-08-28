@@ -15,6 +15,22 @@ import type {
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
 
+export async function apiGet<T>(path: string): Promise<T> {
+  return apiFetch<T>(path);
+}
+
+export async function apiPost<T>(path: string, body: unknown): Promise<T> {
+  return apiFetch<T>(path, { method: "POST", body: JSON.stringify(body) });
+}
+
+export async function apiPostForm<T>(path: string, form: FormData): Promise<T> {
+  const res = await fetch(`${BASE_URL}${path}`, { method: "POST", body: form });
+  if (!res.ok) {
+    throw new Error(`API ${res.status}: ${path}`);
+  }
+  return (await res.json()) as T;
+}
+
 async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, {
     headers: { "Content-Type": "application/json" },

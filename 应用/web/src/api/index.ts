@@ -5,14 +5,20 @@
 import type {
   AgentChatRequest,
   AgentChatResponse,
+  DailyAnswerItem,
+  DailyDiagnosisResult,
   DiagnosisResult,
   DiagnosisSession,
   LearningPath,
   MistakeRecord,
   ParentReport,
   StudentProfile,
+  TodayDiagnosis,
 } from "@contracts";
 import {
+  apiGet,
+  apiPost,
+  apiPostForm,
   realAgentChat,
   realGetMistakes,
   realGetPath,
@@ -37,7 +43,7 @@ export const api = {
   startDiagnosis: (studentId: string, grade: number, subjects: string[], count?: number): Promise<DiagnosisSession> =>
     USE_MOCK ? mockStartDiagnosis(studentId, grade, subjects, count) : realStartDiagnosis(studentId, grade, subjects, count),
   submitDiagnosis: (sessionId: string, studentId: string, answers: unknown[]): Promise<DiagnosisResult> =>
-    apiPost("/api/v1/diagnosis/submit", { session_id: sessionId, student_id: studentId, answers }),
+    USE_MOCK ? mockSubmitDiagnosis(sessionId, studentId, answers) : realSubmitDiagnosis(sessionId, studentId, answers),
   /** 拍照改卷：上传图片 + AI 批改 */
   uploadPractice: (studentId: string, subject: string, note: string, selfCorrect: boolean, file: File): Promise<{ practice_id: string; subject: string; ai_feedback: string; image_path: string }> => {
     const fd = new FormData();
@@ -69,7 +75,6 @@ export const api = {
   /** 提交每日诊断：判分 + 弱项识别 + 错题入本 */
   submitDailyDiagnosis: (studentId: string, grade: number, answers: DailyAnswerItem[]): Promise<DailyDiagnosisResult> =>
     apiPost("/api/v1/diagnosis/daily-submit", { student_id: studentId, grade, answers }),
-    USE_MOCK ? mockSubmitDiagnosis(sessionId, studentId, answers) : realSubmitDiagnosis(sessionId, studentId, answers),
   getProfile: (studentId: string): Promise<StudentProfile> =>
     USE_MOCK ? mockGetProfile(studentId) : realGetProfile(studentId),
   getPath: (studentId: string): Promise<LearningPath> =>
