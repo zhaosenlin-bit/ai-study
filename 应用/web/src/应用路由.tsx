@@ -8,6 +8,7 @@ import { 诊断页 } from "@/pages/诊断页";
 import { 落地页 } from "@/pages/落地页";
 import { 学习进度页 } from "@/pages/学习进度页";
 import { 今日诊断页 } from "@/pages/今日诊断页";
+import { AI画像页 } from "@/pages/AI画像页";
 import { 登录页 } from "@/pages/登录页";
 import { 错题本页 } from "@/pages/错题本页";
 import { 家长看板页 } from "@/pages/家长看板页";
@@ -16,7 +17,10 @@ import { 注册页 } from "@/pages/注册页";
 import { 报告页 } from "@/pages/报告页";
 import { 选择年级页 } from "@/pages/选择年级页";
 import { getMe } from "@/api/用户信息";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "@/api";
 import { useAppStore } from "@/stores/应用状态";
+import { Navigate } from "react-router-dom";
 import type { UserInfo } from "@contracts";
 
 function getStoredUser(): UserInfo | null {
@@ -39,10 +43,23 @@ function RequireAuth({ children }: { children: React.ReactElement }) {
   return children;
 }
 
-/** 按登录角色分流首页：家长 → 家长看板；学生 → 学习课程目录 */
+function 学生首页() {
+  const { studentId } = useAppStore();
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ["ai-profile", studentId],
+    queryFn: () => api.getAiProfile(studentId),
+  });
+  if (isLoading) return null;
+  if (!profile || Object.keys(profile).length === 0) return <Navigate to="/setup/profile" replace />;
+  return <今日诊断页 />;
+}
+
+/** 按登录角色分流首页：家长 → 家长看板；学生 → AI 画像/每日诊断 */
 function RoleHome() {
   const role = useAppStore((s) => s.role);
-  return role === "parent" ? <家长看板页 /> : <今日诊断页 />;
+  if (role === "parent") return <家长看板页 />;
+  // 学生：首次引导完成 AI 画像（记住用户），之后进每日诊断
+  return <学生首页 />;
 }
 
 /** 根路径：未登录显示 Landing，已登录跳学习空间 */
@@ -92,6 +109,7 @@ export function 应用路由() {
         <Route path="home" element={<RoleHome />} />
         <Route path="learn" element={<学习进度页 />} />
         <Route path="diagnosis/today" element={<今日诊断页 />} />
+        <Route path="setup/profile" element={<AI画像页 />} />
         <Route path="course/:subject/:courseId" element={<课程答题页 />} />
         <Route path="diagnosis" element={<诊断页 />} />
         <Route path="chat/:subject" element={<对话页 />} />

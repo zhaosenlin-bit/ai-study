@@ -66,6 +66,11 @@ def init_db() -> None:
                 seconds INTEGER NOT NULL DEFAULT 0,
                 recorded_at TEXT NOT NULL
             );
+            CREATE TABLE IF NOT EXISTS student_profile (
+                student_id TEXT PRIMARY KEY,
+                profile TEXT NOT NULL DEFAULT '{}',
+                updated_at TEXT
+            );
             CREATE TABLE IF NOT EXISTS daily_diagnosis (
                 student_id TEXT NOT NULL,
                 date TEXT NOT NULL,
@@ -318,3 +323,22 @@ def get_daily_diagnosis(student_id: str, date: str) -> dict | None:
             (student_id, date),
         ).fetchone()
     return json.loads(row["result"]) if row else None
+
+
+def save_student_profile(student_id: str, profile: dict) -> None:
+    """保存/更新学生画像（学习时长/时段/兴趣/目标/风格/谈心记录）。"""
+    with _connect() as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO student_profile (student_id, profile, updated_at)"
+            " VALUES (?, ?, ?)",
+            (student_id, json.dumps(profile, ensure_ascii=False), datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def get_student_profile(student_id: str) -> dict:
+    """读取学生画像；无则返回空 dict。"""
+    with _connect() as conn:
+        row = conn.execute(
+            "SELECT profile FROM student_profile WHERE student_id = ?", (student_id,)
+        ).fetchone()
+    return json.loads(row["profile"]) if row else {}

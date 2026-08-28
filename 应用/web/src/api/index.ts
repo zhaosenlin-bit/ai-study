@@ -38,6 +38,12 @@ export const api = {
     USE_MOCK ? mockStartDiagnosis(studentId, grade, subjects, count) : realStartDiagnosis(studentId, grade, subjects, count),
   submitDiagnosis: (sessionId: string, studentId: string, answers: unknown[]): Promise<DiagnosisResult> =>
     apiPost("/api/v1/diagnosis/submit", { session_id: sessionId, student_id: studentId, answers }),
+  /** AI 伴学画像：读取（长期记忆，用于个性化） */
+  getAiProfile: (studentId: string): Promise<Record<string, string>> =>
+    apiGet(`/api/v1/students/${studentId}/ai-profile`),
+  /** AI 伴学画像：保存问卷/谈心记录 */
+  saveAiProfile: (studentId: string, answers: { key: string; value: string }[]): Promise<Record<string, string>> =>
+    apiPost("/api/v1/students/ai-profile", { student_id: studentId, answers }),
   /** 今日诊断：六类题型（每天一套），已诊断则返回结果 */
   todayDiagnosis: (studentId: string, grade: number): Promise<TodayDiagnosis> =>
     apiGet(`/api/v1/diagnosis/today?student_id=${studentId}&grade=${grade}`),
