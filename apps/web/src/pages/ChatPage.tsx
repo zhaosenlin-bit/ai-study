@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { api } from "@/api";
-import { AiCompanion } from "@/components/companion/AiCompanion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { subjectMeta } from "@/lib/subjects";
 import { useAppStore } from "@/stores/appStore";
+import { useMemoryStore } from "@/stores/memoryStore";
 import type { AgentStrategy } from "@contracts";
 
 interface Message {
@@ -28,29 +28,62 @@ const SUBJECTS = ["math", "chinese", "english"] as const;
 
 export function ChatPage() {
   const { subject = "math" } = useParams();
+  const [searchParams] = useSearchParams();
+  const taskTitle = searchParams.get("title") ?? "";
+  const taskKp = searchParams.get("kp") ?? "";
   const { studentId, studentName, setCompanion } = useAppStore();
+  const getFacts = useMemoryStore((s) => s.getFacts);
+  const extractFromChat = useMemoryStore((s) => s.extractFromChat);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [hintLevel, setHintLevel] = useState(0);
   const [showTrace, setShowTrace] = useState(false);
+  const [newFactsCount, setNewFactsCount] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
+  const taskPrefixedRef = useRef(false);
+  const navigate = useNavigate();
 
   const meta = subjectMeta(subject);
 
-  // 进入学科时生成 AI 开场
+  // 进入学科时生成 AI 开场（任务化时优先针对该任务开场；带记忆的问候）
   useEffect(() => {
+    const knownFacts = getFacts(studentId);
+    const nick = knownFacts.find((f) => f.key === "nickname")?.value;
+    const fav = knownFacts.find((f) => f.key === "fav_subject")?.value;
+    const weak = knownFacts.find((f) => f.key === "weak_point")?.value;
+    const greetName = nick || studentName;
+    const memoryHint =
+      knownFacts.length > 0
+        ? `\n\n（我记着：${[
+            fav ? `你喜欢 ${fav === "math" ? "数学" : fav === "chinese" ? "语文" : "英语"}` : null,
+            weak ? `你 ${weak} 觉得有点卡` : null,
+          ]
+            .filter(Boolean)
+            .join("；")}。有变化随时告诉我哦～）`
+        : "";
+
+    const greeting = taskTitle
+      ? `你好呀，${greetName}！今天我们要一起做：「${taskTitle}」${
+          taskKp ? `（${taskKp}）` : ""
+        }。从你最有把握的地方开始说，遇到卡点直接告诉我，我会用三步提示陪你一步步想出来～${memoryHint}`
+      : `你好呀，${greetName}！我是你的 AI 学习伙伴，今天我们一起来学${meta.label}。有问题随时问我，我会引导你自己想明白，不会直接告诉你答案哦。${memoryHint}`;
     setMessages([
       {
         role: "ai",
-        text: `你好呀，${studentName}！我是你的 AI 学习伙伴，今天我们一起来学${meta.label}。有问题随时问我，我会引导你自己想明白，不会直接告诉你答案哦。`,
+        text: greeting,
         strategy: "socratic",
       },
     ]);
     setHintLevel(0);
-    setCompanion("我们开始吧！先告诉我你在哪里卡住了？", "greeting");
+    setInput(taskTitle ? `我想做「${taskTitle}」，从哪里开始？` : "");
+    setCompanion(
+      taskTitle ? `今天我们一起做：${taskTitle}` : "我们开始吧！先告诉我你在哪里卡住了？",
+      "greeting",
+    );
+    taskPrefixedRef.current = !!taskTitle;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [subject, studentId]);
+  }, [subject, studentId, taskTitle]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -80,6 +113,12 @@ export function ChatPage() {
         res.strategy === "encourage" ? "答对啦！继续加油！" : res.reply,
         res.strategy === "encourage" ? "success" : "idle",
       );
+      // 长期记忆：从用户消息 + AI 回复里提取认知入库
+      const newFacts = extractFromChat(studentId, text, res.reply);
+      if (newFacts.length > 0) {
+        setNewFactsCount(newFacts.length);
+        window.setTimeout(() => setNewFactsCount(0), 4000);
+      }
     } catch {
       setMessages((m) => [
         ...m,
@@ -92,6 +131,21 @@ export function ChatPage() {
 
   return (
     <div className="mx-auto flex h-full max-w-4xl flex-col gap-4 py-2">
+      {/* 长期记忆提示 + 档案入口 */}
+      <div className="flex items-center justify-between text-xs">
+        <button
+          onClick={() => navigate("/memory")}
+          className="flex items-center gap-1.5 rounded-full border border-amber-200/60 bg-white/70 px-3 py-1 text-foreground transition hover:bg-amber-50"
+        >
+          <span>🧠</span>
+          <span>小熊的认知档案（{getFacts(studentId).length} 条）</span>
+        </button>
+        {newFactsCount > 0 && (
+          <div className="animate-fade-in rounded-full bg-emerald-100 px-3 py-1 text-emerald-700">
+            🐻 刚记住 {newFactsCount} 条新信息～
+          </div>
+        )}
+      </div>
       {/* 学科切换 */}
       <div className="flex items-center gap-2">
         {SUBJECTS.map((s) => {
@@ -172,27 +226,56 @@ export function ChatPage() {
 
           {/* 输入区 */}
           <div className="border-t border-white/8 p-3">
-            <div className="flex gap-2">
-              <Textarea
-                rows={2}
-                value={input}
-                placeholder={`和${meta.label}有关的任何问题都可以问我…`}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    void handleSend();
-                  }
-                }}
-              />
-              <Button
-                size="lg"
-                className="self-end"
-                disabled={sending || !input.trim()}
-                onClick={() => void handleSend()}
-              >
-                发送
-              </Button>
+            <div className="rounded-2xl bg-gradient-to-r from-sky-100 via-sky-50 to-amber-50 p-4 shadow-sm">
+              <p className="mb-3 text-sm text-muted-foreground">
+                直接回答我：想学什么？做测试？聊天？
+              </p>
+              <div className="flex gap-2">
+                <Textarea
+                  rows={2}
+                  value={input}
+                  placeholder={`和${meta.label}有关的任何问题都可以问我…`}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      void handleSend();
+                    }
+                  }}
+                  className="bg-white"
+                />
+                <Button
+                  size="lg"
+                  className="self-end rounded-2xl bg-primary px-6 text-base font-bold text-primary-foreground shadow-[0_4px_12px_rgba(249,116,21,0.35)] hover:brightness-110"
+                  disabled={sending || !input.trim()}
+                  onClick={() => void handleSend()}
+                >
+                  回答
+                </Button>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {[
+                  { icon: "🧸", label: "认识我", to: null as string | null, prompt: "你是什么 AI？介绍一下你自己～" },
+                  { icon: "📝", label: "做测试", to: "/diagnosis", prompt: null },
+                  { icon: "💬", label: "聊聊天", to: null, prompt: "和我随便聊聊吧～" },
+                  { icon: "🧠", label: "知识库", to: "/textbook", prompt: null },
+                  { icon: "📕", label: "错题", to: "/mistakes", prompt: null },
+                  { icon: "📅", label: "学习计划", to: "/path", prompt: null },
+                ].map((q) => (
+                  <button
+                    key={q.label}
+                    type="button"
+                    onClick={() => {
+                      if (q.to) navigate(q.to);
+                      else if (q.prompt) setInput(q.prompt);
+                    }}
+                    className="flex items-center gap-1.5 rounded-full border border-white/60 bg-white/90 px-3 py-1.5 text-xs font-semibold text-foreground shadow-sm transition hover:border-primary/40 hover:bg-white"
+                  >
+                    <span aria-hidden>{q.icon}</span>
+                    {q.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -200,7 +283,6 @@ export function ChatPage() {
         {/* 右侧：精灵 + 痕迹 */}
         <div className="flex flex-col gap-4">
           <div className="glass-panel flex flex-col items-center gap-2 p-4">
-            <AiCompanion size={84} showBubble={false} />
             <p className="text-center text-xs leading-relaxed text-muted-foreground">
               {meta.label}辅导中 · 提示层级 {hintLevel + 1}/4
             </p>
