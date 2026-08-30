@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "@/api";
 import { TOOL_TRACES } from "@/api/mockData";
-import { AiCompanion } from "@/components/companion/AiCompanion";
 import { QuestionCard } from "@/components/question/QuestionCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,6 +34,7 @@ export function DiagnosisPage() {
 
   const [starting, setStarting] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const isLast = currentIndex === questions.length - 1;
   const answeredCount = Object.keys(answers).length;
@@ -44,12 +44,16 @@ export function DiagnosisPage() {
 
   async function handleStart() {
     setStarting(true);
+    setError(null);
     setCompanion("开始三科小诊断啦，我会根据你的回答找出薄弱点～", "thinking");
     try {
       const session = await api.startDiagnosis(studentId, 4, ["math", "chinese", "english"], 3);
       startSession(session.session_id, session.questions);
       setToolTrace(TOOL_TRACES["diagnosis"]);
       setCompanion("第一题来啦，慢慢来，不着急！", "greeting");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "诊断启动失败，请稍后重试");
+      setCompanion("诊断启动出了点问题，我们再试一次？", "idle");
     } finally {
       setStarting(false);
     }
@@ -58,6 +62,7 @@ export function DiagnosisPage() {
   async function handleSubmit() {
     if (!sessionId) return;
     setSubmitting(true);
+    setError(null);
     setCompanion("让我分析一下你的回答…", "thinking");
     try {
       const diagnosis = await api.submitDiagnosis(
@@ -68,6 +73,9 @@ export function DiagnosisPage() {
       finishDiagnosis(diagnosis);
       setToolTrace(TOOL_TRACES["path"]);
       setCompanion("太棒了！我已经帮你找到 3 个薄弱点，一起攻克它们吧！", "success");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "提交失败，请稍后重试");
+      setCompanion("提交出了点问题，我们再试一次？", "idle");
     } finally {
       setSubmitting(false);
     }
@@ -85,7 +93,6 @@ export function DiagnosisPage() {
       .slice(0, 3);
     return (
       <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-6 py-6">
-        <AiCompanion size={100} />
         <Card className="w-full animate-fade-in">
           <CardContent className="space-y-5 p-6">
             <div>
@@ -174,6 +181,12 @@ export function DiagnosisPage() {
           onChange={(v) => setAnswer(q.id, v)}
         />
 
+        {error && (
+          <p className="w-full max-w-2xl text-center text-sm font-medium text-destructive">
+            {error}，请重试。
+          </p>
+        )}
+
         <div className="flex w-full max-w-2xl items-center justify-between gap-3">
           <Button variant="ghost" size="lg" disabled={currentIndex === 0} onClick={goPrev}>
             ← 上一题
@@ -199,7 +212,6 @@ export function DiagnosisPage() {
   /* ---------- 起始页 ---------- */
   return (
     <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-6 py-6">
-      <AiCompanion size={110} />
       <Card className="w-full animate-fade-in text-center">
         <CardContent className="space-y-4 p-8">
           <h2 className="text-2xl font-black text-foreground">
@@ -219,6 +231,11 @@ export function DiagnosisPage() {
               );
             })}
           </div>
+          {error && (
+            <p className="mx-auto max-w-md text-sm font-medium text-destructive">
+              {error}，请检查网络后重试。
+            </p>
+          )}
           <Button size="lg" className="mt-2 min-w-48" disabled={starting} onClick={handleStart}>
             {starting ? "准备题目中…" : "🚀 开始诊断"}
           </Button>
