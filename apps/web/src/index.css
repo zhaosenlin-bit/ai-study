@@ -4,30 +4,31 @@
 
 @layer base {
   :root {
-    --background: 228 45% 6%;
-    --foreground: 220 32% 96%;
-    --card: 228 38% 9%;
-    --card-foreground: 220 32% 96%;
-    --popover: 228 38% 10%;
-    --popover-foreground: 220 32% 96%;
-    --primary: 262 82% 64%;
-    --primary-foreground: 220 32% 98%;
-    --secondary: 228 30% 15%;
-    --secondary-foreground: 220 32% 92%;
-    --muted: 228 26% 14%;
-    --muted-foreground: 226 14% 62%;
-    --accent: 262 42% 22%;
-    --accent-foreground: 220 32% 94%;
-    --destructive: 0 72% 55%;
-    --destructive-foreground: 220 32% 98%;
-    --border: 228 26% 18%;
-    --input: 228 26% 18%;
-    --ring: 262 82% 64%;
+    --background: 40 80% 92%;
+    --foreground: 25 40% 22%;
+    --card: 40 60% 96%;
+    --card-foreground: 25 40% 22%;
+    --popover: 40 60% 95%;
+    --popover-foreground: 25 40% 22%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 40 100% 98%;
+    --secondary: 40 75% 85%;
+    --secondary-foreground: 25 50% 25%;
+    --muted: 40 50% 90%;
+    --muted-foreground: 25 35% 35%;
+    --accent: 35 95% 70%;
+    --accent-foreground: 25 40% 25%;
+    --destructive: 5 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 60% 82%;
+    --input: 40 60% 85%;
+    --ring: 25 95% 53%;
     --radius: 0.75rem;
 
     --subject-math: 220 90% 62%;
     --subject-chinese: 18 88% 62%;
     --subject-english: 158 68% 52%;
+    --subject-mixed: 280 70% 60%;
   }
 
   * {
@@ -41,7 +42,12 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background:
+      radial-gradient(circle at 12% 8%, #fff6c9 0%, transparent 45%),
+      radial-gradient(circle at 88% 92%, #ffe4b5 0%, transparent 40%),
+      radial-gradient(circle at 80% 10%, #d9f4ff 0%, transparent 35%),
+      hsl(var(--background));
+    @apply text-foreground antialiased;
     font-family:
       "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC",
       system-ui, -apple-system, sans-serif;
