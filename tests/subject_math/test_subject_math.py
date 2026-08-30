@@ -35,9 +35,9 @@ class TestSubjectMathData(unittest.TestCase):
         self.assertTrue(self.data.validate())
 
     def test_grades_covered(self):
-        """覆盖 3-6 年级。"""
+        """覆盖 1-6 年级。"""
         grades = {k["grade"] for k in self.data.knowledge_points}
-        self.assertEqual(grades, {3, 4, 5, 6})
+        self.assertEqual(grades, {1, 2, 3, 4, 5, 6})
 
     def test_every_kp_has_question(self):
         """每个知识点都有题目支撑。"""
@@ -53,7 +53,7 @@ class TestSubjectMathData(unittest.TestCase):
 
     def test_bank_selection(self):
         """诊断/巩固/复习三类题可按 id 约定筛选。"""
-        self.assertEqual(len(self.data.questions_by_bank("diagnosis")), 42)
+        self.assertEqual(len(self.data.questions_by_bank("diagnosis")), 53)
         self.assertEqual(len(self.data.questions_by_bank("practice")), 20)
         self.assertEqual(len(self.data.questions_by_bank("review")), 10)
 
