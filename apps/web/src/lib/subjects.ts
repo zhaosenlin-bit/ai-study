@@ -7,26 +7,26 @@ export const SUBJECT_META: Record<
   math: {
     label: "数学",
     icon: "🔢",
-    chipClass: "border-subject-math/30 bg-subject-math/12 text-subject-math",
+    chipClass: "border-subject-math/60 bg-subject-math/20 text-subject-math",
     dotClass: "bg-subject-math",
   },
   chinese: {
     label: "语文",
     icon: "📖",
-    chipClass: "border-subject-chinese/30 bg-subject-chinese/12 text-subject-chinese",
+    chipClass: "border-subject-chinese/60 bg-subject-chinese/20 text-subject-chinese",
     dotClass: "bg-subject-chinese",
   },
   english: {
     label: "英语",
     icon: "🌎",
-    chipClass: "border-subject-english/30 bg-subject-english/12 text-subject-english",
+    chipClass: "border-subject-english/60 bg-subject-english/20 text-subject-english",
     dotClass: "bg-subject-english",
   },
   mixed: {
     label: "综合",
     icon: "✨",
-    chipClass: "border-primary/30 bg-primary/12 text-primary",
-    dotClass: "bg-primary",
+    chipClass: "border-subject-mixed/60 bg-subject-mixed/20 text-subject-mixed",
+    dotClass: "bg-subject-mixed",
   },
 };
 
