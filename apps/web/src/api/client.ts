@@ -15,15 +15,25 @@ import type {
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000";
 
+/** 请求超时（毫秒）：线上纯静态环境后端不可达时快速失败，触发降级而不是无限挂起。 */
+const FETCH_TIMEOUT_MS = 5000;
+
 async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: { "Content-Type": "application/json" },
-    ...init,
-  });
-  if (!res.ok) {
-    throw new Error(`API ${res.status}: ${path}`);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const res = await fetch(`${BASE_URL}${path}`, {
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      ...init,
+    });
+    if (!res.ok) {
+      throw new Error(`API ${res.status}: ${path}`);
+    }
+    return (await res.json()) as T;
+  } finally {
+    clearTimeout(timer);
   }
-  return (await res.json()) as T;
 }
 
 export async function realStartDiagnosis(
@@ -66,8 +76,16 @@ export async function realGetReport(studentId: string): Promise<ParentReport> {
 }
 
 export async function realAgentChat(req: AgentChatRequest): Promise<AgentChatResponse> {
-  return apiFetch<AgentChatResponse>("/api/v1/agent/chat", {
+  const resp = await apiFetch<AgentChatResponse>("/api/v1/agent/chat", {
     method: "POST",
     body: JSON.stringify(req),
   });
+  // 成功调真实 LLM 后，把顶部"模型"标签从 Mock 切到 minimax
+  try {
+    const { useAppStore } = await import("@/stores/appStore");
+    useAppStore.getState().setModelProvider("minimax");
+  } catch {
+    /* 极少数测试场景无 store 上下文 */
+  }
+  return resp;
 }
