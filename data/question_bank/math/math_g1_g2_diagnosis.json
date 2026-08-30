@@ -1,0 +1,192 @@
+[
+  {
+    "id": "math_q_g1_0001",
+    "subject": "math",
+    "grade": 1,
+    "type": "fill_blank",
+    "stem": "7 + 8 = ______。",
+    "options": [],
+    "answer": "15",
+    "knowledge_point_ids": [
+      "math_g1_addition_subtraction_within_20"
+    ],
+    "explanation": "用凑十法：7+8 = 7+3+5 = 10+5 = 15。",
+    "error_type": "calculation_error",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g1_0002",
+    "subject": "math",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "15 - 9 =（ ）。",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ],
+    "answer": "6",
+    "knowledge_point_ids": [
+      "math_g1_addition_subtraction_within_20"
+    ],
+    "explanation": "15-9：先把 15 分成 10 和 5，10-9=1，1+5=6。",
+    "error_type": "calculation_error",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g1_0003",
+    "subject": "math",
+    "grade": 1,
+    "type": "single_choice",
+    "stem": "下面哪个数比 35 大？（ ）",
+    "options": [
+      "28",
+      "42",
+      "30",
+      "35"
+    ],
+    "answer": "42",
+    "knowledge_point_ids": [
+      "math_g1_numbers_comparison"
+    ],
+    "explanation": "比较数的大小：先看十位，42 的十位是 4，比 35 的十位 3 大，所以 42 比 35 大。",
+    "error_type": "concept_missing",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g1_0004",
+    "subject": "math",
+    "grade": 1,
+    "type": "fill_blank",
+    "stem": "6 个十和 8 个一组成的数是 ______。",
+    "options": [],
+    "answer": "68",
+    "knowledge_point_ids": [
+      "math_g1_numbers_comparison"
+    ],
+    "explanation": "6 个十是 60，8 个一是 8，合起来是 68。",
+    "error_type": "concept_missing",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g2_0001",
+    "subject": "math",
+    "grade": 2,
+    "type": "fill_blank",
+    "stem": "7 × 8 = ______。",
+    "options": [],
+    "answer": "56",
+    "knowledge_point_ids": [
+      "math_g2_multiplication_table"
+    ],
+    "explanation": "七八五十六，7×8=56。",
+    "error_type": "calculation_error",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g2_0002",
+    "subject": "math",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "6 × 9 =（ ）。",
+    "options": [
+      "54",
+      "45",
+      "56",
+      "63"
+    ],
+    "answer": "54",
+    "knowledge_point_ids": [
+      "math_g2_multiplication_table"
+    ],
+    "explanation": "六九五十四，6×9=54。",
+    "error_type": "calculation_error",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g2_0003",
+    "subject": "math",
+    "grade": 2,
+    "type": "fill_blank",
+    "stem": "36 + 47 = ______。",
+    "options": [],
+    "answer": "83",
+    "knowledge_point_ids": [
+      "math_g2_addition_subtraction_within_100"
+    ],
+    "explanation": "36+47：个位 6+7=13 写 3 进 1，十位 3+4+1=8，得 83。",
+    "error_type": "calculation_error",
+    "difficulty": 2
+  },
+  {
+    "id": "math_q_g2_0004",
+    "subject": "math",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "80 - 27 =（ ）。",
+    "options": [
+      "53",
+      "63",
+      "43",
+      "57"
+    ],
+    "answer": "53",
+    "knowledge_point_ids": [
+      "math_g2_addition_subtraction_within_100"
+    ],
+    "explanation": "80-27：个位 0-7 不够，向十位借 1 当 10，10-7=3；十位剩 7，7-2=5，得 53。",
+    "error_type": "calculation_error",
+    "difficulty": 2
+  },
+  {
+    "id": "math_q_g2_0005",
+    "subject": "math",
+    "grade": 2,
+    "type": "single_choice",
+    "stem": "1 张 10 元和 3 张 5 元，一共是（ ）元。",
+    "options": [
+      "25",
+      "15",
+      "30",
+      "35"
+    ],
+    "answer": "25",
+    "knowledge_point_ids": [
+      "math_g2_renminbi"
+    ],
+    "explanation": "3 张 5 元是 15 元，加上 1 张 10 元：10+15=25（元）。",
+    "error_type": "modeling_error",
+    "difficulty": 2
+  },
+  {
+    "id": "math_q_g2_0006",
+    "subject": "math",
+    "grade": 2,
+    "type": "fill_blank",
+    "stem": "5 角 + 8 角 = ______ 角。",
+    "options": [],
+    "answer": "13",
+    "knowledge_point_ids": [
+      "math_g2_renminbi"
+    ],
+    "explanation": "5+8=13，5 角加 8 角等于 13 角，也就是 1 元 3 角。",
+    "error_type": "concept_missing",
+    "difficulty": 1
+  },
+  {
+    "id": "math_q_g2_0011",
+    "subject": "math",
+    "grade": 2,
+    "type": "fill_blank",
+    "stem": "23 ÷ 5 = ______……______（写出商和余数）。",
+    "options": [],
+    "answer": "4……3",
+    "knowledge_point_ids": [
+      "math_g2_division_with_remainder"
+    ],
+    "explanation": "23 里面最多有 4 个 5（4×5=20），还剩 23-20=3，所以商 4 余 3。",
+    "error_type": "calculation_error",
+    "difficulty": 2
+  }
+]
