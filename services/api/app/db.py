@@ -10,11 +10,29 @@ from pathlib import Path
 
 DB_PATH = Path(__file__).resolve().parents[1] / "data" / "ai_study.db"
 
+# Schema 版本：每次结构变更 +1，并在 migrate() 中编写迁移步骤（验收项 D-2）。
+SCHEMA_VERSION = 1
+
 
 def _connect() -> sqlite3.Connection:
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
+
+
+def schema_version() -> int:
+    with _connect() as conn:
+        return conn.execute("PRAGMA user_version").fetchone()[0]
+
+
+def migrate() -> None:
+    """迁移入口：按版本递增执行迁移，保证旧库可升级。"""
+    current = schema_version()
+    if current < 1:
+        init_db()  # 首次初始化即建表 + 种子数据
+    # 未来变更示例：if current < 2: 执行 ALTER TABLE ...；随后 PRAGMA user_version = 2
+    if schema_version() != SCHEMA_VERSION:
+        raise RuntimeError(f"数据库迁移失败：版本 {schema_version()} -> {SCHEMA_VERSION}")
 
 
 def init_db() -> None:
@@ -46,6 +64,7 @@ def init_db() -> None:
             );
             """
         )
+        conn.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
     seed_demo_student()
 
 
