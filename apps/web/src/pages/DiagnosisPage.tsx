@@ -209,6 +209,20 @@ export function DiagnosisPage() {
     );
   }
 
+  /* ---------- 题目加载失败（防御：questions 为空但 session 已建） ---------- */
+  if (sessionId && questions.length === 0) {
+    return (
+      <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-4 py-6">
+        <Card className="w-full max-w-md text-center">
+          <CardContent className="space-y-3 p-6">
+            <p className="text-sm text-destructive">题目加载失败，请重试。</p>
+            <Button size="lg" onClick={handleRestart}>重新诊断</Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   /* ---------- 起始页 ---------- */
   return (
     <div className="mx-auto flex h-full max-w-3xl flex-col items-center justify-center gap-6 py-6">
