@@ -44,6 +44,7 @@ export default {
           math: "hsl(var(--subject-math))",
           chinese: "hsl(var(--subject-chinese))",
           english: "hsl(var(--subject-english))",
+          mixed: "hsl(var(--subject-mixed))",
         },
       },
       borderRadius: {
