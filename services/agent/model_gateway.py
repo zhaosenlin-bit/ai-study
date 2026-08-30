@@ -1,10 +1,11 @@
 """统一模型网关：业务代码不写死模型供应商。
 
 环境变量：
-- MODEL_PROVIDER=mock|spark|deepseek|qwen|minimax（默认 mock）
+- MODEL_PROVIDER=mock|spark|deepseek|qwen|minimax|ollama（默认 mock）
 - <PROVIDER>_API_KEY 与 <PROVIDER>_BASE_URL（未配置则自动回退 mock，不抛错）
 
-deepseek/qwen/minimax 走 OpenAI 兼容 HTTP 端点；spark 需要 WebSocket，留待接入。
+deepseek/qwen/minimax/ollama 走 OpenAI 兼容 HTTP 端点；spark 需要 WebSocket，留待接入。
+ollama 本地模型（如 qwen2.5）无需 API Key，base_url 默认 http://localhost:11434/v1。
 """
 
 import os
@@ -12,15 +13,16 @@ from typing import Literal
 
 import httpx
 
-Provider = Literal["spark", "deepseek", "qwen", "minimax", "mock"]
+Provider = Literal["spark", "deepseek", "qwen", "minimax", "ollama", "mock"]
 
-PROVIDERS: tuple[Provider, ...] = ("spark", "deepseek", "qwen", "minimax", "mock")
+PROVIDERS: tuple[Provider, ...] = ("spark", "deepseek", "qwen", "minimax", "ollama", "mock")
 
 DEFAULT_MODELS = {
     "deepseek": "deepseek-chat",
     "qwen": "qwen-plus",
-    "minimax": "abab6.5s-chat",
+    "minimax": "MiniMax-Text-01",
     "spark": "generalv3.5",
+    "ollama": "qwen2.5:7b",
 }
 
 
@@ -50,7 +52,11 @@ def complete(system: str, user: str) -> tuple[str, str]:
 
     api_key = os.getenv(f"{provider.upper()}_API_KEY", "").strip()
     base_url = os.getenv(f"{provider.upper()}_BASE_URL", "").strip()
-    if not api_key or not base_url:
+    if provider == "ollama":
+        # 本地模型无需鉴权；未配 base_url 时用默认本地地址
+        api_key = api_key or "ollama"
+        base_url = base_url or "http://localhost:11434/v1"
+    elif not api_key or not base_url:
         return _mock_reply(system, user), "mock"
 
     try:
