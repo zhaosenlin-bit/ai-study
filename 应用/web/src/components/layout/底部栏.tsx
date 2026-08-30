@@ -10,26 +10,32 @@ interface Action {
   onClick: () => void;
 }
 
-/** 移动端固定导航 Tab */
+/** 移动端底部导航 Tab（始终显示） */
 const MOBILE_TABS: { to: string; icon: string; label: string; role?: "student" | "parent" }[] = [
-  { to: "/learn", icon: "🏠", label: "学习" },
+  { to: "/learn", icon: "🏠", label: "首页" },
   { to: "/textbook", icon: "📖", label: "教材" },
-  { to: "/chat/math", icon: "📚", label: "课程" },
+  { to: "/diagnosis", icon: "🧪", label: "诊断" },
+  { to: "/chat/math", icon: "📚", label: "辅导" },
   { to: "/mistakes", icon: "📒", label: "错题" },
-  { to: "/report", icon: "📊", label: "报告" },
-  { to: "/home", icon: "👨‍👩‍👦", label: "家长", role: "parent" },
+  { to: "/report", icon: "📊", label: "报告", role: "parent" },
 ];
 
-/** 移动端底部导航（<md 显示） */
-function MobileNav() {
+/** 移动端底部导航（始终显示） */
+function MobileBottomNav() {
   const { pathname } = useLocation();
   const nav = useNavigate();
   const role = useAppStore((s) => s.role);
   const tabs = MOBILE_TABS.filter((t) => !t.role || t.role === role);
+
   return (
-    <footer className="z-30 flex h-16 shrink-0 items-stretch border-t border-white/8 bg-background/80 backdrop-blur-md md:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-30 flex h-16 shrink-0 items-stretch border-t border-white/8 bg-background/95 backdrop-blur-md lg:hidden">
       {tabs.map((t) => {
-        const active = t.to === "/home" ? pathname === "/home" : pathname.startsWith(t.to.split("/").slice(0, 2).join("/"));
+        // 精确匹配首页，其他按前缀匹配
+        const isHome = t.to === "/learn";
+        const active = isHome 
+          ? pathname === "/learn" || pathname === "/home" || pathname === "/" || pathname.endsWith("/learn")
+          : pathname.startsWith(t.to.split("/").slice(0, 2).join("/"));
+        
         return (
           <button
             key={t.to}
@@ -40,18 +46,18 @@ function MobileNav() {
               active ? "text-primary" : "text-muted-foreground",
             )}
           >
-            <span className="text-lg leading-none" aria-hidden>
+            <span className="text-xl leading-none" aria-hidden>
               {t.icon}
             </span>
             {t.label}
           </button>
         );
       })}
-    </footer>
+    </nav>
   );
 }
 
-/** 桌面端情境操作栏（≥md 显示） */
+/** 桌面端情境操作栏（仅 lg 及以上显示） */
 function DesktopActions() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -59,7 +65,7 @@ function DesktopActions() {
   let actions: Action[] = [];
   let hint = "";
 
-  if (pathname === "/") {
+  if (pathname === "/" || pathname === "/home" || pathname === "/learn") {
     hint = "准备好开始今天的学习了吗？";
     actions = [
       { label: "开始三科诊断", icon: "🧪", primary: true, onClick: () => navigate("/diagnosis") },
@@ -68,7 +74,7 @@ function DesktopActions() {
     hint = "跟随 AI 伙伴完成诊断，找出薄弱点";
   } else if (pathname.startsWith("/chat/")) {
     hint = "答错也没关系，AI 伙伴会分步引导你";
-    actions = [{ label: "回到今日任务", onClick: () => navigate("/") }];
+    actions = [{ label: "回到首页", onClick: () => navigate("/learn") }];
   } else if (pathname === "/path") {
     hint = "先攻克最薄弱的环节，效率更高";
     actions = [{ label: "去辅导薄弱点", icon: "🧑‍🏫", primary: true, onClick: () => navigate("/chat/math") }];
@@ -86,7 +92,7 @@ function DesktopActions() {
   if (pathname === "/demo") return null;
 
   return (
-    <footer className="relative z-20 hidden h-16 shrink-0 items-center justify-between gap-4 border-t border-white/8 bg-background/60 px-6 backdrop-blur-md md:flex">
+    <footer className="relative z-20 hidden h-16 shrink-0 items-center justify-between gap-4 border-t border-white/8 bg-background/60 px-6 backdrop-blur-md lg:flex">
       <p className="text-sm text-muted-foreground">{hint}</p>
       <div className="ml-auto flex items-center gap-3">
         {actions.map((a) => (
@@ -105,7 +111,9 @@ export function 底部栏() {
   if (pathname === "/demo") return null;
   return (
     <>
-      <MobileNav />
+      {/* 移动端底部导航 - 始终显示 */}
+      <MobileBottomNav />
+      {/* 桌面端操作栏 - 仅大屏显示 */}
       <DesktopActions />
     </>
   );

@@ -45,7 +45,8 @@ function Rail({ items, side }: { items: RailItem[]; side: "left" | "right" }) {
   return (
     <nav
       className={cn(
-        "z-10 hidden w-[72px] shrink-0 flex-col items-center gap-3 border-white/8 px-2 py-4 md:flex",
+        // 手机端隐藏，桌面端显示
+        "z-10 hidden w-[72px] shrink-0 flex-col items-center gap-3 border-white/8 px-2 py-4 lg:flex",
         side === "left" ? "border-r" : "border-l",
       )}
       aria-label={side === "left" ? "学习导航" : "功能导航"}
@@ -70,7 +71,7 @@ function Rail({ items, side }: { items: RailItem[]; side: "left" | "right" }) {
   );
 }
 
-/** 学生：题目目录（语数英分类 + 课程列表），点课程进入做题 */
+/** 学生：题目目录（语数英分类 + 课程列表），点课程进入做题 - 仅桌面端显示 */
 function 题目目录() {
   const nav = useNavigate();
   const { pathname } = useLocation();
@@ -89,7 +90,7 @@ function 题目目录() {
   });
 
   return (
-    <aside className="z-10 hidden w-60 shrink-0 flex-col border-r border-white/8 bg-background/40 py-3 md:flex">
+    <aside className="z-10 hidden w-60 shrink-0 flex-col border-r border-white/8 bg-background/40 py-3 lg:flex">
       {/* 顶部通用入口 */}
       <div className="flex flex-col gap-1 px-2 pb-3">
         {STUDENT_TOP.map((item) => {
@@ -149,7 +150,7 @@ function 题目目录() {
                         <button
                           type="button"
                           disabled={disabled}
-                          onClick={() => !disabled && nav(`/course/${subj}/${c.course_id}`)}
+                          onClick={() => !disabled && nav(/course//)}
                           title={c.name}
                           className={cn(
                             "flex w-full items-center gap-1.5 rounded-md px-2 py-1.5 text-left text-xs transition",

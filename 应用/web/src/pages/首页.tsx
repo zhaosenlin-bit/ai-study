@@ -8,9 +8,7 @@ import { subjectMeta } from "@/lib/学科";
 import { useAppStore } from "@/stores/应用状态";
 
 /** 从知识掌握度聚合出学科平均掌握度 */
-function subjectMastery(
-  mastery: Record<string, number>,
-): { subject: string; value: number }[] {
+function subjectMastery(mastery: Record<string, number>): { subject: string; value: number }[] {
   const sum: Record<string, { total: number; count: number }> = {};
   for (const [kp, v] of Object.entries(mastery)) {
     const subject = kp.split("_")[0];
@@ -33,23 +31,10 @@ function SunnyBackground() {
       {/* 太阳 */}
       <div className="sky-sun absolute top-16 right-[10%] h-32 w-32 md:h-40 md:w-40" />
       
-      {/* 白云1 */}
-      <div 
-        className="sky-cloud absolute left-[5%] top-[12%] h-6 w-20"
-        style={{ animation: "cloud-drift 28s ease-in-out infinite" }}
-      />
-      
-      {/* 白云2 */}
-      <div 
-        className="sky-cloud absolute right-[20%] top-[22%] h-8 w-28 opacity-80"
-        style={{ animation: "cloud-drift 35s ease-in-out 3s infinite" }}
-      />
-      
-      {/* 白云3 */}
-      <div 
-        className="sky-cloud absolute left-[30%] bottom-[25%] h-5 w-16 opacity-60"
-        style={{ animation: "cloud-drift 22s ease-in-out 1s infinite" }}
-      />
+      {/* 白云 */}
+      <div className="sky-cloud absolute left-[5%] top-[12%] h-6 w-20" style={{ animation: "cloud-drift 28s ease-in-out infinite" }} />
+      <div className="sky-cloud absolute right-[20%] top-[22%] h-8 w-28 opacity-80" style={{ animation: "cloud-drift 35s ease-in-out 3s infinite" }} />
+      <div className="sky-cloud absolute left-[30%] bottom-[25%] h-5 w-16 opacity-60" style={{ animation: "cloud-drift 22s ease-in-out 1s infinite" }} />
       
       {/* 底部暖光 */}
       <div className="sky-ground" />
@@ -77,13 +62,14 @@ export function 首页() {
     <>
       <SunnyBackground />
       
-      <div className="mx-auto flex h-full max-w-5xl flex-col items-center justify-center gap-8 py-4">
-        {/* AI 伙伴问候 */}
-        <div className="w-full max-w-xl">
+      <div className="mx-auto flex h-full max-w-6xl flex-col items-center justify-center gap-6 py-4 sm:gap-8">
+        {/* AI 伙伴问候 - 移动端缩小 */}
+        <div className="w-full max-w-lg sm:max-w-xl">
           <AI伙伴 />
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2">
+        {/* 今日任务 + 三科掌握度 - 移动端堆叠，桌面端并排 */}
+        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {/* 今日任务 */}
           <卡片 className="animate-fade-up glass-panel">
             <卡片头 className="flex-row items-center justify-between">
@@ -96,38 +82,29 @@ export function 首页() {
               {isLoading && <p className="py-6 text-center text-sm text-muted-foreground">加载中…</p>}
               {!isLoading &&
                 (todoTasks.length ? (
-                  todoTasks.map((t) => {
+                  todoTasks.slice(0, 5).map((t) => {
                     const meta = subjectMeta(t.subject);
                     return (
                       <Link
                         key={t.task_id}
                         to={/chat/}
-                        className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/70 px-4 py-3 transition-all hover:border-[#e8830c]/40 hover:bg-white/90"
+                        className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/70 px-4 py-3 transition-all hover:border-[#e8830c]/40 hover:bg-white/90 backdrop-blur"
                       >
-                        <span
-                          className={lex h-8 w-8 items-center justify-center rounded-lg border }
-                          aria-hidden
-                        >
+                        <span className={lex h-8 w-8 shrink-0 items-center justify-center rounded-lg border } aria-hidden>
                           {meta.icon}
                         </span>
                         <div className="min-w-0 flex-1">
-                          <div className="truncate text-sm font-semibold text-foreground">
-                            {t.title}
-                          </div>
+                          <div className="truncate text-sm font-semibold text-foreground">{t.title}</div>
                           <div className="text-xs text-muted-foreground">
                             {meta.label} · {t.status === "doing" ? "进行中" : "待开始"}
                           </div>
                         </div>
-                        <span className="text-muted-foreground" aria-hidden>
-                          →
-                        </span>
+                        <span className="text-muted-foreground" aria-hidden>→</span>
                       </Link>
                     );
                   })
                 ) : (
-                  <p className="py-6 text-center text-sm text-muted-foreground">
-                    今天的任务都完成啦，真棒！🎉
-                  </p>
+                  <p className="py-6 text-center text-sm text-muted-foreground">今天的任务都完成啦，真棒！🎉</p>
                 ))}
             </卡片内容>
           </卡片>
@@ -169,25 +146,31 @@ export function 首页() {
           </卡片>
         </div>
         
-        {/* 快捷入口 */}
-        <div className="flex flex-wrap items-center justify-center gap-3 animate-fade-up delay-400">
+        {/* 快捷入口 - 移动端自适应 */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 animate-fade-up delay-400">
           <Link
             to="/textbook"
-            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-5 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40"
+            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-4 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40 sm:px-5 sm:py-3"
           >
             📖 教材
           </Link>
           <Link
             to="/practice"
-            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-5 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40"
+            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-4 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40 sm:px-5 sm:py-3"
           >
             📸 拍照改卷
           </Link>
           <Link
             to="/mistakes"
-            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-5 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40"
+            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-4 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40 sm:px-5 sm:py-3"
           >
             📒 错题本
+          </Link>
+          <Link
+            to="/path"
+            className="flex items-center gap-2 rounded-full border border-white/30 bg-white/60 px-4 py-2.5 text-sm font-semibold text-foreground backdrop-blur transition hover:bg-white/80 hover:border-[#e8830c]/40 sm:px-5 sm:py-3"
+          >
+            🗺️ 知识地图
           </Link>
         </div>
       </div>

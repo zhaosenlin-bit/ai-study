@@ -34,7 +34,13 @@ export function 应用框架() {
       <顶部栏 />
       <div className="flex min-h-0 flex-1">
         <左侧导航 />
-        <main className="relative min-w-0 flex-1 overflow-y-auto px-4 pb-20 pt-4 md:px-6 md:pb-6 md:pt-6">
+        {/* 
+          主内容区域：
+          - 手机端 (默认)：无侧边距，底部留出导航栏空间 (pb-20)
+          - 平板端 (md)：左右留边距
+          - 桌面端 (lg)：更大边距
+        */}
+        <main className="relative min-w-0 flex-1 overflow-y-auto px-3 pb-20 pt-3 sm:px-4 md:px-6 md:pb-24 lg:pb-6 lg:pt-6 xl:px-8">
           <Outlet />
         </main>
         <右侧导航 />
