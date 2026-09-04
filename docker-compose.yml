@@ -1,0 +1,75 @@
+# ============================================================
+# docker-compose · ai-study AI 伴学智能体生产部署
+# 路径:ai-study/docker-compose.yml(部署到 ai-study 仓库根)
+# 启动:docker compose up -d --build
+# 创建:2026-09-04 小C
+# ⚠️ 凭证字段不进 KB(Private Zone)
+# ============================================================
+
+services:
+  # ---- 后端 FastAPI :8000 ----
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: ai-study-api:latest
+    container_name: ai-study-api
+    restart: unless-stopped
+    env_file:
+      - .env   # 凭证从 .env 读(不进镜像)
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # SQLite 数据库持久化
+      - ./services/api/data.db:/app/services/api/data.db
+      - ./services/api/ai_study.db:/app/services/api/ai_study.db
+      # 数据只读挂载(图谱 + 题库)
+      - ./data:/app/data:ro
+      # 日志
+      - ./logs/api:/app/logs
+    networks:
+      - ai-study-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/api/v1/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ---- 前端 Vite + Nginx 反代 ----
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      args:
+        - VITE_API_BASE_URL=
+        - VITE_USE_MOCK=false
+    image: ai-study-web:latest
+    container_name: ai-study-web
+    restart: unless-stopped
+    ports:
+      - "80:80"     # 对外端口(后续 Nginx + SSL 在这上面)
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - ai-study-net
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ai-study-net:
+    driver: bridge

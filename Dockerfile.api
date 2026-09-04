@@ -1,0 +1,46 @@
+# ============================================================
+# Dockerfile · ai-study 后端(FastAPI + Uvicorn)
+# 路径:ai-study/Dockerfile.api(部署到 ai-study 仓库根)
+# 关联:docker-compose.yml(双服务编排)
+# 创建:2026-09-04 小C
+# ⚠️ 受 Private Zone 保护(凭证不进 KB)
+# ============================================================
+
+FROM python:3.11-slim AS base
+
+# 系统依赖(gcc 给某些 wheel 后备编译)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# ---- Python 依赖(分层缓存)----
+COPY services/api/requirements.txt* ./requirements.txt
+# 如果 ai-study 仓库没 requirements.txt,从归档复制
+COPY ai-study-requirements.txt /tmp/requirements.txt
+RUN if [ ! -f ./requirements.txt ] || [ ! -s ./requirements.txt ]; then \
+        cp /tmp/requirements.txt ./requirements.txt; \
+    fi \
+    && pip install --no-cache-dir -r requirements.txt
+
+# ---- 业务代码 + 数据 ----
+COPY services/api/ ./services/api/
+COPY data/ ./data/
+COPY prompts/ ./prompts/ 2>/dev/null || true
+
+# ---- 环境变量 ----
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PORT=8000
+ENV HOST=0.0.0.0
+
+# ---- 健康检查 ----
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+  CMD curl -fsS http://localhost:8000/api/v1/health || exit 1
+
+EXPOSE 8000
+
+# ---- 启动 ----
+CMD ["uvicorn", "services.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
